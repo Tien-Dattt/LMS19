@@ -71,10 +71,18 @@
         <field name="arch" type="xml">
             <xpath expr="//page[@name='ai_feedback']" position="inside">
                 <button
-                    name="action_generate_submission_feedback_draft"
-                    string="Generate Submission Feedback Draft"
+                    name="action_generate_ai_feedback_draft"
+                    string="Generate AI Feedback Draft"
                     type="object"
-                    class="btn-primary"/>
+                    class="btn-primary"
+                    groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor"/>
+                <button
+                    name="action_copy_ai_feedback_to_feedback"
+                    string="Copy Draft to Feedback"
+                    type="object"
+                    class="btn-secondary"
+                    confirm="Copy the AI draft into the official feedback field? Review and edit it before grading."
+                    groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor"/>
             </xpath>
         </field>
     </record>
