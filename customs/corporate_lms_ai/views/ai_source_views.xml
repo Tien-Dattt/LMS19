@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_ai_agent_source_elearning_list" model="ir.ui.view">
+        <field name="name">ai.agent.source.elearning.list</field>
+        <field name="model">ai.agent.source</field>
+        <field name="arch" type="xml">
+            <list string="eLearning AI Sources" decoration-danger="status == 'failed'" decoration-muted="not is_active">
+                <field name="name"/>
+                <field name="agent_id"/>
+                <field name="type"/>
+                <field name="channel_id"/>
+                <field name="slide_id"/>
+                <field name="status" widget="badge" decoration-success="status == 'indexed'" decoration-info="status == 'processing'" decoration-danger="status == 'failed'"/>
+                <field name="is_active"/>
+                <field name="user_has_access"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_ai_agent_source_elearning_form" model="ir.ui.view">
+        <field name="name">ai.agent.source.elearning.form</field>
+        <field name="model">ai.agent.source</field>
+        <field name="arch" type="xml">
+            <form string="eLearning AI Source">
+                <header>
+                    <button
+                        name="action_sync_elearning_ai_sources"
+                        string="Sync eLearning AI Sources"
+                        type="object"
+                        class="btn-primary"
+                        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor"/>
+                    <button name="action_access_source" string="Open Source" type="object"/>
+                    <field name="status" widget="statusbar" statusbar_visible="processing,indexed,failed"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="agent_id"/>
+                            <field name="type" readonly="1"/>
+                            <field name="is_active" readonly="status in ('processing', 'failed')"/>
+                            <field name="user_has_access" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="channel_id" invisible="type != 'elearning_course'"/>
+                            <field name="slide_id" invisible="type != 'elearning_slide'"/>
+                            <field name="attachment_id" readonly="1"/>
+                            <field name="file_size" readonly="1"/>
+                        </group>
+                    </group>
+                    <group invisible="not error_details">
+                        <field name="error_details" readonly="1" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_ai_agent_source_elearning_search" model="ir.ui.view">
+        <field name="name">ai.agent.source.elearning.search</field>
+        <field name="model">ai.agent.source</field>
+        <field name="arch" type="xml">
+            <search string="eLearning AI Sources">
+                <field name="name"/>
+                <field name="agent_id"/>
+                <field name="channel_id"/>
+                <field name="slide_id"/>
+                <filter name="filter_elearning_course" string="eLearning Course" domain="[('type', '=', 'elearning_course')]"/>
+                <filter name="filter_elearning_slide" string="eLearning Slide" domain="[('type', '=', 'elearning_slide')]"/>
+                <separator/>
+                <filter name="filter_processing" string="Processing" domain="[('status', '=', 'processing')]"/>
+                <filter name="filter_indexed" string="Indexed" domain="[('status', '=', 'indexed')]"/>
+                <filter name="filter_failed" string="Failed" domain="[('status', '=', 'failed')]"/>
+                <group>
+                    <filter name="group_by_type" string="Source Type" context="{'group_by': 'type'}"/>
+                    <filter name="group_by_status" string="Sync Status" context="{'group_by': 'status'}"/>
+                    <filter name="group_by_agent" string="AI Agent" context="{'group_by': 'agent_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_elearning_ai_sources" model="ir.actions.act_window">
+        <field name="name">eLearning Sources</field>
+        <field name="res_model">ai.agent.source</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('type', 'in', ('elearning_course', 'elearning_slide'))]</field>
+        <field name="context">{'default_type': 'elearning_course'}</field>
+        <field name="search_view_id" ref="view_ai_agent_source_elearning_search"/>
+    </record>
+
+    <record id="action_elearning_ai_sources_list_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_ai_agent_source_elearning_list"/>
+        <field name="act_window_id" ref="action_elearning_ai_sources"/>
+    </record>
+
+    <record id="action_elearning_ai_sources_form_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_ai_agent_source_elearning_form"/>
+        <field name="act_window_id" ref="action_elearning_ai_sources"/>
+    </record>
+
+    <menuitem
+        id="menu_elearning_ai_sources"
+        name="eLearning Sources"
+        parent="corporate_lms_base.menu_corporate_lms_ai"
+        action="action_elearning_ai_sources"
+        sequence="10"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor"/>
+
+    <record id="view_slide_channel_form_ai_source_action" model="ir.ui.view">
+        <field name="name">slide.channel.form.ai.source.action</field>
+        <field name="model">slide.channel</field>
+        <field name="inherit_id" ref="corporate_lms_ai.view_slide_channel_form_ai_fields"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='corporate_lms_ai_fields']/group" position="after">
+                <button
+                    name="action_create_ai_source_from_course"
+                    string="Create AI Source from Course"
+                    type="object"
+                    class="btn-secondary"
+                    groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_slide_slide_form_ai_source_action" model="ir.ui.view">
+        <field name="name">slide.slide.form.ai.source.action</field>
+        <field name="model">slide.slide</field>
+        <field name="inherit_id" ref="corporate_lms_ai.view_slide_slide_form_ai_fields"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='corporate_lms_ai_fields']/group" position="after">
+                <button
+                    name="action_create_ai_source_from_slide"
+                    string="Create AI Source from Slide"
+                    type="object"
+                    class="btn-secondary"
+                    groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

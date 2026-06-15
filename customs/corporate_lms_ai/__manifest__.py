@@ -16,6 +16,8 @@
     "data": [
         "security/ir.model.access.csv",
         "views/ai_field_views.xml",
+        "views/ai_source_views.xml",
+        "views/ai_question_wizard_views.xml",
     ],
     "demo": [],
     "installable": True,

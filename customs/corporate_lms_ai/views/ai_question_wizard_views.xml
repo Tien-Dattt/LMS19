@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_ai_generate_question_wizard_form" model="ir.ui.view">
+        <field name="name">elearning.ai.generate.question.wizard.form</field>
+        <field name="model">elearning.ai.generate.question.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generate Draft Questions by AI">
+                <sheet>
+                    <group>
+                        <field name="question_bank_id"/>
+                        <field name="source_type"/>
+                        <field name="channel_id" invisible="source_type != 'course'" required="source_type == 'course'"/>
+                        <field name="slide_id" invisible="source_type != 'slide'" required="source_type == 'slide'"/>
+                        <field name="question_count"/>
+                        <field name="difficulty"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button
+                        name="action_generate_draft_questions"
+                        string="Generate Draft Questions"
+                        type="object"
+                        class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_elearning_ai_generate_question_wizard" model="ir.actions.act_window">
+        <field name="name">Generate Draft Questions by AI</field>
+        <field name="res_model">elearning.ai.generate.question.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_elearning_ai_generate_question_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <record id="view_elearning_question_bank_form_ai_generate_questions" model="ir.ui.view">
+        <field name="name">elearning.question.bank.form.ai.generate.questions</field>
+        <field name="model">elearning.question.bank</field>
+        <field name="inherit_id" ref="corporate_lms_assessment.view_elearning_question_bank_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button
+                    name="action_open_ai_generate_question_wizard"
+                    string="Generate Draft Questions by AI"
+                    type="object"
+                    class="btn-secondary"
+                    groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
