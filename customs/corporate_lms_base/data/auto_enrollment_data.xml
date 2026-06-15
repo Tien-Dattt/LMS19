@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_server_corporate_lms_auto_enroll_employees" model="ir.actions.server">
+        <field name="name">Run LMS Auto Enrollment</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="group_ids" eval="[
+            (4, ref('corporate_lms_base.group_corporate_lms_admin')),
+            (4, ref('corporate_lms_base.group_corporate_lms_training_manager')),
+            (4, ref('corporate_lms_base.group_corporate_lms_hr_officer'))
+        ]"/>
+        <field name="code">records.action_corporate_lms_auto_enroll()</field>
+    </record>
+
+    <record id="ir_cron_corporate_lms_auto_enrollment" model="ir.cron">
+        <field name="name">Corporate LMS Auto Enrollment</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_corporate_lms_auto_enrollment()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

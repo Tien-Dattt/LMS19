@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_program_list" model="ir.ui.view">
+        <field name="name">elearning.program.list</field>
+        <field name="model">elearning.program</field>
+        <field name="arch" type="xml">
+            <list string="Programs">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="state"/>
+                <field name="passing_score" optional="show"/>
+                <field name="active" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_program_form" model="ir.ui.view">
+        <field name="name">elearning.program.form</field>
+        <field name="model">elearning.program</field>
+        <field name="arch" type="xml">
+            <form string="Program">
+                <header>
+                    <button
+                        name="action_publish"
+                        string="Publish"
+                        type="object"
+                        class="btn-primary"
+                        invisible="state != 'draft'"/>
+                    <button
+                        name="action_archive"
+                        string="Archive"
+                        type="object"
+                        invisible="state == 'archived'"/>
+                    <button
+                        name="action_reset_to_draft"
+                        string="Reset to Draft"
+                        type="object"
+                        invisible="state == 'draft'"
+                        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,published,archived"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="action_view_enrollments"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-users">
+                            <field name="enrollment_ids" widget="statinfo" string="Enrollments"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="state"/>
+                            <field name="passing_score"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="courses" string="Courses">
+                            <field name="line_ids">
+                                <list editable="bottom" default_order="sequence, id">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="channel_id"/>
+                                    <field name="mandatory"/>
+                                    <field name="unlock_policy"/>
+                                    <field name="weight"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page name="targets" string="Targets">
+                            <group>
+                                <field name="target_level_ids" widget="many2many_tags"/>
+                                <field name="target_role_track_ids" widget="many2many_tags"/>
+                            </group>
+                        </page>
+                        <page name="enrollments" string="Enrollments">
+                            <field name="enrollment_ids" readonly="1">
+                                <list>
+                                    <field name="partner_id"/>
+                                    <field name="employee_id"/>
+                                    <field name="state"/>
+                                    <field name="progress" widget="progressbar"/>
+                                    <field name="deadline_date"/>
+                                    <field name="assigned_date"/>
+                                    <field name="completed_date"/>
+                                    <field name="final_score"/>
+                                    <field name="source"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page name="description" string="Description">
+                            <field name="description" nolabel="1" placeholder="Description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_program_search" model="ir.ui.view">
+    <field name="name">elearning.program.search</field>
+    <field name="model">elearning.program</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="code"/>
+            <field name="state"/>
+            <field name="target_level_ids"/>
+            <field name="target_role_track_ids"/>
+
+            <filter name="filter_draft"
+                    string="Draft"
+                    domain="[('state', '=', 'draft')]"/>
+
+            <filter name="filter_published"
+                    string="Published"
+                    domain="[('state', '=', 'published')]"/>
+
+            <filter name="filter_archived"
+                    string="Archived"
+                    domain="[('state', '=', 'archived')]"/>
+
+            <separator/>
+
+            <group>
+                <filter name="group_by_state"
+                        string="State"
+                        context="{'group_by': 'state'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+    <record id="view_elearning_program_line_list" model="ir.ui.view">
+        <field name="name">elearning.program.line.list</field>
+        <field name="model">elearning.program.line</field>
+        <field name="arch" type="xml">
+            <list string="Program Courses" default_order="program_id, sequence, id">
+                <field name="program_id"/>
+                <field name="sequence" widget="handle"/>
+                <field name="channel_id"/>
+                <field name="mandatory"/>
+                <field name="unlock_policy"/>
+                <field name="weight"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_program_line_form" model="ir.ui.view">
+        <field name="name">elearning.program.line.form</field>
+        <field name="model">elearning.program.line</field>
+        <field name="arch" type="xml">
+            <form string="Program Course">
+                <sheet>
+                    <group>
+                        <field name="program_id"/>
+                        <field name="channel_id"/>
+                        <field name="sequence"/>
+                        <field name="mandatory"/>
+                        <field name="unlock_policy"/>
+                        <field name="weight"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_elearning_program" model="ir.actions.act_window">
+        <field name="name">Programs</field>
+        <field name="res_model">elearning.program</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_elearning_program"
+        name="Programs"
+        parent="menu_corporate_lms_programs"
+        action="action_elearning_program"
+        sequence="10"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_learner"/>
+</odoo>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_class_list" model="ir.ui.view">
+        <field name="name">elearning.class.list</field>
+        <field name="model">elearning.class</field>
+        <field name="arch" type="xml">
+            <list string="Classes">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="program_id"/>
+                <field name="channel_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="state"/>
+                <field name="max_students"/>
+                <field name="active" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_class_form" model="ir.ui.view">
+        <field name="name">elearning.class.form</field>
+        <field name="model">elearning.class</field>
+        <field name="arch" type="xml">
+            <form string="Class">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open,running,done,cancelled"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="program_id"/>
+                            <field name="channel_id"/>
+                        </group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="max_students"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="trainers" string="Trainers">
+                            <field name="trainer_ids" widget="many2many_tags"/>
+                        </page>
+                        <page name="students" string="Students">
+                            <field name="student_ids">
+                                <list editable="bottom">
+                                    <field name="partner_id"/>
+                                    <field name="employee_id"/>
+                                    <field name="program_partner_id"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_class_search" model="ir.ui.view">
+        <field name="name">elearning.class.search</field>
+        <field name="model">elearning.class</field>
+        <field name="arch" type="xml">
+            <search string="Classes">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="program_id"/>
+                <field name="channel_id"/>
+                <field name="trainer_ids"/>
+                <field name="student_ids"/>
+                <field name="state"/>
+                <filter name="filter_my_classes_as_trainer" string="My Classes as Trainer" domain="[('trainer_ids', 'in', [uid])]"/>
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_open" string="Open" domain="[('state', '=', 'open')]"/>
+                <filter name="filter_running" string="Running" domain="[('state', '=', 'running')]"/>
+                <filter name="filter_done" string="Done" domain="[('state', '=', 'done')]"/>
+                <filter name="filter_cancelled" string="Cancelled" domain="[('state', '=', 'cancelled')]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                    <filter name="group_by_program" string="Program" context="{'group_by': 'program_id'}"/>
+                    <filter name="group_by_course" string="Course" context="{'group_by': 'channel_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_elearning_class_student_list" model="ir.ui.view">
+        <field name="name">elearning.class.student.list</field>
+        <field name="model">elearning.class.student</field>
+        <field name="arch" type="xml">
+            <list string="Class Students">
+                <field name="class_id"/>
+                <field name="partner_id"/>
+                <field name="employee_id"/>
+                <field name="program_partner_id"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_class_student_form" model="ir.ui.view">
+        <field name="name">elearning.class.student.form</field>
+        <field name="model">elearning.class.student</field>
+        <field name="arch" type="xml">
+            <form string="Class Student">
+                <sheet>
+                    <group>
+                        <field name="class_id"/>
+                        <field name="partner_id"/>
+                        <field name="employee_id"/>
+                        <field name="program_partner_id"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_class_student_search" model="ir.ui.view">
+        <field name="name">elearning.class.student.search</field>
+        <field name="model">elearning.class.student</field>
+        <field name="arch" type="xml">
+            <search string="Class Students">
+                <field name="class_id"/>
+                <field name="partner_id"/>
+                <field name="employee_id"/>
+                <field name="program_partner_id"/>
+                <field name="state"/>
+                <filter name="filter_invited" string="Invited" domain="[('state', '=', 'invited')]"/>
+                <filter name="filter_active" string="Active" domain="[('state', '=', 'active')]"/>
+                <filter name="filter_completed" string="Completed" domain="[('state', '=', 'completed')]"/>
+                <filter name="filter_dropped" string="Dropped" domain="[('state', '=', 'dropped')]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_class" string="Class" context="{'group_by': 'class_id'}"/>
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_elearning_class" model="ir.actions.act_window">
+        <field name="name">Classes</field>
+        <field name="res_model">elearning.class</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_elearning_class_student" model="ir.actions.act_window">
+        <field name="name">Class Students</field>
+        <field name="res_model">elearning.class.student</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_elearning_class"
+        name="Classes"
+        parent="menu_corporate_lms_classes"
+        action="action_elearning_class"
+        sequence="10"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
+
+    <menuitem
+        id="menu_elearning_class_student"
+        name="Class Students"
+        parent="menu_corporate_lms_classes"
+        action="action_elearning_class_student"
+        sequence="20"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager"/>
+</odoo>

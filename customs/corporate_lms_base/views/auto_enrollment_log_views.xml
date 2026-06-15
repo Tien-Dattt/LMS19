@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_auto_enrollment_log_list" model="ir.ui.view">
+        <field name="name">elearning.auto.enrollment.log.list</field>
+        <field name="model">elearning.auto.enrollment.log</field>
+        <field name="arch" type="xml">
+            <list string="Auto Enrollment Logs" create="false" edit="false">
+                <field name="run_date"/>
+                <field name="status"/>
+                <field name="employee_id"/>
+                <field name="partner_id"/>
+                <field name="matrix_id"/>
+                <field name="program_id"/>
+                <field name="message"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_auto_enrollment_log_form" model="ir.ui.view">
+        <field name="name">elearning.auto.enrollment.log.form</field>
+        <field name="model">elearning.auto.enrollment.log</field>
+        <field name="arch" type="xml">
+            <form string="Auto Enrollment Log" create="false" edit="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="run_date"/>
+                            <field name="status"/>
+                            <field name="employee_id"/>
+                            <field name="partner_id"/>
+                        </group>
+                        <group>
+                            <field name="matrix_id"/>
+                            <field name="program_id"/>
+                        </group>
+                    </group>
+                    <field name="message" nolabel="1"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_auto_enrollment_log_search" model="ir.ui.view">
+        <field name="name">elearning.auto.enrollment.log.search</field>
+        <field name="model">elearning.auto.enrollment.log</field>
+        <field name="arch" type="xml">
+            <search string="Auto Enrollment Logs">
+                <field name="employee_id"/>
+                <field name="partner_id"/>
+                <field name="matrix_id"/>
+                <field name="program_id"/>
+                <field name="message"/>
+                <filter name="status_success" string="Success" domain="[('status', '=', 'success')]"/>
+                <filter name="status_skipped" string="Skipped" domain="[('status', '=', 'skipped')]"/>
+                <filter name="status_error" string="Error" domain="[('status', '=', 'error')]"/>
+                <group>
+                    <filter name="group_status" string="Status" context="{'group_by': 'status'}"/>
+                    <filter name="group_program" string="Program" context="{'group_by': 'program_id'}"/>
+                    <filter name="group_run_date" string="Run Date" context="{'group_by': 'run_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_elearning_auto_enrollment_log" model="ir.actions.act_window">
+        <field name="name">Auto Enrollment Logs</field>
+        <field name="res_model">elearning.auto.enrollment.log</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_elearning_auto_enrollment_log"
+        name="Auto Enrollment Logs"
+        parent="menu_corporate_lms_reports"
+        action="action_elearning_auto_enrollment_log"
+        sequence="10"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer"/>
+</odoo>

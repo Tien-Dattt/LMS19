@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_exam_list" model="ir.ui.view">
+        <field name="name">elearning.exam.list</field>
+        <field name="model">elearning.exam</field>
+        <field name="arch" type="xml">
+            <list string="Exams">
+                <field name="name"/>
+                <field name="program_id"/>
+                <field name="channel_id"/>
+                <field name="class_id"/>
+                <field name="question_bank_id"/>
+                <field name="question_count"/>
+                <field name="attempt_limit"/>
+                <field name="passing_score"/>
+                <field name="state"/>
+                <field name="active" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_exam_form" model="ir.ui.view">
+        <field name="name">elearning.exam.form</field>
+        <field name="model">elearning.exam</field>
+        <field name="arch" type="xml">
+            <form string="Exam">
+                <header>
+                    <button
+                        name="action_publish"
+                        string="Publish"
+                        type="object"
+                        class="btn-primary"
+                        invisible="state == 'published'"/>
+                    <button
+                        name="action_close"
+                        string="Close"
+                        type="object"
+                        invisible="state == 'closed'"/>
+                    <button
+                        name="action_start_exam"
+                        string="Start Exam"
+                        type="object"
+                        class="btn-primary"
+                        invisible="state != 'published'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,published,closed"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="program_id"/>
+                            <field name="channel_id"/>
+                            <field name="class_id"/>
+                            <field name="question_bank_id"/>
+                        </group>
+                        <group>
+                            <field name="question_count"/>
+                            <field name="time_limit_minutes"/>
+                            <field name="attempt_limit"/>
+                            <field name="passing_score"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="randomize_questions"/>
+                        <field name="randomize_answers"/>
+                    </group>
+                    <notebook>
+                        <page name="sessions" string="Sessions">
+                            <field name="session_ids" readonly="1">
+                                <list>
+                                    <field name="partner_id"/>
+                                    <field name="employee_id"/>
+                                    <field name="started_at"/>
+                                    <field name="submitted_at"/>
+                                    <field name="score"/>
+                                    <field name="passed"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_exam_search" model="ir.ui.view">
+        <field name="name">elearning.exam.search</field>
+        <field name="model">elearning.exam</field>
+        <field name="arch" type="xml">
+            <search string="Exams">
+                <field name="name"/>
+                <field name="program_id"/>
+                <field name="channel_id"/>
+                <field name="class_id"/>
+                <field name="question_bank_id"/>
+                <field name="state"/>
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_published" string="Published" domain="[('state', '=', 'published')]"/>
+                <filter name="filter_closed" string="Closed" domain="[('state', '=', 'closed')]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_program" string="Program" context="{'group_by': 'program_id'}"/>
+                    <filter name="group_by_class" string="Class" context="{'group_by': 'class_id'}"/>
+                    <filter name="group_by_bank" string="Question Bank" context="{'group_by': 'question_bank_id'}"/>
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_elearning_exam_session_list" model="ir.ui.view">
+        <field name="name">elearning.exam.session.list</field>
+        <field name="model">elearning.exam.session</field>
+        <field name="arch" type="xml">
+            <list string="Exam Sessions">
+                <field name="exam_id"/>
+                <field name="partner_id"/>
+                <field name="employee_id"/>
+                <field name="started_at"/>
+                <field name="submitted_at"/>
+                <field name="score"/>
+                <field name="passed"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_exam_session_form" model="ir.ui.view">
+        <field name="name">elearning.exam.session.form</field>
+        <field name="model">elearning.exam.session</field>
+        <field name="arch" type="xml">
+            <form string="Exam Session">
+                <header>
+                    <button
+                        name="action_submit"
+                        string="Submit"
+                        type="object"
+                        class="btn-primary"
+                        invisible="state != 'in_progress'"/>
+                    <button
+                        name="action_expire"
+                        string="Expire"
+                        type="object"
+                        invisible="state != 'in_progress'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="in_progress,submitted,graded,expired"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="exam_id"/>
+                            <field name="partner_id"/>
+                            <field name="employee_id"/>
+                        </group>
+                        <group>
+                            <field name="started_at"/>
+                            <field name="submitted_at"/>
+                            <field name="score"/>
+                            <field name="passed"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="answers" string="Answers">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="question_id"/>
+                                    <field name="selected_answer_ids" widget="many2many_tags"/>
+                                    <field name="score"/>
+                                    <field name="is_correct"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_exam_session_search" model="ir.ui.view">
+        <field name="name">elearning.exam.session.search</field>
+        <field name="model">elearning.exam.session</field>
+        <field name="arch" type="xml">
+            <search string="Exam Sessions">
+                <field name="exam_id"/>
+                <field name="partner_id"/>
+                <field name="employee_id"/>
+                <field name="state"/>
+                <filter name="filter_in_progress" string="In Progress" domain="[('state', '=', 'in_progress')]"/>
+                <filter name="filter_graded" string="Graded" domain="[('state', '=', 'graded')]"/>
+                <filter name="filter_expired" string="Expired" domain="[('state', '=', 'expired')]"/>
+                <filter name="filter_passed" string="Passed" domain="[('passed', '=', True)]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_exam" string="Exam" context="{'group_by': 'exam_id'}"/>
+                    <filter name="group_by_learner" string="Learner" context="{'group_by': 'partner_id'}"/>
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_elearning_exam" model="ir.actions.act_window">
+        <field name="name">Exams</field>
+        <field name="res_model">elearning.exam</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_elearning_exam_session" model="ir.actions.act_window">
+        <field name="name">Exam Sessions</field>
+        <field name="res_model">elearning.exam.session</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_elearning_exam"
+        name="Exams"
+        parent="corporate_lms_base.menu_corporate_lms_assessments"
+        action="action_elearning_exam"
+        sequence="60"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
+
+    <menuitem
+        id="menu_elearning_exam_session"
+        name="Exam Sessions"
+        parent="corporate_lms_base.menu_corporate_lms_assessments"
+        action="action_elearning_exam_session"
+        sequence="70"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
+</odoo>

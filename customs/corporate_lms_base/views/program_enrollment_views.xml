@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_program_partner_list" model="ir.ui.view">
+        <field name="name">elearning.program.partner.list</field>
+        <field name="model">elearning.program.partner</field>
+        <field name="arch" type="xml">
+            <list string="Program Enrollments">
+                <field name="program_id"/>
+                <field name="partner_id"/>
+                <field name="employee_id"/>
+                <field name="state"/>
+                <field name="progress" widget="progressbar"/>
+                <field name="deadline_date"/>
+                <field name="assigned_date"/>
+                <field name="completed_date"/>
+                <field name="final_score"/>
+                <field name="source"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_program_partner_form" model="ir.ui.view">
+        <field name="name">elearning.program.partner.form</field>
+        <field name="model">elearning.program.partner</field>
+        <field name="arch" type="xml">
+            <form string="Program Enrollment">
+                <header>
+                    <button
+                        name="action_enroll_courses"
+                        string="Enroll Required Courses"
+                        type="object"
+                        class="btn-primary"
+                        invisible="state in ('completed', 'failed', 'cancelled')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="assigned,in_progress,completed,failed,cancelled"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="program_id"/>
+                            <field name="partner_id"/>
+                            <field name="employee_id"/>
+                        </group>
+                        <group>
+                            <field name="progress" widget="progressbar"/>
+                            <field name="deadline_date"/>
+                            <field name="assigned_date"/>
+                            <field name="completed_date"/>
+                            <field name="final_score"/>
+                            <field name="source"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_program_partner_search" model="ir.ui.view">
+        <field name="name">elearning.program.partner.search</field>
+        <field name="model">elearning.program.partner</field>
+        <field name="arch" type="xml">
+            <search string="Program Enrollments">
+                <field name="program_id"/>
+                <field name="partner_id"/>
+                <field name="employee_id"/>
+                <field name="state"/>
+                <field name="source"/>
+
+                <filter name="filter_assigned"
+                        string="Assigned"
+                        domain="[('state', '=', 'assigned')]"/>
+
+                <filter name="filter_in_progress"
+                        string="In Progress"
+                        domain="[('state', '=', 'in_progress')]"/>
+
+                <filter name="filter_completed"
+                        string="Completed"
+                        domain="[('state', '=', 'completed')]"/>
+
+                <filter name="filter_failed"
+                        string="Failed"
+                        domain="[('state', '=', 'failed')]"/>
+
+                <filter name="filter_cancelled"
+                        string="Cancelled"
+                        domain="[('state', '=', 'cancelled')]"/>
+
+                <separator/>
+
+                <group>
+                    <filter name="group_by_program"
+                            string="Program"
+                            context="{'group_by': 'program_id'}"/>
+
+                    <filter name="group_by_state"
+                            string="State"
+                            context="{'group_by': 'state'}"/>
+
+                    <filter name="group_by_source"
+                            string="Source"
+                            context="{'group_by': 'source'}"/>
+
+                    <filter name="group_by_employee"
+                            string="Employee"
+                            context="{'group_by': 'employee_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_elearning_program_partner" model="ir.actions.act_window">
+        <field name="name">Program Enrollments</field>
+        <field name="res_model">elearning.program.partner</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_elearning_program_partner"
+        name="Program Enrollments"
+        parent="menu_corporate_lms_programs"
+        action="action_elearning_program_partner"
+        sequence="20"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_learner"/>
+</odoo>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rule_elearning_program_full_access" model="ir.rule">
+        <field name="name">Programs: training roles</field>
+        <field name="model_id" ref="model_elearning_program"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager')), (4, ref('corporate_lms_base.group_corporate_lms_hr_officer')), (4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_program_learner_assigned" model="ir.rule">
+        <field name="name">Programs: learner assigned programs</field>
+        <field name="model_id" ref="model_elearning_program"/>
+        <field name="domain_force">[('enrollment_ids.partner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_program_line_full_access" model="ir.rule">
+        <field name="name">Program lines: training roles</field>
+        <field name="model_id" ref="model_elearning_program_line"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager')), (4, ref('corporate_lms_base.group_corporate_lms_hr_officer')), (4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_program_line_learner_assigned" model="ir.rule">
+        <field name="name">Program lines: learner assigned program lines</field>
+        <field name="model_id" ref="model_elearning_program_line"/>
+        <field name="domain_force">[('program_id.enrollment_ids.partner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_program_partner_full_access" model="ir.rule">
+        <field name="name">Program enrollments: training administrators</field>
+        <field name="model_id" ref="model_elearning_program_partner"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager')), (4, ref('corporate_lms_base.group_corporate_lms_hr_officer'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_program_partner_learner_own" model="ir.rule">
+        <field name="name">Program enrollments: learner own records</field>
+        <field name="model_id" ref="model_elearning_program_partner"/>
+        <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+</odoo>

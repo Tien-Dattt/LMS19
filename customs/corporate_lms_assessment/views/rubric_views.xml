@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_rubric_list" model="ir.ui.view">
+        <field name="name">elearning.rubric.list</field>
+        <field name="model">elearning.rubric</field>
+        <field name="arch" type="xml">
+            <list string="Rubrics">
+                <field name="name"/>
+                <field name="max_score"/>
+                <field name="active" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_rubric_form" model="ir.ui.view">
+        <field name="name">elearning.rubric.form</field>
+        <field name="model">elearning.rubric</field>
+        <field name="arch" type="xml">
+            <form string="Rubric">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="max_score" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="criteria" string="Criteria">
+                            <field name="criteria_ids">
+                                <list editable="bottom" default_order="sequence, id">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="max_score"/>
+                                    <field name="description"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page name="description" string="Description">
+                            <field name="description" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_rubric_search" model="ir.ui.view">
+        <field name="name">elearning.rubric.search</field>
+        <field name="model">elearning.rubric</field>
+        <field name="arch" type="xml">
+            <search string="Rubrics">
+                <field name="name"/>
+                <field name="criteria_ids"/>
+                <filter name="filter_active" string="Active" domain="[('active', '=', True)]"/>
+                <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_elearning_rubric_criteria_list" model="ir.ui.view">
+        <field name="name">elearning.rubric.criteria.list</field>
+        <field name="model">elearning.rubric.criteria</field>
+        <field name="arch" type="xml">
+            <list string="Rubric Criteria">
+                <field name="rubric_id"/>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="max_score"/>
+                <field name="description"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_elearning_rubric" model="ir.actions.act_window">
+        <field name="name">Rubrics</field>
+        <field name="res_model">elearning.rubric</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_elearning_rubric"
+        name="Rubrics"
+        parent="corporate_lms_base.menu_corporate_lms_assessments"
+        action="action_elearning_rubric"
+        sequence="10"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
+</odoo>

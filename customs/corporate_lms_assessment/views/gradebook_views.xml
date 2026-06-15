@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_gradebook_list" model="ir.ui.view">
+        <field name="name">elearning.gradebook.list</field>
+        <field name="model">elearning.gradebook</field>
+        <field name="arch" type="xml">
+            <list string="Gradebooks">
+                <field name="program_id"/>
+                <field name="class_id"/>
+                <field name="partner_id"/>
+                <field name="employee_id"/>
+                <field name="final_score"/>
+                <field name="passed"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_gradebook_form" model="ir.ui.view">
+        <field name="name">elearning.gradebook.form</field>
+        <field name="model">elearning.gradebook</field>
+        <field name="arch" type="xml">
+            <form string="Gradebook">
+                <header>
+                    <button
+                        name="action_finalize"
+                        string="Lock"
+                        type="object"
+                        class="btn-primary"
+                        invisible="state == 'locked'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open,locked"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="program_id"/>
+                            <field name="class_id"/>
+                            <field name="partner_id"/>
+                            <field name="employee_id"/>
+                        </group>
+                        <group>
+                            <field name="final_score" readonly="1"/>
+                            <field name="passed" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="lines" string="Grade Lines">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="source_type"/>
+                                    <field name="submission_id" invisible="source_type != 'assignment'"/>
+                                    <field name="exam_session_id" invisible="source_type != 'exam'"/>
+                                    <field name="score"/>
+                                    <field name="weight"/>
+                                    <field name="weighted_score" readonly="1"/>
+                                    <field name="note"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_gradebook_search" model="ir.ui.view">
+        <field name="name">elearning.gradebook.search</field>
+        <field name="model">elearning.gradebook</field>
+        <field name="arch" type="xml">
+            <search string="Gradebooks">
+                <field name="program_id"/>
+                <field name="class_id"/>
+                <field name="partner_id"/>
+                <field name="employee_id"/>
+                <field name="state"/>
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_open" string="Open" domain="[('state', '=', 'open')]"/>
+                <filter name="filter_locked" string="Locked" domain="[('state', '=', 'locked')]"/>
+                <filter name="filter_passed" string="Passed" domain="[('passed', '=', True)]"/>
+                <filter name="filter_not_passed" string="Not Passed" domain="[('passed', '=', False)]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_program" string="Program" context="{'group_by': 'program_id'}"/>
+                    <filter name="group_by_class" string="Class" context="{'group_by': 'class_id'}"/>
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                    <filter name="group_by_passed" string="Passed" context="{'group_by': 'passed'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_elearning_gradebook_line_list" model="ir.ui.view">
+        <field name="name">elearning.gradebook.line.list</field>
+        <field name="model">elearning.gradebook.line</field>
+        <field name="arch" type="xml">
+            <list string="Gradebook Lines">
+                <field name="gradebook_id"/>
+                <field name="source_type"/>
+                <field name="submission_id"/>
+                <field name="exam_session_id"/>
+                <field name="score"/>
+                <field name="weight"/>
+                <field name="weighted_score"/>
+                <field name="note"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_gradebook_line_form" model="ir.ui.view">
+        <field name="name">elearning.gradebook.line.form</field>
+        <field name="model">elearning.gradebook.line</field>
+        <field name="arch" type="xml">
+            <form string="Gradebook Line">
+                <sheet>
+                    <group>
+                        <field name="gradebook_id"/>
+                        <field name="source_type"/>
+                        <field name="submission_id" invisible="source_type != 'assignment'"/>
+                        <field name="exam_session_id" invisible="source_type != 'exam'"/>
+                        <field name="score"/>
+                        <field name="weight"/>
+                        <field name="weighted_score" readonly="1"/>
+                        <field name="note"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_elearning_gradebook" model="ir.actions.act_window">
+        <field name="name">Gradebooks</field>
+        <field name="res_model">elearning.gradebook</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_elearning_gradebook"
+        name="Gradebooks"
+        parent="corporate_lms_base.menu_corporate_lms_reports"
+        action="action_elearning_gradebook"
+        sequence="20"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
+</odoo>

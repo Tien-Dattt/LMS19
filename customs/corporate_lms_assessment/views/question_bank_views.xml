@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_question_bank_list" model="ir.ui.view">
+        <field name="name">elearning.question.bank.list</field>
+        <field name="model">elearning.question.bank</field>
+        <field name="arch" type="xml">
+            <list string="Question Banks">
+                <field name="name"/>
+                <field name="owner_id"/>
+                <field name="program_id"/>
+                <field name="channel_id"/>
+                <field name="state"/>
+                <field name="active" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_question_bank_form" model="ir.ui.view">
+        <field name="name">elearning.question.bank.form</field>
+        <field name="model">elearning.question.bank</field>
+        <field name="arch" type="xml">
+            <form string="Question Bank">
+                <header>
+                    <button
+                        name="action_activate"
+                        string="Activate"
+                        type="object"
+                        class="btn-primary"
+                        invisible="state == 'active'"/>
+                    <button
+                        name="action_archive"
+                        string="Archive"
+                        type="object"
+                        invisible="state == 'archived'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,active,archived"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="owner_id"/>
+                            <field name="program_id"/>
+                            <field name="channel_id"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="description" string="Description">
+                            <field name="description" nolabel="1"/>
+                        </page>
+                        <page name="questions" string="Questions">
+                            <field name="question_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="question_type"/>
+                                    <field name="difficulty"/>
+                                    <field name="score"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_question_bank_search" model="ir.ui.view">
+        <field name="name">elearning.question.bank.search</field>
+        <field name="model">elearning.question.bank</field>
+        <field name="arch" type="xml">
+            <search string="Question Banks">
+                <field name="name"/>
+                <field name="owner_id"/>
+                <field name="program_id"/>
+                <field name="channel_id"/>
+                <field name="state"/>
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_active" string="Active" domain="[('state', '=', 'active')]"/>
+                <filter name="filter_archived" string="Archived" domain="[('state', '=', 'archived')]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_program" string="Program" context="{'group_by': 'program_id'}"/>
+                    <filter name="group_by_owner" string="Owner" context="{'group_by': 'owner_id'}"/>
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_elearning_question_list" model="ir.ui.view">
+        <field name="name">elearning.question.list</field>
+        <field name="model">elearning.question</field>
+        <field name="arch" type="xml">
+            <list string="Questions">
+                <field name="bank_id"/>
+                <field name="name"/>
+                <field name="question_type"/>
+                <field name="difficulty"/>
+                <field name="score"/>
+                <field name="state"/>
+                <field name="active" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_question_form" model="ir.ui.view">
+        <field name="name">elearning.question.form</field>
+        <field name="model">elearning.question</field>
+        <field name="arch" type="xml">
+            <form string="Question">
+                <header>
+                    <button
+                        name="action_activate"
+                        string="Activate"
+                        type="object"
+                        class="btn-primary"
+                        invisible="state == 'active'"/>
+                    <button
+                        name="action_archive"
+                        string="Archive"
+                        type="object"
+                        invisible="state == 'archived'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,active,archived"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="bank_id"/>
+                            <field name="question_type"/>
+                            <field name="difficulty"/>
+                        </group>
+                        <group>
+                            <field name="score"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="question" string="Question">
+                            <field name="name" nolabel="1"/>
+                        </page>
+                        <page name="answers" string="Answers">
+                            <field name="answer_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="is_correct"/>
+                                    <field name="feedback"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page name="ai_explanation" string="AI Explanation">
+                            <field name="ai_explanation" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_question_search" model="ir.ui.view">
+        <field name="name">elearning.question.search</field>
+        <field name="model">elearning.question</field>
+        <field name="arch" type="xml">
+            <search string="Questions">
+                <field name="bank_id"/>
+                <field name="name"/>
+                <field name="question_type"/>
+                <field name="difficulty"/>
+                <field name="state"/>
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_active" string="Active" domain="[('state', '=', 'active')]"/>
+                <filter name="filter_archived" string="Archived" domain="[('state', '=', 'archived')]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_bank" string="Bank" context="{'group_by': 'bank_id'}"/>
+                    <filter name="group_by_type" string="Type" context="{'group_by': 'question_type'}"/>
+                    <filter name="group_by_difficulty" string="Difficulty" context="{'group_by': 'difficulty'}"/>
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_elearning_question_bank" model="ir.actions.act_window">
+        <field name="name">Question Banks</field>
+        <field name="res_model">elearning.question.bank</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_elearning_question" model="ir.actions.act_window">
+        <field name="name">Questions</field>
+        <field name="res_model">elearning.question</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_elearning_question_bank"
+        name="Question Banks"
+        parent="corporate_lms_base.menu_corporate_lms_assessments"
+        action="action_elearning_question_bank"
+        sequence="40"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_learner"/>
+
+    <menuitem
+        id="menu_elearning_question"
+        name="Questions"
+        parent="corporate_lms_base.menu_corporate_lms_assessments"
+        action="action_elearning_question"
+        sequence="50"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor"/>
+</odoo>

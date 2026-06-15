@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_assignment_list" model="ir.ui.view">
+        <field name="name">elearning.assignment.list</field>
+        <field name="model">elearning.assignment</field>
+        <field name="arch" type="xml">
+            <list string="Assignments">
+                <field name="name"/>
+                <field name="program_id"/>
+                <field name="channel_id"/>
+                <field name="class_id"/>
+                <field name="due_date"/>
+                <field name="submission_type"/>
+                <field name="max_score"/>
+                <field name="state"/>
+                <field name="active" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_assignment_form" model="ir.ui.view">
+        <field name="name">elearning.assignment.form</field>
+        <field name="model">elearning.assignment</field>
+        <field name="arch" type="xml">
+            <form string="Assignment">
+                <header>
+                    <button
+                        name="action_publish"
+                        string="Publish"
+                        type="object"
+                        class="btn-primary"
+                        invisible="state != 'draft'"/>
+                    <button
+                        name="action_close"
+                        string="Close"
+                        type="object"
+                        invisible="state == 'closed'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,published,closed"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="program_id"/>
+                            <field name="channel_id"/>
+                            <field name="class_id"/>
+                            <field name="rubric_id"/>
+                        </group>
+                        <group>
+                            <field name="due_date"/>
+                            <field name="submission_type"/>
+                            <field name="max_score"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="description" string="Description">
+                            <field name="description" nolabel="1"/>
+                        </page>
+                        <page name="submissions" string="Submissions">
+                            <field name="submission_ids" readonly="1">
+                                <list>
+                                    <field name="partner_id"/>
+                                    <field name="employee_id"/>
+                                    <field name="submitted_at"/>
+                                    <field name="state"/>
+                                    <field name="score"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_assignment_search" model="ir.ui.view">
+        <field name="name">elearning.assignment.search</field>
+        <field name="model">elearning.assignment</field>
+        <field name="arch" type="xml">
+            <search string="Assignments">
+                <field name="name"/>
+                <field name="program_id"/>
+                <field name="channel_id"/>
+                <field name="class_id"/>
+                <field name="rubric_id"/>
+                <field name="state"/>
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_published" string="Published" domain="[('state', '=', 'published')]"/>
+                <filter name="filter_closed" string="Closed" domain="[('state', '=', 'closed')]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_program" string="Program" context="{'group_by': 'program_id'}"/>
+                    <filter name="group_by_class" string="Class" context="{'group_by': 'class_id'}"/>
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_elearning_assignment_submission_list" model="ir.ui.view">
+        <field name="name">elearning.assignment.submission.list</field>
+        <field name="model">elearning.assignment.submission</field>
+        <field name="arch" type="xml">
+            <list string="Submissions">
+                <field name="assignment_id"/>
+                <field name="partner_id"/>
+                <field name="employee_id"/>
+                <field name="submitted_at"/>
+                <field name="state"/>
+                <field name="score"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_assignment_submission_form" model="ir.ui.view">
+        <field name="name">elearning.assignment.submission.form</field>
+        <field name="model">elearning.assignment.submission</field>
+        <field name="arch" type="xml">
+            <form string="Submission">
+                <header>
+                    <button
+                        name="action_submit"
+                        string="Submit"
+                        type="object"
+                        class="btn-primary"
+                        invisible="state not in ('draft', 'returned')"/>
+                    <button
+                        name="action_return"
+                        string="Return"
+                        type="object"
+                        invisible="state not in ('submitted', 'late', 'graded')"/>
+                    <button
+                        name="action_grade"
+                        string="Grade"
+                        type="object"
+                        class="btn-primary"
+                        invisible="state not in ('submitted', 'late', 'returned')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,submitted,late,graded,returned"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="assignment_id"/>
+                            <field name="partner_id"/>
+                            <field name="employee_id"/>
+                        </group>
+                        <group>
+                            <field name="submitted_at"/>
+                            <field name="score"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="answer" string="Answer">
+                            <field name="text_answer" nolabel="1"/>
+                            <field name="external_url"/>
+                            <field name="attachment_ids" widget="many2many_binary"/>
+                        </page>
+                        <page name="feedback" string="Feedback">
+                            <field name="feedback" nolabel="1"/>
+                        </page>
+                        <page name="ai_feedback" string="AI Draft">
+                            <field name="ai_feedback_draft" nolabel="1"/>
+                            <field name="ai_strengths"/>
+                            <field name="ai_weaknesses"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_assignment_submission_search" model="ir.ui.view">
+        <field name="name">elearning.assignment.submission.search</field>
+        <field name="model">elearning.assignment.submission</field>
+        <field name="arch" type="xml">
+            <search string="Submissions">
+                <field name="assignment_id"/>
+                <field name="partner_id"/>
+                <field name="employee_id"/>
+                <field name="state"/>
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_submitted" string="Submitted" domain="[('state', '=', 'submitted')]"/>
+                <filter name="filter_late" string="Late" domain="[('state', '=', 'late')]"/>
+                <filter name="filter_graded" string="Graded" domain="[('state', '=', 'graded')]"/>
+                <filter name="filter_returned" string="Returned" domain="[('state', '=', 'returned')]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_assignment" string="Assignment" context="{'group_by': 'assignment_id'}"/>
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                    <filter name="group_by_learner" string="Learner" context="{'group_by': 'partner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_elearning_assignment" model="ir.actions.act_window">
+        <field name="name">Assignments</field>
+        <field name="res_model">elearning.assignment</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_elearning_assignment_submission" model="ir.actions.act_window">
+        <field name="name">Submissions</field>
+        <field name="res_model">elearning.assignment.submission</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_elearning_assignment"
+        name="Assignments"
+        parent="corporate_lms_base.menu_corporate_lms_assessments"
+        action="action_elearning_assignment"
+        sequence="20"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
+
+    <menuitem
+        id="menu_elearning_assignment_submission"
+        name="Submissions"
+        parent="corporate_lms_base.menu_corporate_lms_assessments"
+        action="action_elearning_assignment_submission"
+        sequence="30"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
+</odoo>

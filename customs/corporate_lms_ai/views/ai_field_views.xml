@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_program_form_ai_fields" model="ir.ui.view">
+        <field name="name">elearning.program.form.ai.fields</field>
+        <field name="model">elearning.program</field>
+        <field name="inherit_id" ref="corporate_lms_base.view_elearning_program_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="ai_fields" string="AI Draft">
+                    <button
+                        name="action_generate_program_ai_summary"
+                        string="Generate Program AI Summary"
+                        type="object"
+                        class="btn-primary"/>
+                    <field name="ai_summary" nolabel="1" placeholder="Draft AI summary"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_slide_channel_form_ai_fields" model="ir.ui.view">
+        <field name="name">slide.channel.form.ai.fields</field>
+        <field name="model">slide.channel</field>
+        <field name="inherit_id" ref="website_slides.view_slide_channel_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="corporate_lms_ai_fields" string="AI Draft">
+                    <group>
+                        <field name="ai_agent_id"/>
+                        <field name="ai_difficulty_suggestion" placeholder="Draft difficulty suggestion"/>
+                        <field name="ai_sync_status"/>
+                    </group>
+                    <button
+                        name="action_generate_course_ai_summary"
+                        string="Generate Course AI Summary"
+                        type="object"
+                        class="btn-primary"/>
+                    <field name="ai_course_summary" nolabel="1" placeholder="Draft AI course summary"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_slide_slide_form_ai_fields" model="ir.ui.view">
+        <field name="name">slide.slide.form.ai.fields</field>
+        <field name="model">slide.slide</field>
+        <field name="inherit_id" ref="website_slides.view_slide_slide_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="corporate_lms_ai_fields" string="AI Draft" invisible="is_category">
+                    <group>
+                        <field name="ai_keywords"/>
+                        <field name="ai_source_id"/>
+                        <field name="ai_sync_status"/>
+                    </group>
+                    <button
+                        name="action_generate_slide_ai_summary"
+                        string="Generate Slide AI Summary"
+                        type="object"
+                        class="btn-primary"/>
+                    <field name="ai_summary" nolabel="1" placeholder="Draft AI lesson summary"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_elearning_assignment_submission_form_ai_action" model="ir.ui.view">
+        <field name="name">elearning.assignment.submission.form.ai.action</field>
+        <field name="model">elearning.assignment.submission</field>
+        <field name="inherit_id" ref="corporate_lms_assessment.view_elearning_assignment_submission_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='ai_feedback']" position="inside">
+                <button
+                    name="action_generate_submission_feedback_draft"
+                    string="Generate Submission Feedback Draft"
+                    type="object"
+                    class="btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_elearning_question_form_ai_action" model="ir.ui.view">
+        <field name="name">elearning.question.form.ai.action</field>
+        <field name="model">elearning.question</field>
+        <field name="inherit_id" ref="corporate_lms_assessment.view_elearning_question_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='ai_explanation']" position="inside">
+                <button
+                    name="action_generate_question_ai_explanation"
+                    string="Generate Question AI Explanation"
+                    type="object"
+                    class="btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

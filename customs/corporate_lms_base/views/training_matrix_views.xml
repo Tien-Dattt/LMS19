@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_training_matrix_list" model="ir.ui.view">
+        <field name="name">elearning.training.matrix.list</field>
+        <field name="model">elearning.training.matrix</field>
+        <field name="arch" type="xml">
+            <list string="Training Matrix">
+                <field name="name"/>
+                <field name="department_id" optional="show"/>
+                <field name="job_id" optional="show"/>
+                <field name="employee_level_id" optional="show"/>
+                <field name="role_track_id" optional="show"/>
+                <field name="program_id"/>
+                <field name="priority"/>
+                <field name="mandatory"/>
+                <field name="deadline_days" optional="show"/>
+                <field name="required_score" optional="show"/>
+                <field name="active" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_elearning_training_matrix_form" model="ir.ui.view">
+        <field name="name">elearning.training.matrix.form</field>
+        <field name="model">elearning.training.matrix</field>
+        <field name="arch" type="xml">
+            <form string="Training Matrix">
+                <sheet>
+                    <group>
+                        <group string="Rule">
+                            <field name="name"/>
+                            <field name="program_id"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="Requirement">
+                            <field name="mandatory"/>
+                            <field name="priority"/>
+                            <field name="deadline_days"/>
+                            <field name="required_score"/>
+                        </group>
+                    </group>
+                    <group string="Matching Conditions">
+                        <group>
+                            <field name="department_id"/>
+                            <field name="job_id"/>
+                        </group>
+                        <group>
+                            <field name="employee_level_id"/>
+                            <field name="role_track_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_elearning_training_matrix_search" model="ir.ui.view">
+        <field name="name">elearning.training.matrix.search</field>
+        <field name="model">elearning.training.matrix</field>
+        <field name="arch" type="xml">
+            <search string="Training Matrix">
+                <field name="name"/>
+                <field name="department_id"/>
+                <field name="job_id"/>
+                <field name="employee_level_id"/>
+                <field name="role_track_id"/>
+                <field name="program_id"/>
+                <field name="priority"/>
+
+                <filter name="filter_required"
+                        string="Required"
+                        domain="[('priority', '=', 'required')]"/>
+
+                <filter name="filter_recommended"
+                        string="Recommended"
+                        domain="[('priority', '=', 'recommended')]"/>
+
+                <filter name="filter_optional"
+                        string="Optional"
+                        domain="[('priority', '=', 'optional')]"/>
+
+                <filter name="filter_mandatory"
+                        string="Mandatory"
+                        domain="[('mandatory', '=', True)]"/>
+
+                <filter name="filter_inactive"
+                        string="Inactive"
+                        domain="[('active', '=', False)]"/>
+
+                <separator/>
+
+                <group>
+                    <filter name="group_by_department"
+                            string="Department"
+                            context="{'group_by': 'department_id'}"/>
+
+                    <filter name="group_by_job"
+                            string="Job Position"
+                            context="{'group_by': 'job_id'}"/>
+
+                    <filter name="group_by_employee_level"
+                            string="Employee Level"
+                            context="{'group_by': 'employee_level_id'}"/>
+
+                    <filter name="group_by_role_track"
+                            string="Role Track"
+                            context="{'group_by': 'role_track_id'}"/>
+
+                    <filter name="group_by_program"
+                            string="Program"
+                            context="{'group_by': 'program_id'}"/>
+
+                    <filter name="group_by_priority"
+                            string="Priority"
+                            context="{'group_by': 'priority'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_elearning_training_matrix" model="ir.actions.act_window">
+        <field name="name">Training Matrix</field>
+        <field name="res_model">elearning.training.matrix</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_elearning_training_matrix"
+        name="Training Matrix"
+        parent="menu_corporate_lms_configuration"
+        action="action_elearning_training_matrix"
+        sequence="30"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer"/>
+</odoo>

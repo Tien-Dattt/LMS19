@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hr_employee_form_corporate_lms" model="ir.ui.view">
+        <field name="name">hr.employee.form.corporate.lms</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button
+                    name="action_apply_training_matrix"
+                    string="Apply Training Matrix"
+                    type="object"
+                    groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer"/>
+            </xpath>
+            <xpath expr="//page[@name='work_information']//group[field[@name='department_id']]" position="after">
+                <group string="Corporate LMS">
+                    <field name="employee_level_id"/>
+                    <field name="role_track_id"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

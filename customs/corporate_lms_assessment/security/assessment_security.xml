@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rule_elearning_rubric_training_roles" model="ir.rule">
+        <field name="name">Rubrics: training roles</field>
+        <field name="model_id" ref="model_elearning_rubric"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager')), (4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_rubric_read_all" model="ir.rule">
+        <field name="name">Rubrics: read all</field>
+        <field name="model_id" ref="model_elearning_rubric"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_manager')), (4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_rubric_criteria_training_roles" model="ir.rule">
+        <field name="name">Rubric criteria: training roles</field>
+        <field name="model_id" ref="model_elearning_rubric_criteria"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager')), (4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_rubric_criteria_read_all" model="ir.rule">
+        <field name="name">Rubric criteria: read all</field>
+        <field name="model_id" ref="model_elearning_rubric_criteria"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_manager')), (4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_assignment_training_full_access" model="ir.rule">
+        <field name="name">Assignments: training administrators</field>
+        <field name="model_id" ref="model_elearning_assignment"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_assignment_instructor_assigned_class" model="ir.rule">
+        <field name="name">Assignments: assigned class instructors</field>
+        <field name="model_id" ref="model_elearning_assignment"/>
+        <field name="domain_force">[('class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_assignment_manager_assigned_class" model="ir.rule">
+        <field name="name">Assignments: assigned class managers</field>
+        <field name="model_id" ref="model_elearning_assignment"/>
+        <field name="domain_force">[('class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_assignment_learner_assigned" model="ir.rule">
+        <field name="name">Assignments: learner assigned published assignments</field>
+        <field name="model_id" ref="model_elearning_assignment"/>
+        <field name="domain_force">[('state', '=', 'published'), '|', '|', ('program_id.enrollment_ids.partner_id', '=', user.partner_id.id), ('class_id.student_ids.partner_id', '=', user.partner_id.id), ('channel_id.partner_ids', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_assignment_submission_training_full_access" model="ir.rule">
+        <field name="name">Assignment submissions: training administrators</field>
+        <field name="model_id" ref="model_elearning_assignment_submission"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_assignment_submission_instructor_assigned_class" model="ir.rule">
+        <field name="name">Assignment submissions: assigned class instructors</field>
+        <field name="model_id" ref="model_elearning_assignment_submission"/>
+        <field name="domain_force">[('assignment_id.class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_assignment_submission_manager_assigned_class" model="ir.rule">
+        <field name="name">Assignment submissions: assigned class managers</field>
+        <field name="model_id" ref="model_elearning_assignment_submission"/>
+        <field name="domain_force">[('assignment_id.class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_assignment_submission_learner_read_own" model="ir.rule">
+        <field name="name">Assignment submissions: learner own records</field>
+        <field name="model_id" ref="model_elearning_assignment_submission"/>
+        <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_assignment_submission_learner_edit_own_open" model="ir.rule">
+        <field name="name">Assignment submissions: learner edit own open records</field>
+        <field name="model_id" ref="model_elearning_assignment_submission"/>
+        <field name="domain_force">[('partner_id', '=', user.partner_id.id), ('state', 'in', ('draft', 'returned'))]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="False"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_question_bank_training_full_access" model="ir.rule">
+        <field name="name">Question banks: training administrators</field>
+        <field name="model_id" ref="model_elearning_question_bank"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_question_bank_instructor_owner" model="ir.rule">
+        <field name="name">Question banks: instructor owned banks</field>
+        <field name="model_id" ref="model_elearning_question_bank"/>
+        <field name="domain_force">[('owner_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_question_bank_learner_assigned_active" model="ir.rule">
+        <field name="name">Question banks: learner assigned active banks</field>
+        <field name="model_id" ref="model_elearning_question_bank"/>
+        <field name="domain_force">[('state', '=', 'active'), ('exam_ids.state', '=', 'published'), '|', '|', ('exam_ids.program_id.enrollment_ids.partner_id', '=', user.partner_id.id), ('exam_ids.class_id.student_ids.partner_id', '=', user.partner_id.id), ('exam_ids.channel_id.partner_ids', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_question_training_full_access" model="ir.rule">
+        <field name="name">Questions: training administrators</field>
+        <field name="model_id" ref="model_elearning_question"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_question_instructor_owner" model="ir.rule">
+        <field name="name">Questions: instructor owned banks</field>
+        <field name="model_id" ref="model_elearning_question"/>
+        <field name="domain_force">[('bank_id.owner_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_question_learner_assigned_active" model="ir.rule">
+        <field name="name">Questions: learner assigned active questions</field>
+        <field name="model_id" ref="model_elearning_question"/>
+        <field name="domain_force">[('state', '=', 'active'), ('bank_id.state', '=', 'active'), ('bank_id.exam_ids.state', '=', 'published'), '|', '|', ('bank_id.exam_ids.program_id.enrollment_ids.partner_id', '=', user.partner_id.id), ('bank_id.exam_ids.class_id.student_ids.partner_id', '=', user.partner_id.id), ('bank_id.exam_ids.channel_id.partner_ids', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_answer_training_full_access" model="ir.rule">
+        <field name="name">Answers: training administrators</field>
+        <field name="model_id" ref="model_elearning_answer"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_answer_instructor_owner" model="ir.rule">
+        <field name="name">Answers: instructor owned banks</field>
+        <field name="model_id" ref="model_elearning_answer"/>
+        <field name="domain_force">[('question_id.bank_id.owner_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_answer_learner_assigned_active" model="ir.rule">
+        <field name="name">Answers: learner assigned active answers</field>
+        <field name="model_id" ref="model_elearning_answer"/>
+        <field name="domain_force">[('question_id.state', '=', 'active'), ('question_id.bank_id.state', '=', 'active'), ('question_id.bank_id.exam_ids.state', '=', 'published'), '|', '|', ('question_id.bank_id.exam_ids.program_id.enrollment_ids.partner_id', '=', user.partner_id.id), ('question_id.bank_id.exam_ids.class_id.student_ids.partner_id', '=', user.partner_id.id), ('question_id.bank_id.exam_ids.channel_id.partner_ids', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_exam_training_full_access" model="ir.rule">
+        <field name="name">Exams: training administrators</field>
+        <field name="model_id" ref="model_elearning_exam"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_exam_instructor_assigned_class" model="ir.rule">
+        <field name="name">Exams: assigned class instructors</field>
+        <field name="model_id" ref="model_elearning_exam"/>
+        <field name="domain_force">[('class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_exam_manager_assigned_class" model="ir.rule">
+        <field name="name">Exams: assigned class managers</field>
+        <field name="model_id" ref="model_elearning_exam"/>
+        <field name="domain_force">[('class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_exam_learner_assigned_published" model="ir.rule">
+        <field name="name">Exams: learner assigned published exams</field>
+        <field name="model_id" ref="model_elearning_exam"/>
+        <field name="domain_force">[('state', '=', 'published'), '|', '|', ('program_id.enrollment_ids.partner_id', '=', user.partner_id.id), ('class_id.student_ids.partner_id', '=', user.partner_id.id), ('channel_id.partner_ids', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_exam_session_training_full_access" model="ir.rule">
+        <field name="name">Exam sessions: training administrators</field>
+        <field name="model_id" ref="model_elearning_exam_session"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_exam_session_instructor_assigned_class" model="ir.rule">
+        <field name="name">Exam sessions: assigned class instructors</field>
+        <field name="model_id" ref="model_elearning_exam_session"/>
+        <field name="domain_force">[('exam_id.class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_exam_session_manager_assigned_class" model="ir.rule">
+        <field name="name">Exam sessions: assigned class managers</field>
+        <field name="model_id" ref="model_elearning_exam_session"/>
+        <field name="domain_force">[('exam_id.class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_exam_session_learner_read_own" model="ir.rule">
+        <field name="name">Exam sessions: learner own records</field>
+        <field name="model_id" ref="model_elearning_exam_session"/>
+        <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_exam_session_learner_edit_own_open" model="ir.rule">
+        <field name="name">Exam sessions: learner edit own open records</field>
+        <field name="model_id" ref="model_elearning_exam_session"/>
+        <field name="domain_force">[('partner_id', '=', user.partner_id.id), ('state', '=', 'in_progress')]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="False"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_exam_session_line_training_full_access" model="ir.rule">
+        <field name="name">Exam session lines: training administrators</field>
+        <field name="model_id" ref="model_elearning_exam_session_line"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_exam_session_line_instructor_assigned_class" model="ir.rule">
+        <field name="name">Exam session lines: assigned class instructors</field>
+        <field name="model_id" ref="model_elearning_exam_session_line"/>
+        <field name="domain_force">[('session_id.exam_id.class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_exam_session_line_manager_assigned_class" model="ir.rule">
+        <field name="name">Exam session lines: assigned class managers</field>
+        <field name="model_id" ref="model_elearning_exam_session_line"/>
+        <field name="domain_force">[('session_id.exam_id.class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_exam_session_line_learner_read_own" model="ir.rule">
+        <field name="name">Exam session lines: learner own records</field>
+        <field name="model_id" ref="model_elearning_exam_session_line"/>
+        <field name="domain_force">[('session_id.partner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_exam_session_line_learner_edit_own_open" model="ir.rule">
+        <field name="name">Exam session lines: learner answer own open records</field>
+        <field name="model_id" ref="model_elearning_exam_session_line"/>
+        <field name="domain_force">[('session_id.partner_id', '=', user.partner_id.id), ('session_id.state', '=', 'in_progress')]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="False"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_gradebook_training_full_access" model="ir.rule">
+        <field name="name">Gradebooks: training administrators</field>
+        <field name="model_id" ref="model_elearning_gradebook"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_gradebook_hr_read_all" model="ir.rule">
+        <field name="name">Gradebooks: HR read all</field>
+        <field name="model_id" ref="model_elearning_gradebook"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_hr_officer'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_gradebook_instructor_assigned_class" model="ir.rule">
+        <field name="name">Gradebooks: assigned class instructors</field>
+        <field name="model_id" ref="model_elearning_gradebook"/>
+        <field name="domain_force">[('class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_gradebook_manager_assigned_class" model="ir.rule">
+        <field name="name">Gradebooks: assigned class managers</field>
+        <field name="model_id" ref="model_elearning_gradebook"/>
+        <field name="domain_force">[('class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_gradebook_learner_own" model="ir.rule">
+        <field name="name">Gradebooks: learner own records</field>
+        <field name="model_id" ref="model_elearning_gradebook"/>
+        <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_gradebook_line_training_full_access" model="ir.rule">
+        <field name="name">Gradebook lines: training administrators</field>
+        <field name="model_id" ref="model_elearning_gradebook_line"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_admin')), (4, ref('corporate_lms_base.group_corporate_lms_training_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="rule_elearning_gradebook_line_hr_read_all" model="ir.rule">
+        <field name="name">Gradebook lines: HR read all</field>
+        <field name="model_id" ref="model_elearning_gradebook_line"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_hr_officer'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_gradebook_line_instructor_assigned_class" model="ir.rule">
+        <field name="name">Gradebook lines: assigned class instructors</field>
+        <field name="model_id" ref="model_elearning_gradebook_line"/>
+        <field name="domain_force">[('gradebook_id.class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_instructor'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_gradebook_line_manager_assigned_class" model="ir.rule">
+        <field name="name">Gradebook lines: assigned class managers</field>
+        <field name="model_id" ref="model_elearning_gradebook_line"/>
+        <field name="domain_force">[('gradebook_id.class_id.trainer_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="rule_elearning_gradebook_line_learner_own" model="ir.rule">
+        <field name="name">Gradebook lines: learner own records</field>
+        <field name="model_id" ref="model_elearning_gradebook_line"/>
+        <field name="domain_force">[('gradebook_id.partner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('corporate_lms_base.group_corporate_lms_learner'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+</odoo>
