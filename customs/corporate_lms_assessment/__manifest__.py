@@ -20,6 +20,7 @@
         "views/question_bank_views.xml",
         "views/exam_views.xml",
         "views/gradebook_views.xml",
+        "views/report_views.xml",
     ],
     "demo": [],
     "installable": True,

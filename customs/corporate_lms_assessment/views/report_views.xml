@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_report_assignment_submission_list" model="ir.ui.view">
+        <field name="name">report.assignment.submission.list</field>
+        <field name="model">elearning.assignment.submission</field>
+        <field name="arch" type="xml">
+            <list string="Assignment Submission Report">
+                <field name="assignment_id"/>
+                <field name="assignment_class_id"/>
+                <field name="assignment_program_id"/>
+                <field name="assignment_channel_id"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+                <field name="submitted_at"/>
+                <field name="score"/>
+                <field name="grader_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_report_assignment_submission_pivot" model="ir.ui.view">
+        <field name="name">report.assignment.submission.pivot</field>
+        <field name="model">elearning.assignment.submission</field>
+        <field name="arch" type="xml">
+            <pivot string="Assignment Submission Report">
+                <field name="assignment_id" type="row"/>
+                <field name="assignment_class_id" type="row"/>
+                <field name="state" type="col"/>
+                <field name="score" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_report_assignment_submission_search" model="ir.ui.view">
+        <field name="name">report.assignment.submission.search</field>
+        <field name="model">elearning.assignment.submission</field>
+        <field name="arch" type="xml">
+            <search string="Assignment Submission Report">
+                <field name="assignment_id"/>
+                <field name="assignment_class_id"/>
+                <field name="assignment_program_id"/>
+                <field name="assignment_channel_id"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+                <field name="grader_id"/>
+                <field name="submitted_at"/>
+                <filter name="filter_submitted" string="Submitted" domain="[('state', '=', 'submitted')]"/>
+                <filter name="filter_late" string="Late" domain="[('state', '=', 'late')]"/>
+                <filter name="filter_graded" string="Graded" domain="[('state', '=', 'graded')]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_assignment" string="Assignment" context="{'group_by': 'assignment_id'}"/>
+                    <filter name="group_by_class" string="Class" context="{'group_by': 'assignment_class_id'}"/>
+                    <filter name="group_by_program" string="Program" context="{'group_by': 'assignment_program_id'}"/>
+                    <filter name="group_by_course" string="Course" context="{'group_by': 'assignment_channel_id'}"/>
+                    <filter name="group_by_learner" string="Learner" context="{'group_by': 'partner_id'}"/>
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                    <filter name="group_by_grader" string="Grader" context="{'group_by': 'grader_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_report_assignment_submission" model="ir.actions.act_window">
+        <field name="name">Assignment Submission Report</field>
+        <field name="res_model">elearning.assignment.submission</field>
+        <field name="view_mode">list,pivot,form</field>
+        <field name="search_view_id" ref="view_report_assignment_submission_search"/>
+    </record>
+
+    <record id="action_report_assignment_submission_list_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_report_assignment_submission_list"/>
+        <field name="act_window_id" ref="action_report_assignment_submission"/>
+    </record>
+
+    <record id="action_report_assignment_submission_pivot_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">pivot</field>
+        <field name="view_id" ref="view_report_assignment_submission_pivot"/>
+        <field name="act_window_id" ref="action_report_assignment_submission"/>
+    </record>
+
+    <record id="action_report_assignment_submission_form_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_elearning_assignment_submission_form"/>
+        <field name="act_window_id" ref="action_report_assignment_submission"/>
+    </record>
+
+    <menuitem
+        id="menu_report_assignment_submission"
+        name="Assignment Submission Report"
+        parent="corporate_lms_base.menu_corporate_lms_reports"
+        action="action_report_assignment_submission"
+        sequence="20"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
+
+    <record id="view_report_exam_session_list" model="ir.ui.view">
+        <field name="name">report.exam.session.list</field>
+        <field name="model">elearning.exam.session</field>
+        <field name="arch" type="xml">
+            <list string="Exam Session Report">
+                <field name="exam_id"/>
+                <field name="exam_class_id"/>
+                <field name="exam_program_id"/>
+                <field name="exam_channel_id"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+                <field name="score"/>
+                <field name="passed"/>
+                <field name="submitted_at"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_report_exam_session_pivot" model="ir.ui.view">
+        <field name="name">report.exam.session.pivot</field>
+        <field name="model">elearning.exam.session</field>
+        <field name="arch" type="xml">
+            <pivot string="Exam Session Report">
+                <field name="exam_id" type="row"/>
+                <field name="exam_class_id" type="row"/>
+                <field name="state" type="col"/>
+                <field name="score" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_report_exam_session_search" model="ir.ui.view">
+        <field name="name">report.exam.session.search</field>
+        <field name="model">elearning.exam.session</field>
+        <field name="arch" type="xml">
+            <search string="Exam Session Report">
+                <field name="exam_id"/>
+                <field name="exam_class_id"/>
+                <field name="exam_program_id"/>
+                <field name="exam_channel_id"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+                <field name="submitted_at"/>
+                <filter name="filter_in_progress" string="In Progress" domain="[('state', '=', 'in_progress')]"/>
+                <filter name="filter_graded" string="Graded" domain="[('state', '=', 'graded')]"/>
+                <filter name="filter_expired" string="Expired" domain="[('state', '=', 'expired')]"/>
+                <filter name="filter_passed" string="Passed" domain="[('passed', '=', True)]"/>
+                <filter name="filter_not_passed" string="Not Passed" domain="[('passed', '=', False)]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_exam" string="Exam" context="{'group_by': 'exam_id'}"/>
+                    <filter name="group_by_class" string="Class" context="{'group_by': 'exam_class_id'}"/>
+                    <filter name="group_by_program" string="Program" context="{'group_by': 'exam_program_id'}"/>
+                    <filter name="group_by_course" string="Course" context="{'group_by': 'exam_channel_id'}"/>
+                    <filter name="group_by_learner" string="Learner" context="{'group_by': 'partner_id'}"/>
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                    <filter name="group_by_passed" string="Passed" context="{'group_by': 'passed'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_report_exam_session" model="ir.actions.act_window">
+        <field name="name">Exam Session Report</field>
+        <field name="res_model">elearning.exam.session</field>
+        <field name="view_mode">list,pivot,form</field>
+        <field name="search_view_id" ref="view_report_exam_session_search"/>
+    </record>
+
+    <record id="action_report_exam_session_list_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_report_exam_session_list"/>
+        <field name="act_window_id" ref="action_report_exam_session"/>
+    </record>
+
+    <record id="action_report_exam_session_pivot_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">pivot</field>
+        <field name="view_id" ref="view_report_exam_session_pivot"/>
+        <field name="act_window_id" ref="action_report_exam_session"/>
+    </record>
+
+    <record id="action_report_exam_session_form_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_elearning_exam_session_form"/>
+        <field name="act_window_id" ref="action_report_exam_session"/>
+    </record>
+
+    <menuitem
+        id="menu_report_exam_session"
+        name="Exam Session Report"
+        parent="corporate_lms_base.menu_corporate_lms_reports"
+        action="action_report_exam_session"
+        sequence="30"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
+
+    <record id="view_report_gradebook_list" model="ir.ui.view">
+        <field name="name">report.gradebook.list</field>
+        <field name="model">elearning.gradebook</field>
+        <field name="arch" type="xml">
+            <list string="Gradebook Report">
+                <field name="program_id"/>
+                <field name="class_id"/>
+                <field name="partner_id"/>
+                <field name="final_score"/>
+                <field name="passed"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_report_gradebook_pivot" model="ir.ui.view">
+        <field name="name">report.gradebook.pivot</field>
+        <field name="model">elearning.gradebook</field>
+        <field name="arch" type="xml">
+            <pivot string="Gradebook Report">
+                <field name="program_id" type="row"/>
+                <field name="class_id" type="row"/>
+                <field name="passed" type="col"/>
+                <field name="final_score" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_report_gradebook_search" model="ir.ui.view">
+        <field name="name">report.gradebook.search</field>
+        <field name="model">elearning.gradebook</field>
+        <field name="arch" type="xml">
+            <search string="Gradebook Report">
+                <field name="program_id"/>
+                <field name="class_id"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+                <filter name="filter_open" string="Open" domain="[('state', '=', 'open')]"/>
+                <filter name="filter_locked" string="Locked" domain="[('state', '=', 'locked')]"/>
+                <filter name="filter_passed" string="Passed" domain="[('passed', '=', True)]"/>
+                <filter name="filter_not_passed" string="Not Passed" domain="[('passed', '=', False)]"/>
+                <separator/>
+                <group>
+                    <filter name="group_by_program" string="Program" context="{'group_by': 'program_id'}"/>
+                    <filter name="group_by_class" string="Class" context="{'group_by': 'class_id'}"/>
+                    <filter name="group_by_learner" string="Learner" context="{'group_by': 'partner_id'}"/>
+                    <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                    <filter name="group_by_passed" string="Passed" context="{'group_by': 'passed'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_report_gradebook" model="ir.actions.act_window">
+        <field name="name">Gradebook Report</field>
+        <field name="res_model">elearning.gradebook</field>
+        <field name="view_mode">list,pivot,form</field>
+        <field name="search_view_id" ref="view_report_gradebook_search"/>
+    </record>
+
+    <record id="action_report_gradebook_list_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_report_gradebook_list"/>
+        <field name="act_window_id" ref="action_report_gradebook"/>
+    </record>
+
+    <record id="action_report_gradebook_pivot_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">pivot</field>
+        <field name="view_id" ref="view_report_gradebook_pivot"/>
+        <field name="act_window_id" ref="action_report_gradebook"/>
+    </record>
+
+    <record id="action_report_gradebook_form_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_elearning_gradebook_form"/>
+        <field name="act_window_id" ref="action_report_gradebook"/>
+    </record>
+
+    <menuitem
+        id="menu_report_gradebook"
+        name="Gradebook Report"
+        parent="corporate_lms_base.menu_corporate_lms_reports"
+        action="action_report_gradebook"
+        sequence="40"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
+</odoo>

@@ -17,6 +17,7 @@
         "security/ir.model.access.csv",
         "views/ai_field_views.xml",
         "views/ai_source_views.xml",
+        "views/ai_report_views.xml",
         "views/ai_question_wizard_views.xml",
     ],
     "demo": [],

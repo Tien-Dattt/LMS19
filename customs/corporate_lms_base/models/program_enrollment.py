@@ -29,6 +29,27 @@ class ElearningProgramPartner(models.Model):
         ondelete="set null",
         tracking=True,
     )
+    department_id = fields.Many2one(
+        "hr.department",
+        related="employee_id.department_id",
+        store=True,
+        readonly=True,
+        string="Department",
+    )
+    employee_level_id = fields.Many2one(
+        "elearning.employee.level",
+        related="employee_id.employee_level_id",
+        store=True,
+        readonly=True,
+        string="Employee Level",
+    )
+    role_track_id = fields.Many2one(
+        "elearning.role.track",
+        related="employee_id.role_track_id",
+        store=True,
+        readonly=True,
+        string="Role Track",
+    )
     state = fields.Selection(
         [
             ("assigned", "Assigned"),

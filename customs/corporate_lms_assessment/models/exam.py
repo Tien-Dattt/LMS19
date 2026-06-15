@@ -197,6 +197,27 @@ class ElearningExamSession(models.Model):
         index=True,
         tracking=True,
     )
+    exam_program_id = fields.Many2one(
+        "elearning.program",
+        related="exam_id.program_id",
+        store=True,
+        readonly=True,
+        string="Program",
+    )
+    exam_channel_id = fields.Many2one(
+        "slide.channel",
+        related="exam_id.channel_id",
+        store=True,
+        readonly=True,
+        string="Course",
+    )
+    exam_class_id = fields.Many2one(
+        "elearning.class",
+        related="exam_id.class_id",
+        store=True,
+        readonly=True,
+        string="Class",
+    )
     started_at = fields.Datetime(
         default=fields.Datetime.now,
         required=True,

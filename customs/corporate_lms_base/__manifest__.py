@@ -28,6 +28,7 @@
         "views/auto_enrollment_log_views.xml",
         "views/training_matrix_views.xml",
         "views/hr_employee_views.xml",
+        "views/report_views.xml",
     ],
     "demo": [],
     "installable": True,

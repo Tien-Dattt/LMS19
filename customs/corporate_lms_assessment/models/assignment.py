@@ -124,6 +124,27 @@ class ElearningAssignmentSubmission(models.Model):
         index=True,
         tracking=True,
     )
+    assignment_program_id = fields.Many2one(
+        "elearning.program",
+        related="assignment_id.program_id",
+        store=True,
+        readonly=True,
+        string="Program",
+    )
+    assignment_channel_id = fields.Many2one(
+        "slide.channel",
+        related="assignment_id.channel_id",
+        store=True,
+        readonly=True,
+        string="Course",
+    )
+    assignment_class_id = fields.Many2one(
+        "elearning.class",
+        related="assignment_id.class_id",
+        store=True,
+        readonly=True,
+        string="Class",
+    )
     text_answer = fields.Html()
     attachment_ids = fields.Many2many(
         "ir.attachment",
@@ -148,6 +169,12 @@ class ElearningAssignmentSubmission(models.Model):
     )
     score = fields.Float(tracking=True)
     feedback = fields.Html()
+    grader_id = fields.Many2one(
+        "res.users",
+        string="Grader",
+        readonly=True,
+        tracking=True,
+    )
     ai_feedback_draft = fields.Html(string="AI Feedback Draft")
     ai_strengths = fields.Html(string="AI Strengths")
     ai_weaknesses = fields.Html(string="AI Weaknesses")
@@ -190,7 +217,10 @@ class ElearningAssignmentSubmission(models.Model):
 
     def action_grade(self):
         self._check_score_limits()
-        self.write({"state": "graded"})
+        self.write({
+            "state": "graded",
+            "grader_id": self.env.user.id,
+        })
         self._sync_assignment_gradebook_line()
         return True
 
