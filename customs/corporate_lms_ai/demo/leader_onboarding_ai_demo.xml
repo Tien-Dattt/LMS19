@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="ai_agent_leader_onboarding" model="ai.agent">
+            <field name="name">Leader Onboarding AI Agent</field>
+            <field name="restrict_to_sources" eval="True"/>
+        </record>
+
+        <record id="corporate_lms_base.slide_channel_leader_onboarding" model="slide.channel">
+            <field name="ai_agent_id" ref="ai_agent_leader_onboarding"/>
+            <field name="ai_course_summary" type="html"><p>Draft AI summary for the Leader Onboarding Course.</p></field>
+            <field name="ai_difficulty_suggestion">Beginner to intermediate people leadership</field>
+        </record>
+
+        <record id="corporate_lms_base.slide_leader_onboarding_overview" model="slide.slide">
+            <field name="ai_summary" type="html"><p>Draft summary of leader role expectations.</p></field>
+            <field name="ai_keywords">leader, expectations, coaching, escalation</field>
+        </record>
+
+        <record id="ai_source_leader_onboarding_course" model="ai.agent.source">
+            <field name="name">Leader Onboarding Course Source</field>
+            <field name="agent_id" ref="ai_agent_leader_onboarding"/>
+            <field name="type">elearning_course</field>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_leader_onboarding"/>
+            <field name="status">processing</field>
+        </record>
+    </data>
+</odoo>

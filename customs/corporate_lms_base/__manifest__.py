@@ -30,7 +30,9 @@
         "views/hr_employee_views.xml",
         "views/report_views.xml",
     ],
-    "demo": [],
+    "demo": [
+        "demo/leader_onboarding_demo.xml",
+    ],
     "installable": True,
     "application": True,
 }

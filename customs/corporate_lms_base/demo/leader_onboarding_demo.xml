@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Users and HR profile for the Leader Onboarding use case. -->
+        <record id="partner_leader_onboarding_hr" model="res.partner">
+            <field name="name">LMS Demo HR Officer</field>
+            <field name="email">lms.demo.hr@example.com</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="user_leader_onboarding_hr" model="res.users" context="{'no_reset_password': True}">
+            <field name="partner_id" ref="partner_leader_onboarding_hr"/>
+            <field name="login">lms.demo.hr@example.com</field>
+            <field name="password">lms_demo</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="group_ids" eval="[Command.set([ref('base.group_user'), ref('hr.group_hr_user'), ref('corporate_lms_base.group_corporate_lms_hr_officer')])]"/>
+        </record>
+        <record id="partner_leader_onboarding_hr" model="res.partner">
+            <field name="user_id" ref="user_leader_onboarding_hr"/>
+        </record>
+
+        <record id="partner_leader_onboarding_training_manager" model="res.partner">
+            <field name="name">LMS Demo Training Manager</field>
+            <field name="email">lms.demo.training.manager@example.com</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="user_leader_onboarding_training_manager" model="res.users" context="{'no_reset_password': True}">
+            <field name="partner_id" ref="partner_leader_onboarding_training_manager"/>
+            <field name="login">lms.demo.training.manager@example.com</field>
+            <field name="password">lms_demo</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="group_ids" eval="[Command.set([ref('base.group_user'), ref('website_slides.group_website_slides_manager'), ref('corporate_lms_base.group_corporate_lms_training_manager')])]"/>
+        </record>
+        <record id="partner_leader_onboarding_training_manager" model="res.partner">
+            <field name="user_id" ref="user_leader_onboarding_training_manager"/>
+        </record>
+
+        <record id="partner_leader_onboarding_instructor" model="res.partner">
+            <field name="name">LMS Demo Instructor</field>
+            <field name="email">lms.demo.instructor@example.com</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="user_leader_onboarding_instructor" model="res.users" context="{'no_reset_password': True}">
+            <field name="partner_id" ref="partner_leader_onboarding_instructor"/>
+            <field name="login">lms.demo.instructor@example.com</field>
+            <field name="password">lms_demo</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="group_ids" eval="[Command.set([ref('base.group_user'), ref('website_slides.group_website_slides_officer'), ref('corporate_lms_base.group_corporate_lms_instructor')])]"/>
+        </record>
+        <record id="partner_leader_onboarding_instructor" model="res.partner">
+            <field name="user_id" ref="user_leader_onboarding_instructor"/>
+        </record>
+
+        <record id="partner_leader_onboarding_manager" model="res.partner">
+            <field name="name">LMS Demo People Manager</field>
+            <field name="email">lms.demo.manager@example.com</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="user_leader_onboarding_manager" model="res.users" context="{'no_reset_password': True}">
+            <field name="partner_id" ref="partner_leader_onboarding_manager"/>
+            <field name="login">lms.demo.manager@example.com</field>
+            <field name="password">lms_demo</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="group_ids" eval="[Command.set([ref('base.group_user'), ref('corporate_lms_base.group_corporate_lms_manager')])]"/>
+        </record>
+        <record id="partner_leader_onboarding_manager" model="res.partner">
+            <field name="user_id" ref="user_leader_onboarding_manager"/>
+        </record>
+
+        <record id="partner_leader_onboarding_learner" model="res.partner">
+            <field name="name">LMS Demo Leader Learner</field>
+            <field name="email">lms.demo.leader.learner@example.com</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="user_leader_onboarding_learner" model="res.users" context="{'no_reset_password': True}">
+            <field name="partner_id" ref="partner_leader_onboarding_learner"/>
+            <field name="login">lms.demo.leader.learner@example.com</field>
+            <field name="password">lms_demo</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="group_ids" eval="[Command.set([ref('base.group_user'), ref('corporate_lms_base.group_corporate_lms_learner')])]"/>
+        </record>
+        <record id="partner_leader_onboarding_learner" model="res.partner">
+            <field name="user_id" ref="user_leader_onboarding_learner"/>
+        </record>
+
+        <record id="department_it" model="hr.department">
+            <field name="name">IT</field>
+        </record>
+
+        <record id="job_team_leader" model="hr.job">
+            <field name="name">Team Leader</field>
+            <field name="department_id" ref="department_it"/>
+        </record>
+
+        <record id="employee_level_leader" model="elearning.employee.level">
+            <field name="name">Leader</field>
+            <field name="code">LEADER</field>
+            <field name="sequence">40</field>
+            <field name="description">Employees who lead a team and need people leadership onboarding.</field>
+        </record>
+
+        <record id="role_track_people_leader" model="elearning.role.track">
+            <field name="name">People Leader</field>
+            <field name="code">PEOPLE-LEADER</field>
+            <field name="description">Track for leaders responsible for coaching, feedback, and team performance.</field>
+        </record>
+
+        <record id="slide_channel_leader_onboarding" model="slide.channel">
+            <field name="name">Leader Onboarding Course</field>
+            <field name="channel_type">training</field>
+            <field name="enroll">public</field>
+            <field name="visibility">public</field>
+            <field name="is_published" eval="True"/>
+            <field name="user_id" ref="user_leader_onboarding_instructor"/>
+            <field name="description_short" type="html"><p>Core onboarding course for new people leaders.</p></field>
+            <field name="description" type="html">
+                <p>Learn how to set expectations, coach team members, run feedback conversations, and lead the first 30 days as a Team Leader.</p>
+            </field>
+        </record>
+
+        <record id="slide_leader_onboarding_overview" model="slide.slide">
+            <field name="name">Leader Role Overview</field>
+            <field name="channel_id" ref="slide_channel_leader_onboarding"/>
+            <field name="slide_category">article</field>
+            <field name="is_published" eval="True"/>
+            <field name="completion_time">1.0</field>
+            <field name="description" type="html"><p>Responsibilities, expectations, and decision boundaries for a new Team Leader.</p></field>
+            <field name="html_content" type="html">
+                <p>A people leader aligns work, coaches team members, gives timely feedback, and escalates risks early.</p>
+            </field>
+        </record>
+
+        <record id="slide_leader_onboarding_coaching" model="slide.slide">
+            <field name="name">Coaching and Feedback Basics</field>
+            <field name="channel_id" ref="slide_channel_leader_onboarding"/>
+            <field name="slide_category">article</field>
+            <field name="is_published" eval="True"/>
+            <field name="completion_time">1.0</field>
+            <field name="description" type="html"><p>How to structure coaching conversations and follow-up actions.</p></field>
+            <field name="html_content" type="html">
+                <p>Effective feedback is specific, behavior-based, timely, and connected to agreed next actions.</p>
+            </field>
+        </record>
+
+        <record id="program_leader_onboarding" model="elearning.program">
+            <field name="name">Leader Onboarding Program</field>
+            <field name="code">LEADER-ONBOARDING</field>
+            <field name="description" type="html"><p>Required onboarding path for new IT Team Leaders on the People Leader track.</p></field>
+            <field name="state">published</field>
+            <field name="target_level_ids" eval="[Command.set([ref('employee_level_leader')])]"/>
+            <field name="target_role_track_ids" eval="[Command.set([ref('role_track_people_leader')])]"/>
+            <field name="passing_score">70.0</field>
+        </record>
+
+        <record id="program_line_leader_onboarding_course" model="elearning.program.line">
+            <field name="program_id" ref="program_leader_onboarding"/>
+            <field name="channel_id" ref="slide_channel_leader_onboarding"/>
+            <field name="sequence">10</field>
+            <field name="mandatory" eval="True"/>
+            <field name="unlock_policy">always</field>
+            <field name="weight">1.0</field>
+        </record>
+
+        <record id="matrix_leader_onboarding_it_team_leader" model="elearning.training.matrix">
+            <field name="name">IT Team Leader - Leader Onboarding</field>
+            <field name="department_id" ref="department_it"/>
+            <field name="job_id" ref="job_team_leader"/>
+            <field name="employee_level_id" ref="employee_level_leader"/>
+            <field name="role_track_id" ref="role_track_people_leader"/>
+            <field name="program_id" ref="program_leader_onboarding"/>
+            <field name="mandatory" eval="True"/>
+            <field name="priority">required</field>
+            <field name="deadline_days">30</field>
+            <field name="required_score">70.0</field>
+        </record>
+
+        <record id="employee_leader_onboarding_learner" model="hr.employee">
+            <field name="name">LMS Demo Leader Learner</field>
+            <field name="user_id" ref="user_leader_onboarding_learner"/>
+            <field name="work_email">lms.demo.leader.learner@example.com</field>
+            <field name="department_id" ref="department_it"/>
+            <field name="job_id" ref="job_team_leader"/>
+            <field name="employee_level_id" ref="employee_level_leader"/>
+            <field name="role_track_id" ref="role_track_people_leader"/>
+        </record>
+
+        <record id="class_leader_batch_01" model="elearning.class">
+            <field name="name">Leader Batch 01</field>
+            <field name="code">LEADER-BATCH-01</field>
+            <field name="program_id" ref="program_leader_onboarding"/>
+            <field name="channel_id" ref="slide_channel_leader_onboarding"/>
+            <field name="trainer_ids" eval="[Command.set([ref('user_leader_onboarding_instructor'), ref('user_leader_onboarding_manager')])]"/>
+            <field name="state">open</field>
+            <field name="max_students">20</field>
+        </record>
+
+        <record id="class_student_leader_batch_01_learner" model="elearning.class.student">
+            <field name="class_id" ref="class_leader_batch_01"/>
+            <field name="partner_id" ref="partner_leader_onboarding_learner"/>
+            <field name="employee_id" ref="employee_leader_onboarding_learner"/>
+            <field name="program_partner_id" model="elearning.program.partner" search="[('program_id', '=', ref('program_leader_onboarding')), ('partner_id', '=', ref('partner_leader_onboarding_learner'))]"/>
+            <field name="state">active</field>
+        </record>
+    </data>
+</odoo>

@@ -20,7 +20,9 @@
         "views/ai_report_views.xml",
         "views/ai_question_wizard_views.xml",
     ],
-    "demo": [],
+    "demo": [
+        "demo/leader_onboarding_ai_demo.xml",
+    ],
     "installable": True,
     "application": False,
 }

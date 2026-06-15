@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="rubric_leadership" model="elearning.rubric">
+            <field name="name">Leadership Rubric</field>
+            <field name="description" type="html"><p>Rubric for reviewing the leadership case study.</p></field>
+            <field name="criteria_ids" eval="[
+                Command.create({'name': 'Problem analysis', 'description': 'Identifies the core team issue and stakeholders.', 'max_score': 15.0, 'sequence': 10}),
+                Command.create({'name': 'Coaching plan', 'description': 'Defines practical coaching actions and follow-up.', 'max_score': 20.0, 'sequence': 20}),
+                Command.create({'name': 'Communication clarity', 'description': 'Uses clear, respectful, and actionable communication.', 'max_score': 10.0, 'sequence': 30}),
+            ]"/>
+        </record>
+
+        <record id="assignment_leadership_case_study" model="elearning.assignment">
+            <field name="name">Leadership Case Study</field>
+            <field name="description" type="html">
+                <p>Analyze a new team conflict scenario and propose a coaching plan for the first two weeks.</p>
+            </field>
+            <field name="program_id" ref="corporate_lms_base.program_leader_onboarding"/>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_leader_onboarding"/>
+            <field name="class_id" ref="corporate_lms_base.class_leader_batch_01"/>
+            <field name="submission_type">text</field>
+            <field name="max_score">45.0</field>
+            <field name="rubric_id" ref="rubric_leadership"/>
+            <field name="state">published</field>
+        </record>
+
+        <record id="submission_leadership_case_study" model="elearning.assignment.submission">
+            <field name="assignment_id" ref="assignment_leadership_case_study"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_leader_onboarding_learner"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_leader_onboarding_learner"/>
+            <field name="text_answer" type="html">
+                <p>I would first clarify expectations with the team, hold individual coaching conversations, and agree on measurable follow-up actions.</p>
+            </field>
+            <field name="state">submitted</field>
+            <field name="submitted_at" eval="datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="ai_feedback_draft" type="html">
+                <p>Draft AI feedback: The response shows a practical coaching approach. Add clearer success metrics for the follow-up actions.</p>
+            </field>
+            <field name="ai_strengths" type="html"><p>Clear coaching intent and stakeholder awareness.</p></field>
+            <field name="ai_weaknesses" type="html"><p>Needs more measurable outcomes and escalation criteria.</p></field>
+        </record>
+
+        <record id="question_bank_leader_onboarding" model="elearning.question.bank">
+            <field name="name">Leader Onboarding Question Bank</field>
+            <field name="description">Question bank for the Leader Onboarding Exam.</field>
+            <field name="owner_id" ref="corporate_lms_base.user_leader_onboarding_instructor"/>
+            <field name="program_id" ref="corporate_lms_base.program_leader_onboarding"/>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_leader_onboarding"/>
+            <field name="state">active</field>
+        </record>
+
+        <record id="question_leader_feedback" model="elearning.question">
+            <field name="bank_id" ref="question_bank_leader_onboarding"/>
+            <field name="name">Which behavior best supports a new Team Leader's coaching role?</field>
+            <field name="question_type">single</field>
+            <field name="difficulty">easy</field>
+            <field name="score">25.0</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="answer_leader_feedback_correct" model="elearning.answer">
+            <field name="question_id" ref="question_leader_feedback"/>
+            <field name="name">Give timely, behavior-based feedback and agree follow-up actions.</field>
+            <field name="is_correct" eval="True"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="answer_leader_feedback_wrong" model="elearning.answer">
+            <field name="question_id" ref="question_leader_feedback"/>
+            <field name="name">Avoid feedback until the annual review.</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="question_leader_feedback" model="elearning.question">
+            <field name="state">active</field>
+        </record>
+
+        <record id="question_leader_planning" model="elearning.question">
+            <field name="bank_id" ref="question_bank_leader_onboarding"/>
+            <field name="name">Which items belong in a people leadership onboarding plan?</field>
+            <field name="question_type">multiple</field>
+            <field name="difficulty">medium</field>
+            <field name="score">30.0</field>
+            <field name="ai_explanation" type="html"><p>Draft helper explanation for instructor review.</p></field>
+            <field name="state">draft</field>
+        </record>
+        <record id="answer_leader_planning_role_track" model="elearning.answer">
+            <field name="question_id" ref="question_leader_planning"/>
+            <field name="name">Role track expectations.</field>
+            <field name="is_correct" eval="True"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="answer_leader_planning_coaching" model="elearning.answer">
+            <field name="question_id" ref="question_leader_planning"/>
+            <field name="name">Coaching and feedback routines.</field>
+            <field name="is_correct" eval="True"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="answer_leader_planning_ai_score" model="elearning.answer">
+            <field name="question_id" ref="question_leader_planning"/>
+            <field name="name">Let AI decide the official pass/fail result.</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="question_leader_planning" model="elearning.question">
+            <field name="state">active</field>
+        </record>
+
+        <record id="exam_leader_onboarding" model="elearning.exam">
+            <field name="name">Leader Onboarding Exam</field>
+            <field name="program_id" ref="corporate_lms_base.program_leader_onboarding"/>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_leader_onboarding"/>
+            <field name="class_id" ref="corporate_lms_base.class_leader_batch_01"/>
+            <field name="question_bank_id" ref="question_bank_leader_onboarding"/>
+            <field name="question_count">2</field>
+            <field name="randomize_questions" eval="False"/>
+            <field name="randomize_answers" eval="False"/>
+            <field name="time_limit_minutes">30</field>
+            <field name="attempt_limit">1</field>
+            <field name="passing_score">40.0</field>
+            <field name="state">published</field>
+        </record>
+    </data>
+</odoo>

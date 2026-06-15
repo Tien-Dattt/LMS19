@@ -22,7 +22,9 @@
         "views/gradebook_views.xml",
         "views/report_views.xml",
     ],
-    "demo": [],
+    "demo": [
+        "demo/leader_onboarding_assessment_demo.xml",
+    ],
     "installable": True,
     "application": False,
 }
