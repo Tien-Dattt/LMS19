@@ -1,0 +1,2040 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- ============================================ -->
+        <!-- 1. SLIDE CHANNEL TAG GROUPS & TAGS -->
+        <!-- ============================================ -->
+        
+        <!-- Tag Groups -->
+        <record id="slide_channel_tag_group_technology" model="slide.channel.tag.group">
+            <field name="name">Technology</field>
+            <field name="sequence">10</field>
+        </record>
+        
+        <record id="slide_channel_tag_group_business" model="slide.channel.tag.group">
+            <field name="name">Business</field>
+            <field name="sequence">20</field>
+        </record>
+        
+        <record id="slide_channel_tag_group_design" model="slide.channel.tag.group">
+            <field name="name">Design</field>
+            <field name="sequence">30</field>
+        </record>
+        
+        <record id="slide_channel_tag_group_marketing" model="slide.channel.tag.group">
+            <field name="name">Marketing</field>
+            <field name="sequence">40</field>
+        </record>
+        
+        <!-- Technology Tags -->
+        <record id="slide_channel_tag_programming" model="slide.channel.tag">
+            <field name="name">Programming</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">1</field>
+            <field name="sequence">1</field>
+        </record>
+        
+        <record id="slide_channel_tag_python" model="slide.channel.tag">
+            <field name="name">Python</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">2</field>
+            <field name="sequence">2</field>
+        </record>
+        
+        <record id="slide_channel_tag_odoo" model="slide.channel.tag">
+            <field name="name">Odoo</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">3</field>
+            <field name="sequence">3</field>
+        </record>
+        
+        <record id="slide_channel_tag_javascript" model="slide.channel.tag">
+            <field name="name">JavaScript</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">4</field>
+            <field name="sequence">4</field>
+        </record>
+        
+        <record id="slide_channel_tag_database" model="slide.channel.tag">
+            <field name="name">Database</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">5</field>
+            <field name="sequence">5</field>
+        </record>
+        
+        <!-- Business Tags -->
+        <record id="slide_channel_tag_management" model="slide.channel.tag">
+            <field name="name">Management</field>
+            <field name="group_id" ref="slide_channel_tag_group_business"/>
+            <field name="color">6</field>
+            <field name="sequence">6</field>
+        </record>
+        
+        <record id="slide_channel_tag_leadership" model="slide.channel.tag">
+            <field name="name">Leadership</field>
+            <field name="group_id" ref="slide_channel_tag_group_business"/>
+            <field name="color">7</field>
+            <field name="sequence">7</field>
+        </record>
+        
+        <record id="slide_channel_tag_sales" model="slide.channel.tag">
+            <field name="name">Sales</field>
+            <field name="group_id" ref="slide_channel_tag_group_business"/>
+            <field name="color">8</field>
+            <field name="sequence">8</field>
+        </record>
+        
+        <!-- Design Tags -->
+        <record id="slide_channel_tag_ui_ux" model="slide.channel.tag">
+            <field name="name">UI/UX</field>
+            <field name="group_id" ref="slide_channel_tag_group_design"/>
+            <field name="color">9</field>
+            <field name="sequence">9</field>
+        </record>
+        
+        <!-- Marketing Tags -->
+        <record id="slide_channel_tag_digital_marketing" model="slide.channel.tag">
+            <field name="name">Digital Marketing</field>
+            <field name="group_id" ref="slide_channel_tag_group_marketing"/>
+            <field name="color">10</field>
+            <field name="sequence">10</field>
+        </record>
+
+
+        <!-- ============================================ -->
+        <!-- 2. SLIDE TAGS (Content Tags) -->
+        <!-- ============================================ -->
+        
+        <record id="slide_tag_beginner" model="slide.tag">
+            <field name="name">Beginner</field>
+        </record>
+        
+        <record id="slide_tag_intermediate" model="slide.tag">
+            <field name="name">Intermediate</field>
+        </record>
+        
+        <record id="slide_tag_advanced" model="slide.tag">
+            <field name="name">Advanced</field>
+        </record>
+        
+        <record id="slide_tag_hands_on" model="slide.tag">
+            <field name="name">Hands-on</field>
+        </record>
+        
+        <record id="slide_tag_theory" model="slide.tag">
+            <field name="name">Theory</field>
+        </record>
+
+
+        <!-- ============================================ -->
+        <!-- 3. DEMO USERS -->
+        <!-- ============================================ -->
+        
+        <!-- Portal Users (Students) -->
+        <record id="demo_student_john" model="res.users">
+            <field name="name">John Doe</field>
+            <field name="login">john.doe@elearning.demo</field>
+            <field name="email">john.doe@elearning.demo</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="demo_student_jane" model="res.users">
+            <field name="name">Jane Smith</field>
+            <field name="login">jane.smith@elearning.demo</field>
+            <field name="email">jane.smith@elearning.demo</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="demo_student_mike" model="res.users">
+            <field name="name">Mike Johnson</field>
+            <field name="login">mike.johnson@elearning.demo</field>
+            <field name="email">mike.johnson@elearning.demo</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="demo_student_sarah" model="res.users">
+            <field name="name">Sarah Williams</field>
+            <field name="login">sarah.williams@elearning.demo</field>
+            <field name="email">sarah.williams@elearning.demo</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="demo_student_david" model="res.users">
+            <field name="name">David Brown</field>
+            <field name="login">david.brown@elearning.demo</field>
+            <field name="email">david.brown@elearning.demo</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="demo_student_emily" model="res.users">
+            <field name="name">Emily Davis</field>
+            <field name="login">emily.davis@elearning.demo</field>
+            <field name="email">emily.davis@elearning.demo</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <!-- Internal Users (Instructors/Officers) -->
+        <record id="demo_instructor_robert" model="res.users">
+            <field name="name">Robert Miller</field>
+            <field name="login">robert.miller@elearning.demo</field>
+            <field name="email">robert.miller@elearning.demo</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('website_slides.group_website_slides_officer')])]"/>
+        </record>
+        
+        <record id="demo_instructor_lisa" model="res.users">
+            <field name="name">Lisa Anderson</field>
+            <field name="login">lisa.anderson@elearning.demo</field>
+            <field name="email">lisa.anderson@elearning.demo</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('website_slides.group_website_slides_officer')])]"/>
+        </record>
+
+
+        <!-- ============================================ -->
+        <!-- 4. SLIDE CHANNELS (Courses) -->
+        <!-- ============================================ -->
+        
+        <!-- Course 1: Python Programming Fundamentals -->
+        <record id="slide_channel_python_fundamentals" model="slide.channel">
+            <field name="name">Python Programming Fundamentals</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="demo_instructor_robert"/>
+            <field name="description_short">Learn Python from scratch with hands-on examples and real-world projects</field>
+            <field name="description"><![CDATA[
+                <h2>Course Overview</h2>
+                <p>Master the fundamentals of Python programming in this comprehensive course designed for beginners.</p>
+                
+                <h3>What You'll Learn:</h3>
+                <ul>
+                    <li>Python syntax and basic programming concepts</li>
+                    <li>Variables, data types, and operators</li>
+                    <li>Control flow: if statements, loops</li>
+                    <li>Functions and modules</li>
+                    <li>Data structures: lists, dictionaries, sets, tuples</li>
+                    <li>Object-Oriented Programming (OOP)</li>
+                    <li>File handling and exceptions</li>
+                    <li>Working with libraries and packages</li>
+                </ul>
+                
+                <h3>Prerequisites:</h3>
+                <p>No prior programming experience required! Just bring your enthusiasm to learn.</p>
+                
+                <h3>Course Duration:</h3>
+                <p>Approximately 8 hours of video content + hands-on exercises</p>
+            ]]></field>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published" eval="True"/>
+            <field name="karma_gen_channel_finish">50</field>
+            <field name="karma_gen_channel_rank">10</field>
+            <field name="karma_review">15</field>
+            <field name="karma_slide_comment">5</field>
+            <field name="karma_slide_vote">3</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_programming'), ref('slide_channel_tag_python')])]"/>
+        </record>
+        
+        <!-- Course 2: Odoo Development Masterclass -->
+        <record id="slide_channel_odoo_development" model="slide.channel">
+            <field name="name">Odoo Development Masterclass</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="demo_instructor_robert"/>
+            <field name="description_short">Complete guide to Odoo module development from basics to advanced</field>
+            <field name="description"><![CDATA[
+                <h2>Become an Odoo Expert</h2>
+                <p>This comprehensive course covers everything you need to know about Odoo development.</p>
+                
+                <h3>Topics Covered:</h3>
+                <ul>
+                    <li>Odoo Framework Architecture</li>
+                    <li>Model Development (ORM, fields, methods)</li>
+                    <li>View Development (XML, QWeb)</li>
+                    <li>Security and Access Rights</li>
+                    <li>Controllers and HTTP Routes</li>
+                    <li>JavaScript and OWL Framework</li>
+                    <li>Reports and Wizards</li>
+                    <li>Best Practices and OCA Guidelines</li>
+                </ul>
+                
+                <h3>Prerequisites:</h3>
+                <p>Python Programming Fundamentals (or equivalent knowledge)</p>
+            ]]></field>
+            <field name="visibility">connected</field>
+            <field name="enroll">public</field>
+            <field name="is_published" eval="True"/>
+            <field name="prerequisite_channel_ids" eval="[(6, 0, [ref('slide_channel_python_fundamentals')])]"/>
+            <field name="karma_gen_channel_finish">100</field>
+            <field name="karma_gen_channel_rank">15</field>
+            <field name="karma_review">20</field>
+            <field name="karma_slide_comment">5</field>
+            <field name="karma_slide_vote">3</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_odoo'), ref('slide_channel_tag_programming')])]"/>
+        </record>
+        
+        <!-- Course 3: Project Management Essentials -->
+        <record id="slide_channel_project_management" model="slide.channel">
+            <field name="name">Project Management Essentials</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="demo_instructor_lisa"/>
+            <field name="description_short">Master project management fundamentals and Agile methodologies</field>
+            <field name="description"><![CDATA[
+                <h2>Essential Project Management Skills</h2>
+                <p>Learn the core principles and practices of effective project management.</p>
+                
+                <h3>Course Content:</h3>
+                <ul>
+                    <li>Project Management Fundamentals</li>
+                    <li>Agile and Scrum Framework</li>
+                    <li>Planning and Scheduling</li>
+                    <li>Risk Management</li>
+                    <li>Team Leadership</li>
+                    <li>Communication Strategies</li>
+                </ul>
+            ]]></field>
+            <field name="visibility">public</field>
+            <field name="enroll">invite</field>
+            <field name="is_published" eval="True"/>
+            <field name="karma_gen_channel_finish">40</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_management')])]"/>
+        </record>
+        
+        <!-- Course 4: JavaScript for Web Developers -->
+        <record id="slide_channel_javascript_web" model="slide.channel">
+            <field name="name">JavaScript for Web Developers</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="demo_instructor_robert"/>
+            <field name="description_short">Modern JavaScript from basics to advanced concepts</field>
+            <field name="description"><![CDATA[
+                <h2>Master Modern JavaScript</h2>
+                <p>Learn JavaScript ES6+ features and modern web development practices.</p>
+                
+                <h3>What You'll Learn:</h3>
+                <ul>
+                    <li>JavaScript Fundamentals</li>
+                    <li>ES6+ Features (arrow functions, destructuring, modules)</li>
+                    <li>Asynchronous JavaScript (Promises, async/await)</li>
+                    <li>DOM Manipulation</li>
+                    <li>Working with APIs</li>
+                    <li>Modern Frameworks Overview</li>
+                </ul>
+            ]]></field>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published" eval="True"/>
+            <field name="karma_gen_channel_finish">60</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_programming'), ref('slide_channel_tag_javascript')])]"/>
+        </record>
+        
+        <!-- Course 5: Database Design and SQL -->
+        <record id="slide_channel_database_sql" model="slide.channel">
+            <field name="name">Database Design and SQL Mastery</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="demo_instructor_robert"/>
+            <field name="description_short">Learn database design principles and SQL from beginner to advanced</field>
+            <field name="description"><![CDATA[
+                <h2>Master Database Design and SQL</h2>
+                <p>Comprehensive course on relational databases and SQL.</p>
+                
+                <h3>Topics:</h3>
+                <ul>
+                    <li>Database Design Principles</li>
+                    <li>Normalization</li>
+                    <li>SQL Basics (SELECT, INSERT, UPDATE, DELETE)</li>
+                    <li>Joins and Subqueries</li>
+                    <li>Indexes and Performance</li>
+                    <li>PostgreSQL Specific Features</li>
+                </ul>
+            ]]></field>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published" eval="True"/>
+            <field name="karma_gen_channel_finish">70</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_database')])]"/>
+        </record>
+        
+        <!-- Course 6: Digital Marketing Fundamentals -->
+        <record id="slide_channel_digital_marketing" model="slide.channel">
+            <field name="name">Digital Marketing Fundamentals</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="demo_instructor_lisa"/>
+            <field name="description_short">Learn the essentials of digital marketing and online strategies</field>
+            <field name="description"><![CDATA[
+                <h2>Digital Marketing Essentials</h2>
+                <p>Master the fundamentals of digital marketing in today's online world.</p>
+                
+                <h3>Course Modules:</h3>
+                <ul>
+                    <li>Digital Marketing Overview</li>
+                    <li>SEO and Content Marketing</li>
+                    <li>Social Media Marketing</li>
+                    <li>Email Marketing</li>
+                    <li>Analytics and Metrics</li>
+                </ul>
+            ]]></field>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published" eval="True"/>
+            <field name="karma_gen_channel_finish">45</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_digital_marketing')])]"/>
+        </record>
+
+
+        <!-- ============================================ -->
+        <!-- 5. PYTHON COURSE CONTENT -->
+        <!-- ============================================ -->
+        
+        <!-- Module 1: Introduction -->
+        <record id="slide_python_cat_intro" model="slide.slide">
+            <field name="name">Module 1: Introduction to Python</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="is_category" eval="True"/>
+            <field name="sequence">10</field>
+            <field name="is_published" eval="True"/>
+        </record>
+        
+        <record id="slide_python_welcome" model="slide.slide">
+            <field name="name">Welcome to Python Programming</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_intro"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=kqtD5dpn9C8</field>
+            <field name="sequence">11</field>
+            <field name="completion_time">15</field>
+            <field name="is_preview" eval="True"/>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <p>Welcome to the Python Programming Fundamentals course!</p>
+                <p>In this introductory video, you'll learn:</p>
+                <ul>
+                    <li>What is Python and why learn it?</li>
+                    <li>Python's applications in real world</li>
+                    <li>Course structure and learning path</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner')])]"/>
+        </record>
+        
+        <record id="slide_python_overview" model="slide.slide">
+            <field name="name">Course Overview and Learning Path</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_intro"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">12</field>
+            <field name="completion_time">10</field>
+            <field name="is_preview" eval="True"/>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>What You Will Learn</h2>
+                <p>This comprehensive course covers:</p>
+                <ul>
+                    <li><strong>Module 1:</strong> Introduction and Setup</li>
+                    <li><strong>Module 2:</strong> Python Basics (variables, data types, operators)</li>
+                    <li><strong>Module 3:</strong> Control Flow (if/else, loops)</li>
+                    <li><strong>Module 4:</strong> Functions and Modules</li>
+                    <li><strong>Module 5:</strong> Data Structures</li>
+                    <li><strong>Module 6:</strong> Object-Oriented Programming</li>
+                </ul>
+                
+                <h2>Prerequisites</h2>
+                <p>No prior programming experience required! Just bring:</p>
+                <ul>
+                    <li>A computer with internet connection</li>
+                    <li>Willingness to learn and practice</li>
+                    <li>Curiosity and problem-solving mindset</li>
+                </ul>
+                
+                <h2>Learning Approach</h2>
+                <p>This course uses a hands-on approach with:</p>
+                <ul>
+                    <li>Video lectures explaining concepts</li>
+                    <li>Code examples and demonstrations</li>
+                    <li>Practice exercises after each module</li>
+                    <li>Quizzes to test your understanding</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner')])]"/>
+        </record>
+        
+        <record id="slide_python_setup" model="slide.slide">
+            <field name="name">Python Installation and Setup Guide</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_intro"/>
+            <field name="slide_category">document</field>
+            <field name="source_type">local_file</field>
+            <field name="sequence">13</field>
+            <field name="completion_time">20</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Setting Up Your Python Environment</h2>
+                <p>Follow this step-by-step guide to install Python and set up your development environment.</p>
+                
+                <h3>Windows Installation:</h3>
+                <ol>
+                    <li>Download Python from python.org</li>
+                    <li>Run the installer (check "Add Python to PATH")</li>
+                    <li>Verify installation: <code>python --version</code></li>
+                </ol>
+                
+                <h3>Recommended Tools:</h3>
+                <ul>
+                    <li><strong>VS Code:</strong> Lightweight code editor</li>
+                    <li><strong>PyCharm:</strong> Full-featured Python IDE</li>
+                    <li><strong>Jupyter Notebook:</strong> Interactive coding environment</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_hands_on')])]"/>
+        </record>
+        
+        <!-- Module 2: Python Basics -->
+        <record id="slide_python_cat_basics" model="slide.slide">
+            <field name="name">Module 2: Python Basics</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="is_category" eval="True"/>
+            <field name="sequence">20</field>
+            <field name="is_published" eval="True"/>
+        </record>
+        
+        <record id="slide_python_variables" model="slide.slide">
+            <field name="name">Variables and Data Types</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_basics"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=Z1Yd7upQsXY</field>
+            <field name="sequence">21</field>
+            <field name="completion_time">25</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Understanding Variables and Data Types</h2>
+                <p>Learn the foundation of Python programming:</p>
+                
+                <h3>Topics Covered:</h3>
+                <ul>
+                    <li><strong>Variables:</strong> How to create and use variables</li>
+                    <li><strong>Integers:</strong> Whole numbers (1, 42, -10)</li>
+                    <li><strong>Floats:</strong> Decimal numbers (3.14, -0.5)</li>
+                    <li><strong>Strings:</strong> Text data ("Hello", 'Python')</li>
+                    <li><strong>Booleans:</strong> True/False values</li>
+                    <li><strong>Type Conversion:</strong> Converting between types</li>
+                </ul>
+                
+                <h3>Code Examples:</h3>
+                <pre><code>
+# Variables
+name = "John"
+age = 25
+height = 1.75
+is_student = True
+
+# Type conversion
+age_str = str(age)  # "25"
+price = float("19.99")  # 19.99
+                </code></pre>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_theory')])]"/>
+        </record>
+        
+        <record id="slide_python_operators" model="slide.slide">
+            <field name="name">Operators and Expressions</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_basics"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">22</field>
+            <field name="completion_time">20</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Python Operators</h2>
+                
+                <h3>Arithmetic Operators:</h3>
+                <ul>
+                    <li><code>+</code> Addition</li>
+                    <li><code>-</code> Subtraction</li>
+                    <li><code>*</code> Multiplication</li>
+                    <li><code>/</code> Division</li>
+                    <li><code>//</code> Floor Division</li>
+                    <li><code>%</code> Modulus</li>
+                    <li><code>**</code> Exponentiation</li>
+                </ul>
+                
+                <h3>Comparison Operators:</h3>
+                <ul>
+                    <li><code>==</code> Equal to</li>
+                    <li><code>!=</code> Not equal to</li>
+                    <li><code>&gt;</code> Greater than</li>
+                    <li><code>&lt;</code> Less than</li>
+                    <li><code>&gt;=</code> Greater than or equal</li>
+                    <li><code>&lt;=</code> Less than or equal</li>
+                </ul>
+                
+                <h3>Logical Operators:</h3>
+                <ul>
+                    <li><code>and</code> - Both conditions must be True</li>
+                    <li><code>or</code> - At least one condition must be True</li>
+                    <li><code>not</code> - Reverses the boolean value</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner')])]"/>
+        </record>
+        
+        <record id="slide_python_strings" model="slide.slide">
+            <field name="name">Working with Strings</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_basics"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=k9TUPpGqYTo</field>
+            <field name="sequence">23</field>
+            <field name="completion_time">30</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>String Manipulation in Python</h2>
+                <p>Master string operations and methods:</p>
+                <ul>
+                    <li>String concatenation and formatting</li>
+                    <li>String methods (upper, lower, strip, split)</li>
+                    <li>String slicing and indexing</li>
+                    <li>F-strings for modern formatting</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner')])]"/>
+        </record>
+        
+        <record id="slide_python_quiz_basics" model="slide.slide">
+            <field name="name">Quiz: Python Basics</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_basics"/>
+            <field name="slide_category">quiz</field>
+            <field name="sequence">24</field>
+            <field name="completion_time">15</field>
+            <field name="is_published" eval="True"/>
+            <field name="quiz_first_attempt_reward">20</field>
+            <field name="quiz_second_attempt_reward">10</field>
+            <field name="quiz_third_attempt_reward">5</field>
+            <field name="quiz_fourth_attempt_reward">2</field>
+            <field name="description"><![CDATA[
+                <p>Test your understanding of Python basics!</p>
+                <p>This quiz covers variables, data types, operators, and strings.</p>
+            ]]></field>
+        </record>
+        
+        <!-- Module 3: Control Flow -->
+        <record id="slide_python_cat_control" model="slide.slide">
+            <field name="name">Module 3: Control Flow</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="is_category" eval="True"/>
+            <field name="sequence">30</field>
+            <field name="is_published" eval="True"/>
+        </record>
+        
+        <record id="slide_python_if_else" model="slide.slide">
+            <field name="name">If-Else Statements</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_control"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=DZwmZ8Usvnk</field>
+            <field name="sequence">31</field>
+            <field name="completion_time">25</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Conditional Statements</h2>
+                <p>Learn how to make decisions in your code:</p>
+                <ul>
+                    <li>if statements</li>
+                    <li>if-else statements</li>
+                    <li>elif (else if) statements</li>
+                    <li>Nested conditions</li>
+                    <li>Ternary operators</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner')])]"/>
+        </record>
+        
+        <record id="slide_python_loops" model="slide.slide">
+            <field name="name">Loops: For and While</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_control"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=6iF8Xb7Z3wQ</field>
+            <field name="sequence">32</field>
+            <field name="completion_time">30</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Iteration with Loops</h2>
+                <p>Master looping constructs:</p>
+                <ul>
+                    <li>for loops and range()</li>
+                    <li>while loops</li>
+                    <li>break and continue statements</li>
+                    <li>Loop else clause</li>
+                    <li>Nested loops</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner')])]"/>
+        </record>
+        
+        <record id="slide_python_quiz_control" model="slide.slide">
+            <field name="name">Quiz: Control Flow</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_control"/>
+            <field name="slide_category">quiz</field>
+            <field name="sequence">33</field>
+            <field name="completion_time">15</field>
+            <field name="is_published" eval="True"/>
+            <field name="quiz_first_attempt_reward">20</field>
+            <field name="quiz_second_attempt_reward">10</field>
+            <field name="quiz_third_attempt_reward">5</field>
+            <field name="quiz_fourth_attempt_reward">2</field>
+            <field name="description"><![CDATA[
+                <p>Test your knowledge of if-else statements and loops!</p>
+            ]]></field>
+        </record>
+        
+        <!-- Module 4: Functions -->
+        <record id="slide_python_cat_functions" model="slide.slide">
+            <field name="name">Module 4: Functions and Modules</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="is_category" eval="True"/>
+            <field name="sequence">40</field>
+            <field name="is_published" eval="True"/>
+        </record>
+        
+        <record id="slide_python_functions" model="slide.slide">
+            <field name="name">Defining and Calling Functions</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_functions"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=9Os0o3wzS_I</field>
+            <field name="sequence">41</field>
+            <field name="completion_time">35</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Functions in Python</h2>
+                <p>Learn to write reusable code with functions:</p>
+                <ul>
+                    <li>Defining functions with def</li>
+                    <li>Parameters and arguments</li>
+                    <li>Return values</li>
+                    <li>Default parameters</li>
+                    <li>*args and **kwargs</li>
+                    <li>Lambda functions</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate')])]"/>
+        </record>
+        
+        <record id="slide_python_modules" model="slide.slide">
+            <field name="name">Working with Modules and Packages</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_functions"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">42</field>
+            <field name="completion_time">25</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Modules and Packages</h2>
+                <p>Organize your code effectively:</p>
+                <ul>
+                    <li>Importing modules</li>
+                    <li>Creating your own modules</li>
+                    <li>Understanding __name__ == "__main__"</li>
+                    <li>Working with packages</li>
+                    <li>Standard library overview</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate')])]"/>
+        </record>
+        
+        <!-- Module 5: Data Structures -->
+        <record id="slide_python_cat_data_structures" model="slide.slide">
+            <field name="name">Module 5: Data Structures</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="is_category" eval="True"/>
+            <field name="sequence">50</field>
+            <field name="is_published" eval="True"/>
+        </record>
+        
+        <record id="slide_python_lists" model="slide.slide">
+            <field name="name">Lists and List Comprehensions</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_data_structures"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=W8KRzm-HUcc</field>
+            <field name="sequence">51</field>
+            <field name="completion_time">30</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Python Lists</h2>
+                <p>Master the most versatile data structure:</p>
+                <ul>
+                    <li>Creating and accessing lists</li>
+                    <li>List methods (append, extend, insert, remove)</li>
+                    <li>List slicing</li>
+                    <li>List comprehensions</li>
+                    <li>Nested lists</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate')])]"/>
+        </record>
+        
+        <record id="slide_python_dictionaries" model="slide.slide">
+            <field name="name">Dictionaries and Sets</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_data_structures"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=daefaLgNkw0</field>
+            <field name="sequence">52</field>
+            <field name="completion_time">30</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Dictionaries and Sets</h2>
+                <p>Learn key-value pairs and unique collections:</p>
+                <ul>
+                    <li>Dictionary basics</li>
+                    <li>Dictionary methods</li>
+                    <li>Dictionary comprehensions</li>
+                    <li>Sets and set operations</li>
+                    <li>When to use each data structure</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate')])]"/>
+        </record>
+        
+        <record id="slide_python_tuples" model="slide.slide">
+            <field name="name">Tuples and Immutable Data</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_data_structures"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">53</field>
+            <field name="completion_time">20</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Understanding Tuples</h2>
+                <p>Learn about immutable sequences:</p>
+                <ul>
+                    <li>Creating tuples</li>
+                    <li>Tuple packing and unpacking</li>
+                    <li>When to use tuples vs lists</li>
+                    <li>Named tuples</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate')])]"/>
+        </record>
+        
+        <!-- Module 6: OOP -->
+        <record id="slide_python_cat_oop" model="slide.slide">
+            <field name="name">Module 6: Object-Oriented Programming</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="is_category" eval="True"/>
+            <field name="sequence">60</field>
+            <field name="is_published" eval="True"/>
+        </record>
+        
+        <record id="slide_python_classes" model="slide.slide">
+            <field name="name">Classes and Objects</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_oop"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=ZDa-Z5JzLYM</field>
+            <field name="sequence">61</field>
+            <field name="completion_time">40</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Introduction to OOP</h2>
+                <p>Learn object-oriented programming concepts:</p>
+                <ul>
+                    <li>Classes and objects</li>
+                    <li>Attributes and methods</li>
+                    <li>__init__ constructor</li>
+                    <li>self parameter</li>
+                    <li>Instance vs class variables</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_advanced')])]"/>
+        </record>
+        
+        <record id="slide_python_inheritance" model="slide.slide">
+            <field name="name">Inheritance and Polymorphism</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_oop"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=RSl87lqOXDE</field>
+            <field name="sequence">62</field>
+            <field name="completion_time">35</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Advanced OOP Concepts</h2>
+                <p>Master inheritance and polymorphism:</p>
+                <ul>
+                    <li>Inheritance basics</li>
+                    <li>Method overriding</li>
+                    <li>super() function</li>
+                    <li>Multiple inheritance</li>
+                    <li>Polymorphism</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_advanced')])]"/>
+        </record>
+        
+        <record id="slide_python_quiz_final" model="slide.slide">
+            <field name="name">Final Quiz: Python Fundamentals</field>
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="category_id" ref="slide_python_cat_oop"/>
+            <field name="slide_category">quiz</field>
+            <field name="sequence">63</field>
+            <field name="completion_time">30</field>
+            <field name="is_published" eval="True"/>
+            <field name="quiz_first_attempt_reward">50</field>
+            <field name="quiz_second_attempt_reward">30</field>
+            <field name="quiz_third_attempt_reward">15</field>
+            <field name="quiz_fourth_attempt_reward">5</field>
+            <field name="description"><![CDATA[
+                <p>Comprehensive final quiz covering all course topics!</p>
+                <p>Test your mastery of Python fundamentals.</p>
+            ]]></field>
+        </record>
+
+
+        <!-- ============================================ -->
+        <!-- 6. QUIZ QUESTIONS AND ANSWERS -->
+        <!-- ============================================ -->
+        
+        <!-- Python Basics Quiz Questions -->
+        <record id="slide_question_py_basics_1" model="slide.question">
+            <field name="question">What is the correct way to declare a variable in Python?</field>
+            <field name="slide_id" ref="slide_python_quiz_basics"/>
+            <field name="sequence">1</field>
+        </record>
+        
+        <record id="slide_answer_py_basics_1_1" model="slide.answer">
+            <field name="text_value">int x = 5</field>
+            <field name="question_id" ref="slide_question_py_basics_1"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">1</field>
+            <field name="comment">This is C/Java syntax, not Python!</field>
+        </record>
+        
+        <record id="slide_answer_py_basics_1_2" model="slide.answer">
+            <field name="text_value">x = 5</field>
+            <field name="question_id" ref="slide_question_py_basics_1"/>
+            <field name="is_correct" eval="True"/>
+            <field name="sequence">2</field>
+            <field name="comment">Correct! Python uses dynamic typing.</field>
+        </record>
+        
+        <record id="slide_answer_py_basics_1_3" model="slide.answer">
+            <field name="text_value">var x = 5</field>
+            <field name="question_id" ref="slide_question_py_basics_1"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">3</field>
+            <field name="comment">This is JavaScript syntax!</field>
+        </record>
+        
+        <record id="slide_question_py_basics_2" model="slide.question">
+            <field name="question">Which data type is mutable in Python?</field>
+            <field name="slide_id" ref="slide_python_quiz_basics"/>
+            <field name="sequence">2</field>
+        </record>
+        
+        <record id="slide_answer_py_basics_2_1" model="slide.answer">
+            <field name="text_value">String</field>
+            <field name="question_id" ref="slide_question_py_basics_2"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">1</field>
+            <field name="comment">Strings are immutable in Python.</field>
+        </record>
+        
+        <record id="slide_answer_py_basics_2_2" model="slide.answer">
+            <field name="text_value">Tuple</field>
+            <field name="question_id" ref="slide_question_py_basics_2"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">2</field>
+            <field name="comment">Tuples are immutable.</field>
+        </record>
+        
+        <record id="slide_answer_py_basics_2_3" model="slide.answer">
+            <field name="text_value">List</field>
+            <field name="question_id" ref="slide_question_py_basics_2"/>
+            <field name="is_correct" eval="True"/>
+            <field name="sequence">3</field>
+            <field name="comment">Correct! Lists can be modified after creation.</field>
+        </record>
+        
+        <record id="slide_answer_py_basics_2_4" model="slide.answer">
+            <field name="text_value">Integer</field>
+            <field name="question_id" ref="slide_question_py_basics_2"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">4</field>
+            <field name="comment">Integers are immutable.</field>
+        </record>
+        
+        <record id="slide_question_py_basics_3" model="slide.question">
+            <field name="question">What is the output of: print(type(3.14))?</field>
+            <field name="slide_id" ref="slide_python_quiz_basics"/>
+            <field name="sequence">3</field>
+        </record>
+        
+        <record id="slide_answer_py_basics_3_1" model="slide.answer">
+            <field name="text_value">&lt;class 'int'&gt;</field>
+            <field name="question_id" ref="slide_question_py_basics_3"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">1</field>
+            <field name="comment">3.14 is a decimal number, not an integer.</field>
+        </record>
+        
+        <record id="slide_answer_py_basics_3_2" model="slide.answer">
+            <field name="text_value">&lt;class 'float'&gt;</field>
+            <field name="question_id" ref="slide_question_py_basics_3"/>
+            <field name="is_correct" eval="True"/>
+            <field name="sequence">2</field>
+            <field name="comment">Correct! 3.14 is a float (floating-point number).</field>
+        </record>
+        
+        <record id="slide_answer_py_basics_3_3" model="slide.answer">
+            <field name="text_value">&lt;class 'str'&gt;</field>
+            <field name="question_id" ref="slide_question_py_basics_3"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">3</field>
+            <field name="comment">This would be the type if it was in quotes: "3.14"</field>
+        </record>
+        
+        <!-- Control Flow Quiz Questions -->
+        <record id="slide_question_py_control_1" model="slide.question">
+            <field name="question">What is the correct syntax for an if statement in Python?</field>
+            <field name="slide_id" ref="slide_python_quiz_control"/>
+            <field name="sequence">1</field>
+        </record>
+        
+        <record id="slide_answer_py_control_1_1" model="slide.answer">
+            <field name="text_value">if (x &gt; 5) { }</field>
+            <field name="question_id" ref="slide_question_py_control_1"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">1</field>
+            <field name="comment">Python doesn't use curly braces for blocks.</field>
+        </record>
+        
+        <record id="slide_answer_py_control_1_2" model="slide.answer">
+            <field name="text_value">if x &gt; 5:</field>
+            <field name="question_id" ref="slide_question_py_control_1"/>
+            <field name="is_correct" eval="True"/>
+            <field name="sequence">2</field>
+            <field name="comment">Correct! Python uses colon and indentation.</field>
+        </record>
+        
+        <record id="slide_answer_py_control_1_3" model="slide.answer">
+            <field name="text_value">if x &gt; 5 then</field>
+            <field name="question_id" ref="slide_question_py_control_1"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">3</field>
+            <field name="comment">Python doesn't use 'then' keyword.</field>
+        </record>
+        
+        <record id="slide_question_py_control_2" model="slide.question">
+            <field name="question">Which loop is used when you know the number of iterations?</field>
+            <field name="slide_id" ref="slide_python_quiz_control"/>
+            <field name="sequence">2</field>
+        </record>
+        
+        <record id="slide_answer_py_control_2_1" model="slide.answer">
+            <field name="text_value">while loop</field>
+            <field name="question_id" ref="slide_question_py_control_2"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">1</field>
+            <field name="comment">While loops are better for unknown iterations.</field>
+        </record>
+        
+        <record id="slide_answer_py_control_2_2" model="slide.answer">
+            <field name="text_value">for loop</field>
+            <field name="question_id" ref="slide_question_py_control_2"/>
+            <field name="is_correct" eval="True"/>
+            <field name="sequence">2</field>
+            <field name="comment">Correct! For loops are ideal for known iterations.</field>
+        </record>
+        
+        <record id="slide_answer_py_control_2_3" model="slide.answer">
+            <field name="text_value">do-while loop</field>
+            <field name="question_id" ref="slide_question_py_control_2"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">3</field>
+            <field name="comment">Python doesn't have do-while loops.</field>
+        </record>
+        
+        <record id="slide_question_py_control_3" model="slide.question">
+            <field name="question">What does the 'break' statement do in a loop?</field>
+            <field name="slide_id" ref="slide_python_quiz_control"/>
+            <field name="sequence">3</field>
+        </record>
+        
+        <record id="slide_answer_py_control_3_1" model="slide.answer">
+            <field name="text_value">Skips the current iteration</field>
+            <field name="question_id" ref="slide_question_py_control_3"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">1</field>
+            <field name="comment">That's what 'continue' does.</field>
+        </record>
+        
+        <record id="slide_answer_py_control_3_2" model="slide.answer">
+            <field name="text_value">Exits the loop completely</field>
+            <field name="question_id" ref="slide_question_py_control_3"/>
+            <field name="is_correct" eval="True"/>
+            <field name="sequence">2</field>
+            <field name="comment">Correct! Break terminates the loop.</field>
+        </record>
+        
+        <record id="slide_answer_py_control_3_3" model="slide.answer">
+            <field name="text_value">Pauses the loop</field>
+            <field name="question_id" ref="slide_question_py_control_3"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">3</field>
+            <field name="comment">Break doesn't pause, it exits.</field>
+        </record>
+        
+        <!-- Final Quiz Questions -->
+        <record id="slide_question_py_final_1" model="slide.question">
+            <field name="question">What is the purpose of the __init__ method in a Python class?</field>
+            <field name="slide_id" ref="slide_python_quiz_final"/>
+            <field name="sequence">1</field>
+        </record>
+        
+        <record id="slide_answer_py_final_1_1" model="slide.answer">
+            <field name="text_value">To delete an object</field>
+            <field name="question_id" ref="slide_question_py_final_1"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">1</field>
+            <field name="comment">That's __del__ method.</field>
+        </record>
+        
+        <record id="slide_answer_py_final_1_2" model="slide.answer">
+            <field name="text_value">To initialize object attributes</field>
+            <field name="question_id" ref="slide_question_py_final_1"/>
+            <field name="is_correct" eval="True"/>
+            <field name="sequence">2</field>
+            <field name="comment">Correct! __init__ is the constructor method.</field>
+        </record>
+        
+        <record id="slide_answer_py_final_1_3" model="slide.answer">
+            <field name="text_value">To print the object</field>
+            <field name="question_id" ref="slide_question_py_final_1"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">3</field>
+            <field name="comment">That's __str__ or __repr__ method.</field>
+        </record>
+        
+        <record id="slide_question_py_final_2" model="slide.question">
+            <field name="question">Which method is used to add an element to the end of a list?</field>
+            <field name="slide_id" ref="slide_python_quiz_final"/>
+            <field name="sequence">2</field>
+        </record>
+        
+        <record id="slide_answer_py_final_2_1" model="slide.answer">
+            <field name="text_value">add()</field>
+            <field name="question_id" ref="slide_question_py_final_2"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">1</field>
+            <field name="comment">add() is used for sets, not lists.</field>
+        </record>
+        
+        <record id="slide_answer_py_final_2_2" model="slide.answer">
+            <field name="text_value">append()</field>
+            <field name="question_id" ref="slide_question_py_final_2"/>
+            <field name="is_correct" eval="True"/>
+            <field name="sequence">2</field>
+            <field name="comment">Correct! append() adds to the end of a list.</field>
+        </record>
+        
+        <record id="slide_answer_py_final_2_3" model="slide.answer">
+            <field name="text_value">push()</field>
+            <field name="question_id" ref="slide_question_py_final_2"/>
+            <field name="is_correct" eval="False"/>
+            <field name="sequence">3</field>
+            <field name="comment">push() is used in other languages, not Python.</field>
+        </record>
+
+
+        <!-- ============================================ -->
+        <!-- 7. ODOO DEVELOPMENT COURSE CONTENT -->
+        <!-- ============================================ -->
+        
+        <!-- Module 1: Odoo Basics -->
+        <record id="slide_odoo_cat_basics" model="slide.slide">
+            <field name="name">Module 1: Odoo Framework Basics</field>
+            <field name="channel_id" ref="slide_channel_odoo_development"/>
+            <field name="is_category" eval="True"/>
+            <field name="sequence">10</field>
+            <field name="is_published" eval="True"/>
+        </record>
+        
+        <record id="slide_odoo_intro" model="slide.slide">
+            <field name="name">Introduction to Odoo Framework</field>
+            <field name="channel_id" ref="slide_channel_odoo_development"/>
+            <field name="category_id" ref="slide_odoo_cat_basics"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=Kj4hR7F3xKM</field>
+            <field name="sequence">11</field>
+            <field name="completion_time">20</field>
+            <field name="is_preview" eval="True"/>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Welcome to Odoo Development</h2>
+                <p>Introduction to the Odoo framework and ecosystem.</p>
+                <ul>
+                    <li>What is Odoo?</li>
+                    <li>Odoo architecture overview</li>
+                    <li>Development environment setup</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner')])]"/>
+        </record>
+        
+        <record id="slide_odoo_architecture" model="slide.slide">
+            <field name="name">Odoo Architecture Overview</field>
+            <field name="channel_id" ref="slide_channel_odoo_development"/>
+            <field name="category_id" ref="slide_odoo_cat_basics"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">12</field>
+            <field name="completion_time">30</field>
+            <field name="is_preview" eval="True"/>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Odoo Framework Architecture</h2>
+                <p>Understanding the MVC pattern in Odoo:</p>
+                
+                <h3>Three-Tier Architecture:</h3>
+                <ul>
+                    <li><strong>Models:</strong> Business logic and data structure (Python)</li>
+                    <li><strong>Views:</strong> User interface (XML, QWeb)</li>
+                    <li><strong>Controllers:</strong> HTTP request handling (Python)</li>
+                </ul>
+                
+                <h3>Key Components:</h3>
+                <ul>
+                    <li><strong>ORM:</strong> Object-Relational Mapping for database operations</li>
+                    <li><strong>PostgreSQL:</strong> Database backend</li>
+                    <li><strong>QWeb:</strong> Template engine for reports and views</li>
+                    <li><strong>Security Framework:</strong> Access rights and record rules</li>
+                    <li><strong>Workflow Engine:</strong> Business process automation</li>
+                </ul>
+                
+                <h3>Module Structure:</h3>
+                <pre><code>
+my_module/
+├── __init__.py
+├── __manifest__.py
+├── models/
+│   ├── __init__.py
+│   └── my_model.py
+├── views/
+│   └── my_model_views.xml
+├── security/
+│   ├── ir.model.access.csv
+│   └── security.xml
+└── data/
+    └── data.xml
+                </code></pre>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate'), ref('slide_tag_theory')])]"/>
+        </record>
+        
+        <record id="slide_odoo_models" model="slide.slide">
+            <field name="name">Model Development with ORM</field>
+            <field name="channel_id" ref="slide_channel_odoo_development"/>
+            <field name="category_id" ref="slide_odoo_cat_basics"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=mGvsg_8CMhY</field>
+            <field name="sequence">13</field>
+            <field name="completion_time">45</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Creating Odoo Models</h2>
+                <p>Learn how to create models using the Odoo ORM:</p>
+                
+                <h3>Topics Covered:</h3>
+                <ul>
+                    <li>Model definition and inheritance</li>
+                    <li>Field types (Char, Integer, Many2one, One2many, Many2many)</li>
+                    <li>Field attributes (required, readonly, default)</li>
+                    <li>Computed fields with @api.depends</li>
+                    <li>Onchange methods</li>
+                    <li>Constraints and validations</li>
+                </ul>
+                
+                <h3>Example:</h3>
+                <pre><code>
+from odoo import models, fields, api
+
+class MyModel(models.Model):
+    _name = 'my.model'
+    _description = 'My Model'
+    
+    name = fields.Char(string='Name', required=True)
+    date = fields.Date(string='Date')
+    amount = fields.Float(string='Amount')
+    partner_id = fields.Many2one('res.partner', string='Partner')
+                </code></pre>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate'), ref('slide_tag_hands_on')])]"/>
+        </record>
+        
+        <record id="slide_odoo_views" model="slide.slide">
+            <field name="name">View Development (XML)</field>
+            <field name="channel_id" ref="slide_channel_odoo_development"/>
+            <field name="category_id" ref="slide_odoo_cat_basics"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=example_views</field>
+            <field name="sequence">14</field>
+            <field name="completion_time">40</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Creating Views in Odoo</h2>
+                <p>Master XML view development:</p>
+                <ul>
+                    <li>Form views</li>
+                    <li>Tree (list) views</li>
+                    <li>Kanban views</li>
+                    <li>Search views</li>
+                    <li>Calendar and graph views</li>
+                    <li>View inheritance</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate')])]"/>
+        </record>
+        
+        <!-- Module 2: Advanced Topics -->
+        <record id="slide_odoo_cat_advanced" model="slide.slide">
+            <field name="name">Module 2: Advanced Odoo Development</field>
+            <field name="channel_id" ref="slide_channel_odoo_development"/>
+            <field name="is_category" eval="True"/>
+            <field name="sequence">20</field>
+            <field name="is_published" eval="True"/>
+        </record>
+        
+        <record id="slide_odoo_security" model="slide.slide">
+            <field name="name">Security and Access Rights</field>
+            <field name="channel_id" ref="slide_channel_odoo_development"/>
+            <field name="category_id" ref="slide_odoo_cat_advanced"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">21</field>
+            <field name="completion_time">40</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Odoo Security Framework</h2>
+                
+                <h3>Access Rights (ir.model.access.csv):</h3>
+                <p>Define CRUD permissions for groups:</p>
+                <pre><code>
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_my_model_user,my.model.user,model_my_model,base.group_user,1,1,1,0
+access_my_model_manager,my.model.manager,model_my_model,base.group_system,1,1,1,1
+                </code></pre>
+                
+                <h3>Record Rules (ir.rule):</h3>
+                <p>Row-level security with domain filters:</p>
+                <pre><code>
+&lt;record id="my_model_rule" model="ir.rule"&gt;
+    &lt;field name="name"&gt;My Model: User can only see own records&lt;/field&gt;
+    &lt;field name="model_id" ref="model_my_model"/&gt;
+    &lt;field name="domain_force"&gt;[('user_id', '=', user.id)]&lt;/field&gt;
+    &lt;field name="groups" eval="[(4, ref('base.group_user'))]"/&gt;
+&lt;/record&gt;
+                </code></pre>
+                
+                <h3>Field-Level Security:</h3>
+                <ul>
+                    <li>groups attribute on fields</li>
+                    <li>Conditional visibility</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_advanced')])]"/>
+        </record>
+        
+        <record id="slide_odoo_controllers" model="slide.slide">
+            <field name="name">Controllers and HTTP Routes</field>
+            <field name="channel_id" ref="slide_channel_odoo_development"/>
+            <field name="category_id" ref="slide_odoo_cat_advanced"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=example_controllers</field>
+            <field name="sequence">22</field>
+            <field name="completion_time">35</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>HTTP Controllers in Odoo</h2>
+                <p>Learn to create web endpoints:</p>
+                <ul>
+                    <li>@http.route decorator</li>
+                    <li>Request types (http, json)</li>
+                    <li>Authentication (public, user)</li>
+                    <li>Rendering QWeb templates</li>
+                    <li>JSON-RPC endpoints</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_advanced')])]"/>
+        </record>
+        
+        <record id="slide_odoo_javascript" model="slide.slide">
+            <field name="name">JavaScript and OWL Framework</field>
+            <field name="channel_id" ref="slide_channel_odoo_development"/>
+            <field name="category_id" ref="slide_odoo_cat_advanced"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=example_owl</field>
+            <field name="sequence">23</field>
+            <field name="completion_time">50</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Frontend Development with OWL</h2>
+                <p>Master Odoo's JavaScript framework:</p>
+                <ul>
+                    <li>OWL (Odoo Web Library) basics</li>
+                    <li>Creating custom widgets</li>
+                    <li>Component lifecycle</li>
+                    <li>RPC calls from JavaScript</li>
+                    <li>Extending existing views</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_advanced')])]"/>
+        </record>
+
+
+        <!-- ============================================ -->
+        <!-- 8. OTHER COURSES CONTENT (Shorter) -->
+        <!-- ============================================ -->
+        
+        <!-- JavaScript Course -->
+        <record id="slide_js_cat_basics" model="slide.slide">
+            <field name="name">Module 1: JavaScript Fundamentals</field>
+            <field name="channel_id" ref="slide_channel_javascript_web"/>
+            <field name="is_category" eval="True"/>
+            <field name="sequence">10</field>
+            <field name="is_published" eval="True"/>
+        </record>
+        
+        <record id="slide_js_intro" model="slide.slide">
+            <field name="name">Introduction to JavaScript</field>
+            <field name="channel_id" ref="slide_channel_javascript_web"/>
+            <field name="category_id" ref="slide_js_cat_basics"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=W6NZfCO5SIk</field>
+            <field name="sequence">11</field>
+            <field name="completion_time">25</field>
+            <field name="is_preview" eval="True"/>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>JavaScript Basics</h2>
+                <p>Learn the fundamentals of JavaScript programming.</p>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner')])]"/>
+        </record>
+        
+        <record id="slide_js_es6" model="slide.slide">
+            <field name="name">ES6+ Features</field>
+            <field name="channel_id" ref="slide_channel_javascript_web"/>
+            <field name="category_id" ref="slide_js_cat_basics"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=NCwa_xi0Uuc</field>
+            <field name="sequence">12</field>
+            <field name="completion_time">40</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Modern JavaScript Features</h2>
+                <p>Learn ES6+ features:</p>
+                <ul>
+                    <li>Arrow functions</li>
+                    <li>Destructuring</li>
+                    <li>Template literals</li>
+                    <li>Modules</li>
+                    <li>Promises and async/await</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate')])]"/>
+        </record>
+        
+        <!-- Database Course -->
+        <record id="slide_db_cat_basics" model="slide.slide">
+            <field name="name">Module 1: Database Fundamentals</field>
+            <field name="channel_id" ref="slide_channel_database_sql"/>
+            <field name="is_category" eval="True"/>
+            <field name="sequence">10</field>
+            <field name="is_published" eval="True"/>
+        </record>
+        
+        <record id="slide_db_intro" model="slide.slide">
+            <field name="name">Introduction to Databases</field>
+            <field name="channel_id" ref="slide_channel_database_sql"/>
+            <field name="category_id" ref="slide_db_cat_basics"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=FR4QIeZaPeM</field>
+            <field name="sequence">11</field>
+            <field name="completion_time">30</field>
+            <field name="is_preview" eval="True"/>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Database Basics</h2>
+                <p>Understanding relational databases and SQL.</p>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner')])]"/>
+        </record>
+        
+        <record id="slide_db_sql" model="slide.slide">
+            <field name="name">SQL Fundamentals</field>
+            <field name="channel_id" ref="slide_channel_database_sql"/>
+            <field name="category_id" ref="slide_db_cat_basics"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=HXV3zeQKqGY</field>
+            <field name="sequence">12</field>
+            <field name="completion_time">45</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>SQL Basics</h2>
+                <p>Learn SQL commands:</p>
+                <ul>
+                    <li>SELECT, INSERT, UPDATE, DELETE</li>
+                    <li>WHERE clauses</li>
+                    <li>JOINs</li>
+                    <li>Aggregate functions</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner')])]"/>
+        </record>
+        
+        <!-- Project Management Course -->
+        <record id="slide_pm_cat_fundamentals" model="slide.slide">
+            <field name="name">Module 1: PM Fundamentals</field>
+            <field name="channel_id" ref="slide_channel_project_management"/>
+            <field name="is_category" eval="True"/>
+            <field name="sequence">10</field>
+            <field name="is_published" eval="True"/>
+        </record>
+        
+        <record id="slide_pm_intro" model="slide.slide">
+            <field name="name">Introduction to Project Management</field>
+            <field name="channel_id" ref="slide_channel_project_management"/>
+            <field name="category_id" ref="slide_pm_cat_fundamentals"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=ZKOL-rZ79gs</field>
+            <field name="sequence">11</field>
+            <field name="completion_time">20</field>
+            <field name="is_preview" eval="True"/>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>PM Basics</h2>
+                <p>Learn the fundamentals of project management.</p>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner')])]"/>
+        </record>
+        
+        <record id="slide_pm_agile" model="slide.slide">
+            <field name="name">Agile Project Management</field>
+            <field name="channel_id" ref="slide_channel_project_management"/>
+            <field name="category_id" ref="slide_pm_cat_fundamentals"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">12</field>
+            <field name="completion_time">35</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Agile Methodology</h2>
+                <p>Understanding Agile principles:</p>
+                <ul>
+                    <li>Scrum Framework</li>
+                    <li>Sprint Planning</li>
+                    <li>Daily Standups</li>
+                    <li>Retrospectives</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate')])]"/>
+        </record>
+        
+        <!-- Digital Marketing Course -->
+        <record id="slide_marketing_cat_basics" model="slide.slide">
+            <field name="name">Module 1: Digital Marketing Basics</field>
+            <field name="channel_id" ref="slide_channel_digital_marketing"/>
+            <field name="is_category" eval="True"/>
+            <field name="sequence">10</field>
+            <field name="is_published" eval="True"/>
+        </record>
+        
+        <record id="slide_marketing_intro" model="slide.slide">
+            <field name="name">Introduction to Digital Marketing</field>
+            <field name="channel_id" ref="slide_channel_digital_marketing"/>
+            <field name="category_id" ref="slide_marketing_cat_basics"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=nU-IIXBWlS4</field>
+            <field name="sequence">11</field>
+            <field name="completion_time">25</field>
+            <field name="is_preview" eval="True"/>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>Digital Marketing Overview</h2>
+                <p>Learn the basics of digital marketing.</p>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner')])]"/>
+        </record>
+        
+        <record id="slide_marketing_seo" model="slide.slide">
+            <field name="name">SEO and Content Marketing</field>
+            <field name="channel_id" ref="slide_channel_digital_marketing"/>
+            <field name="category_id" ref="slide_marketing_cat_basics"/>
+            <field name="slide_category">video</field>
+            <field name="source_type">external</field>
+            <field name="url">https://www.youtube.com/watch?v=hF515-0Tduk</field>
+            <field name="sequence">12</field>
+            <field name="completion_time">40</field>
+            <field name="is_published" eval="True"/>
+            <field name="description"><![CDATA[
+                <h2>SEO Fundamentals</h2>
+                <p>Learn search engine optimization:</p>
+                <ul>
+                    <li>Keyword research</li>
+                    <li>On-page SEO</li>
+                    <li>Link building</li>
+                    <li>Content strategy</li>
+                </ul>
+            ]]></field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate')])]"/>
+        </record>
+
+
+        <!-- ============================================ -->
+        <!-- 9. CHANNEL MEMBERSHIPS (Enrollments) -->
+        <!-- ============================================ -->
+        
+        <!-- John Doe's enrollments -->
+        <record id="membership_john_python" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="partner_id" eval="obj(ref('demo_student_john')).partner_id.id"/>
+            <field name="member_status">ongoing</field>
+        </record>
+        
+        <record id="membership_john_pm" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_project_management"/>
+            <field name="partner_id" eval="obj(ref('demo_student_john')).partner_id.id"/>
+            <field name="member_status">joined</field>
+        </record>
+        
+        <!-- Jane Smith's enrollments -->
+        <record id="membership_jane_python" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="member_status">completed</field>
+        </record>
+        
+        <record id="membership_jane_odoo" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_odoo_development"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="member_status">ongoing</field>
+        </record>
+        
+        <record id="membership_jane_js" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_javascript_web"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="member_status">ongoing</field>
+        </record>
+        
+        <!-- Mike Johnson's enrollments -->
+        <record id="membership_mike_python" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="partner_id" eval="obj(ref('demo_student_mike')).partner_id.id"/>
+            <field name="member_status">invited</field>
+        </record>
+        
+        <record id="membership_mike_db" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_database_sql"/>
+            <field name="partner_id" eval="obj(ref('demo_student_mike')).partner_id.id"/>
+            <field name="member_status">ongoing</field>
+        </record>
+        
+        <!-- Sarah Williams's enrollments -->
+        <record id="membership_sarah_python" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_python_fundamentals"/>
+            <field name="partner_id" eval="obj(ref('demo_student_sarah')).partner_id.id"/>
+            <field name="member_status">completed</field>
+        </record>
+        
+        <record id="membership_sarah_odoo" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_odoo_development"/>
+            <field name="partner_id" eval="obj(ref('demo_student_sarah')).partner_id.id"/>
+            <field name="member_status">completed</field>
+        </record>
+        
+        <record id="membership_sarah_marketing" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_digital_marketing"/>
+            <field name="partner_id" eval="obj(ref('demo_student_sarah')).partner_id.id"/>
+            <field name="member_status">ongoing</field>
+        </record>
+        
+        <!-- David Brown's enrollments -->
+        <record id="membership_david_js" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_javascript_web"/>
+            <field name="partner_id" eval="obj(ref('demo_student_david')).partner_id.id"/>
+            <field name="member_status">ongoing</field>
+        </record>
+        
+        <record id="membership_david_db" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_database_sql"/>
+            <field name="partner_id" eval="obj(ref('demo_student_david')).partner_id.id"/>
+            <field name="member_status">joined</field>
+        </record>
+        
+        <!-- Emily Davis's enrollments -->
+        <record id="membership_emily_pm" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_project_management"/>
+            <field name="partner_id" eval="obj(ref('demo_student_emily')).partner_id.id"/>
+            <field name="member_status">ongoing</field>
+        </record>
+        
+        <record id="membership_emily_marketing" model="slide.channel.partner">
+            <field name="channel_id" ref="slide_channel_digital_marketing"/>
+            <field name="partner_id" eval="obj(ref('demo_student_emily')).partner_id.id"/>
+            <field name="member_status">completed</field>
+        </record>
+
+
+        <!-- ============================================ -->
+        <!-- 10. SLIDE PROGRESS (Individual slide completion) -->
+        <!-- ============================================ -->
+        
+        <!-- John's progress in Python course -->
+        <record id="progress_john_py_welcome" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_welcome"/>
+            <field name="partner_id" eval="obj(ref('demo_student_john')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_john_py_overview" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_overview"/>
+            <field name="partner_id" eval="obj(ref('demo_student_john')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_john_py_setup" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_setup"/>
+            <field name="partner_id" eval="obj(ref('demo_student_john')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">0</field>
+        </record>
+        
+        <record id="progress_john_py_variables" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_variables"/>
+            <field name="partner_id" eval="obj(ref('demo_student_john')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_john_py_operators" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_operators"/>
+            <field name="partner_id" eval="obj(ref('demo_student_john')).partner_id.id"/>
+            <field name="completed" eval="False"/>
+            <field name="vote">0</field>
+        </record>
+        
+        <!-- Jane's progress (completed Python) -->
+        <record id="progress_jane_py_welcome" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_welcome"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_jane_py_overview" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_overview"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_jane_py_setup" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_setup"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_jane_py_variables" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_variables"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_jane_py_quiz_basics" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_quiz_basics"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="quiz_attempts_count">1</field>
+        </record>
+        
+        <record id="progress_jane_py_if_else" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_if_else"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_jane_py_loops" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_loops"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_jane_py_quiz_control" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_quiz_control"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="quiz_attempts_count">2</field>
+        </record>
+        
+        <!-- Jane's progress in Odoo course -->
+        <record id="progress_jane_odoo_intro" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_odoo_intro"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_jane_odoo_arch" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_odoo_architecture"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_jane_odoo_models" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_odoo_models"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="completed" eval="False"/>
+            <field name="vote">0</field>
+        </record>
+        
+        <!-- Sarah's progress (completed both Python and Odoo) -->
+        <record id="progress_sarah_py_welcome" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_welcome"/>
+            <field name="partner_id" eval="obj(ref('demo_student_sarah')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_sarah_odoo_intro" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_odoo_intro"/>
+            <field name="partner_id" eval="obj(ref('demo_student_sarah')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <!-- Mike's progress in Database course -->
+        <record id="progress_mike_db_intro" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_db_intro"/>
+            <field name="partner_id" eval="obj(ref('demo_student_mike')).partner_id.id"/>
+            <field name="completed" eval="True"/>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_mike_db_sql" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_db_sql"/>
+            <field name="partner_id" eval="obj(ref('demo_student_mike')).partner_id.id"/>
+            <field name="completed" eval="False"/>
+            <field name="vote">0</field>
+        </record>
+
+
+        <!-- ============================================ -->
+        <!-- 11. RATINGS AND REVIEWS -->
+        <!-- ============================================ -->
+        
+        <record id="rating_jane_python" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="slide_channel_python_fundamentals"/>
+            <field name="partner_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+            <field name="rating">5</field>
+            <field name="feedback">Excellent course! Very well structured and easy to follow. The hands-on examples really helped me understand Python concepts.</field>
+            <field name="consumed" eval="True"/>
+        </record>
+        
+        <record id="rating_john_python" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="slide_channel_python_fundamentals"/>
+            <field name="partner_id" eval="obj(ref('demo_student_john')).partner_id.id"/>
+            <field name="rating">4</field>
+            <field name="feedback">Great content overall, but would love more practical examples and exercises.</field>
+            <field name="consumed" eval="True"/>
+        </record>
+        
+        <record id="rating_sarah_python" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="slide_channel_python_fundamentals"/>
+            <field name="partner_id" eval="obj(ref('demo_student_sarah')).partner_id.id"/>
+            <field name="rating">5</field>
+            <field name="feedback">Perfect for beginners! The instructor explains everything clearly.</field>
+            <field name="consumed" eval="True"/>
+        </record>
+        
+        <record id="rating_sarah_odoo" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="slide_channel_odoo_development"/>
+            <field name="partner_id" eval="obj(ref('demo_student_sarah')).partner_id.id"/>
+            <field name="rating">5</field>
+            <field name="feedback">Comprehensive Odoo development course. Covers everything from basics to advanced topics!</field>
+            <field name="consumed" eval="True"/>
+        </record>
+        
+        <record id="rating_emily_marketing" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="slide_channel_digital_marketing"/>
+            <field name="partner_id" eval="obj(ref('demo_student_emily')).partner_id.id"/>
+            <field name="rating">4</field>
+            <field name="feedback">Good introduction to digital marketing. Would like more case studies.</field>
+            <field name="consumed" eval="True"/>
+        </record>
+        
+        <record id="rating_mike_db" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="slide_channel_database_sql"/>
+            <field name="partner_id" eval="obj(ref('demo_student_mike')).partner_id.id"/>
+            <field name="rating">5</field>
+            <field name="feedback">Best SQL course I've taken! Clear explanations and practical examples.</field>
+            <field name="consumed" eval="True"/>
+        </record>
+
+
+        <!-- ============================================ -->
+        <!-- 12. MAIL MESSAGES (Comments/Discussions) -->
+        <!-- ============================================ -->
+        
+        <record id="comment_python_welcome_1" model="mail.message">
+            <field name="model">slide.slide</field>
+            <field name="res_id" ref="slide_python_welcome"/>
+            <field name="message_type">comment</field>
+            <field name="body"><![CDATA[<p>Great introduction! Looking forward to the rest of the course.</p>]]></field>
+            <field name="author_id" eval="obj(ref('demo_student_john')).partner_id.id"/>
+        </record>
+        
+        <record id="comment_python_welcome_2" model="mail.message">
+            <field name="model">slide.slide</field>
+            <field name="res_id" ref="slide_python_welcome"/>
+            <field name="message_type">comment</field>
+            <field name="body"><![CDATA[<p>Very clear explanation. Thanks for making this course!</p>]]></field>
+            <field name="author_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+        </record>
+        
+        <record id="comment_python_variables_1" model="mail.message">
+            <field name="model">slide.slide</field>
+            <field name="res_id" ref="slide_python_variables"/>
+            <field name="message_type">comment</field>
+            <field name="body"><![CDATA[<p>The examples really helped me understand data types. Could you add more examples about type conversion?</p>]]></field>
+            <field name="author_id" eval="obj(ref('demo_student_john')).partner_id.id"/>
+        </record>
+        
+        <record id="comment_odoo_architecture_1" model="mail.message">
+            <field name="model">slide.slide</field>
+            <field name="res_id" ref="slide_odoo_architecture"/>
+            <field name="message_type">comment</field>
+            <field name="body"><![CDATA[<p>Excellent overview of Odoo architecture! The MVC explanation was very helpful.</p>]]></field>
+            <field name="author_id" eval="obj(ref('demo_student_jane')).partner_id.id"/>
+        </record>
+        
+        <record id="comment_odoo_models_1" model="mail.message">
+            <field name="model">slide.slide</field>
+            <field name="res_id" ref="slide_odoo_models"/>
+            <field name="message_type">comment</field>
+            <field name="body"><![CDATA[<p>Can someone explain the difference between @api.depends and @api.onchange?</p>]]></field>
+            <field name="author_id" eval="obj(ref('demo_student_sarah')).partner_id.id"/>
+        </record>
+        
+        <record id="comment_js_intro_1" model="mail.message">
+            <field name="model">slide.slide</field>
+            <field name="res_id" ref="slide_js_intro"/>
+            <field name="message_type">comment</field>
+            <field name="body"><![CDATA[<p>Great start to JavaScript! The examples are easy to follow.</p>]]></field>
+            <field name="author_id" eval="obj(ref('demo_student_david')).partner_id.id"/>
+        </record>
+
+
+        <!-- ============================================ -->
+        <!-- 13. SLIDE RESOURCES (Downloadable materials) -->
+        <!-- ============================================ -->
+        
+        <record id="resource_python_cheatsheet" model="slide.slide.resource">
+            <field name="name">Python Cheat Sheet.pdf</field>
+            <field name="slide_id" ref="slide_python_variables"/>
+            <field name="slide_resource_downloadable" eval="True"/>
+        </record>
+        
+        <record id="resource_python_exercises" model="slide.slide.resource">
+            <field name="name">Practice Exercises - Variables.zip</field>
+            <field name="slide_id" ref="slide_python_variables"/>
+            <field name="slide_resource_downloadable" eval="True"/>
+        </record>
+        
+        <record id="resource_python_control_exercises" model="slide.slide.resource">
+            <field name="name">Control Flow Exercises.zip</field>
+            <field name="slide_id" ref="slide_python_if_else"/>
+            <field name="slide_resource_downloadable" eval="True"/>
+        </record>
+        
+        <record id="resource_python_loop_examples" model="slide.slide.resource">
+            <field name="name">Loop Examples and Solutions.pdf</field>
+            <field name="slide_id" ref="slide_python_loops"/>
+            <field name="slide_resource_downloadable" eval="True"/>
+        </record>
+        
+        <record id="resource_odoo_guide" model="slide.slide.resource">
+            <field name="name">Odoo Development Guide.pdf</field>
+            <field name="slide_id" ref="slide_odoo_architecture"/>
+            <field name="slide_resource_downloadable" eval="True"/>
+        </record>
+        
+        <record id="resource_odoo_examples" model="slide.slide.resource">
+            <field name="name">Odoo Model Examples.zip</field>
+            <field name="slide_id" ref="slide_odoo_models"/>
+            <field name="slide_resource_downloadable" eval="True"/>
+        </record>
+        
+        <record id="resource_odoo_security_template" model="slide.slide.resource">
+            <field name="name">Security Configuration Template.xml</field>
+            <field name="slide_id" ref="slide_odoo_security"/>
+            <field name="slide_resource_downloadable" eval="True"/>
+        </record>
+        
+        <record id="resource_js_cheatsheet" model="slide.slide.resource">
+            <field name="name">JavaScript ES6+ Cheat Sheet.pdf</field>
+            <field name="slide_id" ref="slide_js_es6"/>
+            <field name="slide_resource_downloadable" eval="True"/>
+        </record>
+        
+        <record id="resource_sql_cheatsheet" model="slide.slide.resource">
+            <field name="name">SQL Commands Reference.pdf</field>
+            <field name="slide_id" ref="slide_db_sql"/>
+            <field name="slide_resource_downloadable" eval="True"/>
+        </record>
+        
+        <record id="resource_pm_templates" model="slide.slide.resource">
+            <field name="name">Project Management Templates.zip</field>
+            <field name="slide_id" ref="slide_pm_agile"/>
+            <field name="slide_resource_downloadable" eval="True"/>
+        </record>
+        
+        <record id="resource_marketing_toolkit" model="slide.slide.resource">
+            <field name="name">Digital Marketing Toolkit.pdf</field>
+            <field name="slide_id" ref="slide_marketing_seo"/>
+            <field name="slide_resource_downloadable" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

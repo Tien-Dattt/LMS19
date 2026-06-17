@@ -1,0 +1,3309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- ============================================ -->
+        <!-- DEMO DATA E-LEARNING HOÀN CHỈNH - TIẾNG VIỆT -->
+        <!-- Odoo 19 Enterprise - website_slides module -->
+        <!-- ============================================ -->
+        
+        <!-- ============================================ -->
+        <!-- 1. NHÓM TAG KHÓA HỌC (Tag Groups) -->
+        <!-- ============================================ -->
+        
+        <record id="slide_channel_tag_group_technology" model="slide.channel.tag.group">
+            <field name="name">Công Nghệ</field>
+            <field name="sequence">10</field>
+        </record>
+        
+        <record id="slide_channel_tag_group_business" model="slide.channel.tag.group">
+            <field name="name">Kinh Doanh</field>
+            <field name="sequence">20</field>
+        </record>
+        
+        <record id="slide_channel_tag_group_design" model="slide.channel.tag.group">
+            <field name="name">Thiết Kế</field>
+            <field name="sequence">30</field>
+        </record>
+        
+        <record id="slide_channel_tag_group_marketing" model="slide.channel.tag.group">
+            <field name="name">Marketing</field>
+            <field name="sequence">40</field>
+        </record>
+        
+        <record id="slide_channel_tag_group_soft_skills" model="slide.channel.tag.group">
+            <field name="name">Kỹ Năng Mềm</field>
+            <field name="sequence">50</field>
+        </record>
+        
+        
+        <!-- ============================================ -->
+        <!-- 2. TAG KHÓA HỌC (Channel Tags) - CÓ COLOR -->
+        <!-- ============================================ -->
+        
+        <!-- Tag Công Nghệ -->
+        <record id="slide_channel_tag_programming" model="slide.channel.tag">
+            <field name="name">Lập Trình</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">1</field>
+            <field name="sequence">1</field>
+        </record>
+        
+        <record id="slide_channel_tag_python" model="slide.channel.tag">
+            <field name="name">Python</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">2</field>
+            <field name="sequence">2</field>
+        </record>
+        
+        <record id="slide_channel_tag_odoo" model="slide.channel.tag">
+            <field name="name">Odoo ERP</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">3</field>
+            <field name="sequence">3</field>
+        </record>
+        
+        <record id="slide_channel_tag_javascript" model="slide.channel.tag">
+            <field name="name">JavaScript</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">4</field>
+            <field name="sequence">4</field>
+        </record>
+        
+        <record id="slide_channel_tag_database" model="slide.channel.tag">
+            <field name="name">Cơ Sở Dữ Liệu</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">5</field>
+            <field name="sequence">5</field>
+        </record>
+        
+        <record id="slide_channel_tag_web_dev" model="slide.channel.tag">
+            <field name="name">Phát Triển Web</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">6</field>
+            <field name="sequence">6</field>
+        </record>
+        
+        <record id="slide_channel_tag_mobile_dev" model="slide.channel.tag">
+            <field name="name">Phát Triển Mobile</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">7</field>
+            <field name="sequence">7</field>
+        </record>
+        
+        <record id="slide_channel_tag_devops" model="slide.channel.tag">
+            <field name="name">DevOps</field>
+            <field name="group_id" ref="slide_channel_tag_group_technology"/>
+            <field name="color">8</field>
+            <field name="sequence">8</field>
+        </record>
+        
+        <!-- Tag Kinh Doanh -->
+        <record id="slide_channel_tag_management" model="slide.channel.tag">
+            <field name="name">Quản Lý</field>
+            <field name="group_id" ref="slide_channel_tag_group_business"/>
+            <field name="color">9</field>
+            <field name="sequence">9</field>
+        </record>
+        
+        <record id="slide_channel_tag_leadership" model="slide.channel.tag">
+            <field name="name">Lãnh Đạo</field>
+            <field name="group_id" ref="slide_channel_tag_group_business"/>
+            <field name="color">10</field>
+            <field name="sequence">10</field>
+        </record>
+        
+        <record id="slide_channel_tag_sales" model="slide.channel.tag">
+            <field name="name">Bán Hàng</field>
+            <field name="group_id" ref="slide_channel_tag_group_business"/>
+            <field name="color">11</field>
+            <field name="sequence">11</field>
+        </record>
+        
+        <record id="slide_channel_tag_finance" model="slide.channel.tag">
+            <field name="name">Tài Chính</field>
+            <field name="group_id" ref="slide_channel_tag_group_business"/>
+            <field name="color">12</field>
+            <field name="sequence">12</field>
+        </record>
+        
+        <record id="slide_channel_tag_hr" model="slide.channel.tag">
+            <field name="name">Nhân Sự</field>
+            <field name="group_id" ref="slide_channel_tag_group_business"/>
+            <field name="color">13</field>
+            <field name="sequence">13</field>
+        </record>
+        
+        <!-- Tag Thiết Kế -->
+        <record id="slide_channel_tag_ui_ux" model="slide.channel.tag">
+            <field name="name">UI/UX Design</field>
+            <field name="group_id" ref="slide_channel_tag_group_design"/>
+            <field name="color">14</field>
+            <field name="sequence">14</field>
+        </record>
+        
+        <record id="slide_channel_tag_graphic_design" model="slide.channel.tag">
+            <field name="name">Thiết Kế Đồ Họa</field>
+            <field name="group_id" ref="slide_channel_tag_group_design"/>
+            <field name="color">15</field>
+            <field name="sequence">15</field>
+        </record>
+        
+        <!-- Tag Marketing -->
+        <record id="slide_channel_tag_digital_marketing" model="slide.channel.tag">
+            <field name="name">Marketing Số</field>
+            <field name="group_id" ref="slide_channel_tag_group_marketing"/>
+            <field name="color">16</field>
+            <field name="sequence">16</field>
+        </record>
+        
+        <record id="slide_channel_tag_seo" model="slide.channel.tag">
+            <field name="name">SEO</field>
+            <field name="group_id" ref="slide_channel_tag_group_marketing"/>
+            <field name="color">17</field>
+            <field name="sequence">17</field>
+        </record>
+        
+        <record id="slide_channel_tag_content_marketing" model="slide.channel.tag">
+            <field name="name">Content Marketing</field>
+            <field name="group_id" ref="slide_channel_tag_group_marketing"/>
+            <field name="color">18</field>
+            <field name="sequence">18</field>
+        </record>
+        
+        <!-- Tag Kỹ Năng Mềm -->
+        <record id="slide_channel_tag_communication" model="slide.channel.tag">
+            <field name="name">Giao Tiếp</field>
+            <field name="group_id" ref="slide_channel_tag_group_soft_skills"/>
+            <field name="color">19</field>
+            <field name="sequence">19</field>
+        </record>
+        
+        <record id="slide_channel_tag_teamwork" model="slide.channel.tag">
+            <field name="name">Làm Việc Nhóm</field>
+            <field name="group_id" ref="slide_channel_tag_group_soft_skills"/>
+            <field name="color">20</field>
+            <field name="sequence">20</field>
+        </record>
+        
+        
+        <!-- ============================================ -->
+        <!-- 3. TAG NỘI DUNG (Content Tags) - KHÔNG CÓ COLOR -->
+        <!-- ============================================ -->
+        
+        <record id="slide_tag_beginner" model="slide.tag">
+            <field name="name">Cơ Bản</field>
+        </record>
+        
+        <record id="slide_tag_intermediate" model="slide.tag">
+            <field name="name">Trung Cấp</field>
+        </record>
+        
+        <record id="slide_tag_advanced" model="slide.tag">
+            <field name="name">Nâng Cao</field>
+        </record>
+        
+        <record id="slide_tag_hands_on" model="slide.tag">
+            <field name="name">Thực Hành</field>
+        </record>
+        
+        <record id="slide_tag_theory" model="slide.tag">
+            <field name="name">Lý Thuyết</field>
+        </record>
+        
+        <record id="slide_tag_project" model="slide.tag">
+            <field name="name">Dự Án</field>
+        </record>
+        
+        <record id="slide_tag_case_study" model="slide.tag">
+            <field name="name">Case Study</field>
+        </record>
+        
+        <record id="slide_tag_tutorial" model="slide.tag">
+            <field name="name">Hướng Dẫn</field>
+        </record>
+        
+        <record id="slide_tag_quick_tip" model="slide.tag">
+            <field name="name">Mẹo Nhanh</field>
+        </record>
+        
+        <record id="slide_tag_best_practice" model="slide.tag">
+            <field name="name">Best Practice</field>
+        </record>
+        
+        
+        <!-- ============================================ -->
+        <!-- 4. PARTNERS (Tạo TRƯỚC users) -->
+        <!-- ============================================ -->
+        
+        <!-- Partners cho Học viên -->
+        <record id="partner_student_01" model="res.partner">
+            <field name="name">Nguyễn Văn An</field>
+            <field name="email">nguyen.van.an@elearning.vn</field>
+            <field name="phone">0901234567</field>
+            <field name="city">Hà Nội</field>
+        </record>
+        
+        <record id="partner_student_02" model="res.partner">
+            <field name="name">Trần Thị Bình</field>
+            <field name="email">tran.thi.binh@elearning.vn</field>
+            <field name="phone">0901234568</field>
+            <field name="city">Hồ Chí Minh</field>
+        </record>
+        
+        <record id="partner_student_03" model="res.partner">
+            <field name="name">Lê Minh Cường</field>
+            <field name="email">le.minh.cuong@elearning.vn</field>
+            <field name="phone">0901234569</field>
+            <field name="city">Đà Nẵng</field>
+        </record>
+        
+        <record id="partner_student_04" model="res.partner">
+            <field name="name">Phạm Thu Dung</field>
+            <field name="email">pham.thu.dung@elearning.vn</field>
+            <field name="phone">0901234570</field>
+            <field name="city">Hải Phòng</field>
+        </record>
+        
+        <record id="partner_student_05" model="res.partner">
+            <field name="name">Hoàng Văn Em</field>
+            <field name="email">hoang.van.em@elearning.vn</field>
+            <field name="phone">0901234571</field>
+            <field name="city">Cần Thơ</field>
+        </record>
+        
+        <record id="partner_student_06" model="res.partner">
+            <field name="name">Vũ Thị Phương</field>
+            <field name="email">vu.thi.phuong@elearning.vn</field>
+            <field name="phone">0901234572</field>
+            <field name="city">Huế</field>
+        </record>
+        
+        <record id="partner_student_07" model="res.partner">
+            <field name="name">Đỗ Văn Giang</field>
+            <field name="email">do.van.giang@elearning.vn</field>
+            <field name="phone">0901234573</field>
+            <field name="city">Nha Trang</field>
+        </record>
+        
+        <record id="partner_student_08" model="res.partner">
+            <field name="name">Bùi Thị Hoa</field>
+            <field name="email">bui.thi.hoa@elearning.vn</field>
+            <field name="phone">0901234574</field>
+            <field name="city">Vũng Tàu</field>
+        </record>
+        
+        <record id="partner_student_09" model="res.partner">
+            <field name="name">Ngô Văn Ích</field>
+            <field name="email">ngo.van.ich@elearning.vn</field>
+            <field name="phone">0901234575</field>
+            <field name="city">Quy Nhơn</field>
+        </record>
+        
+        <record id="partner_student_10" model="res.partner">
+            <field name="name">Đinh Thị Kim</field>
+            <field name="email">dinh.thi.kim@elearning.vn</field>
+            <field name="phone">0901234576</field>
+            <field name="city">Biên Hòa</field>
+        </record>
+        
+        <record id="partner_student_11" model="res.partner">
+            <field name="name">Trương Văn Long</field>
+            <field name="email">truong.van.long@elearning.vn</field>
+            <field name="phone">0901234577</field>
+            <field name="city">Thái Nguyên</field>
+        </record>
+        
+        <record id="partner_student_12" model="res.partner">
+            <field name="name">Lý Thị Mai</field>
+            <field name="email">ly.thi.mai@elearning.vn</field>
+            <field name="phone">0901234578</field>
+            <field name="city">Nam Định</field>
+        </record>
+        
+        <!-- Partners cho Giảng viên -->
+        <record id="partner_instructor_01" model="res.partner">
+            <field name="name">Nguyễn Quang Hải</field>
+            <field name="email">nguyen.quang.hai@elearning.vn</field>
+            <field name="phone">0909876543</field>
+            <field name="city">Hà Nội</field>
+        </record>
+        
+        <record id="partner_instructor_02" model="res.partner">
+            <field name="name">Trần Thị Lan</field>
+            <field name="email">tran.thi.lan@elearning.vn</field>
+            <field name="phone">0909876544</field>
+            <field name="city">Hồ Chí Minh</field>
+        </record>
+        
+        <record id="partner_instructor_03" model="res.partner">
+            <field name="name">Phạm Minh Tuấn</field>
+            <field name="email">pham.minh.tuan@elearning.vn</field>
+            <field name="phone">0909876545</field>
+            <field name="city">Đà Nẵng</field>
+        </record>
+        
+        <record id="partner_instructor_04" model="res.partner">
+            <field name="name">Lê Thu Hương</field>
+            <field name="email">le.thu.huong@elearning.vn</field>
+            <field name="phone">0909876546</field>
+            <field name="city">Hà Nội</field>
+        </record>
+        
+        
+        <!-- ============================================ -->
+        <!-- 5. USERS (Dùng partner_id và group_ids) -->
+        <!-- ============================================ -->
+        
+        <!-- Người dùng Portal (Học viên) -->
+        <record id="user_student_01" model="res.users">
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="login">nguyen.van.an@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="user_student_02" model="res.users">
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="login">tran.thi.binh@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="user_student_03" model="res.users">
+            <field name="partner_id" ref="partner_student_03"/>
+            <field name="login">le.minh.cuong@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="user_student_04" model="res.users">
+            <field name="partner_id" ref="partner_student_04"/>
+            <field name="login">pham.thu.dung@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="user_student_05" model="res.users">
+            <field name="partner_id" ref="partner_student_05"/>
+            <field name="login">hoang.van.em@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="user_student_06" model="res.users">
+            <field name="partner_id" ref="partner_student_06"/>
+            <field name="login">vu.thi.phuong@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="user_student_07" model="res.users">
+            <field name="partner_id" ref="partner_student_07"/>
+            <field name="login">do.van.giang@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="user_student_08" model="res.users">
+            <field name="partner_id" ref="partner_student_08"/>
+            <field name="login">bui.thi.hoa@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="user_student_09" model="res.users">
+            <field name="partner_id" ref="partner_student_09"/>
+            <field name="login">ngo.van.ich@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="user_student_10" model="res.users">
+            <field name="partner_id" ref="partner_student_10"/>
+            <field name="login">dinh.thi.kim@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="user_student_11" model="res.users">
+            <field name="partner_id" ref="partner_student_11"/>
+            <field name="login">truong.van.long@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <record id="user_student_12" model="res.users">
+            <field name="partner_id" ref="partner_student_12"/>
+            <field name="login">ly.thi.mai@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_portal')])]"/>
+        </record>
+        
+        <!-- Người dùng Internal (Giảng viên) -->
+        <record id="user_instructor_01" model="res.users">
+            <field name="partner_id" ref="partner_instructor_01"/>
+            <field name="login">nguyen.quang.hai@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('website_slides.group_website_slides_officer')])]"/>
+        </record>
+        
+        <record id="user_instructor_02" model="res.users">
+            <field name="partner_id" ref="partner_instructor_02"/>
+            <field name="login">tran.thi.lan@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('website_slides.group_website_slides_officer')])]"/>
+        </record>
+        
+        <record id="user_instructor_03" model="res.users">
+            <field name="partner_id" ref="partner_instructor_03"/>
+            <field name="login">pham.minh.tuan@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('website_slides.group_website_slides_officer')])]"/>
+        </record>
+        
+        <record id="user_instructor_04" model="res.users">
+            <field name="partner_id" ref="partner_instructor_04"/>
+            <field name="login">le.thu.huong@elearning.vn</field>
+            <field name="group_ids" eval="[(6, 0, [ref('base.group_user'), ref('website_slides.group_website_slides_officer')])]"/>
+        </record>
+        
+
+        <!-- ============================================ -->
+        <!-- 6. KHÓA HỌC (Courses) -->
+        <!-- ============================================ -->
+        
+        <!-- Khóa học 1: Lập Trình Python Từ Cơ Bản Đến Nâng Cao -->
+        <record id="course_python_complete" model="slide.channel">
+            <field name="name">Lập Trình Python Từ Cơ Bản Đến Nâng Cao</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="user_instructor_01"/>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published">True</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_programming'), ref('slide_channel_tag_python')])]"/>
+            <field name="description_short">Khóa học Python toàn diện từ cơ bản đến nâng cao, phù hợp cho người mới bắt đầu</field>
+            <field name="description"><![CDATA[
+                <h3>Giới thiệu khóa học</h3>
+                <p>Khóa học Python toàn diện giúp bạn nắm vững ngôn ngữ lập trình phổ biến nhất hiện nay.</p>
+                <h4>Bạn sẽ học được gì?</h4>
+                <ul>
+                    <li>Cú pháp cơ bản của Python</li>
+                    <li>Lập trình hướng đối tượng (OOP)</li>
+                    <li>Xử lý file và dữ liệu</li>
+                    <li>Làm việc với database</li>
+                    <li>Xây dựng ứng dụng web với Flask/Django</li>
+                    <li>Data Science cơ bản</li>
+                </ul>
+                <h4>Yêu cầu</h4>
+                <p>Không cần kiến thức lập trình trước đó</p>
+            ]]></field>
+            <field name="karma_gen_channel_finish">50</field>
+            <field name="karma_gen_channel_rank">10</field>
+        </record>
+        
+        <!-- Khóa học 2: Phát Triển Odoo ERP -->
+        <record id="course_odoo_development" model="slide.channel">
+            <field name="name">Phát Triển Module Odoo ERP</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="user_instructor_01"/>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published">True</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_odoo'), ref('slide_channel_tag_python'), ref('slide_channel_tag_database')])]"/>
+            <field name="description_short">Học cách phát triển module tùy chỉnh cho Odoo ERP</field>
+            <field name="description"><![CDATA[
+                <h3>Khóa học Odoo Development</h3>
+                <p>Trở thành chuyên gia phát triển Odoo với khóa học thực chiến này.</p>
+                <h4>Nội dung khóa học</h4>
+                <ul>
+                    <li>Kiến trúc Odoo Framework</li>
+                    <li>Tạo module từ đầu</li>
+                    <li>Models, Views, Controllers</li>
+                    <li>ORM và Database</li>
+                    <li>Security và Access Rights</li>
+                    <li>Workflows và Automation</li>
+                    <li>Reports và Dashboard</li>
+                </ul>
+            ]]></field>
+            <field name="karma_gen_channel_finish">80</field>
+            <field name="prerequisite_channel_ids" eval="[(6, 0, [ref('course_python_complete')])]"/>
+        </record>
+        
+        <!-- Khóa học 3: JavaScript và Web Development -->
+        <record id="course_javascript_web" model="slide.channel">
+            <field name="name">JavaScript và Phát Triển Web Hiện Đại</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="user_instructor_02"/>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published">True</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_javascript'), ref('slide_channel_tag_web_dev')])]"/>
+            <field name="description_short">Làm chủ JavaScript và các framework hiện đại như React, Vue</field>
+            <field name="description"><![CDATA[
+                <h3>JavaScript Modern</h3>
+                <p>Khóa học JavaScript toàn diện từ ES6+ đến các framework phổ biến.</p>
+                <ul>
+                    <li>JavaScript ES6+ Fundamentals</li>
+                    <li>DOM Manipulation</li>
+                    <li>Async Programming</li>
+                    <li>React.js Framework</li>
+                    <li>Vue.js Framework</li>
+                    <li>Node.js Backend</li>
+                </ul>
+            ]]></field>
+            <field name="karma_gen_channel_finish">60</field>
+        </record>
+        
+        <!-- Khóa học 4: Quản Lý Dự Án Agile -->
+        <record id="course_agile_management" model="slide.channel">
+            <field name="name">Quản Lý Dự Án Agile và Scrum</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="user_instructor_03"/>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published">True</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_management'), ref('slide_channel_tag_leadership')])]"/>
+            <field name="description_short">Phương pháp Agile và Scrum trong quản lý dự án phần mềm</field>
+            <field name="description"><![CDATA[
+                <h3>Agile Project Management</h3>
+                <p>Nắm vững phương pháp Agile để quản lý dự án hiệu quả.</p>
+                <ul>
+                    <li>Agile Manifesto và Principles</li>
+                    <li>Scrum Framework</li>
+                    <li>Sprint Planning và Execution</li>
+                    <li>Daily Standup và Retrospective</li>
+                    <li>Kanban Method</li>
+                    <li>Tools: Jira, Trello</li>
+                </ul>
+            ]]></field>
+            <field name="karma_gen_channel_finish">40</field>
+        </record>
+        
+        <!-- Khóa học 5: UI/UX Design -->
+        <record id="course_ui_ux_design" model="slide.channel">
+            <field name="name">Thiết Kế UI/UX Chuyên Nghiệp</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="user_instructor_04"/>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published">True</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_ui_ux'), ref('slide_channel_tag_graphic_design')])]"/>
+            <field name="description_short">Học thiết kế giao diện người dùng và trải nghiệm người dùng</field>
+            <field name="description"><![CDATA[
+                <h3>UI/UX Design Course</h3>
+                <p>Trở thành UI/UX Designer chuyên nghiệp.</p>
+                <ul>
+                    <li>Design Thinking Process</li>
+                    <li>User Research và Personas</li>
+                    <li>Wireframing và Prototyping</li>
+                    <li>Visual Design Principles</li>
+                    <li>Figma và Adobe XD</li>
+                    <li>Usability Testing</li>
+                </ul>
+            ]]></field>
+            <field name="karma_gen_channel_finish">45</field>
+        </record>
+        
+        <!-- Khóa học 6: Digital Marketing -->
+        <record id="course_digital_marketing" model="slide.channel">
+            <field name="name">Digital Marketing Toàn Diện</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="user_instructor_02"/>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published">True</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_digital_marketing'), ref('slide_channel_tag_seo'), ref('slide_channel_tag_content_marketing')])]"/>
+            <field name="description_short">Chiến lược Marketing số từ A-Z</field>
+            <field name="description"><![CDATA[
+                <h3>Digital Marketing Mastery</h3>
+                <p>Nắm vững các kênh marketing số hiện đại.</p>
+                <ul>
+                    <li>SEO và SEM</li>
+                    <li>Social Media Marketing</li>
+                    <li>Content Marketing</li>
+                    <li>Email Marketing</li>
+                    <li>Google Analytics</li>
+                    <li>Facebook Ads và Google Ads</li>
+                </ul>
+            ]]></field>
+            <field name="karma_gen_channel_finish">50</field>
+        </record>
+        
+        <!-- Khóa học 7: Database và SQL -->
+        <record id="course_database_sql" model="slide.channel">
+            <field name="name">Cơ Sở Dữ Liệu và SQL</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="user_instructor_01"/>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published">True</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_database'), ref('slide_channel_tag_programming')])]"/>
+            <field name="description_short">Làm chủ SQL và quản trị cơ sở dữ liệu</field>
+            <field name="description"><![CDATA[
+                <h3>Database và SQL</h3>
+                <p>Khóa học về cơ sở dữ liệu quan hệ và SQL.</p>
+                <ul>
+                    <li>Database Design Fundamentals</li>
+                    <li>SQL Queries (SELECT, JOIN, GROUP BY)</li>
+                    <li>Database Normalization</li>
+                    <li>Indexes và Performance</li>
+                    <li>PostgreSQL và MySQL</li>
+                    <li>Stored Procedures và Triggers</li>
+                </ul>
+            ]]></field>
+            <field name="karma_gen_channel_finish">45</field>
+        </record>
+        
+        <!-- Khóa học 8: DevOps và CI/CD -->
+        <record id="course_devops_cicd" model="slide.channel">
+            <field name="name">DevOps và CI/CD Pipeline</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="user_instructor_03"/>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published">True</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_devops'), ref('slide_channel_tag_programming')])]"/>
+            <field name="description_short">Tự động hóa deployment với DevOps</field>
+            <field name="description"><![CDATA[
+                <h3>DevOps Engineering</h3>
+                <p>Học cách triển khai và vận hành hệ thống tự động.</p>
+                <ul>
+                    <li>Docker và Containerization</li>
+                    <li>Kubernetes Orchestration</li>
+                    <li>CI/CD với Jenkins/GitLab CI</li>
+                    <li>Infrastructure as Code (Terraform)</li>
+                    <li>Monitoring và Logging</li>
+                    <li>Cloud Platforms (AWS, Azure)</li>
+                </ul>
+            ]]></field>
+            <field name="karma_gen_channel_finish">70</field>
+        </record>
+        
+        <!-- Khóa học 9: Kỹ Năng Giao Tiếp -->
+        <record id="course_communication_skills" model="slide.channel">
+            <field name="name">Kỹ Năng Giao Tiếp Hiệu Quả</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="user_instructor_04"/>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published">True</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_communication'), ref('slide_channel_tag_teamwork')])]"/>
+            <field name="description_short">Nâng cao kỹ năng giao tiếp trong công việc</field>
+            <field name="description"><![CDATA[
+                <h3>Communication Skills</h3>
+                <p>Phát triển kỹ năng giao tiếp chuyên nghiệp.</p>
+                <ul>
+                    <li>Giao tiếp hiệu quả trong team</li>
+                    <li>Presentation Skills</li>
+                    <li>Negotiation và Persuasion</li>
+                    <li>Conflict Resolution</li>
+                    <li>Email và Business Writing</li>
+                    <li>Active Listening</li>
+                </ul>
+            ]]></field>
+            <field name="karma_gen_channel_finish">30</field>
+        </record>
+        
+        <!-- Khóa học 10: Bán Hàng Chuyên Nghiệp -->
+        <record id="course_professional_sales" model="slide.channel">
+            <field name="name">Kỹ Năng Bán Hàng Chuyên Nghiệp</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="user_instructor_02"/>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published">True</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_sales'), ref('slide_channel_tag_communication')])]"/>
+            <field name="description_short">Phương pháp bán hàng hiệu quả và chốt deal thành công</field>
+            <field name="description"><![CDATA[
+                <h3>Professional Sales</h3>
+                <p>Trở thành Sales chuyên nghiệp với tỷ lệ chốt deal cao.</p>
+                <ul>
+                    <li>Sales Funnel và Customer Journey</li>
+                    <li>Prospecting và Lead Generation</li>
+                    <li>Consultative Selling</li>
+                    <li>Handling Objections</li>
+                    <li>Closing Techniques</li>
+                    <li>CRM và Sales Tools</li>
+                </ul>
+            ]]></field>
+            <field name="karma_gen_channel_finish">40</field>
+        </record>
+        
+        <!-- Khóa học 11: Mobile App Development -->
+        <record id="course_mobile_development" model="slide.channel">
+            <field name="name">Phát Triển Ứng Dụng Mobile</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="user_instructor_03"/>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published">True</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_mobile_dev'), ref('slide_channel_tag_programming')])]"/>
+            <field name="description_short">Xây dựng ứng dụng mobile với React Native và Flutter</field>
+            <field name="description"><![CDATA[
+                <h3>Mobile App Development</h3>
+                <p>Phát triển ứng dụng mobile đa nền tảng.</p>
+                <ul>
+                    <li>React Native Fundamentals</li>
+                    <li>Flutter và Dart</li>
+                    <li>Mobile UI/UX Patterns</li>
+                    <li>API Integration</li>
+                    <li>Push Notifications</li>
+                    <li>App Store Deployment</li>
+                </ul>
+            ]]></field>
+            <field name="karma_gen_channel_finish">65</field>
+        </record>
+        
+        <!-- Khóa học 12: Quản Lý Tài Chính Doanh Nghiệp -->
+        <record id="course_financial_management" model="slide.channel">
+            <field name="name">Quản Lý Tài Chính Doanh Nghiệp</field>
+            <field name="channel_type">training</field>
+            <field name="user_id" ref="user_instructor_04"/>
+            <field name="visibility">public</field>
+            <field name="enroll">public</field>
+            <field name="is_published">True</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_channel_tag_finance'), ref('slide_channel_tag_management')])]"/>
+            <field name="description_short">Kiến thức tài chính cơ bản cho quản lý doanh nghiệp</field>
+            <field name="description"><![CDATA[
+                <h3>Financial Management</h3>
+                <p>Nắm vững quản lý tài chính doanh nghiệp.</p>
+                <ul>
+                    <li>Báo cáo tài chính</li>
+                    <li>Phân tích tài chính</li>
+                    <li>Budgeting và Forecasting</li>
+                    <li>Cash Flow Management</li>
+                    <li>Investment Analysis</li>
+                    <li>Financial Planning</li>
+                </ul>
+            ]]></field>
+            <field name="karma_gen_channel_finish">50</field>
+        </record>
+        
+
+        <!-- ============================================ -->
+        <!-- 7. NỘI DUNG HỌC - KHÓA PYTHON (Course Content) -->
+        <!-- ============================================ -->
+        
+        <!-- Module 1: Python Basics -->
+        <record id="slide_python_module1" model="slide.slide">
+            <field name="name">Module 1: Giới Thiệu Python</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="is_category">True</field>
+            <field name="sequence">10</field>
+            <field name="is_published">True</field>
+        </record>
+        
+        <record id="slide_python_intro" model="slide.slide">
+            <field name="name">Bài 1.1: Python Là Gì?</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="category_id" ref="slide_python_module1"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">11</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">10</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Python là gì?</h3>
+                <p>Python là ngôn ngữ lập trình bậc cao, dễ học, dễ đọc và có cú pháp rõ ràng.</p>
+                <h4>Đặc điểm nổi bật:</h4>
+                <ul>
+                    <li>Cú pháp đơn giản, dễ hiểu</li>
+                    <li>Thư viện phong phú</li>
+                    <li>Đa năng: Web, Data Science, AI, Automation</li>
+                    <li>Cộng đồng lớn mạnh</li>
+                </ul>
+                <h4>Ứng dụng của Python:</h4>
+                <ul>
+                    <li>Phát triển web (Django, Flask)</li>
+                    <li>Data Science và Machine Learning</li>
+                    <li>Automation và Scripting</li>
+                    <li>Game Development</li>
+                </ul>
+            ]]></field>
+        </record>
+        
+        <record id="slide_python_install" model="slide.slide">
+            <field name="name">Bài 1.2: Cài Đặt Python và IDE</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="category_id" ref="slide_python_module1"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">12</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">15</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_tutorial')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Cài đặt môi trường Python</h3>
+                <h4>Bước 1: Download Python</h4>
+                <p>Truy cập python.org và tải phiên bản mới nhất</p>
+                <h4>Bước 2: Cài đặt IDE</h4>
+                <p>Các IDE phổ biến:</p>
+                <ul>
+                    <li>PyCharm (Professional)</li>
+                    <li>VS Code (Free, recommended)</li>
+                    <li>Jupyter Notebook (Data Science)</li>
+                </ul>
+                <h4>Bước 3: Kiểm tra cài đặt</h4>
+                <pre><code>python --version
+pip --version</code></pre>
+            ]]></field>
+        </record>
+        
+        <record id="slide_python_hello_world" model="slide.slide">
+            <field name="name">Bài 1.3: Chương Trình Đầu Tiên</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="category_id" ref="slide_python_module1"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">13</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">10</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_hands_on')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Hello World trong Python</h3>
+                <pre><code>print("Hello, World!")
+print("Xin chào Python!")</code></pre>
+                <h4>Giải thích:</h4>
+                <p>Hàm <code>print()</code> dùng để in ra màn hình.</p>
+                <h4>Bài tập:</h4>
+                <p>Hãy in ra tên và tuổi của bạn:</p>
+                <pre><code>name = "Nguyễn Văn An"
+age = 25
+print(f"Tên tôi là {name}, {age} tuổi")</code></pre>
+            ]]></field>
+        </record>
+        
+        <!-- Module 2: Variables and Data Types -->
+        <record id="slide_python_module2" model="slide.slide">
+            <field name="name">Module 2: Biến và Kiểu Dữ Liệu</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="is_category">True</field>
+            <field name="sequence">20</field>
+            <field name="is_published">True</field>
+        </record>
+        
+        <record id="slide_python_variables" model="slide.slide">
+            <field name="name">Bài 2.1: Biến trong Python</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="category_id" ref="slide_python_module2"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">21</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">15</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Biến trong Python</h3>
+                <p>Biến là nơi lưu trữ dữ liệu trong bộ nhớ.</p>
+                <h4>Quy tắc đặt tên biến:</h4>
+                <ul>
+                    <li>Bắt đầu bằng chữ cái hoặc _</li>
+                    <li>Không chứa khoảng trắng</li>
+                    <li>Phân biệt hoa thường</li>
+                    <li>Không dùng từ khóa của Python</li>
+                </ul>
+                <h4>Ví dụ:</h4>
+                <pre><code>name = "An"
+age = 25
+is_student = True
+height = 1.75</code></pre>
+            ]]></field>
+        </record>
+        
+        <record id="slide_python_data_types" model="slide.slide">
+            <field name="name">Bài 2.2: Các Kiểu Dữ Liệu Cơ Bản</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="category_id" ref="slide_python_module2"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">22</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">20</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Kiểu dữ liệu trong Python</h3>
+                <table border="1">
+                    <tr><th>Kiểu</th><th>Mô tả</th><th>Ví dụ</th></tr>
+                    <tr><td>int</td><td>Số nguyên</td><td>10, -5, 0</td></tr>
+                    <tr><td>float</td><td>Số thực</td><td>3.14, -0.5</td></tr>
+                    <tr><td>str</td><td>Chuỗi</td><td>"Hello", 'Python'</td></tr>
+                    <tr><td>bool</td><td>Logic</td><td>True, False</td></tr>
+                    <tr><td>list</td><td>Danh sách</td><td>[1, 2, 3]</td></tr>
+                    <tr><td>dict</td><td>Từ điển</td><td>{"key": "value"}</td></tr>
+                </table>
+                <h4>Kiểm tra kiểu dữ liệu:</h4>
+                <pre><code>x = 10
+print(type(x))  # &lt;class 'int'&gt;</code></pre>
+            ]]></field>
+        </record>
+        
+        <record id="slide_python_quiz1" model="slide.slide">
+            <field name="name">Quiz 2.3: Kiểm Tra Kiến Thức Cơ Bản</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="category_id" ref="slide_python_module2"/>
+            <field name="slide_category">quiz</field>
+            <field name="sequence">23</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">10</field>
+        </record>
+        
+        <!-- Quiz Questions for Python Quiz 1 -->
+        <record id="question_python_q1" model="slide.question">
+            <field name="question">Python là ngôn ngữ lập trình gì?</field>
+            <field name="slide_id" ref="slide_python_quiz1"/>
+            <field name="sequence">1</field>
+        </record>
+        
+        <record id="answer_python_q1_a1" model="slide.answer">
+            <field name="text_value">Ngôn ngữ bậc thấp</field>
+            <field name="question_id" ref="question_python_q1"/>
+            <field name="is_correct">False</field>
+            <field name="sequence">1</field>
+        </record>
+        
+        <record id="answer_python_q1_a2" model="slide.answer">
+            <field name="text_value">Ngôn ngữ bậc cao</field>
+            <field name="question_id" ref="question_python_q1"/>
+            <field name="is_correct">True</field>
+            <field name="comment">Đúng! Python là ngôn ngữ bậc cao, dễ đọc và dễ học.</field>
+            <field name="sequence">2</field>
+        </record>
+        
+        <record id="answer_python_q1_a3" model="slide.answer">
+            <field name="text_value">Ngôn ngữ máy</field>
+            <field name="question_id" ref="question_python_q1"/>
+            <field name="is_correct">False</field>
+            <field name="sequence">3</field>
+        </record>
+        
+        <record id="question_python_q2" model="slide.question">
+            <field name="question">Kiểu dữ liệu nào dùng để lưu số thực?</field>
+            <field name="slide_id" ref="slide_python_quiz1"/>
+            <field name="sequence">2</field>
+        </record>
+        
+        <record id="answer_python_q2_a1" model="slide.answer">
+            <field name="text_value">int</field>
+            <field name="question_id" ref="question_python_q2"/>
+            <field name="is_correct">False</field>
+            <field name="comment">int dùng cho số nguyên</field>
+            <field name="sequence">1</field>
+        </record>
+        
+        <record id="answer_python_q2_a2" model="slide.answer">
+            <field name="text_value">float</field>
+            <field name="question_id" ref="question_python_q2"/>
+            <field name="is_correct">True</field>
+            <field name="comment">Chính xác! float dùng cho số thực như 3.14</field>
+            <field name="sequence">2</field>
+        </record>
+        
+        <record id="answer_python_q2_a3" model="slide.answer">
+            <field name="text_value">str</field>
+            <field name="question_id" ref="question_python_q2"/>
+            <field name="is_correct">False</field>
+            <field name="comment">str dùng cho chuỗi ký tự</field>
+            <field name="sequence">3</field>
+        </record>
+        
+        <record id="question_python_q3" model="slide.question">
+            <field name="question">Hàm nào dùng để in ra màn hình?</field>
+            <field name="slide_id" ref="slide_python_quiz1"/>
+            <field name="sequence">3</field>
+        </record>
+        
+        <record id="answer_python_q3_a1" model="slide.answer">
+            <field name="text_value">echo()</field>
+            <field name="question_id" ref="question_python_q3"/>
+            <field name="is_correct">False</field>
+            <field name="sequence">1</field>
+        </record>
+        
+        <record id="answer_python_q3_a2" model="slide.answer">
+            <field name="text_value">print()</field>
+            <field name="question_id" ref="question_python_q3"/>
+            <field name="is_correct">True</field>
+            <field name="comment">Đúng rồi! print() là hàm in chuẩn trong Python</field>
+            <field name="sequence">2</field>
+        </record>
+        
+        <record id="answer_python_q3_a3" model="slide.answer">
+            <field name="text_value">console.log()</field>
+            <field name="question_id" ref="question_python_q3"/>
+            <field name="is_correct">False</field>
+            <field name="comment">Đó là JavaScript, không phải Python</field>
+            <field name="sequence">3</field>
+        </record>
+        
+        <!-- Module 3: Control Flow -->
+        <record id="slide_python_module3" model="slide.slide">
+            <field name="name">Module 3: Cấu Trúc Điều Khiển</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="is_category">True</field>
+            <field name="sequence">30</field>
+            <field name="is_published">True</field>
+        </record>
+        
+        <record id="slide_python_if_else" model="slide.slide">
+            <field name="name">Bài 3.1: Câu Lệnh If-Else</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="category_id" ref="slide_python_module3"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">31</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">20</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_hands_on')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Câu lệnh điều kiện If-Else</h3>
+                <h4>Cú pháp:</h4>
+                <pre><code>if condition:
+    # code block
+elif another_condition:
+    # code block
+else:
+    # code block</code></pre>
+                <h4>Ví dụ:</h4>
+                <pre><code>age = 18
+if age >= 18:
+    print("Bạn đã trưởng thành")
+else:
+    print("Bạn chưa trưởng thành")</code></pre>
+                <h4>Bài tập:</h4>
+                <p>Viết chương trình kiểm tra điểm số và in ra xếp loại (Giỏi, Khá, Trung bình, Yếu)</p>
+            ]]></field>
+        </record>
+        
+        <record id="slide_python_loops" model="slide.slide">
+            <field name="name">Bài 3.2: Vòng Lặp For và While</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="category_id" ref="slide_python_module3"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">32</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">25</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate'), ref('slide_tag_hands_on')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Vòng lặp trong Python</h3>
+                <h4>Vòng lặp For:</h4>
+                <pre><code>for i in range(5):
+    print(i)  # In từ 0 đến 4
+
+fruits = ["táo", "chuối", "cam"]
+for fruit in fruits:
+    print(fruit)</code></pre>
+                <h4>Vòng lặp While:</h4>
+                <pre><code>count = 0
+while count < 5:
+    print(count)
+    count += 1</code></pre>
+                <h4>Break và Continue:</h4>
+                <pre><code>for i in range(10):
+    if i == 5:
+        break  # Dừng vòng lặp
+    if i % 2 == 0:
+        continue  # Bỏ qua lần lặp này
+    print(i)</code></pre>
+            ]]></field>
+        </record>
+        
+        <!-- Module 4: Functions -->
+        <record id="slide_python_module4" model="slide.slide">
+            <field name="name">Module 4: Hàm (Functions)</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="is_category">True</field>
+            <field name="sequence">40</field>
+            <field name="is_published">True</field>
+        </record>
+        
+        <record id="slide_python_functions" model="slide.slide">
+            <field name="name">Bài 4.1: Định Nghĩa và Gọi Hàm</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="category_id" ref="slide_python_module4"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">41</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">25</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Hàm trong Python</h3>
+                <h4>Định nghĩa hàm:</h4>
+                <pre><code>def greet(name):
+    return f"Xin chào, {name}!"
+
+# Gọi hàm
+message = greet("An")
+print(message)</code></pre>
+                <h4>Tham số mặc định:</h4>
+                <pre><code>def power(base, exponent=2):
+    return base ** exponent
+
+print(power(3))      # 9
+print(power(3, 3))   # 27</code></pre>
+                <h4>Args và Kwargs:</h4>
+                <pre><code>def sum_all(*args):
+    return sum(args)
+
+print(sum_all(1, 2, 3, 4))  # 10</code></pre>
+            ]]></field>
+        </record>
+        
+        <record id="slide_python_lambda" model="slide.slide">
+            <field name="name">Bài 4.2: Lambda Functions</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="category_id" ref="slide_python_module4"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">42</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">15</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Lambda Functions</h3>
+                <p>Lambda là hàm ẩn danh, viết trên một dòng.</p>
+                <h4>Cú pháp:</h4>
+                <pre><code>lambda arguments: expression</code></pre>
+                <h4>Ví dụ:</h4>
+                <pre><code># Hàm thông thường
+def square(x):
+    return x ** 2
+
+# Lambda tương đương
+square = lambda x: x ** 2
+
+print(square(5))  # 25</code></pre>
+                <h4>Sử dụng với map, filter:</h4>
+                <pre><code>numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+print(squared)  # [1, 4, 9, 16, 25]
+
+evens = list(filter(lambda x: x%2==0, numbers))
+print(evens)  # [2, 4]</code></pre>
+            ]]></field>
+        </record>
+        
+
+        <!-- ============================================ -->
+        <!-- 8. NỘI DUNG HỌC - KHÓA ODOO -->
+        <!-- ============================================ -->
+        
+        <record id="slide_odoo_module1" model="slide.slide">
+            <field name="name">Module 1: Giới Thiệu Odoo</field>
+            <field name="channel_id" ref="course_odoo_development"/>
+            <field name="is_category">True</field>
+            <field name="sequence">10</field>
+            <field name="is_published">True</field>
+        </record>
+        
+        <record id="slide_odoo_intro" model="slide.slide">
+            <field name="name">Bài 1.1: Odoo ERP Là Gì?</field>
+            <field name="channel_id" ref="course_odoo_development"/>
+            <field name="category_id" ref="slide_odoo_module1"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">11</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">15</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Odoo ERP</h3>
+                <p>Odoo là hệ thống ERP mã nguồn mở, tích hợp đầy đủ các module quản lý doanh nghiệp.</p>
+                <h4>Các module chính:</h4>
+                <ul>
+                    <li>CRM - Quản lý khách hàng</li>
+                    <li>Sales - Bán hàng</li>
+                    <li>Accounting - Kế toán</li>
+                    <li>Inventory - Kho vận</li>
+                    <li>HR - Nhân sự</li>
+                    <li>Manufacturing - Sản xuất</li>
+                </ul>
+                <h4>Kiến trúc Odoo:</h4>
+                <ul>
+                    <li>Backend: Python (ORM, Business Logic)</li>
+                    <li>Frontend: JavaScript (OWL Framework)</li>
+                    <li>Database: PostgreSQL</li>
+                    <li>Views: XML, QWeb Templates</li>
+                </ul>
+            ]]></field>
+        </record>
+        
+        <record id="slide_odoo_architecture" model="slide.slide">
+            <field name="name">Bài 1.2: Kiến Trúc Odoo Framework</field>
+            <field name="channel_id" ref="course_odoo_development"/>
+            <field name="category_id" ref="slide_odoo_module1"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">12</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">20</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Kiến trúc Odoo</h3>
+                <h4>MVC Pattern:</h4>
+                <ul>
+                    <li><strong>Model:</strong> Python classes (models/)</li>
+                    <li><strong>View:</strong> XML files (views/)</li>
+                    <li><strong>Controller:</strong> Python controllers (controllers/)</li>
+                </ul>
+                <h4>Cấu trúc module:</h4>
+                <pre><code>my_module/
+├── __init__.py
+├── __manifest__.py
+├── models/
+│   ├── __init__.py
+│   └── my_model.py
+├── views/
+│   └── my_views.xml
+├── security/
+│   ├── ir.model.access.csv
+│   └── security.xml
+└── data/
+    └── demo_data.xml</code></pre>
+            ]]></field>
+        </record>
+        
+        <record id="slide_odoo_module2" model="slide.slide">
+            <field name="name">Module 2: Tạo Module Đầu Tiên</field>
+            <field name="channel_id" ref="course_odoo_development"/>
+            <field name="is_category">True</field>
+            <field name="sequence">20</field>
+            <field name="is_published">True</field>
+        </record>
+        
+        <record id="slide_odoo_create_module" model="slide.slide">
+            <field name="name">Bài 2.1: Tạo Module Cơ Bản</field>
+            <field name="channel_id" ref="course_odoo_development"/>
+            <field name="category_id" ref="slide_odoo_module2"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">21</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">30</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_hands_on'), ref('slide_tag_tutorial')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Tạo module Odoo</h3>
+                <h4>File __manifest__.py:</h4>
+                <pre><code>{
+    'name': 'My Module',
+    'version': '19.0.1.0.0',
+    'depends': ['base'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/my_views.xml',
+    ],
+    'installable': True,
+    'application': True,
+}</code></pre>
+                <h4>File models/my_model.py:</h4>
+                <pre><code>from odoo import models, fields
+
+class MyModel(models.Model):
+    _name = 'my.model'
+    _description = 'My Model'
+    
+    name = fields.Char(string='Name', required=True)
+    description = fields.Text(string='Description')</code></pre>
+            ]]></field>
+        </record>
+        
+        <record id="slide_odoo_orm" model="slide.slide">
+            <field name="name">Bài 2.2: Odoo ORM</field>
+            <field name="channel_id" ref="course_odoo_development"/>
+            <field name="category_id" ref="slide_odoo_module2"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">22</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">35</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Odoo ORM</h3>
+                <h4>CRUD Operations:</h4>
+                <pre><code># Create
+record = self.env['my.model'].create({
+    'name': 'Test',
+    'description': 'Description'
+})
+
+# Read
+records = self.env['my.model'].search([('name', '=', 'Test')])
+
+# Update
+record.write({'description': 'New Description'})
+
+# Delete
+record.unlink()</code></pre>
+                <h4>Domain Filters:</h4>
+                <pre><code># AND condition
+[('name', '=', 'Test'), ('active', '=', True)]
+
+# OR condition
+['|', ('name', '=', 'A'), ('name', '=', 'B')]</code></pre>
+            ]]></field>
+        </record>
+        
+        <record id="slide_odoo_quiz1" model="slide.slide">
+            <field name="name">Quiz 2.3: Kiểm Tra Kiến Thức Odoo</field>
+            <field name="channel_id" ref="course_odoo_development"/>
+            <field name="category_id" ref="slide_odoo_module2"/>
+            <field name="slide_category">quiz</field>
+            <field name="sequence">23</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">10</field>
+        </record>
+        
+        <record id="question_odoo_q1" model="slide.question">
+            <field name="question">File nào chứa metadata của module Odoo?</field>
+            <field name="slide_id" ref="slide_odoo_quiz1"/>
+            <field name="sequence">1</field>
+        </record>
+        
+        <record id="answer_odoo_q1_a1" model="slide.answer">
+            <field name="text_value">__init__.py</field>
+            <field name="question_id" ref="question_odoo_q1"/>
+            <field name="is_correct">False</field>
+            <field name="sequence">1</field>
+        </record>
+        
+        <record id="answer_odoo_q1_a2" model="slide.answer">
+            <field name="text_value">__manifest__.py</field>
+            <field name="question_id" ref="question_odoo_q1"/>
+            <field name="is_correct">True</field>
+            <field name="comment">Đúng! __manifest__.py chứa metadata của module</field>
+            <field name="sequence">2</field>
+        </record>
+        
+        <record id="answer_odoo_q1_a3" model="slide.answer">
+            <field name="text_value">__openerp__.py</field>
+            <field name="question_id" ref="question_odoo_q1"/>
+            <field name="is_correct">False</field>
+            <field name="comment">Đó là tên cũ, Odoo 19 dùng __manifest__.py</field>
+            <field name="sequence">3</field>
+        </record>
+        
+        
+        <!-- ============================================ -->
+        <!-- 9. NỘI DUNG HỌC - KHÓA JAVASCRIPT -->
+        <!-- ============================================ -->
+        
+        <record id="slide_js_module1" model="slide.slide">
+            <field name="name">Module 1: JavaScript Cơ Bản</field>
+            <field name="channel_id" ref="course_javascript_web"/>
+            <field name="is_category">True</field>
+            <field name="sequence">10</field>
+            <field name="is_published">True</field>
+        </record>
+        
+        <record id="slide_js_intro" model="slide.slide">
+            <field name="name">Bài 1.1: Giới Thiệu JavaScript</field>
+            <field name="channel_id" ref="course_javascript_web"/>
+            <field name="category_id" ref="slide_js_module1"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">11</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">15</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>JavaScript là gì?</h3>
+                <p>JavaScript là ngôn ngữ lập trình cho web, chạy trên browser và server (Node.js).</p>
+                <h4>Đặc điểm:</h4>
+                <ul>
+                    <li>Dynamic typing</li>
+                    <li>Event-driven</li>
+                    <li>Asynchronous programming</li>
+                    <li>Prototype-based OOP</li>
+                </ul>
+                <h4>Ứng dụng:</h4>
+                <ul>
+                    <li>Frontend: React, Vue, Angular</li>
+                    <li>Backend: Node.js, Express</li>
+                    <li>Mobile: React Native</li>
+                    <li>Desktop: Electron</li>
+                </ul>
+            ]]></field>
+        </record>
+        
+        <record id="slide_js_es6" model="slide.slide">
+            <field name="name">Bài 1.2: ES6+ Features</field>
+            <field name="channel_id" ref="course_javascript_web"/>
+            <field name="category_id" ref="slide_js_module1"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">12</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">25</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>ES6+ Modern JavaScript</h3>
+                <h4>Let và Const:</h4>
+                <pre><code>let name = "An";  // Có thể thay đổi
+const PI = 3.14;  // Không thay đổi</code></pre>
+                <h4>Arrow Functions:</h4>
+                <pre><code>// Old way
+function add(a, b) {
+    return a + b;
+}
+
+// Arrow function
+const add = (a, b) => a + b;</code></pre>
+                <h4>Template Literals:</h4>
+                <pre><code>const name = "An";
+const greeting = `Xin chào, ${name}!`;</code></pre>
+                <h4>Destructuring:</h4>
+                <pre><code>const person = {name: "An", age: 25};
+const {name, age} = person;
+
+const arr = [1, 2, 3];
+const [first, second] = arr;</code></pre>
+            ]]></field>
+        </record>
+        
+        <record id="slide_js_async" model="slide.slide">
+            <field name="name">Bài 1.3: Async/Await</field>
+            <field name="channel_id" ref="course_javascript_web"/>
+            <field name="category_id" ref="slide_js_module1"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">13</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">30</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_advanced'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Asynchronous JavaScript</h3>
+                <h4>Promises:</h4>
+                <pre><code>fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));</code></pre>
+                <h4>Async/Await:</h4>
+                <pre><code>async function fetchData() {
+    try {
+        const response = await fetch('https://api.example.com/data');
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}</code></pre>
+            ]]></field>
+        </record>
+        
+        
+        <!-- ============================================ -->
+        <!-- 10. NỘI DUNG HỌC - CÁC KHÓA KHÁC (Rút gọn) -->
+        <!-- ============================================ -->
+        
+        <!-- Agile Management Course -->
+        <record id="slide_agile_intro" model="slide.slide">
+            <field name="name">Giới Thiệu Agile Methodology</field>
+            <field name="channel_id" ref="course_agile_management"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">10</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">20</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Agile Methodology</h3>
+                <p>Agile là phương pháp phát triển phần mềm linh hoạt, tập trung vào khách hàng và phản hồi nhanh.</p>
+                <h4>4 Giá trị Agile:</h4>
+                <ul>
+                    <li>Individuals and interactions over processes and tools</li>
+                    <li>Working software over comprehensive documentation</li>
+                    <li>Customer collaboration over contract negotiation</li>
+                    <li>Responding to change over following a plan</li>
+                </ul>
+            ]]></field>
+        </record>
+        
+        <record id="slide_agile_scrum" model="slide.slide">
+            <field name="name">Scrum Framework</field>
+            <field name="channel_id" ref="course_agile_management"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">20</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">25</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Scrum Framework</h3>
+                <h4>Roles:</h4>
+                <ul>
+                    <li>Product Owner</li>
+                    <li>Scrum Master</li>
+                    <li>Development Team</li>
+                </ul>
+                <h4>Events:</h4>
+                <ul>
+                    <li>Sprint Planning</li>
+                    <li>Daily Standup</li>
+                    <li>Sprint Review</li>
+                    <li>Sprint Retrospective</li>
+                </ul>
+            ]]></field>
+        </record>
+        
+        <!-- UI/UX Design Course -->
+        <record id="slide_uiux_intro" model="slide.slide">
+            <field name="name">Nguyên Tắc Thiết Kế UI/UX</field>
+            <field name="channel_id" ref="course_ui_ux_design"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">10</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">20</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>UI/UX Design Principles</h3>
+                <h4>UI (User Interface):</h4>
+                <p>Giao diện người dùng - cách sản phẩm trông như thế nào</p>
+                <h4>UX (User Experience):</h4>
+                <p>Trải nghiệm người dùng - cảm giác khi sử dụng sản phẩm</p>
+                <h4>Nguyên tắc thiết kế:</h4>
+                <ul>
+                    <li>Consistency - Nhất quán</li>
+                    <li>Hierarchy - Phân cấp</li>
+                    <li>Simplicity - Đơn giản</li>
+                    <li>Feedback - Phản hồi</li>
+                </ul>
+            ]]></field>
+        </record>
+        
+        <!-- Digital Marketing Course -->
+        <record id="slide_marketing_seo" model="slide.slide">
+            <field name="name">SEO Cơ Bản</field>
+            <field name="channel_id" ref="course_digital_marketing"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">10</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">25</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_tutorial')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Search Engine Optimization</h3>
+                <p>SEO là tối ưu hóa website để xếp hạng cao trên Google.</p>
+                <h4>On-page SEO:</h4>
+                <ul>
+                    <li>Keywords research</li>
+                    <li>Title tags và Meta descriptions</li>
+                    <li>Content quality</li>
+                    <li>Internal linking</li>
+                </ul>
+                <h4>Off-page SEO:</h4>
+                <ul>
+                    <li>Backlinks</li>
+                    <li>Social signals</li>
+                    <li>Brand mentions</li>
+                </ul>
+            ]]></field>
+        </record>
+        
+        <!-- Database Course -->
+        <record id="slide_db_sql_basics" model="slide.slide">
+            <field name="name">SQL Cơ Bản</field>
+            <field name="channel_id" ref="course_database_sql"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">10</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">30</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_hands_on')])]"/>
+            <field name="description"><![CDATA[
+                <h3>SQL Basics</h3>
+                <h4>SELECT Statement:</h4>
+                <pre><code>SELECT * FROM users;
+SELECT name, email FROM users WHERE age > 18;</code></pre>
+                <h4>INSERT:</h4>
+                <pre><code>INSERT INTO users (name, email, age)
+VALUES ('An', 'an@example.com', 25);</code></pre>
+                <h4>UPDATE:</h4>
+                <pre><code>UPDATE users SET age = 26 WHERE name = 'An';</code></pre>
+                <h4>DELETE:</h4>
+                <pre><code>DELETE FROM users WHERE age < 18;</code></pre>
+            ]]></field>
+        </record>
+        
+        <!-- DevOps Course -->
+        <record id="slide_devops_docker" model="slide.slide">
+            <field name="name">Docker Cơ Bản</field>
+            <field name="channel_id" ref="course_devops_cicd"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">10</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">30</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate'), ref('slide_tag_hands_on')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Docker Containerization</h3>
+                <p>Docker giúp đóng gói ứng dụng thành container, chạy ở mọi nơi.</p>
+                <h4>Dockerfile:</h4>
+                <pre><code>FROM python:3.11
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+CMD ["python", "app.py"]</code></pre>
+                <h4>Docker Commands:</h4>
+                <pre><code>docker build -t myapp .
+docker run -p 8000:8000 myapp
+docker ps
+docker stop container_id</code></pre>
+            ]]></field>
+        </record>
+        
+        <!-- Communication Skills Course -->
+        <record id="slide_comm_presentation" model="slide.slide">
+            <field name="name">Kỹ Năng Thuyết Trình</field>
+            <field name="channel_id" ref="course_communication_skills"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">10</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">20</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Presentation Skills</h3>
+                <h4>Chuẩn bị:</h4>
+                <ul>
+                    <li>Hiểu rõ đối tượng</li>
+                    <li>Xác định mục tiêu</li>
+                    <li>Chuẩn bị nội dung</li>
+                    <li>Luyện tập trước</li>
+                </ul>
+                <h4>Trong khi thuyết trình:</h4>
+                <ul>
+                    <li>Mở đầu ấn tượng</li>
+                    <li>Giữ eye contact</li>
+                    <li>Sử dụng body language</li>
+                    <li>Tương tác với khán giả</li>
+                </ul>
+            ]]></field>
+        </record>
+        
+        <!-- Sales Course -->
+        <record id="slide_sales_techniques" model="slide.slide">
+            <field name="name">Kỹ Thuật Bán Hàng Hiệu Quả</field>
+            <field name="channel_id" ref="course_professional_sales"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">10</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">25</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate'), ref('slide_tag_case_study')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Sales Techniques</h3>
+                <h4>SPIN Selling:</h4>
+                <ul>
+                    <li>Situation - Tình huống</li>
+                    <li>Problem - Vấn đề</li>
+                    <li>Implication - Hệ quả</li>
+                    <li>Need-payoff - Giải pháp</li>
+                </ul>
+                <h4>Closing Techniques:</h4>
+                <ul>
+                    <li>Assumptive close</li>
+                    <li>Alternative close</li>
+                    <li>Urgency close</li>
+                    <li>Summary close</li>
+                </ul>
+            ]]></field>
+        </record>
+        
+        <!-- Mobile Development Course -->
+        <record id="slide_mobile_react_native" model="slide.slide">
+            <field name="name">React Native Cơ Bản</field>
+            <field name="channel_id" ref="course_mobile_development"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">10</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">30</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_intermediate'), ref('slide_tag_hands_on')])]"/>
+            <field name="description"><![CDATA[
+                <h3>React Native</h3>
+                <p>Framework để xây dựng mobile app bằng JavaScript.</p>
+                <h4>Components:</h4>
+                <pre><code>import React from 'react';
+import { View, Text, Button } from 'react-native';
+
+export default function App() {
+    return (
+        &lt;View&gt;
+            &lt;Text&gt;Hello React Native!&lt;/Text&gt;
+            &lt;Button title="Click me" /&gt;
+        &lt;/View&gt;
+    );
+}</code></pre>
+            ]]></field>
+        </record>
+        
+        <!-- Financial Management Course -->
+        <record id="slide_finance_basics" model="slide.slide">
+            <field name="name">Báo Cáo Tài Chính Cơ Bản</field>
+            <field name="channel_id" ref="course_financial_management"/>
+            <field name="slide_category">article</field>
+            <field name="sequence">10</field>
+            <field name="is_preview">True</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">25</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('slide_tag_beginner'), ref('slide_tag_theory')])]"/>
+            <field name="description"><![CDATA[
+                <h3>Báo Cáo Tài Chính</h3>
+                <h4>3 Báo cáo chính:</h4>
+                <ul>
+                    <li><strong>Balance Sheet:</strong> Bảng cân đối kế toán</li>
+                    <li><strong>Income Statement:</strong> Báo cáo kết quả kinh doanh</li>
+                    <li><strong>Cash Flow Statement:</strong> Báo cáo lưu chuyển tiền tệ</li>
+                </ul>
+                <h4>Chỉ số tài chính:</h4>
+                <ul>
+                    <li>ROI - Return on Investment</li>
+                    <li>ROE - Return on Equity</li>
+                    <li>Current Ratio</li>
+                    <li>Debt-to-Equity Ratio</li>
+                </ul>
+            ]]></field>
+        </record>
+        
+
+        <!-- ============================================ -->
+        <!-- 11. ĐĂNG KÝ KHÓA HỌC (Enrollments) -->
+        <!-- Sử dụng ref="partner_xxx" thay vì obj() -->
+        <!-- ============================================ -->
+        
+        <!-- Enrollments cho Python Course -->
+        <record id="enrollment_python_student01" model="slide.channel.partner">
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="member_status">completed</field>
+            <field name="completion">100</field>
+        </record>
+        
+        <record id="enrollment_python_student02" model="slide.channel.partner">
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">75</field>
+        </record>
+        
+        <record id="enrollment_python_student03" model="slide.channel.partner">
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="partner_id" ref="partner_student_03"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">50</field>
+        </record>
+        
+        <record id="enrollment_python_student04" model="slide.channel.partner">
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="partner_id" ref="partner_student_04"/>
+            <field name="member_status">joined</field>
+            <field name="completion">10</field>
+        </record>
+        
+        <record id="enrollment_python_student05" model="slide.channel.partner">
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="partner_id" ref="partner_student_05"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">60</field>
+        </record>
+        
+        <!-- Enrollments cho Odoo Course -->
+        <record id="enrollment_odoo_student01" model="slide.channel.partner">
+            <field name="channel_id" ref="course_odoo_development"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">40</field>
+        </record>
+        
+        <record id="enrollment_odoo_student02" model="slide.channel.partner">
+            <field name="channel_id" ref="course_odoo_development"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="member_status">joined</field>
+            <field name="completion">5</field>
+        </record>
+        
+        <record id="enrollment_odoo_student06" model="slide.channel.partner">
+            <field name="channel_id" ref="course_odoo_development"/>
+            <field name="partner_id" ref="partner_student_06"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">30</field>
+        </record>
+        
+        <!-- Enrollments cho JavaScript Course -->
+        <record id="enrollment_js_student03" model="slide.channel.partner">
+            <field name="channel_id" ref="course_javascript_web"/>
+            <field name="partner_id" ref="partner_student_03"/>
+            <field name="member_status">completed</field>
+            <field name="completion">100</field>
+        </record>
+        
+        <record id="enrollment_js_student04" model="slide.channel.partner">
+            <field name="channel_id" ref="course_javascript_web"/>
+            <field name="partner_id" ref="partner_student_04"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">65</field>
+        </record>
+        
+        <record id="enrollment_js_student07" model="slide.channel.partner">
+            <field name="channel_id" ref="course_javascript_web"/>
+            <field name="partner_id" ref="partner_student_07"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">45</field>
+        </record>
+        
+        <!-- Enrollments cho Agile Course -->
+        <record id="enrollment_agile_student05" model="slide.channel.partner">
+            <field name="channel_id" ref="course_agile_management"/>
+            <field name="partner_id" ref="partner_student_05"/>
+            <field name="member_status">completed</field>
+            <field name="completion">100</field>
+        </record>
+        
+        <record id="enrollment_agile_student06" model="slide.channel.partner">
+            <field name="channel_id" ref="course_agile_management"/>
+            <field name="partner_id" ref="partner_student_06"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">70</field>
+        </record>
+        
+        <record id="enrollment_agile_student08" model="slide.channel.partner">
+            <field name="channel_id" ref="course_agile_management"/>
+            <field name="partner_id" ref="partner_student_08"/>
+            <field name="member_status">joined</field>
+            <field name="completion">15</field>
+        </record>
+        
+        <!-- Enrollments cho UI/UX Course -->
+        <record id="enrollment_uiux_student07" model="slide.channel.partner">
+            <field name="channel_id" ref="course_ui_ux_design"/>
+            <field name="partner_id" ref="partner_student_07"/>
+            <field name="member_status">completed</field>
+            <field name="completion">100</field>
+        </record>
+        
+        <record id="enrollment_uiux_student08" model="slide.channel.partner">
+            <field name="channel_id" ref="course_ui_ux_design"/>
+            <field name="partner_id" ref="partner_student_08"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">55</field>
+        </record>
+        
+        <record id="enrollment_uiux_student09" model="slide.channel.partner">
+            <field name="channel_id" ref="course_ui_ux_design"/>
+            <field name="partner_id" ref="partner_student_09"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">35</field>
+        </record>
+        
+        <!-- Enrollments cho Digital Marketing Course -->
+        <record id="enrollment_marketing_student09" model="slide.channel.partner">
+            <field name="channel_id" ref="course_digital_marketing"/>
+            <field name="partner_id" ref="partner_student_09"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">80</field>
+        </record>
+        
+        <record id="enrollment_marketing_student10" model="slide.channel.partner">
+            <field name="channel_id" ref="course_digital_marketing"/>
+            <field name="partner_id" ref="partner_student_10"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">50</field>
+        </record>
+        
+        <record id="enrollment_marketing_student11" model="slide.channel.partner">
+            <field name="channel_id" ref="course_digital_marketing"/>
+            <field name="partner_id" ref="partner_student_11"/>
+            <field name="member_status">joined</field>
+            <field name="completion">20</field>
+        </record>
+        
+        <!-- Enrollments cho Database Course -->
+        <record id="enrollment_db_student01" model="slide.channel.partner">
+            <field name="channel_id" ref="course_database_sql"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">85</field>
+        </record>
+        
+        <record id="enrollment_db_student10" model="slide.channel.partner">
+            <field name="channel_id" ref="course_database_sql"/>
+            <field name="partner_id" ref="partner_student_10"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">40</field>
+        </record>
+        
+        <!-- Enrollments cho DevOps Course -->
+        <record id="enrollment_devops_student02" model="slide.channel.partner">
+            <field name="channel_id" ref="course_devops_cicd"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">25</field>
+        </record>
+        
+        <record id="enrollment_devops_student11" model="slide.channel.partner">
+            <field name="channel_id" ref="course_devops_cicd"/>
+            <field name="partner_id" ref="partner_student_11"/>
+            <field name="member_status">joined</field>
+            <field name="completion">10</field>
+        </record>
+        
+        <!-- Enrollments cho Communication Course -->
+        <record id="enrollment_comm_student04" model="slide.channel.partner">
+            <field name="channel_id" ref="course_communication_skills"/>
+            <field name="partner_id" ref="partner_student_04"/>
+            <field name="member_status">completed</field>
+            <field name="completion">100</field>
+        </record>
+        
+        <record id="enrollment_comm_student12" model="slide.channel.partner">
+            <field name="channel_id" ref="course_communication_skills"/>
+            <field name="partner_id" ref="partner_student_12"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">60</field>
+        </record>
+        
+        <!-- Enrollments cho Sales Course -->
+        <record id="enrollment_sales_student05" model="slide.channel.partner">
+            <field name="channel_id" ref="course_professional_sales"/>
+            <field name="partner_id" ref="partner_student_05"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">70</field>
+        </record>
+        
+        <record id="enrollment_sales_student12" model="slide.channel.partner">
+            <field name="channel_id" ref="course_professional_sales"/>
+            <field name="partner_id" ref="partner_student_12"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">45</field>
+        </record>
+        
+        <!-- Enrollments cho Mobile Development Course -->
+        <record id="enrollment_mobile_student03" model="slide.channel.partner">
+            <field name="channel_id" ref="course_mobile_development"/>
+            <field name="partner_id" ref="partner_student_03"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">55</field>
+        </record>
+        
+        <record id="enrollment_mobile_student06" model="slide.channel.partner">
+            <field name="channel_id" ref="course_mobile_development"/>
+            <field name="partner_id" ref="partner_student_06"/>
+            <field name="member_status">joined</field>
+            <field name="completion">15</field>
+        </record>
+        
+        <!-- Enrollments cho Financial Management Course -->
+        <record id="enrollment_finance_student08" model="slide.channel.partner">
+            <field name="channel_id" ref="course_financial_management"/>
+            <field name="partner_id" ref="partner_student_08"/>
+            <field name="member_status">ongoing</field>
+            <field name="completion">50</field>
+        </record>
+        
+        <record id="enrollment_finance_student09" model="slide.channel.partner">
+            <field name="channel_id" ref="course_financial_management"/>
+            <field name="partner_id" ref="partner_student_09"/>
+            <field name="member_status">joined</field>
+            <field name="completion">20</field>
+        </record>
+        
+        
+        <!-- ============================================ -->
+        <!-- 12. TIẾN ĐỘ HỌC TẬP (Progress) -->
+        <!-- Sử dụng ref="partner_xxx" thay vì obj() -->
+        <!-- ============================================ -->
+        
+        <!-- Progress cho Student 01 - Python Course -->
+        <record id="progress_student01_python_intro" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_intro"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student01_python_install" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_install"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student01_python_hello" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_hello_world"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student01_python_variables" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_variables"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student01_python_datatypes" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_data_types"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student01_python_quiz1" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_quiz1"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="quiz_attempts_count">1</field>
+        </record>
+        
+        <record id="progress_student01_python_ifelse" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_if_else"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student01_python_loops" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_loops"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student01_python_functions" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_functions"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student01_python_lambda" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_lambda"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <!-- Progress cho Student 02 - Python Course (75% completed) -->
+        <record id="progress_student02_python_intro" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_intro"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student02_python_install" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_install"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student02_python_hello" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_hello_world"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student02_python_variables" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_variables"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student02_python_datatypes" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_data_types"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student02_python_quiz1" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_quiz1"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="completed">True</field>
+            <field name="quiz_attempts_count">2</field>
+        </record>
+        
+        <record id="progress_student02_python_ifelse" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_if_else"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student02_python_loops" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_python_loops"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="completed">False</field>
+            <field name="vote">0</field>
+        </record>
+        
+        <!-- Progress cho Student 03 - JavaScript Course (100% completed) -->
+        <record id="progress_student03_js_intro" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_js_intro"/>
+            <field name="partner_id" ref="partner_student_03"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student03_js_es6" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_js_es6"/>
+            <field name="partner_id" ref="partner_student_03"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student03_js_async" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_js_async"/>
+            <field name="partner_id" ref="partner_student_03"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <!-- Progress cho Student 01 - Odoo Course (40% completed) -->
+        <record id="progress_student01_odoo_intro" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_odoo_intro"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student01_odoo_arch" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_odoo_architecture"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student01_odoo_create" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_odoo_create_module"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">False</field>
+            <field name="vote">0</field>
+        </record>
+        
+        <!-- Progress cho Student 05 - Agile Course (100% completed) -->
+        <record id="progress_student05_agile_intro" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_agile_intro"/>
+            <field name="partner_id" ref="partner_student_05"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <record id="progress_student05_agile_scrum" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_agile_scrum"/>
+            <field name="partner_id" ref="partner_student_05"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <!-- Progress cho Student 07 - UI/UX Course (100% completed) -->
+        <record id="progress_student07_uiux_intro" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_uiux_intro"/>
+            <field name="partner_id" ref="partner_student_07"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <!-- Progress cho Student 04 - Communication Course (100% completed) -->
+        <record id="progress_student04_comm_presentation" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_comm_presentation"/>
+            <field name="partner_id" ref="partner_student_04"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <!-- Progress cho Student 09 - Marketing Course (80% completed) -->
+        <record id="progress_student09_marketing_seo" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_marketing_seo"/>
+            <field name="partner_id" ref="partner_student_09"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <!-- Progress cho Student 01 - Database Course (85% completed) -->
+        <record id="progress_student01_db_sql" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_db_sql_basics"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <!-- Progress cho Student 02 - DevOps Course (25% completed) -->
+        <record id="progress_student02_devops_docker" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_devops_docker"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="completed">False</field>
+            <field name="vote">0</field>
+        </record>
+        
+        <!-- Progress cho Student 03 - Mobile Course (55% completed) -->
+        <record id="progress_student03_mobile_rn" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_mobile_react_native"/>
+            <field name="partner_id" ref="partner_student_03"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <!-- Progress cho Student 08 - Finance Course (50% completed) -->
+        <record id="progress_student08_finance_basics" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_finance_basics"/>
+            <field name="partner_id" ref="partner_student_08"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+        <!-- Progress cho Student 05 - Sales Course (70% completed) -->
+        <record id="progress_student05_sales_techniques" model="slide.slide.partner">
+            <field name="slide_id" ref="slide_sales_techniques"/>
+            <field name="partner_id" ref="partner_student_05"/>
+            <field name="completed">True</field>
+            <field name="vote">1</field>
+        </record>
+        
+
+        <!-- ============================================ -->
+        <!-- 13. ĐÁNH GIÁ KHÓA HỌC (Ratings) -->
+        <!-- Sử dụng ref="partner_xxx" thay vì obj() -->
+        <!-- ============================================ -->
+        
+        <!-- Ratings cho Python Course -->
+        <record id="rating_python_student01" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_python_complete"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="rating">5</field>
+            <field name="feedback">Khóa học Python rất tuyệt vời! Giảng viên giải thích rõ ràng, dễ hiểu. Tôi đã học được rất nhiều kiến thức từ cơ bản đến nâng cao.</field>
+        </record>
+        
+        <record id="rating_python_student02" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_python_complete"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="rating">5</field>
+            <field name="feedback">Nội dung khóa học rất chi tiết và thực tế. Các ví dụ dễ hiểu, bài tập phong phú. Rất đáng để học!</field>
+        </record>
+        
+        <record id="rating_python_student03" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_python_complete"/>
+            <field name="partner_id" ref="partner_student_03"/>
+            <field name="rating">4</field>
+            <field name="feedback">Khóa học tốt, phù hợp cho người mới bắt đầu. Tuy nhiên nên có thêm nhiều bài tập thực hành hơn.</field>
+        </record>
+        
+        <!-- Ratings cho Odoo Course -->
+        <record id="rating_odoo_student01" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_odoo_development"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="rating">5</field>
+            <field name="feedback">Khóa học Odoo rất chuyên sâu và thực tế. Giúp tôi hiểu rõ về kiến trúc Odoo và cách phát triển module.</field>
+        </record>
+        
+        <!-- Ratings cho JavaScript Course -->
+        <record id="rating_js_student03" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_javascript_web"/>
+            <field name="partner_id" ref="partner_student_03"/>
+            <field name="rating">5</field>
+            <field name="feedback">Khóa học JavaScript hiện đại, cập nhật ES6+. Rất hữu ích cho công việc phát triển web của tôi.</field>
+        </record>
+        
+        <record id="rating_js_student04" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_javascript_web"/>
+            <field name="partner_id" ref="partner_student_04"/>
+            <field name="rating">4</field>
+            <field name="feedback">Nội dung tốt, giảng viên nhiệt tình. Tuy nhiên phần async/await hơi khó hiểu, cần giải thích thêm.</field>
+        </record>
+        
+        <!-- Ratings cho Agile Course -->
+        <record id="rating_agile_student05" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_agile_management"/>
+            <field name="partner_id" ref="partner_student_05"/>
+            <field name="rating">5</field>
+            <field name="feedback">Khóa học Agile rất thực tế, giúp tôi áp dụng ngay vào công việc quản lý dự án. Highly recommended!</field>
+        </record>
+        
+        <record id="rating_agile_student06" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_agile_management"/>
+            <field name="partner_id" ref="partner_student_06"/>
+            <field name="rating">5</field>
+            <field name="feedback">Scrum framework được giải thích rất rõ ràng. Các case study thực tế giúp tôi hiểu sâu hơn về Agile.</field>
+        </record>
+        
+        <!-- Ratings cho UI/UX Course -->
+        <record id="rating_uiux_student07" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_ui_ux_design"/>
+            <field name="partner_id" ref="partner_student_07"/>
+            <field name="rating">5</field>
+            <field name="feedback">Khóa học UI/UX tuyệt vời! Từ design thinking đến prototyping đều được hướng dẫn chi tiết.</field>
+        </record>
+        
+        <record id="rating_uiux_student08" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_ui_ux_design"/>
+            <field name="partner_id" ref="partner_student_08"/>
+            <field name="rating">4</field>
+            <field name="feedback">Nội dung hay, nhiều ví dụ thực tế. Nên có thêm phần về accessibility design.</field>
+        </record>
+        
+        <!-- Ratings cho Digital Marketing Course -->
+        <record id="rating_marketing_student09" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_digital_marketing"/>
+            <field name="partner_id" ref="partner_student_09"/>
+            <field name="rating">5</field>
+            <field name="feedback">Khóa học Digital Marketing toàn diện, từ SEO đến Social Media Marketing. Rất hữu ích cho marketer.</field>
+        </record>
+        
+        <record id="rating_marketing_student10" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_digital_marketing"/>
+            <field name="partner_id" ref="partner_student_10"/>
+            <field name="rating">5</field>
+            <field name="feedback">Giảng viên có kinh nghiệm thực tế, chia sẻ nhiều case study thành công. Rất đáng học!</field>
+        </record>
+        
+        <!-- Ratings cho Database Course -->
+        <record id="rating_db_student01" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_database_sql"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="rating">5</field>
+            <field name="feedback">Khóa học SQL rất cơ bản và dễ hiểu. Phù hợp cho người mới bắt đầu với database.</field>
+        </record>
+        
+        <!-- Ratings cho Communication Course -->
+        <record id="rating_comm_student04" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_communication_skills"/>
+            <field name="partner_id" ref="partner_student_04"/>
+            <field name="rating">5</field>
+            <field name="feedback">Kỹ năng giao tiếp được cải thiện rõ rệt sau khóa học. Rất hữu ích cho công việc hàng ngày.</field>
+        </record>
+        
+        <record id="rating_comm_student12" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_communication_skills"/>
+            <field name="partner_id" ref="partner_student_12"/>
+            <field name="rating">4</field>
+            <field name="feedback">Khóa học tốt, nhiều kỹ thuật thực tế. Nên có thêm phần về giao tiếp qua email.</field>
+        </record>
+        
+        <!-- Ratings cho Sales Course -->
+        <record id="rating_sales_student05" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_professional_sales"/>
+            <field name="partner_id" ref="partner_student_05"/>
+            <field name="rating">5</field>
+            <field name="feedback">Khóa học bán hàng rất thực chiến. Các kỹ thuật closing rất hiệu quả, tôi đã áp dụng thành công.</field>
+        </record>
+        
+        <!-- Ratings cho Mobile Development Course -->
+        <record id="rating_mobile_student03" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_mobile_development"/>
+            <field name="partner_id" ref="partner_student_03"/>
+            <field name="rating">4</field>
+            <field name="feedback">React Native được giảng dạy khá tốt. Tuy nhiên nên có thêm phần về performance optimization.</field>
+        </record>
+        
+        <!-- Ratings cho Financial Management Course -->
+        <record id="rating_finance_student08" model="rating.rating">
+            <field name="res_model">slide.channel</field>
+            <field name="res_id" ref="course_financial_management"/>
+            <field name="partner_id" ref="partner_student_08"/>
+            <field name="rating">5</field>
+            <field name="feedback">Khóa học tài chính doanh nghiệp rất hữu ích cho quản lý. Các chỉ số tài chính được giải thích rõ ràng.</field>
+        </record>
+        
+        
+        <!-- ============================================ -->
+        <!-- 14. BÌNH LUẬN VÀ THẢO LUẬN (Comments) -->
+        <!-- Sử dụng ref="partner_xxx" thay vì obj() -->
+        <!-- ============================================ -->
+        
+        <!-- Comments cho Python Course -->
+        <record id="comment_python_01" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_python_complete"/>
+            <field name="message_type">comment</field>
+            <field name="body">Mình vừa hoàn thành Module 1, cảm thấy rất hứng thú với Python. Cảm ơn giảng viên!</field>
+            <field name="author_id" ref="partner_student_02"/>
+        </record>
+        
+        <record id="comment_python_02" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_python_complete"/>
+            <field name="message_type">comment</field>
+            <field name="body">Có ai gặp lỗi khi cài đặt Python trên Windows không? Mình cần hỗ trợ.</field>
+            <field name="author_id" ref="partner_student_04"/>
+        </record>
+        
+        <record id="comment_python_03" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_python_complete"/>
+            <field name="message_type">comment</field>
+            <field name="body">Phần Lambda Functions hơi khó hiểu, có thể giải thích thêm không ạ?</field>
+            <field name="author_id" ref="partner_student_03"/>
+        </record>
+        
+        <record id="comment_python_04" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_python_complete"/>
+            <field name="message_type">comment</field>
+            <field name="body">Khóa học rất hay! Mình đã hoàn thành 100% và đang áp dụng Python vào công việc.</field>
+            <field name="author_id" ref="partner_student_01"/>
+        </record>
+        
+        <!-- Comments cho Odoo Course -->
+        <record id="comment_odoo_01" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_odoo_development"/>
+            <field name="message_type">comment</field>
+            <field name="body">Odoo ORM rất mạnh mẽ! Mình đã tạo được module đầu tiên thành công.</field>
+            <field name="author_id" ref="partner_student_01"/>
+        </record>
+        
+        <record id="comment_odoo_02" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_odoo_development"/>
+            <field name="message_type">comment</field>
+            <field name="body">Có tài liệu về Odoo 19 API không ạ? Mình muốn tìm hiểu thêm.</field>
+            <field name="author_id" ref="partner_student_06"/>
+        </record>
+        
+        <!-- Comments cho JavaScript Course -->
+        <record id="comment_js_01" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_javascript_web"/>
+            <field name="message_type">comment</field>
+            <field name="body">ES6 Arrow Functions thật sự tiện lợi! Code ngắn gọn hơn nhiều.</field>
+            <field name="author_id" ref="partner_student_03"/>
+        </record>
+        
+        <record id="comment_js_02" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_javascript_web"/>
+            <field name="message_type">comment</field>
+            <field name="body">Async/Await giúp code dễ đọc hơn Promises rất nhiều. Cảm ơn giảng viên đã giải thích rõ ràng!</field>
+            <field name="author_id" ref="partner_student_04"/>
+        </record>
+        
+        <record id="comment_js_03" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_javascript_web"/>
+            <field name="message_type">comment</field>
+            <field name="body">Mình đã hoàn thành khóa học và đang học React. Nền tảng JavaScript vững giúp ích rất nhiều!</field>
+            <field name="author_id" ref="partner_student_07"/>
+        </record>
+        
+        <!-- Comments cho Agile Course -->
+        <record id="comment_agile_01" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_agile_management"/>
+            <field name="message_type">comment</field>
+            <field name="body">Scrum Framework rất phù hợp với team mình. Đã áp dụng Sprint Planning thành công!</field>
+            <field name="author_id" ref="partner_student_05"/>
+        </record>
+        
+        <record id="comment_agile_02" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_agile_management"/>
+            <field name="message_type">comment</field>
+            <field name="body">Daily Standup giúp team sync tốt hơn. Cảm ơn khóa học đã chia sẻ best practices!</field>
+            <field name="author_id" ref="partner_student_06"/>
+        </record>
+        
+        <!-- Comments cho UI/UX Course -->
+        <record id="comment_uiux_01" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_ui_ux_design"/>
+            <field name="message_type">comment</field>
+            <field name="body">Design Thinking Process rất hữu ích! Mình đã áp dụng vào dự án thực tế.</field>
+            <field name="author_id" ref="partner_student_07"/>
+        </record>
+        
+        <record id="comment_uiux_02" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_ui_ux_design"/>
+            <field name="message_type">comment</field>
+            <field name="body">Figma tutorial rất chi tiết. Mình đã tạo được prototype đầu tiên!</field>
+            <field name="author_id" ref="partner_student_08"/>
+        </record>
+        
+        <!-- Comments cho Digital Marketing Course -->
+        <record id="comment_marketing_01" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_digital_marketing"/>
+            <field name="message_type">comment</field>
+            <field name="body">SEO techniques rất thực tế. Website của mình đã lên top 3 Google sau 2 tháng!</field>
+            <field name="author_id" ref="partner_student_09"/>
+        </record>
+        
+        <record id="comment_marketing_02" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_digital_marketing"/>
+            <field name="message_type">comment</field>
+            <field name="body">Facebook Ads campaign đầu tiên của mình đã có ROI 300%. Cảm ơn khóa học!</field>
+            <field name="author_id" ref="partner_student_10"/>
+        </record>
+        
+        <!-- Comments cho Database Course -->
+        <record id="comment_db_01" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_database_sql"/>
+            <field name="message_type">comment</field>
+            <field name="body">SQL JOIN queries ban đầu hơi khó nhưng sau khi thực hành thì dễ hiểu hơn nhiều.</field>
+            <field name="author_id" ref="partner_student_01"/>
+        </record>
+        
+        <record id="comment_db_02" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_database_sql"/>
+            <field name="message_type">comment</field>
+            <field name="body">Database normalization giúp mình thiết kế database tốt hơn. Rất hữu ích!</field>
+            <field name="author_id" ref="partner_student_10"/>
+        </record>
+        
+        <!-- Comments cho Communication Course -->
+        <record id="comment_comm_01" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_communication_skills"/>
+            <field name="message_type">comment</field>
+            <field name="body">Presentation skills giúp mình tự tin hơn khi thuyết trình trước đám đông.</field>
+            <field name="author_id" ref="partner_student_04"/>
+        </record>
+        
+        <record id="comment_comm_02" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_communication_skills"/>
+            <field name="message_type">comment</field>
+            <field name="body">Active listening techniques rất hay! Giúp mình hiểu đồng nghiệp tốt hơn.</field>
+            <field name="author_id" ref="partner_student_12"/>
+        </record>
+        
+        <!-- Comments cho Sales Course -->
+        <record id="comment_sales_01" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_professional_sales"/>
+            <field name="message_type">comment</field>
+            <field name="body">SPIN Selling technique rất hiệu quả! Tỷ lệ chốt deal của mình tăng 40%.</field>
+            <field name="author_id" ref="partner_student_05"/>
+        </record>
+        
+        <record id="comment_sales_02" model="mail.message">
+            <field name="model">slide.channel</field>
+            <field name="res_id" ref="course_professional_sales"/>
+            <field name="message_type">comment</field>
+            <field name="body">Handling objections section rất thực tế. Mình đã vượt qua được nhiều tình huống khó.</field>
+            <field name="author_id" ref="partner_student_12"/>
+        </record>
+        
+        
+        <!-- ============================================ -->
+        <!-- 15. TÀI NGUYÊN BỔ SUNG (Resources) -->
+        <!-- ============================================ -->
+        
+        <!-- Resources cho Python Course -->
+        <record id="resource_python_cheatsheet" model="slide.slide.resource">
+            <field name="name">Python Cheat Sheet.pdf</field>
+            <field name="slide_id" ref="slide_python_intro"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <record id="resource_python_exercises" model="slide.slide.resource">
+            <field name="name">Bài Tập Python Cơ Bản.pdf</field>
+            <field name="slide_id" ref="slide_python_variables"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <record id="resource_python_solutions" model="slide.slide.resource">
+            <field name="name">Đáp Án Bài Tập.pdf</field>
+            <field name="slide_id" ref="slide_python_data_types"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <!-- Resources cho Odoo Course -->
+        <record id="resource_odoo_guide" model="slide.slide.resource">
+            <field name="name">Odoo Development Guide.pdf</field>
+            <field name="slide_id" ref="slide_odoo_intro"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <record id="resource_odoo_template" model="slide.slide.resource">
+            <field name="name">Module Template.zip</field>
+            <field name="slide_id" ref="slide_odoo_create_module"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <record id="resource_odoo_orm_examples" model="slide.slide.resource">
+            <field name="name">ORM Examples.py</field>
+            <field name="slide_id" ref="slide_odoo_orm"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <!-- Resources cho JavaScript Course -->
+        <record id="resource_js_es6_guide" model="slide.slide.resource">
+            <field name="name">ES6 Features Guide.pdf</field>
+            <field name="slide_id" ref="slide_js_es6"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <record id="resource_js_async_examples" model="slide.slide.resource">
+            <field name="name">Async Programming Examples.js</field>
+            <field name="slide_id" ref="slide_js_async"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <!-- Resources cho Agile Course -->
+        <record id="resource_agile_manifesto" model="slide.slide.resource">
+            <field name="name">Agile Manifesto.pdf</field>
+            <field name="slide_id" ref="slide_agile_intro"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <record id="resource_agile_scrum_guide" model="slide.slide.resource">
+            <field name="name">Scrum Guide 2024.pdf</field>
+            <field name="slide_id" ref="slide_agile_scrum"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <!-- Resources cho UI/UX Course -->
+        <record id="resource_uiux_principles" model="slide.slide.resource">
+            <field name="name">UI Design Principles.pdf</field>
+            <field name="slide_id" ref="slide_uiux_intro"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <record id="resource_uiux_figma_template" model="slide.slide.resource">
+            <field name="name">Figma Wireframe Template.fig</field>
+            <field name="slide_id" ref="slide_uiux_intro"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <!-- Resources cho Digital Marketing Course -->
+        <record id="resource_marketing_seo_checklist" model="slide.slide.resource">
+            <field name="name">SEO Checklist 2024.pdf</field>
+            <field name="slide_id" ref="slide_marketing_seo"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <record id="resource_marketing_content_calendar" model="slide.slide.resource">
+            <field name="name">Content Calendar Template.xlsx</field>
+            <field name="slide_id" ref="slide_marketing_seo"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <!-- Resources cho Database Course -->
+        <record id="resource_db_sql_cheatsheet" model="slide.slide.resource">
+            <field name="name">SQL Cheat Sheet.pdf</field>
+            <field name="slide_id" ref="slide_db_sql_basics"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <record id="resource_db_sample_database" model="slide.slide.resource">
+            <field name="name">Sample Database.sql</field>
+            <field name="slide_id" ref="slide_db_sql_basics"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <!-- Resources cho DevOps Course -->
+        <record id="resource_devops_dockerfile" model="slide.slide.resource">
+            <field name="name">Dockerfile Examples.zip</field>
+            <field name="slide_id" ref="slide_devops_docker"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <record id="resource_devops_cicd_template" model="slide.slide.resource">
+            <field name="name">GitLab CI Template.yml</field>
+            <field name="slide_id" ref="slide_devops_docker"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <!-- Resources cho Communication Course -->
+        <record id="resource_comm_presentation_template" model="slide.slide.resource">
+            <field name="name">Presentation Template.pptx</field>
+            <field name="slide_id" ref="slide_comm_presentation"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <!-- Resources cho Sales Course -->
+        <record id="resource_sales_script" model="slide.slide.resource">
+            <field name="name">Sales Script Template.docx</field>
+            <field name="slide_id" ref="slide_sales_techniques"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <record id="resource_sales_crm_guide" model="slide.slide.resource">
+            <field name="name">CRM Best Practices.pdf</field>
+            <field name="slide_id" ref="slide_sales_techniques"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <!-- Resources cho Mobile Development Course -->
+        <record id="resource_mobile_starter_project" model="slide.slide.resource">
+            <field name="name">React Native Starter Project.zip</field>
+            <field name="slide_id" ref="slide_mobile_react_native"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <!-- Resources cho Financial Management Course -->
+        <record id="resource_finance_templates" model="slide.slide.resource">
+            <field name="name">Financial Report Templates.xlsx</field>
+            <field name="slide_id" ref="slide_finance_basics"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <record id="resource_finance_calculator" model="slide.slide.resource">
+            <field name="name">ROI Calculator.xlsx</field>
+            <field name="slide_id" ref="slide_finance_basics"/>
+            <field name="resource_type">file</field>
+        </record>
+        
+        <!-- ============================================ -->
+        <!-- DIỄN ĐÀN (FORUMS) -->
+        <!-- ============================================ -->
+        
+        <!-- Forum cho Python Programming Course -->
+        <record id="forum_python_programming" model="forum.forum">
+            <field name="name">Diễn đàn Lập trình Python</field>
+            <field name="description">Diễn đàn thảo luận về lập trình Python, chia sẻ kinh nghiệm và giải đáp thắc mắc</field>
+            <field name="privacy">public</field>
+            <field name="karma_ask">3</field>
+            <field name="karma_answer">3</field>
+            <field name="karma_comment_own">1</field>
+            <field name="karma_comment_all">1</field>
+            <field name="karma_upvote">5</field>
+            <field name="karma_downvote">50</field>
+        </record>
+        
+        <!-- Link forum to course -->
+        <record id="course_python_complete" model="slide.channel">
+            <field name="forum_id" ref="forum_python_programming"/>
+        </record>
+        
+        <!-- Forum Posts cho Python Course -->
+        <record id="forum_post_python_1" model="forum.post">
+            <field name="name">Làm thế nào để xử lý exception trong Python?</field>
+            <field name="forum_id" ref="forum_python_programming"/>
+            <field name="create_uid" ref="user_student_01"/>
+            <field name="content"><![CDATA[
+                <p>Chào mọi người,</p>
+                <p>Mình đang học về exception handling trong Python. Mình muốn hỏi:</p>
+                <ul>
+                    <li>Khi nào nên dùng try-except?</li>
+                    <li>Có nên catch tất cả exception không?</li>
+                    <li>Làm sao để tạo custom exception?</li>
+                </ul>
+                <p>Cảm ơn mọi người!</p>
+            ]]></field>
+            <field name="state">active</field>
+            <field name="views">45</field>
+        </record>
+        
+        <record id="forum_post_python_1_answer_1" model="forum.post">
+            <field name="forum_id" ref="forum_python_programming"/>
+            <field name="parent_id" ref="forum_post_python_1"/>
+            <field name="create_uid" ref="user_instructor_01"/>
+            <field name="content"><![CDATA[
+                <p>Chào bạn,</p>
+                <p>Đây là những câu hỏi rất hay! Mình xin trả lời:</p>
+                <p><strong>1. Khi nào dùng try-except:</strong></p>
+                <ul>
+                    <li>Khi bạn biết một đoạn code có thể gây ra lỗi</li>
+                    <li>Khi làm việc với file, network, database</li>
+                    <li>Khi convert dữ liệu (string to int, etc.)</li>
+                </ul>
+                <p><strong>2. Không nên catch tất cả exception:</strong></p>
+                <pre><code># Không tốt
+try:
+    do_something()
+except:
+    pass
+
+# Tốt hơn
+try:
+    do_something()
+except ValueError as e:
+    print(f"Lỗi giá trị: {e}")
+except FileNotFoundError as e:
+    print(f"Không tìm thấy file: {e}")</code></pre>
+                <p><strong>3. Tạo custom exception:</strong></p>
+                <pre><code>class MyCustomError(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
+
+# Sử dụng
+raise MyCustomError("Đây là lỗi tùy chỉnh")</code></pre>
+            ]]></field>
+            <field name="state">active</field>
+            <field name="is_correct" eval="True"/>
+        </record>
+        
+        <record id="forum_post_python_2" model="forum.post">
+            <field name="name">List comprehension vs for loop - cái nào nhanh hơn?</field>
+            <field name="forum_id" ref="forum_python_programming"/>
+            <field name="create_uid" ref="user_student_03"/>
+            <field name="content"><![CDATA[
+                <p>Mình thấy trong khóa học có nhắc đến list comprehension.</p>
+                <p>Cho mình hỏi list comprehension có nhanh hơn for loop thông thường không?</p>
+                <p>Và khi nào thì nên dùng list comprehension?</p>
+            ]]></field>
+            <field name="state">active</field>
+            <field name="views">67</field>
+        </record>
+        
+        <record id="forum_post_python_2_answer_1" model="forum.post">
+            <field name="forum_id" ref="forum_python_programming"/>
+            <field name="parent_id" ref="forum_post_python_2"/>
+            <field name="create_uid" ref="user_instructor_02"/>
+            <field name="content"><![CDATA[
+                <p>List comprehension thường nhanh hơn for loop thông thường vì:</p>
+                <ul>
+                    <li>Được tối ưu hóa ở C level</li>
+                    <li>Không cần gọi append() nhiều lần</li>
+                    <li>Code ngắn gọn và dễ đọc hơn</li>
+                </ul>
+                <p><strong>Ví dụ so sánh:</strong></p>
+                <pre><code># For loop thông thường
+squares = []
+for i in range(10):
+    squares.append(i**2)
+
+# List comprehension (nhanh hơn ~30%)
+squares = [i**2 for i in range(10)]</code></pre>
+                <p><strong>Khi nào nên dùng:</strong></p>
+                <ul>
+                    <li>Khi logic đơn giản (1-2 dòng)</li>
+                    <li>Khi cần tạo list mới từ iterable</li>
+                    <li>Khi muốn code ngắn gọn</li>
+                </ul>
+                <p><strong>Khi KHÔNG nên dùng:</strong></p>
+                <ul>
+                    <li>Logic phức tạp (nhiều if-else)</li>
+                    <li>Nested comprehension quá 2 cấp</li>
+                    <li>Khi cần debug chi tiết</li>
+                </ul>
+            ]]></field>
+            <field name="state">active</field>
+            <field name="is_correct" eval="True"/>
+        </record>
+        
+        <!-- Forum cho Web Development Course -->
+        <record id="forum_web_development" model="forum.forum">
+            <field name="name">Diễn đàn Phát triển Web</field>
+            <field name="description">Thảo luận về HTML, CSS, JavaScript và các công nghệ web hiện đại</field>
+            <field name="privacy">public</field>
+            <field name="karma_ask">3</field>
+            <field name="karma_answer">3</field>
+            <field name="karma_comment_own">1</field>
+            <field name="karma_comment_all">1</field>
+        </record>
+        
+        <record id="course_javascript_web" model="slide.channel">
+            <field name="forum_id" ref="forum_web_development"/>
+        </record>
+        
+        <record id="forum_post_web_1" model="forum.post">
+            <field name="name">Flexbox vs Grid - Khi nào dùng cái nào?</field>
+            <field name="forum_id" ref="forum_web_development"/>
+            <field name="create_uid" ref="user_student_02"/>
+            <field name="content"><![CDATA[
+                <p>Mình đang học CSS và thấy có cả Flexbox và Grid.</p>
+                <p>Cả hai đều dùng để layout, vậy khi nào thì dùng Flexbox và khi nào dùng Grid?</p>
+                <p>Có thể dùng cả hai cùng lúc không?</p>
+            ]]></field>
+            <field name="state">active</field>
+            <field name="views">89</field>
+        </record>
+        
+        <record id="forum_post_web_1_answer_1" model="forum.post">
+            <field name="forum_id" ref="forum_web_development"/>
+            <field name="parent_id" ref="forum_post_web_1"/>
+            <field name="create_uid" ref="user_instructor_01"/>
+            <field name="content"><![CDATA[
+                <p>Câu hỏi rất hay! Đây là sự khác biệt:</p>
+                <p><strong>Flexbox - Layout 1 chiều:</strong></p>
+                <ul>
+                    <li>Dùng cho layout theo hàng HOẶC cột</li>
+                    <li>Tốt cho: navbar, card layout, button groups</li>
+                    <li>Linh hoạt với kích thước items</li>
+                </ul>
+                <pre><code>.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}</code></pre>
+                <p><strong>Grid - Layout 2 chiều:</strong></p>
+                <ul>
+                    <li>Dùng cho layout theo hàng VÀ cột</li>
+                    <li>Tốt cho: page layout, gallery, dashboard</li>
+                    <li>Kiểm soát chính xác vị trí</li>
+                </ul>
+                <pre><code>.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}</code></pre>
+                <p><strong>Có thể dùng cả hai:</strong></p>
+                <p>Hoàn toàn được! Ví dụ: dùng Grid cho page layout, Flexbox cho từng component bên trong.</p>
+            ]]></field>
+            <field name="state">active</field>
+            <field name="is_correct" eval="True"/>
+        </record>
+        
+        <record id="forum_post_web_2" model="forum.post">
+            <field name="name">Async/Await trong JavaScript hoạt động như thế nào?</field>
+            <field name="forum_id" ref="forum_web_development"/>
+            <field name="create_uid" ref="user_student_04"/>
+            <field name="content"><![CDATA[
+                <p>Mình đang học về async/await trong JavaScript nhưng vẫn chưa hiểu rõ.</p>
+                <p>Ai có thể giải thích đơn giản về:</p>
+                <ul>
+                    <li>Async/await là gì?</li>
+                    <li>Khác gì với Promise?</li>
+                    <li>Khi nào nên dùng?</li>
+                </ul>
+            ]]></field>
+            <field name="state">active</field>
+            <field name="views">102</field>
+        </record>
+        
+        <record id="forum_post_web_2_answer_1" model="forum.post">
+            <field name="forum_id" ref="forum_web_development"/>
+            <field name="parent_id" ref="forum_post_web_2"/>
+            <field name="create_uid" ref="user_instructor_02"/>
+            <field name="content"><![CDATA[
+                <p>Async/await là cú pháp giúp làm việc với Promise dễ dàng hơn!</p>
+                <p><strong>1. Async/await là gì:</strong></p>
+                <ul>
+                    <li>async: đánh dấu function trả về Promise</li>
+                    <li>await: đợi Promise hoàn thành</li>
+                    <li>Làm code bất đồng bộ trông như đồng bộ</li>
+                </ul>
+                <p><strong>2. So sánh với Promise:</strong></p>
+                <pre><code>// Dùng Promise
+fetch('/api/users')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+
+// Dùng async/await (dễ đọc hơn)
+async function getUsers() {
+    try {
+        const response = await fetch('/api/users');
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}</code></pre>
+                <p><strong>3. Khi nào nên dùng:</strong></p>
+                <ul>
+                    <li>Khi có nhiều async operations liên tiếp</li>
+                    <li>Khi cần error handling rõ ràng</li>
+                    <li>Khi muốn code dễ đọc, dễ maintain</li>
+                </ul>
+            ]]></field>
+            <field name="state">active</field>
+            <field name="is_correct" eval="True"/>
+        </record>
+        
+        <!-- Forum cho Data Science Course -->
+        <record id="forum_data_science" model="forum.forum">
+            <field name="name">Diễn đàn Khoa học Dữ liệu</field>
+            <field name="description">Thảo luận về phân tích dữ liệu, machine learning và data visualization</field>
+            <field name="privacy">public</field>
+            <field name="karma_ask">3</field>
+            <field name="karma_answer">3</field>
+            <field name="karma_comment_own">1</field>
+            <field name="karma_comment_all">1</field>
+        </record>
+        
+        <record id="course_database_sql" model="slide.channel">
+            <field name="forum_id" ref="forum_data_science"/>
+        </record>
+        
+        <record id="forum_post_ds_1" model="forum.post">
+            <field name="name">Pandas vs NumPy - Khi nào dùng cái nào?</field>
+            <field name="forum_id" ref="forum_data_science"/>
+            <field name="create_uid" ref="user_student_05"/>
+            <field name="content"><![CDATA[
+                <p>Mình mới bắt đầu học Data Science và thấy có cả Pandas và NumPy.</p>
+                <p>Cả hai đều xử lý dữ liệu, vậy sự khác biệt là gì?</p>
+                <p>Khi nào thì dùng Pandas và khi nào dùng NumPy?</p>
+            ]]></field>
+            <field name="state">active</field>
+            <field name="views">78</field>
+        </record>
+        
+        <record id="forum_post_ds_1_answer_1" model="forum.post">
+            <field name="forum_id" ref="forum_data_science"/>
+            <field name="parent_id" ref="forum_post_ds_1"/>
+            <field name="create_uid" ref="user_instructor_01"/>
+            <field name="content"><![CDATA[
+                <p>Câu hỏi rất phổ biến với người mới học Data Science!</p>
+                <p><strong>NumPy - Xử lý mảng số:</strong></p>
+                <ul>
+                    <li>Làm việc với mảng nhiều chiều (arrays)</li>
+                    <li>Tính toán số học nhanh</li>
+                    <li>Dùng cho: linear algebra, mathematical operations</li>
+                </ul>
+                <pre><code>import numpy as np
+arr = np.array([1, 2, 3, 4, 5])
+print(arr.mean())  # 3.0</code></pre>
+                <p><strong>Pandas - Xử lý dữ liệu có cấu trúc:</strong></p>
+                <ul>
+                    <li>Làm việc với DataFrame (giống bảng Excel)</li>
+                    <li>Xử lý dữ liệu phức tạp: filter, group, merge</li>
+                    <li>Dùng cho: data cleaning, analysis, manipulation</li>
+                </ul>
+                <pre><code>import pandas as pd
+df = pd.DataFrame({
+    'name': ['An', 'Bình', 'Chi'],
+    'age': [25, 30, 28]
+})
+print(df[df['age'] > 26])</code></pre>
+                <p><strong>Kết luận:</strong></p>
+                <ul>
+                    <li>NumPy: tính toán số học, arrays</li>
+                    <li>Pandas: phân tích dữ liệu, DataFrames</li>
+                    <li>Pandas được xây dựng trên NumPy!</li>
+                </ul>
+            ]]></field>
+            <field name="state">active</field>
+            <field name="is_correct" eval="True"/>
+        </record>
+        
+        <!-- ============================================ -->
+        <!-- CHỨNG NHẬN (CERTIFICATIONS) -->
+        <!-- ============================================ -->
+        
+        <!-- Gamification Badges (Tạo TRƯỚC surveys) -->
+        <record id="badge_python_programming" model="gamification.badge">
+            <field name="name">Chứng nhận Lập trình Python</field>
+            <field name="description">Hoàn thành khóa học Lập trình Python và đạt điểm tối thiểu 70%</field>
+        </record>
+        
+        <record id="badge_web_development" model="gamification.badge">
+            <field name="name">Chứng nhận Phát triển Web</field>
+            <field name="description">Hoàn thành khóa học Phát triển Web và đạt điểm tối thiểu 75%</field>
+        </record>
+        
+        <record id="badge_data_science" model="gamification.badge">
+            <field name="name">Chứng nhận Khoa học Dữ liệu</field>
+            <field name="description">Hoàn thành khóa học Khoa học Dữ liệu và đạt điểm tối thiểu 80%</field>
+        </record>
+        
+        <record id="badge_digital_marketing" model="gamification.badge">
+            <field name="name">Chứng nhận Marketing Số</field>
+            <field name="description">Hoàn thành khóa học Marketing Số và đạt điểm tối thiểu 70%</field>
+        </record>
+        
+        <record id="badge_project_management" model="gamification.badge">
+            <field name="name">Chứng nhận Quản lý Dự án</field>
+            <field name="description">Hoàn thành khóa học Quản lý Dự án và đạt điểm tối thiểu 75%</field>
+        </record>
+        
+        <!-- Survey/Certification cho Python Programming -->
+        <record id="certification_python_programming" model="survey.survey">
+            <field name="title">Chứng nhận Lập trình Python</field>
+            <field name="description">Bài kiểm tra chứng nhận kiến thức lập trình Python cơ bản đến nâng cao</field>
+            <field name="certification">True</field>
+            <field name="certification_give_badge">True</field>
+            <field name="certification_badge_id" ref="badge_python_programming"/>
+            <field name="scoring_type">scoring_with_answers</field>
+            <field name="scoring_success_min">70.0</field>
+            <field name="is_attempts_limited">True</field>
+            <field name="attempts_limit">3</field>
+            <field name="is_time_limited">True</field>
+            <field name="time_limit">60.0</field>
+            <field name="questions_layout">page_per_question</field>
+            <field name="users_can_go_back">False</field>
+        </record>
+        
+        <!-- Certification Slide cho Python Course -->
+        <record id="slide_cert_python" model="slide.slide">
+            <field name="name">Chứng nhận Lập trình Python</field>
+            <field name="channel_id" ref="course_python_complete"/>
+            <field name="slide_category">certification</field>
+            <field name="slide_type">certification</field>
+            <field name="survey_id" ref="certification_python_programming"/>
+            <field name="sequence">100</field>
+            <field name="is_published" eval="True"/>
+            <field name="is_preview" eval="False"/>
+            <field name="description">Hoàn thành bài kiểm tra để nhận chứng nhận Lập trình Python</field>
+        </record>
+        
+        <!-- Survey/Certification cho Web Development -->
+        <record id="certification_web_development" model="survey.survey">
+            <field name="title">Chứng nhận Phát triển Web</field>
+            <field name="description">Bài kiểm tra chứng nhận kiến thức HTML, CSS, JavaScript và phát triển web</field>
+            <field name="certification">True</field>
+            <field name="certification_give_badge">True</field>
+            <field name="certification_badge_id" ref="badge_web_development"/>
+            <field name="scoring_type">scoring_with_answers</field>
+            <field name="scoring_success_min">75.0</field>
+            <field name="is_attempts_limited">True</field>
+            <field name="attempts_limit">3</field>
+            <field name="is_time_limited">True</field>
+            <field name="time_limit">90.0</field>
+            <field name="questions_layout">page_per_question</field>
+        </record>
+        
+        <record id="slide_cert_web" model="slide.slide">
+            <field name="name">Chứng nhận Phát triển Web</field>
+            <field name="channel_id" ref="course_javascript_web"/>
+            <field name="slide_category">certification</field>
+            <field name="slide_type">certification</field>
+            <field name="survey_id" ref="certification_web_development"/>
+            <field name="sequence">100</field>
+            <field name="is_published" eval="True"/>
+            <field name="is_preview" eval="False"/>
+            <field name="description">Hoàn thành bài kiểm tra để nhận chứng nhận Phát triển Web</field>
+        </record>
+        
+        <!-- Survey/Certification cho Data Science -->
+        <record id="certification_data_science" model="survey.survey">
+            <field name="title">Chứng nhận Khoa học Dữ liệu</field>
+            <field name="description">Bài kiểm tra chứng nhận kiến thức về phân tích dữ liệu và machine learning</field>
+            <field name="certification">True</field>
+            <field name="certification_give_badge">True</field>
+            <field name="certification_badge_id" ref="badge_data_science"/>
+            <field name="scoring_type">scoring_with_answers</field>
+            <field name="scoring_success_min">80.0</field>
+            <field name="is_attempts_limited">True</field>
+            <field name="attempts_limit">2</field>
+            <field name="is_time_limited">True</field>
+            <field name="time_limit">120.0</field>
+            <field name="questions_layout">page_per_question</field>
+        </record>
+        
+        <record id="slide_cert_data_science" model="slide.slide">
+            <field name="name">Chứng nhận Khoa học Dữ liệu</field>
+            <field name="channel_id" ref="course_database_sql"/>
+            <field name="slide_category">certification</field>
+            <field name="slide_type">certification</field>
+            <field name="survey_id" ref="certification_data_science"/>
+            <field name="sequence">100</field>
+            <field name="is_published" eval="True"/>
+            <field name="is_preview" eval="False"/>
+            <field name="description">Hoàn thành bài kiểm tra để nhận chứng nhận Khoa học Dữ liệu</field>
+        </record>
+        
+        <!-- Survey/Certification cho Digital Marketing -->
+        <record id="certification_digital_marketing" model="survey.survey">
+            <field name="title">Chứng nhận Marketing Số</field>
+            <field name="description">Bài kiểm tra chứng nhận kiến thức về marketing số và chiến lược online</field>
+            <field name="certification">True</field>
+            <field name="certification_give_badge">True</field>
+            <field name="certification_badge_id" ref="badge_digital_marketing"/>
+            <field name="scoring_type">scoring_with_answers</field>
+            <field name="scoring_success_min">70.0</field>
+            <field name="is_attempts_limited">True</field>
+            <field name="attempts_limit">3</field>
+            <field name="is_time_limited">True</field>
+            <field name="time_limit">60.0</field>
+        </record>
+        
+        <record id="slide_cert_marketing" model="slide.slide">
+            <field name="name">Chứng nhận Marketing Số</field>
+            <field name="channel_id" ref="course_digital_marketing"/>
+            <field name="slide_category">certification</field>
+            <field name="slide_type">certification</field>
+            <field name="survey_id" ref="certification_digital_marketing"/>
+            <field name="sequence">100</field>
+            <field name="is_published" eval="True"/>
+            <field name="is_preview" eval="False"/>
+            <field name="description">Hoàn thành bài kiểm tra để nhận chứng nhận Marketing Số</field>
+        </record>
+        
+        <!-- Survey/Certification cho Project Management -->
+        <record id="certification_project_management" model="survey.survey">
+            <field name="title">Chứng nhận Quản lý Dự án</field>
+            <field name="description">Bài kiểm tra chứng nhận kiến thức về quản lý dự án và phương pháp Agile</field>
+            <field name="certification">True</field>
+            <field name="certification_give_badge">True</field>
+            <field name="certification_badge_id" ref="badge_project_management"/>
+            <field name="scoring_type">scoring_with_answers</field>
+            <field name="scoring_success_min">75.0</field>
+            <field name="is_attempts_limited">True</field>
+            <field name="attempts_limit">3</field>
+            <field name="is_time_limited">True</field>
+            <field name="time_limit">90.0</field>
+        </record>
+        
+        <record id="slide_cert_pm" model="slide.slide">
+            <field name="name">Chứng nhận Quản lý Dự án</field>
+            <field name="channel_id" ref="course_agile_management"/>
+            <field name="slide_category">certification</field>
+            <field name="slide_type">certification</field>
+            <field name="survey_id" ref="certification_project_management"/>
+            <field name="sequence">100</field>
+            <field name="is_published" eval="True"/>
+            <field name="is_preview" eval="False"/>
+            <field name="description">Hoàn thành bài kiểm tra để nhận chứng nhận Quản lý Dự án</field>
+        </record>
+        
+        <!-- Completed Certifications (User Inputs) -->
+        <!-- Student 1 đã hoàn thành Python certification -->
+        <record id="user_input_cert_python_student1" model="survey.user_input">
+            <field name="survey_id" ref="certification_python_programming"/>
+            <field name="partner_id" ref="partner_student_01"/>
+            <field name="state">done</field>
+            <field name="scoring_success" eval="True"/>
+            <field name="scoring_percentage">85.0</field>
+            <field name="scoring_total">100.0</field>
+        </record>
+        
+        <!-- Student 2 đã hoàn thành Web Development certification -->
+        <record id="user_input_cert_web_student2" model="survey.user_input">
+            <field name="survey_id" ref="certification_web_development"/>
+            <field name="partner_id" ref="partner_student_02"/>
+            <field name="state">done</field>
+            <field name="scoring_success" eval="True"/>
+            <field name="scoring_percentage">92.0</field>
+            <field name="scoring_total">100.0</field>
+        </record>
+        
+        <!-- Student 3 đã hoàn thành Data Science certification -->
+        <record id="user_input_cert_ds_student3" model="survey.user_input">
+            <field name="survey_id" ref="certification_data_science"/>
+            <field name="partner_id" ref="partner_student_03"/>
+            <field name="state">done</field>
+            <field name="scoring_success" eval="True"/>
+            <field name="scoring_percentage">88.0</field>
+            <field name="scoring_total">100.0</field>
+        </record>
+        
+        <!-- Student 4 đã hoàn thành Digital Marketing certification -->
+        <record id="user_input_cert_marketing_student4" model="survey.user_input">
+            <field name="survey_id" ref="certification_digital_marketing"/>
+            <field name="partner_id" ref="partner_student_04"/>
+            <field name="state">done</field>
+            <field name="scoring_success" eval="True"/>
+            <field name="scoring_percentage">78.0</field>
+            <field name="scoring_total">100.0</field>
+        </record>
+        
+        <!-- Student 5 đã hoàn thành Project Management certification -->
+        <record id="user_input_cert_pm_student5" model="survey.user_input">
+            <field name="survey_id" ref="certification_project_management"/>
+            <field name="partner_id" ref="partner_student_05"/>
+            <field name="state">done</field>
+            <field name="scoring_success" eval="True"/>
+            <field name="scoring_percentage">81.0</field>
+            <field name="scoring_total">100.0</field>
+        </record>
+        
+        <!-- Instructor 1 đã hoàn thành nhiều certifications -->
+        <record id="user_input_cert_python_instructor1" model="survey.user_input">
+            <field name="survey_id" ref="certification_python_programming"/>
+            <field name="partner_id" ref="partner_instructor_01"/>
+            <field name="state">done</field>
+            <field name="scoring_success" eval="True"/>
+            <field name="scoring_percentage">98.0</field>
+            <field name="scoring_total">100.0</field>
+        </record>
+        
+        <record id="user_input_cert_web_instructor1" model="survey.user_input">
+            <field name="survey_id" ref="certification_web_development"/>
+            <field name="partner_id" ref="partner_instructor_01"/>
+            <field name="state">done</field>
+            <field name="scoring_success" eval="True"/>
+            <field name="scoring_percentage">96.0</field>
+            <field name="scoring_total">100.0</field>
+        </record>
+        
+    </data>
+</odoo>
+
+

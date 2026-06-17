@@ -1,0 +1,1486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ============================================ -->
+        <!-- CRM TAGS (15 records) -->
+        <!-- ============================================ -->
+        <record id="crm_tag_vip" model="crm.tag">
+            <field name="name">VIP</field>
+            <field name="color">1</field>
+        </record>
+
+        <record id="crm_tag_enterprise" model="crm.tag">
+            <field name="name">Doanh nghiệp lớn</field>
+            <field name="color">2</field>
+        </record>
+
+        <record id="crm_tag_sme" model="crm.tag">
+            <field name="name">Doanh nghiệp vừa và nhỏ</field>
+            <field name="color">3</field>
+        </record>
+
+        <record id="crm_tag_startup" model="crm.tag">
+            <field name="name">Startup</field>
+            <field name="color">4</field>
+        </record>
+
+        <record id="crm_tag_hot" model="crm.tag">
+            <field name="name">Khách hàng tiềm năng cao</field>
+            <field name="color">9</field>
+        </record>
+
+        <record id="crm_tag_cold" model="crm.tag">
+            <field name="name">Khách hàng lạnh</field>
+            <field name="color">7</field>
+        </record>
+
+        <record id="crm_tag_retail" model="crm.tag">
+            <field name="name">Bán lẻ</field>
+            <field name="color">5</field>
+        </record>
+
+        <record id="crm_tag_manufacturing" model="crm.tag">
+            <field name="name">Sản xuất</field>
+            <field name="color">6</field>
+        </record>
+
+        <record id="crm_tag_technology" model="crm.tag">
+            <field name="name">Công nghệ</field>
+            <field name="color">8</field>
+        </record>
+
+        <record id="crm_tag_education" model="crm.tag">
+            <field name="name">Giáo dục</field>
+            <field name="color">10</field>
+        </record>
+
+        <record id="crm_tag_healthcare" model="crm.tag">
+            <field name="name">Y tế</field>
+            <field name="color">11</field>
+        </record>
+
+        <record id="crm_tag_finance" model="crm.tag">
+            <field name="name">Tài chính</field>
+            <field name="color">1</field>
+        </record>
+
+        <record id="crm_tag_logistics" model="crm.tag">
+            <field name="name">Logistics</field>
+            <field name="color">2</field>
+        </record>
+
+        <record id="crm_tag_hospitality" model="crm.tag">
+            <field name="name">Khách sạn - Nhà hàng</field>
+            <field name="color">3</field>
+        </record>
+
+        <record id="crm_tag_government" model="crm.tag">
+            <field name="name">Chính phủ</field>
+            <field name="color">4</field>
+        </record>
+
+        <!-- ============================================ -->
+        <!-- LOST REASONS (12 records) -->
+        <!-- ============================================ -->
+        <record id="crm_lost_reason_price" model="crm.lost.reason">
+            <field name="name">Giá cao</field>
+        </record>
+
+        <record id="crm_lost_reason_competitor" model="crm.lost.reason">
+            <field name="name">Chọn đối thủ cạnh tranh</field>
+        </record>
+
+        <record id="crm_lost_reason_no_budget" model="crm.lost.reason">
+            <field name="name">Không có ngân sách</field>
+        </record>
+
+        <record id="crm_lost_reason_no_response" model="crm.lost.reason">
+            <field name="name">Không phản hồi</field>
+        </record>
+
+        <record id="crm_lost_reason_timing" model="crm.lost.reason">
+            <field name="name">Thời điểm không phù hợp</field>
+        </record>
+
+        <record id="crm_lost_reason_features" model="crm.lost.reason">
+            <field name="name">Thiếu tính năng</field>
+        </record>
+
+        <record id="crm_lost_reason_quality" model="crm.lost.reason">
+            <field name="name">Chất lượng không đạt</field>
+        </record>
+
+        <record id="crm_lost_reason_support" model="crm.lost.reason">
+            <field name="name">Hỗ trợ không tốt</field>
+        </record>
+
+        <record id="crm_lost_reason_integration" model="crm.lost.reason">
+            <field name="name">Khó tích hợp</field>
+        </record>
+
+        <record id="crm_lost_reason_complexity" model="crm.lost.reason">
+            <field name="name">Quá phức tạp</field>
+        </record>
+
+        <record id="crm_lost_reason_contract" model="crm.lost.reason">
+            <field name="name">Điều khoản hợp đồng</field>
+        </record>
+
+        <record id="crm_lost_reason_other" model="crm.lost.reason">
+            <field name="name">Lý do khác</field>
+        </record>
+
+        <!-- ============================================ -->
+        <!-- UTM CAMPAIGNS (12 records) -->
+        <!-- ============================================ -->
+        <record id="utm_campaign_q1_2026" model="utm.campaign">
+            <field name="name">Chiến dịch Q1 2026</field>
+        </record>
+
+        <record id="utm_campaign_q2_2026" model="utm.campaign">
+            <field name="name">Chiến dịch Q2 2026</field>
+        </record>
+
+        <record id="utm_campaign_product_launch" model="utm.campaign">
+            <field name="name">Ra mắt sản phẩm 2026</field>
+        </record>
+
+        <record id="utm_campaign_webinar" model="utm.campaign">
+            <field name="name">Chuỗi Webinar</field>
+        </record>
+
+        <record id="utm_campaign_email_marketing" model="utm.campaign">
+            <field name="name">Email Marketing Q1</field>
+        </record>
+
+        <record id="utm_campaign_trade_show" model="utm.campaign">
+            <field name="name">Hội chợ Thương mại 2026</field>
+        </record>
+
+        <record id="utm_campaign_summer_sale" model="utm.campaign">
+            <field name="name">Khuyến mãi Hè 2026</field>
+        </record>
+
+        <record id="utm_campaign_year_end" model="utm.campaign">
+            <field name="name">Cuối năm 2026</field>
+        </record>
+
+        <record id="utm_campaign_referral" model="utm.campaign">
+            <field name="name">Chương trình Giới thiệu</field>
+        </record>
+
+        <record id="utm_campaign_partnership" model="utm.campaign">
+            <field name="name">Đối tác Chiến lược</field>
+        </record>
+
+        <record id="utm_campaign_content_marketing" model="utm.campaign">
+            <field name="name">Content Marketing</field>
+        </record>
+
+        <record id="utm_campaign_retargeting" model="utm.campaign">
+            <field name="name">Retargeting Campaign</field>
+        </record>
+
+        <!-- ============================================ -->
+        <!-- UTM SOURCES (12 records) -->
+        <!-- ============================================ -->
+        <record id="utm_source_google" model="utm.source">
+            <field name="name">Google Ads</field>
+        </record>
+
+        <record id="utm_source_facebook" model="utm.source">
+            <field name="name">Facebook</field>
+        </record>
+
+        <record id="utm_source_linkedin" model="utm.source">
+            <field name="name">LinkedIn</field>
+        </record>
+
+        <record id="utm_source_website" model="utm.source">
+            <field name="name">Website</field>
+        </record>
+
+        <record id="utm_source_referral" model="utm.source">
+            <field name="name">Giới thiệu</field>
+        </record>
+
+        <record id="utm_source_instagram" model="utm.source">
+            <field name="name">Instagram</field>
+        </record>
+
+        <record id="utm_source_youtube" model="utm.source">
+            <field name="name">YouTube</field>
+        </record>
+
+        <record id="utm_source_tiktok" model="utm.source">
+            <field name="name">TikTok</field>
+        </record>
+
+        <record id="utm_source_zalo" model="utm.source">
+            <field name="name">Zalo</field>
+        </record>
+
+        <record id="utm_source_email" model="utm.source">
+            <field name="name">Email Campaign</field>
+        </record>
+
+        <record id="utm_source_trade_show" model="utm.source">
+            <field name="name">Hội chợ</field>
+        </record>
+
+        <record id="utm_source_partner" model="utm.source">
+            <field name="name">Đối tác</field>
+        </record>
+
+        <!-- ============================================ -->
+        <!-- UTM MEDIUMS (12 records) -->
+        <!-- ============================================ -->
+        <record id="utm_medium_cpc" model="utm.medium">
+            <field name="name">CPC</field>
+        </record>
+
+        <record id="utm_medium_email" model="utm.medium">
+            <field name="name">Email</field>
+        </record>
+
+        <record id="utm_medium_social" model="utm.medium">
+            <field name="name">Social Media</field>
+        </record>
+
+        <record id="utm_medium_organic" model="utm.medium">
+            <field name="name">Organic</field>
+        </record>
+
+        <record id="utm_medium_display" model="utm.medium">
+            <field name="name">Display Ads</field>
+        </record>
+
+        <record id="utm_medium_video" model="utm.medium">
+            <field name="name">Video</field>
+        </record>
+
+        <record id="utm_medium_banner" model="utm.medium">
+            <field name="name">Banner</field>
+        </record>
+
+        <record id="utm_medium_sms" model="utm.medium">
+            <field name="name">SMS</field>
+        </record>
+
+        <record id="utm_medium_direct" model="utm.medium">
+            <field name="name">Direct</field>
+        </record>
+
+        <record id="utm_medium_referral" model="utm.medium">
+            <field name="name">Referral</field>
+        </record>
+
+        <record id="utm_medium_affiliate" model="utm.medium">
+            <field name="name">Affiliate</field>
+        </record>
+
+        <record id="utm_medium_retargeting" model="utm.medium">
+            <field name="name">Retargeting</field>
+        </record>
+
+        <!-- ============================================ -->
+        <!-- CRM TEAMS (12 records) -->
+        <!-- ============================================ -->
+        <record id="crm_team_north" model="crm.team">
+            <field name="name">Miền Bắc</field>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">100</field>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_south" model="crm.team">
+            <field name="name">Miền Nam</field>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">100</field>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_central" model="crm.team">
+            <field name="name">Miền Trung</field>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">80</field>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_enterprise" model="crm.team">
+            <field name="name">Enterprise Sales</field>
+            <field name="use_leads" eval="False"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">50</field>
+            <field name="assignment_domain">[('expected_revenue', '>=', 100000000)]</field>
+        </record>
+
+        <record id="crm_team_sme" model="crm.team">
+            <field name="name">SME Sales</field>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">120</field>
+            <field name="assignment_domain">[('expected_revenue', '&lt;', 100000000)]</field>
+        </record>
+
+        <record id="crm_team_retail" model="crm.team">
+            <field name="name">Bán lẻ</field>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">150</field>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_technology" model="crm.team">
+            <field name="name">Công nghệ</field>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">90</field>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_education" model="crm.team">
+            <field name="name">Giáo dục</field>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">70</field>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_healthcare" model="crm.team">
+            <field name="name">Y tế</field>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">60</field>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_finance" model="crm.team">
+            <field name="name">Tài chính</field>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">80</field>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_online" model="crm.team">
+            <field name="name">Online Sales</field>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">200</field>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_partner" model="crm.team">
+            <field name="name">Kênh Đối tác</field>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">100</field>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <!-- ============================================ -->
+        <!-- CRM TEAM MEMBERS (12 records) -->
+        <!-- ============================================ -->
+        <record id="crm_team_member_001" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="crm_team_id" ref="crm_team_north"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">30</field>
+            <field name="assignment_optout" eval="False"/>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_member_002" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="crm_team_id" ref="crm_team_south"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">30</field>
+            <field name="assignment_optout" eval="False"/>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_member_003" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="crm_team_id" ref="crm_team_central"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">25</field>
+            <field name="assignment_optout" eval="False"/>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_member_004" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="crm_team_id" ref="crm_team_enterprise"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">15</field>
+            <field name="assignment_optout" eval="False"/>
+            <field name="assignment_domain">[('expected_revenue', '>=', 100000000)]</field>
+        </record>
+
+        <record id="crm_team_member_005" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="crm_team_id" ref="crm_team_sme"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">40</field>
+            <field name="assignment_optout" eval="False"/>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_member_006" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="crm_team_id" ref="crm_team_retail"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">50</field>
+            <field name="assignment_optout" eval="False"/>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_member_007" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="crm_team_id" ref="crm_team_technology"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">30</field>
+            <field name="assignment_optout" eval="False"/>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_member_008" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="crm_team_id" ref="crm_team_education"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">25</field>
+            <field name="assignment_optout" eval="False"/>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_member_009" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="crm_team_id" ref="crm_team_healthcare"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">20</field>
+            <field name="assignment_optout" eval="False"/>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_member_010" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="crm_team_id" ref="crm_team_finance"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">25</field>
+            <field name="assignment_optout" eval="False"/>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_member_011" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="crm_team_id" ref="crm_team_online"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">60</field>
+            <field name="assignment_optout" eval="False"/>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <record id="crm_team_member_012" model="crm.team.member">
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="crm_team_id" ref="crm_team_partner"/>
+            <field name="assignment_enabled" eval="True"/>
+            <field name="assignment_max">35</field>
+            <field name="assignment_optout" eval="False"/>
+            <field name="assignment_domain">[]</field>
+        </record>
+
+        <!-- ============================================ -->
+        <!-- PARTNERS - COMPANIES (15 records) -->
+        <!-- ============================================ -->
+        <record id="partner_techviet" model="res.partner">
+            <field name="name">TechViet Solutions JSC</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">123 Nguyễn Huệ</field>
+            <field name="city">Hà Nội</field>
+            <field name="zip">100000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 24 3826 1234</field>
+            <field name="email">info@techviet.vn</field>
+            <field name="website">www.techviet.vn</field>
+        </record>
+
+        <record id="partner_globalcorp" model="res.partner">
+            <field name="name">Global Corp Vietnam</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">456 Lê Lợi, Quận 1</field>
+            <field name="city">TP. Hồ Chí Minh</field>
+            <field name="zip">700000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 28 3827 5678</field>
+            <field name="email">contact@globalcorp.vn</field>
+            <field name="website">www.globalcorp.vn</field>
+        </record>
+
+        <record id="partner_startup_ai" model="res.partner">
+            <field name="name">AI Startup Hub</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">789 Trần Hưng Đạo</field>
+            <field name="city">Đà Nẵng</field>
+            <field name="zip">550000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 236 3888 999</field>
+            <field name="email">hello@aistartup.vn</field>
+            <field name="website">www.aistartup.vn</field>
+        </record>
+
+        <record id="partner_retail_chain" model="res.partner">
+            <field name="name">Retail Chain Vietnam</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">321 Hai Bà Trưng</field>
+            <field name="city">Hà Nội</field>
+            <field name="zip">100000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 24 3999 8888</field>
+            <field name="email">sales@retailchain.vn</field>
+            <field name="website">www.retailchain.vn</field>
+        </record>
+
+        <record id="partner_manufacturing" model="res.partner">
+            <field name="name">Công ty TNHH Sản xuất Việt Nam</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">100 Đường Láng</field>
+            <field name="city">Hà Nội</field>
+            <field name="zip">100000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 24 3555 1234</field>
+            <field name="email">info@manufacturing.vn</field>
+            <field name="website">www.manufacturing.vn</field>
+        </record>
+
+        <record id="partner_education" model="res.partner">
+            <field name="name">Trung tâm Đào tạo Quốc tế</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">50 Nguyễn Chí Thanh</field>
+            <field name="city">Hà Nội</field>
+            <field name="zip">100000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 24 3777 5555</field>
+            <field name="email">contact@education.vn</field>
+            <field name="website">www.education.vn</field>
+        </record>
+
+        <record id="partner_hospital" model="res.partner">
+            <field name="name">Bệnh viện Đa khoa Trung ương</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">200 Giải Phóng</field>
+            <field name="city">Hà Nội</field>
+            <field name="zip">100000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 24 3888 6666</field>
+            <field name="email">info@hospital.vn</field>
+            <field name="website">www.hospital.vn</field>
+        </record>
+
+        <record id="partner_bank" model="res.partner">
+            <field name="name">Ngân hàng TMCP Việt Nam</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">88 Láng Hạ</field>
+            <field name="city">Hà Nội</field>
+            <field name="zip">100000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 24 3999 7777</field>
+            <field name="email">contact@bank.vn</field>
+            <field name="website">www.bank.vn</field>
+        </record>
+
+        <record id="partner_logistics" model="res.partner">
+            <field name="name">Công ty Logistics Việt Nam</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">300 Nguyễn Văn Linh</field>
+            <field name="city">TP. Hồ Chí Minh</field>
+            <field name="zip">700000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 28 3666 8888</field>
+            <field name="email">info@logistics.vn</field>
+            <field name="website">www.logistics.vn</field>
+        </record>
+
+        <record id="partner_hotel" model="res.partner">
+            <field name="name">Khách sạn 5 Sao Hà Nội</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">15 Hoàn Kiếm</field>
+            <field name="city">Hà Nội</field>
+            <field name="zip">100000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 24 3444 9999</field>
+            <field name="email">reservation@hotel.vn</field>
+            <field name="website">www.hotel.vn</field>
+        </record>
+
+        <record id="partner_ecommerce" model="res.partner">
+            <field name="name">Sàn Thương mại Điện tử VN</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">99 Trần Duy Hưng</field>
+            <field name="city">Hà Nội</field>
+            <field name="zip">100000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 24 3222 3333</field>
+            <field name="email">support@ecommerce.vn</field>
+            <field name="website">www.ecommerce.vn</field>
+        </record>
+
+        <record id="partner_construction" model="res.partner">
+            <field name="name">Tập đoàn Xây dựng Việt Nam</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">500 Cầu Giấy</field>
+            <field name="city">Hà Nội</field>
+            <field name="zip">100000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 24 3111 2222</field>
+            <field name="email">info@construction.vn</field>
+            <field name="website">www.construction.vn</field>
+        </record>
+
+        <record id="partner_telecom" model="res.partner">
+            <field name="name">Công ty Viễn thông Việt Nam</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">777 Nguyễn Trãi</field>
+            <field name="city">Hà Nội</field>
+            <field name="zip">100000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 24 3888 1111</field>
+            <field name="email">contact@telecom.vn</field>
+            <field name="website">www.telecom.vn</field>
+        </record>
+
+        <record id="partner_insurance" model="res.partner">
+            <field name="name">Bảo hiểm Việt Nam</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">250 Lê Duẩn</field>
+            <field name="city">Hà Nội</field>
+            <field name="zip">100000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 24 3777 8888</field>
+            <field name="email">info@insurance.vn</field>
+            <field name="website">www.insurance.vn</field>
+        </record>
+
+        <record id="partner_consulting" model="res.partner">
+            <field name="name">Công ty Tư vấn Quản lý</field>
+            <field name="is_company" eval="True"/>
+            <field name="street">88 Hoàng Quốc Việt</field>
+            <field name="city">Hà Nội</field>
+            <field name="zip">100000</field>
+            <field name="country_id" ref="base.vn"/>
+            <field name="phone">+84 24 3666 7777</field>
+            <field name="email">contact@consulting.vn</field>
+            <field name="website">www.consulting.vn</field>
+        </record>
+
+        <!-- ============================================ -->
+        <!-- PARTNERS - CONTACTS (15 records) -->
+        <!-- ============================================ -->
+        <record id="contact_techviet_cto" model="res.partner">
+            <field name="name">Nguyễn Văn An</field>
+            <field name="parent_id" ref="partner_techviet"/>
+            <field name="type">contact</field>
+            <field name="function">Giám đốc Công nghệ</field>
+            <field name="phone">+84 90 123 4567</field>
+            <field name="email">an.nguyen@techviet.vn</field>
+        </record>
+
+        <record id="contact_globalcorp_manager" model="res.partner">
+            <field name="name">Trần Thị Bình</field>
+            <field name="parent_id" ref="partner_globalcorp"/>
+            <field name="type">contact</field>
+            <field name="function">Trưởng phòng Mua hàng</field>
+            <field name="phone">+84 91 234 5678</field>
+            <field name="email">binh.tran@globalcorp.vn</field>
+        </record>
+
+        <record id="contact_startup_ceo" model="res.partner">
+            <field name="name">Lê Minh Cường</field>
+            <field name="parent_id" ref="partner_startup_ai"/>
+            <field name="type">contact</field>
+            <field name="function">CEO</field>
+            <field name="phone">+84 92 345 6789</field>
+            <field name="email">cuong.le@aistartup.vn</field>
+        </record>
+
+        <record id="contact_retail_director" model="res.partner">
+            <field name="name">Phạm Thị Dung</field>
+            <field name="parent_id" ref="partner_retail_chain"/>
+            <field name="type">contact</field>
+            <field name="function">Giám đốc Kinh doanh</field>
+            <field name="phone">+84 93 456 7890</field>
+            <field name="email">dung.pham@retailchain.vn</field>
+        </record>
+
+        <record id="contact_manufacturing_manager" model="res.partner">
+            <field name="name">Hoàng Văn Em</field>
+            <field name="parent_id" ref="partner_manufacturing"/>
+            <field name="type">contact</field>
+            <field name="function">Giám đốc Sản xuất</field>
+            <field name="phone">+84 94 567 8901</field>
+            <field name="email">em.hoang@manufacturing.vn</field>
+        </record>
+
+        <record id="contact_education_director" model="res.partner">
+            <field name="name">Vũ Thị Phương</field>
+            <field name="parent_id" ref="partner_education"/>
+            <field name="type">contact</field>
+            <field name="function">Giám đốc Đào tạo</field>
+            <field name="phone">+84 95 678 9012</field>
+            <field name="email">phuong.vu@education.vn</field>
+        </record>
+
+        <record id="contact_hospital_admin" model="res.partner">
+            <field name="name">Đỗ Văn Giang</field>
+            <field name="parent_id" ref="partner_hospital"/>
+            <field name="type">contact</field>
+            <field name="function">Giám đốc Hành chính</field>
+            <field name="phone">+84 96 789 0123</field>
+            <field name="email">giang.do@hospital.vn</field>
+        </record>
+
+        <record id="contact_bank_manager" model="res.partner">
+            <field name="name">Bùi Thị Hà</field>
+            <field name="parent_id" ref="partner_bank"/>
+            <field name="type">contact</field>
+            <field name="function">Trưởng phòng Doanh nghiệp</field>
+            <field name="phone">+84 97 890 1234</field>
+            <field name="email">ha.bui@bank.vn</field>
+        </record>
+
+        <record id="contact_logistics_director" model="res.partner">
+            <field name="name">Ngô Văn Ích</field>
+            <field name="parent_id" ref="partner_logistics"/>
+            <field name="type">contact</field>
+            <field name="function">Giám đốc Vận hành</field>
+            <field name="phone">+84 98 901 2345</field>
+            <field name="email">ich.ngo@logistics.vn</field>
+        </record>
+
+        <record id="contact_hotel_manager" model="res.partner">
+            <field name="name">Trương Thị Khánh</field>
+            <field name="parent_id" ref="partner_hotel"/>
+            <field name="type">contact</field>
+            <field name="function">Giám đốc Khách sạn</field>
+            <field name="phone">+84 99 012 3456</field>
+            <field name="email">khanh.truong@hotel.vn</field>
+        </record>
+
+        <record id="contact_ecommerce_ceo" model="res.partner">
+            <field name="name">Lý Văn Long</field>
+            <field name="parent_id" ref="partner_ecommerce"/>
+            <field name="type">contact</field>
+            <field name="function">CEO</field>
+            <field name="phone">+84 90 234 5678</field>
+            <field name="email">long.ly@ecommerce.vn</field>
+        </record>
+
+        <record id="contact_construction_director" model="res.partner">
+            <field name="name">Mai Thị Minh</field>
+            <field name="parent_id" ref="partner_construction"/>
+            <field name="type">contact</field>
+            <field name="function">Giám đốc Dự án</field>
+            <field name="phone">+84 91 345 6789</field>
+            <field name="email">minh.mai@construction.vn</field>
+        </record>
+
+        <record id="contact_telecom_manager" model="res.partner">
+            <field name="name">Phan Văn Nam</field>
+            <field name="parent_id" ref="partner_telecom"/>
+            <field name="type">contact</field>
+            <field name="function">Trưởng phòng Kinh doanh</field>
+            <field name="phone">+84 92 456 7890</field>
+            <field name="email">nam.phan@telecom.vn</field>
+        </record>
+
+        <record id="contact_insurance_director" model="res.partner">
+            <field name="name">Quách Thị Oanh</field>
+            <field name="parent_id" ref="partner_insurance"/>
+            <field name="type">contact</field>
+            <field name="function">Giám đốc Bán hàng</field>
+            <field name="phone">+84 93 567 8901</field>
+            <field name="email">oanh.quach@insurance.vn</field>
+        </record>
+
+        <record id="contact_consulting_partner" model="res.partner">
+            <field name="name">Đặng Văn Phúc</field>
+            <field name="parent_id" ref="partner_consulting"/>
+            <field name="type">contact</field>
+            <field name="function">Partner</field>
+            <field name="phone">+84 94 678 9012</field>
+            <field name="email">phuc.dang@consulting.vn</field>
+        </record>
+
+        <!-- ============================================ -->
+        <!-- LEADS (15 records) -->
+        <!-- ============================================ -->
+        <record id="crm_lead_001" model="crm.lead">
+            <field name="name">Hỏi về giải pháp ERP</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Lê Văn Quang</field>
+            <field name="partner_name">ABC Manufacturing</field>
+            <field name="email_from">quang.le@abcmfg.vn</field>
+            <field name="phone">+84 92 111 2222</field>
+            <field name="team_id" ref="crm_team_north"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="priority">1</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_sme'), ref('crm_tag_manufacturing')])]"/>
+            <field name="campaign_id" ref="utm_campaign_q1_2026"/>
+            <field name="source_id" ref="utm_source_google"/>
+            <field name="medium_id" ref="utm_medium_cpc"/>
+            <field name="description">&lt;p&gt;Công ty sản xuất 200 nhân viên, cần giải pháp quản lý sản xuất và kho.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_002" model="crm.lead">
+            <field name="name">Yêu cầu demo CRM</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Nguyễn Thị Rạng</field>
+            <field name="email_from">rang.nguyen@example.com</field>
+            <field name="phone">+84 93 222 3333</field>
+            <field name="team_id" ref="crm_team_south"/>
+            <field name="priority">2</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_startup'), ref('crm_tag_hot'), ref('crm_tag_technology')])]"/>
+            <field name="source_id" ref="utm_source_website"/>
+            <field name="medium_id" ref="utm_medium_organic"/>
+            <field name="description">&lt;p&gt;Startup công nghệ, cần CRM để quản lý khách hàng.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_003" model="crm.lead">
+            <field name="name">Tư vấn giải pháp bán lẻ</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Hoàng Minh Sơn</field>
+            <field name="partner_name">Retail Plus</field>
+            <field name="email_from">son.hoang@retailplus.vn</field>
+            <field name="phone">+84 94 333 4444</field>
+            <field name="team_id" ref="crm_team_retail"/>
+            <field name="priority">0</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_sme'), ref('crm_tag_retail')])]"/>
+            <field name="campaign_id" ref="utm_campaign_webinar"/>
+            <field name="source_id" ref="utm_source_linkedin"/>
+            <field name="medium_id" ref="utm_medium_social"/>
+            <field name="description">&lt;p&gt;Chuỗi cửa hàng bán lẻ 15 chi nhánh.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_004" model="crm.lead">
+            <field name="name">Hệ thống quản lý bệnh viện</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Trần Văn Tài</field>
+            <field name="partner_name">Phòng khám Đa khoa</field>
+            <field name="email_from">tai.tran@clinic.vn</field>
+            <field name="phone">+84 95 444 5555</field>
+            <field name="team_id" ref="crm_team_healthcare"/>
+            <field name="priority">1</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_healthcare'), ref('crm_tag_sme')])]"/>
+            <field name="campaign_id" ref="utm_campaign_trade_show"/>
+            <field name="source_id" ref="utm_source_trade_show"/>
+            <field name="medium_id" ref="utm_medium_direct"/>
+            <field name="description">&lt;p&gt;Phòng khám cần hệ thống quản lý bệnh nhân và lịch hẹn.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_005" model="crm.lead">
+            <field name="name">Giải pháp E-learning</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Vũ Thị Uyên</field>
+            <field name="partner_name">Trường Đại học ABC</field>
+            <field name="email_from">uyen.vu@university.edu.vn</field>
+            <field name="phone">+84 96 555 6666</field>
+            <field name="team_id" ref="crm_team_education"/>
+            <field name="priority">2</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_education'), ref('crm_tag_hot')])]"/>
+            <field name="campaign_id" ref="utm_campaign_email_marketing"/>
+            <field name="source_id" ref="utm_source_email"/>
+            <field name="medium_id" ref="utm_medium_email"/>
+            <field name="description">&lt;p&gt;Trường đại học cần nền tảng học trực tuyến cho 10,000 sinh viên.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_006" model="crm.lead">
+            <field name="name">Hệ thống quản lý ngân hàng</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Đỗ Văn Vinh</field>
+            <field name="partner_name">Ngân hàng XYZ</field>
+            <field name="email_from">vinh.do@bankxyz.vn</field>
+            <field name="phone">+84 97 666 7777</field>
+            <field name="team_id" ref="crm_team_finance"/>
+            <field name="priority">3</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_finance'), ref('crm_tag_enterprise'), ref('crm_tag_hot')])]"/>
+            <field name="campaign_id" ref="utm_campaign_partnership"/>
+            <field name="source_id" ref="utm_source_partner"/>
+            <field name="medium_id" ref="utm_medium_referral"/>
+            <field name="description">&lt;p&gt;Ngân hàng cần hệ thống CRM cho 50 chi nhánh.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_007" model="crm.lead">
+            <field name="name">Quản lý vận chuyển</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Ngô Thị Xuân</field>
+            <field name="partner_name">Logistics ABC</field>
+            <field name="email_from">xuan.ngo@logisticsabc.vn</field>
+            <field name="phone">+84 98 777 8888</field>
+            <field name="team_id" ref="crm_team_south"/>
+            <field name="priority">1</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_logistics'), ref('crm_tag_sme')])]"/>
+            <field name="campaign_id" ref="utm_campaign_content_marketing"/>
+            <field name="source_id" ref="utm_source_facebook"/>
+            <field name="medium_id" ref="utm_medium_social"/>
+            <field name="description">&lt;p&gt;Công ty logistics cần quản lý đơn hàng và xe vận chuyển.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_008" model="crm.lead">
+            <field name="name">Hệ thống đặt phòng khách sạn</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Trương Văn Yên</field>
+            <field name="partner_name">Khách sạn Paradise</field>
+            <field name="email_from">yen.truong@paradise.vn</field>
+            <field name="phone">+84 99 888 9999</field>
+            <field name="team_id" ref="crm_team_central"/>
+            <field name="priority">0</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_hospitality'), ref('crm_tag_sme')])]"/>
+            <field name="campaign_id" ref="utm_campaign_summer_sale"/>
+            <field name="source_id" ref="utm_source_instagram"/>
+            <field name="medium_id" ref="utm_medium_social"/>
+            <field name="description">&lt;p&gt;Khách sạn 4 sao cần hệ thống quản lý đặt phòng và khách hàng.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_009" model="crm.lead">
+            <field name="name">Sàn thương mại điện tử</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Lý Thị Ánh</field>
+            <field name="partner_name">E-shop Vietnam</field>
+            <field name="email_from">anh.ly@eshop.vn</field>
+            <field name="phone">+84 90 999 0000</field>
+            <field name="team_id" ref="crm_team_online"/>
+            <field name="priority">2</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_retail'), ref('crm_tag_technology'), ref('crm_tag_hot')])]"/>
+            <field name="campaign_id" ref="utm_campaign_retargeting"/>
+            <field name="source_id" ref="utm_source_google"/>
+            <field name="medium_id" ref="utm_medium_retargeting"/>
+            <field name="description">&lt;p&gt;Startup thương mại điện tử cần tích hợp Odoo với website.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_010" model="crm.lead">
+            <field name="name">Quản lý dự án xây dựng</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Mai Văn Bình</field>
+            <field name="partner_name">Xây dựng 123</field>
+            <field name="email_from">binh.mai@xaydung123.vn</field>
+            <field name="phone">+84 91 000 1111</field>
+            <field name="team_id" ref="crm_team_north"/>
+            <field name="priority">1</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_enterprise')])]"/>
+            <field name="campaign_id" ref="utm_campaign_q2_2026"/>
+            <field name="source_id" ref="utm_source_linkedin"/>
+            <field name="medium_id" ref="utm_medium_social"/>
+            <field name="description">&lt;p&gt;Công ty xây dựng cần quản lý nhiều dự án đồng thời.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_011" model="crm.lead">
+            <field name="name">Hệ thống viễn thông</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Phan Thị Cẩm</field>
+            <field name="partner_name">Telecom Plus</field>
+            <field name="email_from">cam.phan@telecomplus.vn</field>
+            <field name="phone">+84 92 111 2222</field>
+            <field name="team_id" ref="crm_team_technology"/>
+            <field name="priority">2</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_technology'), ref('crm_tag_enterprise')])]"/>
+            <field name="campaign_id" ref="utm_campaign_product_launch"/>
+            <field name="source_id" ref="utm_source_youtube"/>
+            <field name="medium_id" ref="utm_medium_video"/>
+            <field name="description">&lt;p&gt;Nhà mạng cần CRM quản lý hàng triệu thuê bao.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_012" model="crm.lead">
+            <field name="name">Bảo hiểm trực tuyến</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Quách Văn Đức</field>
+            <field name="partner_name">Insurance Online</field>
+            <field name="email_from">duc.quach@insuranceonline.vn</field>
+            <field name="phone">+84 93 222 3333</field>
+            <field name="team_id" ref="crm_team_finance"/>
+            <field name="priority">1</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_finance'), ref('crm_tag_sme')])]"/>
+            <field name="campaign_id" ref="utm_campaign_email_marketing"/>
+            <field name="source_id" ref="utm_source_email"/>
+            <field name="medium_id" ref="utm_medium_email"/>
+            <field name="description">&lt;p&gt;Công ty bảo hiểm cần hệ thống bán hàng trực tuyến.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_013" model="crm.lead">
+            <field name="name">Tư vấn quản lý doanh nghiệp</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Đặng Thị Ê</field>
+            <field name="partner_name">Consulting Pro</field>
+            <field name="email_from">e.dang@consultingpro.vn</field>
+            <field name="phone">+84 94 333 4444</field>
+            <field name="team_id" ref="crm_team_partner"/>
+            <field name="priority">0</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_sme')])]"/>
+            <field name="campaign_id" ref="utm_campaign_webinar"/>
+            <field name="source_id" ref="utm_source_zalo"/>
+            <field name="medium_id" ref="utm_medium_social"/>
+            <field name="description">&lt;p&gt;Công ty tư vấn muốn trở thành đối tác triển khai Odoo.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_014" model="crm.lead">
+            <field name="name">Quản lý chuỗi cửa hàng</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Nguyễn Văn Phong</field>
+            <field name="partner_name">Fashion Store</field>
+            <field name="email_from">phong.nguyen@fashionstore.vn</field>
+            <field name="phone">+84 95 444 5555</field>
+            <field name="team_id" ref="crm_team_retail"/>
+            <field name="priority">1</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_retail'), ref('crm_tag_sme')])]"/>
+            <field name="campaign_id" ref="utm_campaign_summer_sale"/>
+            <field name="source_id" ref="utm_source_tiktok"/>
+            <field name="medium_id" ref="utm_medium_video"/>
+            <field name="description">&lt;p&gt;Chuỗi cửa hàng thời trang 20 chi nhánh.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_lead_015" model="crm.lead">
+            <field name="name">Hệ thống chính phủ điện tử</field>
+            <field name="type">lead</field>
+            <field name="contact_name">Trần Văn Giang</field>
+            <field name="partner_name">Sở Thông tin và Truyền thông</field>
+            <field name="email_from">giang.tran@gov.vn</field>
+            <field name="phone">+84 96 555 6666</field>
+            <field name="team_id" ref="crm_team_enterprise"/>
+            <field name="priority">3</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_government'), ref('crm_tag_enterprise')])]"/>
+            <field name="campaign_id" ref="utm_campaign_partnership"/>
+            <field name="source_id" ref="utm_source_partner"/>
+            <field name="medium_id" ref="utm_medium_direct"/>
+            <field name="description">&lt;p&gt;Cơ quan nhà nước cần hệ thống quản lý hồ sơ điện tử.&lt;/p&gt;</field>
+        </record>
+
+        <!-- ============================================ -->
+        <!-- OPPORTUNITIES (20 records - các giai đoạn khác nhau) -->
+        <!-- ============================================ -->
+        <!-- Stage 1: New -->
+        <record id="crm_opportunity_001" model="crm.lead">
+            <field name="name">Triển khai Odoo ERP cho TechViet</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_techviet"/>
+            <field name="contact_name">Nguyễn Văn An</field>
+            <field name="email_from">an.nguyen@techviet.vn</field>
+            <field name="phone">+84 90 123 4567</field>
+            <field name="team_id" ref="crm_team_north"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead1"/>
+            <field name="priority">2</field>
+            <field name="expected_revenue">500000000</field>
+            <field name="probability">10</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_enterprise'), ref('crm_tag_vip'), ref('crm_tag_technology')])]"/>
+            <field name="campaign_id" ref="utm_campaign_product_launch"/>
+            <field name="source_id" ref="utm_source_referral"/>
+            <field name="medium_id" ref="utm_medium_referral"/>
+            <field name="description">&lt;p&gt;&lt;strong&gt;Yêu cầu:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Triển khai module: Accounting, Inventory, Manufacturing, CRM&lt;/li&gt;&lt;li&gt;Tích hợp với hệ thống hiện tại&lt;/li&gt;&lt;li&gt;Đào tạo 50 users&lt;/li&gt;&lt;li&gt;Thời gian: 3 tháng&lt;/li&gt;&lt;/ul&gt;</field>
+        </record>
+
+        <record id="crm_opportunity_002" model="crm.lead">
+            <field name="name">Hệ thống POS cho Retail Chain</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_retail_chain"/>
+            <field name="email_from">sales@retailchain.vn</field>
+            <field name="phone">+84 24 3999 8888</field>
+            <field name="team_id" ref="crm_team_retail"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead1"/>
+            <field name="priority">3</field>
+            <field name="expected_revenue">1200000000</field>
+            <field name="probability">10</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_enterprise'), ref('crm_tag_vip'), ref('crm_tag_hot'), ref('crm_tag_retail')])]"/>
+            <field name="campaign_id" ref="utm_campaign_product_launch"/>
+            <field name="source_id" ref="utm_source_referral"/>
+            <field name="description">&lt;p&gt;&lt;strong&gt;Dự án lớn:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;50 điểm bán hàng&lt;/li&gt;&lt;li&gt;Tích hợp kho trung tâm&lt;/li&gt;&lt;li&gt;Mobile POS&lt;/li&gt;&lt;li&gt;Loyalty program&lt;/li&gt;&lt;/ul&gt;</field>
+        </record>
+
+        <record id="crm_opportunity_003" model="crm.lead">
+            <field name="name">Giải pháp sản xuất thông minh</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_manufacturing"/>
+            <field name="team_id" ref="crm_team_north"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead1"/>
+            <field name="priority">2</field>
+            <field name="expected_revenue">800000000</field>
+            <field name="probability">10</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_enterprise'), ref('crm_tag_manufacturing')])]"/>
+            <field name="source_id" ref="utm_source_trade_show"/>
+            <field name="description">&lt;p&gt;Nhà máy sản xuất cần hệ thống MRP và IoT.&lt;/p&gt;</field>
+        </record>
+
+        <!-- Stage 2: Qualified -->
+        <record id="crm_opportunity_004" model="crm.lead">
+            <field name="name">Nâng cấp hệ thống CRM - Global Corp</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_globalcorp"/>
+            <field name="contact_name">Trần Thị Bình</field>
+            <field name="email_from">binh.tran@globalcorp.vn</field>
+            <field name="phone">+84 91 234 5678</field>
+            <field name="team_id" ref="crm_team_south"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead2"/>
+            <field name="priority">3</field>
+            <field name="expected_revenue">800000000</field>
+            <field name="probability">40</field>
+            <field name="recurring_revenue">50000000</field>
+            <field name="recurring_plan" ref="crm.crm_recurring_plan_monthly"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_enterprise'), ref('crm_tag_vip'), ref('crm_tag_hot')])]"/>
+            <field name="source_id" ref="utm_source_linkedin"/>
+            <field name="medium_id" ref="utm_medium_social"/>
+            <field name="description">&lt;p&gt;&lt;strong&gt;Dự án:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Nâng cấp từ phiên bản cũ lên Odoo 19&lt;/li&gt;&lt;li&gt;Thêm module Marketing Automation&lt;/li&gt;&lt;li&gt;Support 12 tháng&lt;/li&gt;&lt;/ul&gt;</field>
+        </record>
+
+        <record id="crm_opportunity_005" model="crm.lead">
+            <field name="name">Hệ thống quản lý bệnh viện</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_hospital"/>
+            <field name="team_id" ref="crm_team_healthcare"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead2"/>
+            <field name="priority">2</field>
+            <field name="expected_revenue">600000000</field>
+            <field name="probability">40</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_healthcare'), ref('crm_tag_enterprise')])]"/>
+            <field name="source_id" ref="utm_source_partner"/>
+            <field name="description">&lt;p&gt;Bệnh viện 500 giường cần hệ thống quản lý toàn diện.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_opportunity_006" model="crm.lead">
+            <field name="name">Nền tảng E-learning</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_education"/>
+            <field name="team_id" ref="crm_team_education"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead2"/>
+            <field name="priority">2</field>
+            <field name="expected_revenue">400000000</field>
+            <field name="probability">40</field>
+            <field name="recurring_revenue">30000000</field>
+            <field name="recurring_plan" ref="crm.crm_recurring_plan_yearly"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_education'), ref('crm_tag_technology')])]"/>
+            <field name="source_id" ref="utm_source_email"/>
+            <field name="description">&lt;p&gt;Trường đại học cần LMS cho 15,000 sinh viên.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_opportunity_007" model="crm.lead">
+            <field name="name">CRM cho ngân hàng</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_bank"/>
+            <field name="team_id" ref="crm_team_finance"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead2"/>
+            <field name="priority">3</field>
+            <field name="expected_revenue">2000000000</field>
+            <field name="probability">40</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_finance'), ref('crm_tag_enterprise'), ref('crm_tag_vip')])]"/>
+            <field name="source_id" ref="utm_source_partner"/>
+            <field name="description">&lt;p&gt;Ngân hàng 100 chi nhánh cần CRM enterprise.&lt;/p&gt;</field>
+        </record>
+
+        <!-- Stage 3: Proposition -->
+        <record id="crm_opportunity_008" model="crm.lead">
+            <field name="name">Giải pháp AI cho Startup Hub</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_startup_ai"/>
+            <field name="email_from">hello@aistartup.vn</field>
+            <field name="phone">+84 236 3888 999</field>
+            <field name="team_id" ref="crm_team_technology"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead3"/>
+            <field name="priority">1</field>
+            <field name="expected_revenue">150000000</field>
+            <field name="probability">60</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_startup'), ref('crm_tag_technology')])]"/>
+            <field name="campaign_id" ref="utm_campaign_webinar"/>
+            <field name="source_id" ref="utm_source_facebook"/>
+            <field name="medium_id" ref="utm_medium_social"/>
+            <field name="description">&lt;p&gt;Startup AI cần CRM tích hợp machine learning.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_opportunity_009" model="crm.lead">
+            <field name="name">Hệ thống Logistics</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_logistics"/>
+            <field name="team_id" ref="crm_team_south"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead3"/>
+            <field name="priority">2</field>
+            <field name="expected_revenue">700000000</field>
+            <field name="probability">60</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_logistics'), ref('crm_tag_enterprise')])]"/>
+            <field name="source_id" ref="utm_source_google"/>
+            <field name="description">&lt;p&gt;Công ty logistics cần quản lý 1000+ xe và tài xế.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_opportunity_010" model="crm.lead">
+            <field name="name">Quản lý khách sạn</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_hotel"/>
+            <field name="team_id" ref="crm_team_central"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead3"/>
+            <field name="priority">2</field>
+            <field name="expected_revenue">350000000</field>
+            <field name="probability">60</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_hospitality'), ref('crm_tag_sme')])]"/>
+            <field name="source_id" ref="utm_source_website"/>
+            <field name="description">&lt;p&gt;Khách sạn 5 sao cần PMS và CRM tích hợp.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_opportunity_011" model="crm.lead">
+            <field name="name">Sàn thương mại điện tử</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_ecommerce"/>
+            <field name="team_id" ref="crm_team_online"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead3"/>
+            <field name="priority">3</field>
+            <field name="expected_revenue">900000000</field>
+            <field name="probability">60</field>
+            <field name="recurring_revenue">60000000</field>
+            <field name="recurring_plan" ref="crm.crm_recurring_plan_monthly"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_retail'), ref('crm_tag_technology'), ref('crm_tag_hot')])]"/>
+            <field name="source_id" ref="utm_source_google"/>
+            <field name="description">&lt;p&gt;Marketplace với 10,000+ sellers.&lt;/p&gt;</field>
+        </record>
+
+        <!-- Stage 4: Proposition (Final stage before Won) -->
+        <record id="crm_opportunity_012" model="crm.lead">
+            <field name="name">Quản lý dự án xây dựng</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_construction"/>
+            <field name="team_id" ref="crm_team_north"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead3"/>
+            <field name="priority">3</field>
+            <field name="expected_revenue">1500000000</field>
+            <field name="probability">80</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_enterprise'), ref('crm_tag_vip')])]"/>
+            <field name="source_id" ref="utm_source_partner"/>
+            <field name="description">&lt;p&gt;Tập đoàn xây dựng cần quản lý 50+ dự án đồng thời.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_opportunity_013" model="crm.lead">
+            <field name="name">Hệ thống viễn thông</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_telecom"/>
+            <field name="team_id" ref="crm_team_technology"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead3"/>
+            <field name="priority">3</field>
+            <field name="expected_revenue">3000000000</field>
+            <field name="probability">80</field>
+            <field name="recurring_revenue">200000000</field>
+            <field name="recurring_plan" ref="crm.crm_recurring_plan_yearly"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_technology'), ref('crm_tag_enterprise'), ref('crm_tag_vip'), ref('crm_tag_hot')])]"/>
+            <field name="source_id" ref="utm_source_partner"/>
+            <field name="description">&lt;p&gt;Nhà mạng lớn cần CRM cho 10 triệu thuê bao.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_opportunity_014" model="crm.lead">
+            <field name="name">Bảo hiểm trực tuyến</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_insurance"/>
+            <field name="team_id" ref="crm_team_finance"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead3"/>
+            <field name="priority">2</field>
+            <field name="expected_revenue">500000000</field>
+            <field name="probability">80</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_finance'), ref('crm_tag_sme')])]"/>
+            <field name="source_id" ref="utm_source_email"/>
+            <field name="description">&lt;p&gt;Công ty bảo hiểm cần nền tảng bán hàng online.&lt;/p&gt;</field>
+        </record>
+
+        <record id="crm_opportunity_015" model="crm.lead">
+            <field name="name">Đối tác triển khai Odoo</field>
+            <field name="type">opportunity</field>
+            <field name="partner_id" ref="partner_consulting"/>
+            <field name="team_id" ref="crm_team_partner"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="stage_id" ref="crm.stage_lead3"/>
+            <field name="priority">2</field>
+            <field name="expected_revenue">200000000</field>
+            <field name="probability">80</field>
+            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_sme')])]"/>
+            <field name="source_id" ref="utm_source_linkedin"/>
+            <field name="description">&lt;p&gt;Công ty tư vấn muốn trở thành Gold Partner.&lt;/p&gt;</field>
+        </record>
+
+        <!-- WON OPPORTUNITIES (5 records) -->
+<!--        <record id="crm_opportunity_won_001" model="crm.lead">-->
+<!--            <field name="name">Triển khai Odoo cho SME Corp</field>-->
+<!--            <field name="type">opportunity</field>-->
+<!--            <field name="partner_id" ref="base.res_partner_12"/>-->
+<!--            <field name="team_id" ref="crm_team_sme"/>-->
+<!--            <field name="user_id" ref="base.user_admin"/>-->
+<!--            <field name="stage_id" ref="crm.stage_lead4"/>-->
+<!--            <field name="priority">2</field>-->
+<!--            <field name="expected_revenue">300000000</field>-->
+<!--            <field name="probability">100</field>-->
+<!--            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_sme')])]"/>-->
+<!--            <field name="description">&lt;p&gt;Dự án đã hoàn thành thành công. Khách hàng rất hài lòng.&lt;/p&gt;</field>-->
+<!--        </record>-->
+
+<!--        <record id="crm_opportunity_won_002" model="crm.lead">-->
+<!--            <field name="name">Hệ thống POS cho chuỗi cà phê</field>-->
+<!--            <field name="type">opportunity</field>-->
+<!--            <field name="partner_id" ref="base.res_partner_2"/>-->
+<!--            <field name="team_id" ref="crm_team_retail"/>-->
+<!--            <field name="user_id" ref="base.user_admin"/>-->
+<!--            <field name="stage_id" ref="crm.stage_lead4"/>-->
+<!--            <field name="priority">1</field>-->
+<!--            <field name="expected_revenue">250000000</field>-->
+<!--            <field name="probability">100</field>-->
+<!--            <field name="recurring_revenue">15000000</field>-->
+<!--            <field name="recurring_plan" ref="crm.crm_recurring_plan_monthly"/>-->
+<!--            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_retail'), ref('crm_tag_sme')])]"/>-->
+<!--            <field name="description">&lt;p&gt;Triển khai POS cho 25 cửa hàng cà phê.&lt;/p&gt;</field>-->
+<!--        </record>-->
+
+<!--        <record id="crm_opportunity_won_003" model="crm.lead">-->
+<!--            <field name="name">CRM cho công ty du lịch</field>-->
+<!--            <field name="type">opportunity</field>-->
+<!--            <field name="partner_id" ref="base.res_partner_3"/>-->
+<!--            <field name="team_id" ref="crm_team_south"/>-->
+<!--            <field name="user_id" ref="base.user_admin"/>-->
+<!--            <field name="stage_id" ref="crm.stage_lead4"/>-->
+<!--            <field name="priority">1</field>-->
+<!--            <field name="expected_revenue">180000000</field>-->
+<!--            <field name="probability">100</field>-->
+<!--            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_hospitality'), ref('crm_tag_sme')])]"/>-->
+<!--            <field name="description">&lt;p&gt;Hệ thống CRM quản lý tour và khách hàng.&lt;/p&gt;</field>-->
+<!--        </record>-->
+
+<!--        <record id="crm_opportunity_won_004" model="crm.lead">-->
+<!--            <field name="name">Quản lý kho cho nhà phân phối</field>-->
+<!--            <field name="type">opportunity</field>-->
+<!--            <field name="partner_id" ref="base.res_partner_4"/>-->
+<!--            <field name="team_id" ref="crm_team_north"/>-->
+<!--            <field name="user_id" ref="base.user_admin"/>-->
+<!--            <field name="stage_id" ref="crm.stage_lead4"/>-->
+<!--            <field name="priority">2</field>-->
+<!--            <field name="expected_revenue">400000000</field>-->
+<!--            <field name="probability">100</field>-->
+<!--            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_logistics'), ref('crm_tag_sme')])]"/>-->
+<!--            <field name="description">&lt;p&gt;Hệ thống WMS cho 5 kho hàng.&lt;/p&gt;</field>-->
+<!--        </record>-->
+
+<!--        <record id="crm_opportunity_won_005" model="crm.lead">-->
+<!--            <field name="name">Website thương mại điện tử</field>-->
+<!--            <field name="type">opportunity</field>-->
+<!--            <field name="partner_id" ref="base.res_partner_1"/>-->
+<!--            <field name="team_id" ref="crm_team_online"/>-->
+<!--            <field name="user_id" ref="base.user_admin"/>-->
+<!--            <field name="stage_id" ref="crm.stage_lead4"/>-->
+<!--            <field name="priority">1</field>-->
+<!--            <field name="expected_revenue">150000000</field>-->
+<!--            <field name="probability">100</field>-->
+<!--            <field name="recurring_revenue">10000000</field>-->
+<!--            <field name="recurring_plan" ref="crm.crm_recurring_plan_monthly"/>-->
+<!--            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_retail'), ref('crm_tag_technology')])]"/>-->
+<!--            <field name="description">&lt;p&gt;Website bán hàng với Odoo eCommerce.&lt;/p&gt;</field>-->
+<!--        </record>-->
+
+        <!-- LOST OPPORTUNITIES (5 records) -->
+        <!-- Lưu ý: Lost opportunities phải sử dụng stage không có is_won=True -->
+<!--        <record id="crm_opportunity_lost_001" model="crm.lead">-->
+<!--            <field name="name">Dự án bị mất - Giá cao</field>-->
+<!--            <field name="type">opportunity</field>-->
+<!--            <field name="partner_id" ref="base.res_partner_10"/>-->
+<!--            <field name="team_id" ref="crm_team_south"/>-->
+<!--            <field name="user_id" ref="base.user_admin"/>-->
+<!--            <field name="stage_id" ref="crm.stage_lead1"/>-->
+<!--            <field name="active" eval="False"/>-->
+<!--            <field name="priority">1</field>-->
+<!--            <field name="expected_revenue">200000000</field>-->
+<!--            <field name="probability">0</field>-->
+<!--            <field name="lost_reason_id" ref="crm_lost_reason_price"/>-->
+<!--            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_startup')])]"/>-->
+<!--            <field name="description">&lt;p&gt;Khách hàng cho rằng giá cao hơn đối thủ.&lt;/p&gt;</field>-->
+<!--        </record>-->
+
+<!--        <record id="crm_opportunity_lost_002" model="crm.lead">-->
+<!--            <field name="name">Mất vào đối thủ cạnh tranh</field>-->
+<!--            <field name="type">opportunity</field>-->
+<!--            <field name="partner_id" ref="base.res_partner_11"/>-->
+<!--            <field name="team_id" ref="crm_team_north"/>-->
+<!--            <field name="user_id" ref="base.user_admin"/>-->
+<!--            <field name="stage_id" ref="crm.stage_lead2"/>-->
+<!--            <field name="active" eval="False"/>-->
+<!--            <field name="priority">2</field>-->
+<!--            <field name="expected_revenue">450000000</field>-->
+<!--            <field name="probability">0</field>-->
+<!--            <field name="lost_reason_id" ref="crm_lost_reason_competitor"/>-->
+<!--            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_sme')])]"/>-->
+<!--            <field name="description">&lt;p&gt;Khách hàng chọn SAP Business One.&lt;/p&gt;</field>-->
+<!--        </record>-->
+
+<!--        <record id="crm_opportunity_lost_003" model="crm.lead">-->
+<!--            <field name="name">Không có ngân sách</field>-->
+<!--            <field name="type">opportunity</field>-->
+<!--            <field name="partner_id" ref="base.res_partner_9"/>-->
+<!--            <field name="team_id" ref="crm_team_sme"/>-->
+<!--            <field name="user_id" ref="base.user_admin"/>-->
+<!--            <field name="stage_id" ref="crm.stage_lead1"/>-->
+<!--            <field name="active" eval="False"/>-->
+<!--            <field name="priority">1</field>-->
+<!--            <field name="expected_revenue">120000000</field>-->
+<!--            <field name="probability">0</field>-->
+<!--            <field name="lost_reason_id" ref="crm_lost_reason_no_budget"/>-->
+<!--            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_startup')])]"/>-->
+<!--            <field name="description">&lt;p&gt;Startup không có ngân sách trong Q1.&lt;/p&gt;</field>-->
+<!--        </record>-->
+
+<!--        <record id="crm_opportunity_lost_004" model="crm.lead">-->
+<!--            <field name="name">Không phản hồi</field>-->
+<!--            <field name="type">opportunity</field>-->
+<!--            <field name="partner_id" ref="base.res_partner_8"/>-->
+<!--            <field name="team_id" ref="crm_team_central"/>-->
+<!--            <field name="user_id" ref="base.user_admin"/>-->
+<!--            <field name="stage_id" ref="crm.stage_lead1"/>-->
+<!--            <field name="active" eval="False"/>-->
+<!--            <field name="priority">0</field>-->
+<!--            <field name="expected_revenue">80000000</field>-->
+<!--            <field name="probability">0</field>-->
+<!--            <field name="lost_reason_id" ref="crm_lost_reason_no_response"/>-->
+<!--            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_cold')])]"/>-->
+<!--            <field name="description">&lt;p&gt;Không liên lạc được sau 3 lần gọi.&lt;/p&gt;</field>-->
+<!--        </record>-->
+
+<!--        <record id="crm_opportunity_lost_005" model="crm.lead">-->
+<!--            <field name="name">Thời điểm không phù hợp</field>-->
+<!--            <field name="type">opportunity</field>-->
+<!--            <field name="partner_id" ref="base.res_partner_7"/>-->
+<!--            <field name="team_id" ref="crm_team_enterprise"/>-->
+<!--            <field name="user_id" ref="base.user_admin"/>-->
+<!--            <field name="stage_id" ref="crm.stage_lead1"/>-->
+<!--            <field name="active" eval="False"/>-->
+<!--            <field name="priority">1</field>-->
+<!--            <field name="expected_revenue">350000000</field>-->
+<!--            <field name="probability">0</field>-->
+<!--            <field name="lost_reason_id" ref="crm_lost_reason_timing"/>-->
+<!--            <field name="tag_ids" eval="[(6, 0, [ref('crm_tag_enterprise')])]"/>-->
+<!--            <field name="description">&lt;p&gt;Khách hàng muốn triển khai vào năm sau.&lt;/p&gt;</field>-->
+<!--        </record>-->
+
+    </data>
+</odoo>
