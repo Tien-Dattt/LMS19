@@ -1,0 +1,1447 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* corporate_lms_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20250925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-16 11:53+0000\n"
+"PO-Revision-Date: 2026-06-16 11:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/training_class.py:0
+msgid "A class must have at least a program or a course."
+msgstr "Một lớp học phải có ít nhất một chương trình hoặc một khóa học."
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/program_line.py:0
+msgid "A course can only appear once in the same program."
+msgstr "Một khóa học chỉ có thể xuất hiện một lần trong cùng một chương trình."
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/program_enrollment.py:0
+msgid "A learner already has an active enrollment for this program."
+msgstr "Học viên đã có một lượt ghi danh đang hoạt động cho chương trình này."
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/class_student.py:0
+msgid "A learner can only be assigned once to the same class."
+msgstr "Học viên chỉ có thể được phân vào cùng một lớp học một lần."
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/learning_program.py:0
+msgid "A program must have at least one mandatory course before publishing."
+msgstr "Chương trình phải có ít nhất một khóa học bắt buộc trước khi xuất bản."
+
+#. module: corporate_lms_base
+#: model:ir.ui.menu,name:corporate_lms_base.menu_corporate_lms_ai
+msgid "AI Tools"
+msgstr "Công cụ AI"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__message_needaction
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__message_needaction
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__message_needaction
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__message_needaction
+msgid "Action Needed"
+msgstr "Cần xử lý"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__active
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_employee_level__active
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__active
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_role_track__active
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__active
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_class_student__state__active
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_student_search
+msgid "Active"
+msgstr "Đang hoạt động"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__activity_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__activity_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__activity_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__activity_ids
+msgid "Activities"
+msgstr "Hoạt động"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__activity_exception_decoration
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__activity_exception_decoration
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__activity_exception_decoration
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Hiển thị ngoại lệ hoạt động"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__activity_state
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__activity_state
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__activity_state
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__activity_state
+msgid "Activity State"
+msgstr "Trạng thái hoạt động"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__activity_type_icon
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__activity_type_icon
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__activity_type_icon
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Biểu tượng loại hoạt động"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program_line__unlock_policy__always
+msgid "Always"
+msgstr "Luôn luôn"
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/employee_level.py:0
+msgid "An active employee level with this code already exists."
+msgstr "Đã tồn tại một cấp nhân viên đang hoạt động với mã này."
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/role_track.py:0
+msgid "An active role track with this code already exists."
+msgstr "Đã tồn tại một lộ trình vai trò đang hoạt động với mã này."
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_hr_employee_form_corporate_lms
+msgid "Apply Training Matrix"
+msgstr "Áp dụng ma trận đào tạo"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_form
+msgid "Archive"
+msgstr "Lưu trữ"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program__state__archived
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_employee_level_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_role_track_search
+msgid "Archived"
+msgstr "Đã lưu trữ"
+
+#. module: corporate_lms_base
+#: model:ir.ui.menu,name:corporate_lms_base.menu_corporate_lms_assessments
+msgid "Assessments"
+msgstr "Đánh giá"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program_partner__state__assigned
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_search
+msgid "Assigned"
+msgstr "Đã phân công"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__assigned_date
+msgid "Assigned Date"
+msgstr "Ngày phân công"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__message_attachment_count
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__message_attachment_count
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__message_attachment_count
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__message_attachment_count
+msgid "Attachment Count"
+msgstr "Số tệp đính kèm"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program_partner__source__auto
+msgid "Auto"
+msgstr "Tự động"
+
+#. module: corporate_lms_base
+#: model:ir.model,name:corporate_lms_base.model_elearning_auto_enrollment_log
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_auto_enrollment_log_form
+msgid "Auto Enrollment Log"
+msgstr "Nhật ký ghi danh tự động"
+
+#. module: corporate_lms_base
+#: model:ir.actions.act_window,name:corporate_lms_base.action_elearning_auto_enrollment_log
+#: model:ir.ui.menu,name:corporate_lms_base.menu_elearning_auto_enrollment_log
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_auto_enrollment_log_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_auto_enrollment_log_search
+msgid "Auto Enrollment Logs"
+msgstr "Nhật ký ghi danh tự động"
+
+#. module: corporate_lms_base
+#: model:elearning.role.track,name:corporate_lms_base.role_track_backend_developer
+msgid "Backend Developer"
+msgstr "Lập trình viên Backend"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,description:corporate_lms_base.slide_python_variables
+msgid "Biến, kiểu số, chuỗi, danh sách và dictionary trong Python."
+msgstr "Biến, kiểu số, chuỗi, danh sách và dictionary trong Python."
+
+#. module: corporate_lms_base
+#: model:slide.slide,name:corporate_lms_base.slide_python_intro
+msgid "Bài 1.1: Python Là Gì?"
+msgstr "Bài 1.1: Python Là Gì?"
+
+#. module: corporate_lms_base
+#: model:slide.slide,name:corporate_lms_base.slide_python_variables
+msgid "Bài 1.2: Biến và Kiểu Dữ Liệu"
+msgstr "Bài 1.2: Biến và Kiểu Dữ Liệu"
+
+#. module: corporate_lms_base
+#: model:slide.slide,name:corporate_lms_base.slide_devops_cicd_intro
+msgid "Bài 1: CI/CD là gì?"
+msgstr "Bài 1: CI/CD là gì?"
+
+#. module: corporate_lms_base
+#: model:slide.slide,name:corporate_lms_base.slide_sql_intro
+msgid "Bài 1: Giới thiệu SQL"
+msgstr "Bài 1: Giới thiệu SQL"
+
+#. module: corporate_lms_base
+#: model:slide.slide,name:corporate_lms_base.slide_python_functions
+msgid "Bài 2.1: Hàm Trong Python"
+msgstr "Bài 2.1: Hàm Trong Python"
+
+#. module: corporate_lms_base
+#: model:slide.slide,name:corporate_lms_base.slide_devops_github_actions
+msgid "Bài 2: GitHub Actions cơ bản"
+msgstr "Bài 2: GitHub Actions cơ bản"
+
+#. module: corporate_lms_base
+#: model:slide.slide,name:corporate_lms_base.slide_sql_select_where
+msgid "Bài 2: SELECT và WHERE"
+msgstr "Bài 2: SELECT và WHERE"
+
+#. module: corporate_lms_base
+#: model:slide.slide,name:corporate_lms_base.slide_sql_join
+msgid "Bài 3: JOIN cơ bản"
+msgstr "Bài 3: JOIN cơ bản"
+
+#. module: corporate_lms_base
+#: model:slide.slide,name:corporate_lms_base.slide_python_lambda
+msgid "Bài 4.2: Lambda Functions"
+msgstr "Bài 4.2: Hàm Lambda"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,html_content:corporate_lms_base.slide_devops_cicd_intro
+msgid ""
+"CI/CD giúp nhóm phát triển phát hiện lỗi sớm và triển khai phần mềm ổn định "
+"hơn."
+msgstr "CI/CD giúp nhóm phát triển phát hiện lỗi sớm và triển khai phần mềm ổn định hơn."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_class__state__cancelled
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program_partner__state__cancelled
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_search
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: corporate_lms_base
+#: model:ir.model,name:corporate_lms_base.model_slide_channel_partner
+msgid "Channel / Partners (Members)"
+msgstr "Kênh / Đối tác (Thành viên)"
+
+#. module: corporate_lms_base
+#: model_terms:elearning.program,description:corporate_lms_base.program_python_onboarding
+msgid ""
+"Chương trình đào tạo hội nhập dành cho lập trình viên Python mới trong phòng"
+" IT."
+msgstr "Chương trình đào tạo hội nhập dành cho lập trình viên Python mới trong phòng IT."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class_student__class_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_student_search
+msgid "Class"
+msgstr "Lớp học"
+
+#. module: corporate_lms_base
+#: model:ir.model,name:corporate_lms_base.model_elearning_class_student
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_student_form
+msgid "Class Student"
+msgstr "Học viên trong lớp"
+
+#. module: corporate_lms_base
+#: model:ir.actions.act_window,name:corporate_lms_base.action_elearning_class_student
+#: model:ir.ui.menu,name:corporate_lms_base.menu_elearning_class_student
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_student_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_student_search
+msgid "Class Students"
+msgstr "Học viên trong lớp"
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/training_class.py:0
+msgid "Class end date must be on or after start date."
+msgstr "Ngày kết thúc lớp phải bằng hoặc sau ngày bắt đầu."
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/training_class.py:0
+msgid "Class trainers must be Corporate LMS instructors or managers."
+msgstr "Giảng viên của lớp phải là giảng viên hoặc quản lý LMS doanh nghiệp."
+
+#. module: corporate_lms_base
+#: model:ir.actions.act_window,name:corporate_lms_base.action_elearning_class
+#: model:ir.ui.menu,name:corporate_lms_base.menu_corporate_lms_classes
+#: model:ir.ui.menu,name:corporate_lms_base.menu_elearning_class
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_search
+msgid "Classes"
+msgstr "Lớp học"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__code
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_employee_level__code
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__code
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_role_track__code
+msgid "Code"
+msgstr "Mã"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_class_student__state__completed
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program_partner__state__completed
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_student_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_search
+msgid "Completed"
+msgstr "Đã hoàn thành"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__completed_date
+msgid "Completed Date"
+msgstr "Ngày hoàn thành"
+
+#. module: corporate_lms_base
+#: model:ir.ui.menu,name:corporate_lms_base.menu_corporate_lms_configuration
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: corporate_lms_base
+#: model_terms:slide.channel,enroll_msg:corporate_lms_base.slide_channel_python_devops
+#: model_terms:slide.channel,enroll_msg:corporate_lms_base.slide_channel_python_main
+#: model_terms:slide.channel,enroll_msg:corporate_lms_base.slide_channel_python_sql
+msgid "Contact Responsible"
+msgstr "Liên hệ người phụ trách"
+
+#. module: corporate_lms_base
+#: model:ir.module.category,name:corporate_lms_base.module_category_corporate_lms
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_hr_employee_form_corporate_lms
+msgid "Corporate LMS"
+msgstr "LMS doanh nghiệp"
+
+#. module: corporate_lms_base
+#: model:res.groups.privilege,name:corporate_lms_base.privilege_corporate_lms_access
+msgid "Corporate LMS Access"
+msgstr "Quyền truy cập LMS doanh nghiệp"
+
+#. module: corporate_lms_base
+#: model:res.groups,name:corporate_lms_base.group_corporate_lms_admin
+msgid "Corporate LMS Administrator"
+msgstr "Quản trị viên LMS doanh nghiệp"
+
+#. module: corporate_lms_base
+#: model:ir.actions.server,name:corporate_lms_base.ir_cron_corporate_lms_auto_enrollment_ir_actions_server
+msgid "Corporate LMS Auto Enrollment"
+msgstr "Ghi danh tự động LMS doanh nghiệp"
+
+#. module: corporate_lms_base
+#: model:res.groups,name:corporate_lms_base.group_corporate_lms_hr_officer
+msgid "Corporate LMS HR Officer"
+msgstr "Cán bộ nhân sự LMS doanh nghiệp"
+
+#. module: corporate_lms_base
+#: model:res.groups,name:corporate_lms_base.group_corporate_lms_instructor
+msgid "Corporate LMS Instructor"
+msgstr "Giảng viên LMS doanh nghiệp"
+
+#. module: corporate_lms_base
+#: model:res.groups,name:corporate_lms_base.group_corporate_lms_learner
+msgid "Corporate LMS Learner"
+msgstr "Học viên LMS doanh nghiệp"
+
+#. module: corporate_lms_base
+#: model:res.groups,name:corporate_lms_base.group_corporate_lms_manager
+msgid "Corporate LMS Manager"
+msgstr "Quản lý LMS doanh nghiệp"
+
+#. module: corporate_lms_base
+#: model:res.groups,name:corporate_lms_base.group_corporate_lms_training_manager
+msgid "Corporate LMS Training Manager"
+msgstr "Quản lý đào tạo LMS doanh nghiệp"
+
+#. module: corporate_lms_base
+#: model:ir.module.category,description:corporate_lms_base.module_category_corporate_lms
+msgid "Corporate learning management"
+msgstr "Quản lý đào tạo doanh nghiệp"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__channel_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_line__channel_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_search
+msgid "Course"
+msgstr "Khóa học"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__line_ids
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_form
+msgid "Courses"
+msgstr "Các khóa học"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class_student__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_employee_level__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_line__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_role_track__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__create_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__create_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class_student__create_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_employee_level__create_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__create_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_line__create_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__create_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_role_track__create_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__create_date
+msgid "Created on"
+msgstr "Tạo vào"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,description:corporate_lms_base.slide_python_functions
+msgid "Cách định nghĩa hàm, tham số, giá trị trả về và kiểm thử đơn giản."
+msgstr "Cách định nghĩa hàm, tham số, giá trị trả về và kiểm thử đơn giản."
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,description:corporate_lms_base.slide_sql_select_where
+msgid "Cú pháp SELECT và điều kiện WHERE."
+msgstr "Cú pháp SELECT và điều kiện WHERE."
+
+#. module: corporate_lms_base
+#: model:slide.channel,name:corporate_lms_base.slide_channel_python_sql
+msgid "Cơ Sở Dữ Liệu và SQL"
+msgstr "Cơ Sở Dữ Liệu và SQL"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__date_end
+msgid "Date End"
+msgstr "Ngày kết thúc"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__date_start
+msgid "Date Start"
+msgstr "Ngày bắt đầu"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_search
+msgid "Deadline"
+msgstr "Hạn chót"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__deadline_date
+msgid "Deadline Date"
+msgstr "Ngày hạn chót"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__deadline_days
+msgid "Deadline Days"
+msgstr "Số ngày đến hạn"
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/training_matrix.py:0
+msgid "Deadline days must be zero or greater."
+msgstr "Số ngày đến hạn phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__department_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__department_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_search
+msgid "Department"
+msgstr "Phòng ban"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_employee_level__description
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__description
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_role_track__description
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_employee_level_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_role_track_form
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: corporate_lms_base
+#: model:slide.channel,name:corporate_lms_base.slide_channel_python_devops
+msgid "DevOps và CI/CD Pipeline"
+msgstr "DevOps và quy trình CI/CD"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__display_name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__display_name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class_student__display_name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_employee_level__display_name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__display_name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_line__display_name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__display_name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_role_track__display_name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__display_name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_slide_channel_partner__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_class__state__done
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_search
+msgid "Done"
+msgstr "Hoàn tất"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_class__state__draft
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program__state__draft
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_search
+msgid "Draft"
+msgstr "Dự thảo"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_class_student__state__dropped
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_student_search
+msgid "Dropped"
+msgstr "Đã rút khỏi"
+
+#. module: corporate_lms_base
+#: model:ir.model,name:corporate_lms_base.model_hr_employee
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__employee_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class_student__employee_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__employee_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_search
+msgid "Employee"
+msgstr "Nhân viên"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__employee_level_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__employee_level_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_hr_employee__employee_level_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_employee_level_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_search
+msgid "Employee Level"
+msgstr "Cấp nhân viên"
+
+#. module: corporate_lms_base
+#: model:ir.actions.act_window,name:corporate_lms_base.action_elearning_employee_level
+#: model:ir.ui.menu,name:corporate_lms_base.menu_elearning_employee_level
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_employee_level_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_employee_level_search
+msgid "Employee Levels"
+msgstr "Cấp nhân viên"
+
+#. module: corporate_lms_base
+#: model:ir.model,name:corporate_lms_base.model_elearning_role_track
+msgid "Employee Role Track"
+msgstr "Lộ trình vai trò nhân viên"
+
+#. module: corporate_lms_base
+#: model:ir.model,name:corporate_lms_base.model_elearning_employee_level
+msgid "Employee Training Level"
+msgstr "Cấp đào tạo nhân viên"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_form
+msgid "Enroll Required Courses"
+msgstr "Ghi danh các khóa học bắt buộc"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__enrollment_ids
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_form
+msgid "Enrollments"
+msgstr "Ghi danh"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_auto_enrollment_log__status__error
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_auto_enrollment_log_search
+msgid "Error"
+msgstr "Lỗi"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program_partner__state__failed
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_search
+msgid "Failed"
+msgstr "Không đạt"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__final_score
+msgid "Final Score"
+msgstr "Điểm cuối cùng"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__message_follower_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__message_follower_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__message_follower_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__message_follower_ids
+msgid "Followers"
+msgstr "Người theo dõi"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__message_partner_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__message_partner_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__message_partner_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi (Đối tác)"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_class__activity_type_icon
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program__activity_type_icon
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program_partner__activity_type_icon
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_training_matrix__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Biểu tượng Font Awesome, ví dụ fa-tasks"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,description:corporate_lms_base.slide_python_intro
+msgid "Giới thiệu Python, phạm vi ứng dụng và quy ước học tập trong công ty."
+msgstr "Giới thiệu Python, phạm vi ứng dụng và quy ước học tập trong công ty."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__has_message
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__has_message
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__has_message
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__has_message
+msgid "Has Message"
+msgstr "Có tin nhắn"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,html_content:corporate_lms_base.slide_python_functions
+msgid ""
+"Hàm giúp đóng gói logic nghiệp vụ và làm cho mã dễ tái sử dụng trong dự án."
+msgstr "Hàm giúp đóng gói logic nghiệp vụ và làm cho mã dễ tái sử dụng trong dự án."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class_student__id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_employee_level__id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_line__id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_role_track__id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_hr_employee__id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_slide_channel_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,description:corporate_lms_base.slide_sql_join
+msgid "INNER JOIN và LEFT JOIN trong các truy vấn thường gặp."
+msgstr "INNER JOIN và LEFT JOIN trong các truy vấn thường gặp."
+
+#. module: corporate_lms_base
+#: model:hr.department,name:corporate_lms_base.department_it
+msgid "IT"
+msgstr "IT"
+
+#. module: corporate_lms_base
+#: model:elearning.training.matrix,name:corporate_lms_base.matrix_it_junior_python_developer
+msgid "IT Junior Python Developer Matrix"
+msgstr "Ma trận lập trình viên Python Junior phòng IT"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__activity_exception_icon
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__activity_exception_icon
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__activity_exception_icon
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__activity_exception_icon
+msgid "Icon"
+msgstr "Biểu tượng"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_class__activity_exception_icon
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program__activity_exception_icon
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program_partner__activity_exception_icon
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_training_matrix__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Biểu tượng dùng để chỉ báo hoạt động ngoại lệ."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_class__message_needaction
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program__message_needaction
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program_partner__message_needaction
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_training_matrix__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Nếu được chọn, các tin nhắn mới cần bạn xử lý."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_class__message_has_error
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_class__message_has_sms_error
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program__message_has_error
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program__message_has_sms_error
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program_partner__message_has_error
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program_partner__message_has_sms_error
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_training_matrix__message_has_error
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_training_matrix__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Nếu được chọn, một số tin nhắn có lỗi gửi đi."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program_partner__source__import
+msgid "Import"
+msgstr "Nhập"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program_partner__state__in_progress
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_search
+msgid "In Progress"
+msgstr "Đang thực hiện"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_search
+msgid "Inactive"
+msgstr "Không hoạt động"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_class_student__state__invited
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_student_search
+msgid "Invited"
+msgstr "Đã mời"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__message_is_follower
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__message_is_follower
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__message_is_follower
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__message_is_follower
+msgid "Is Follower"
+msgstr "Là người theo dõi"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,html_content:corporate_lms_base.slide_sql_join
+msgid "JOIN kết hợp dữ liệu từ nhiều bảng dựa trên khóa liên kết."
+msgstr "JOIN kết hợp dữ liệu từ nhiều bảng dựa trên khóa liên kết."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__job_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_search
+msgid "Job Position"
+msgstr "Vị trí công việc"
+
+#. module: corporate_lms_base
+#: model:elearning.employee.level,name:corporate_lms_base.level_junior_developer
+msgid "Junior Developer"
+msgstr "Lập trình viên Junior"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,description:corporate_lms_base.slide_devops_cicd_intro
+msgid "Khái niệm tích hợp liên tục và triển khai liên tục."
+msgstr "Khái niệm tích hợp liên tục và triển khai liên tục."
+
+#. module: corporate_lms_base
+#: model_terms:slide.channel,description_short:corporate_lms_base.slide_channel_python_sql
+msgid "Khóa học SQL nền tảng cho lập trình viên backend."
+msgstr "Khóa học SQL nền tảng cho lập trình viên backend."
+
+#. module: corporate_lms_base
+#: model_terms:slide.channel,description:corporate_lms_base.slide_channel_python_devops
+msgid ""
+"Khóa học giải thích vòng đời commit, kiểm thử tự động và triển khai liên "
+"tục."
+msgstr "Khóa học giải thích vòng đời commit, kiểm thử tự động và triển khai liên tục."
+
+#. module: corporate_lms_base
+#: model_terms:slide.channel,description:corporate_lms_base.slide_channel_python_main
+msgid ""
+"Khóa học hướng dẫn từ cú pháp Python cơ bản, hàm, lambda đến cách viết mã rõ"
+" ràng trong dự án nội bộ."
+msgstr "Khóa học hướng dẫn từ cú pháp Python cơ bản, hàm, lambda đến cách viết mã rõ ràng trong dự án nội bộ."
+
+#. module: corporate_lms_base
+#: model_terms:slide.channel,description_short:corporate_lms_base.slide_channel_python_devops
+msgid "Khóa học nhập môn về quy trình CI/CD cho lập trình viên."
+msgstr "Khóa học nhập môn về quy trình CI/CD cho lập trình viên."
+
+#. module: corporate_lms_base
+#: model_terms:slide.channel,description_short:corporate_lms_base.slide_channel_python_main
+msgid "Khóa học nền tảng cho nhân sự Python Developer mới."
+msgstr "Khóa học nền tảng cho nhân sự Python Developer mới."
+
+#. module: corporate_lms_base
+#: model_terms:slide.channel,description:corporate_lms_base.slide_channel_python_sql
+msgid ""
+"Khóa học tập trung vào SELECT, WHERE, JOIN và cách đọc dữ liệu phục vụ "
+"nghiệp vụ."
+msgstr "Khóa học tập trung vào SELECT, WHERE, JOIN và cách đọc dữ liệu phục vụ nghiệp vụ."
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,html_content:corporate_lms_base.slide_python_lambda
+msgid ""
+"Lambda phù hợp cho logic ngắn, ví dụ sắp xếp, map, filter, nhưng không thay "
+"thế các hàm có logic phức tạp."
+msgstr "Lambda phù hợp cho logic ngắn, ví dụ sắp xếp, map, filter, nhưng không thay thế các hàm có logic phức tạp."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class_student__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_employee_level__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_line__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_role_track__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__write_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__write_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class_student__write_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_employee_level__write_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__write_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_line__write_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__write_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_role_track__write_date
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: corporate_lms_base
+#: model:ir.model,name:corporate_lms_base.model_elearning_program
+msgid "Learning Program"
+msgstr "Chương trình học"
+
+#. module: corporate_lms_base
+#: model:ir.model,name:corporate_lms_base.model_elearning_program_line
+msgid "Learning Program Line"
+msgstr "Dòng chương trình học"
+
+#. module: corporate_lms_base
+#: model:ir.actions.act_window,name:corporate_lms_base.action_elearning_program
+#: model:ir.ui.menu,name:corporate_lms_base.menu_corporate_lms_programs
+#: model:ir.ui.menu,name:corporate_lms_base.menu_elearning_program
+msgid "Learning Programs"
+msgstr "Chương trình học"
+
+#. module: corporate_lms_base
+#: model:slide.channel,name:corporate_lms_base.slide_channel_python_main
+msgid "Lập Trình Python Từ Cơ Bản Đến Nâng Cao"
+msgstr "Lập Trình Python Từ Cơ Bản Đến Nâng Cao"
+
+#. module: corporate_lms_base
+#: model:elearning.role.track,description:corporate_lms_base.role_track_python_developer
+msgid "Lộ trình năng lực chuyên sâu về Python."
+msgstr "Lộ trình năng lực chuyên sâu về Python."
+
+#. module: corporate_lms_base
+#: model:elearning.role.track,description:corporate_lms_base.role_track_backend_developer
+msgid "Lộ trình năng lực dành cho lập trình viên backend."
+msgstr "Lộ trình năng lực dành cho lập trình viên backend."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_line__mandatory
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__mandatory
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_search
+msgid "Mandatory"
+msgstr "Bắt buộc"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program_line__unlock_policy__manual
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program_partner__source__manual
+msgid "Manual"
+msgstr "Thủ công"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_form
+msgid "Matching Conditions"
+msgstr "Điều kiện khớp"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__matrix_id
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program_partner__source__matrix
+msgid "Matrix"
+msgstr "Ma trận"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__max_students
+msgid "Max Students"
+msgstr "Số học viên tối đa"
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/training_class.py:0
+msgid "Maximum students must be zero or greater."
+msgstr "Số học viên tối đa phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__message
+msgid "Message"
+msgstr "Tin nhắn"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__message_has_error
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__message_has_error
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__message_has_error
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__message_has_error
+msgid "Message Delivery error"
+msgstr "Lỗi gửi tin nhắn"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__message_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__message_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__message_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__message_ids
+msgid "Messages"
+msgstr "Tin nhắn"
+
+#. module: corporate_lms_base
+#: model:elearning.employee.level,name:corporate_lms_base.level_middle_developer
+msgid "Middle Developer"
+msgstr "Lập trình viên Middle"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__my_activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__my_activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__my_activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Hạn hoạt động của tôi"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_search
+msgid "My Classes as Trainer"
+msgstr "Lớp tôi phụ trách giảng dạy"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_employee_level__name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_role_track__name
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__activity_calendar_event_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__activity_calendar_event_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__activity_calendar_event_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Sự kiện lịch của hoạt động tiếp theo"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Hạn hoạt động tiếp theo"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__activity_summary
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__activity_summary
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__activity_summary
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__activity_summary
+msgid "Next Activity Summary"
+msgstr "Tóm tắt hoạt động tiếp theo"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__activity_type_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__activity_type_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__activity_type_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__activity_type_id
+msgid "Next Activity Type"
+msgstr "Loại hoạt động tiếp theo"
+
+#. module: corporate_lms_base
+#: model:elearning.employee.level,description:corporate_lms_base.level_middle_developer
+msgid "Nhân sự có kinh nghiệm triển khai tính năng độc lập."
+msgstr "Nhân sự có kinh nghiệm triển khai tính năng độc lập."
+
+#. module: corporate_lms_base
+#: model:elearning.employee.level,description:corporate_lms_base.level_junior_developer
+msgid "Nhân sự mới hoặc ít kinh nghiệm trong vai trò phát triển phần mềm."
+msgstr "Nhân sự mới hoặc ít kinh nghiệm trong vai trò phát triển phần mềm."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__message_needaction_counter
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__message_needaction_counter
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__message_needaction_counter
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Số hành động"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__message_has_error_counter
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__message_has_error_counter
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__message_has_error_counter
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__message_has_error_counter
+msgid "Number of errors"
+msgstr "Số lỗi"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_class__message_needaction_counter
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program__message_needaction_counter
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program_partner__message_needaction_counter
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_training_matrix__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Số tin nhắn cần xử lý"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_class__message_has_error_counter
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program__message_has_error_counter
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program_partner__message_has_error_counter
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_training_matrix__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Số tin nhắn có lỗi gửi đi"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,html_content:corporate_lms_base.slide_python_variables
+msgid ""
+"Nội dung trình bày cách khai báo biến, kiểm tra kiểu dữ liệu và chọn cấu "
+"trúc dữ liệu phù hợp."
+msgstr "Nội dung trình bày cách khai báo biến, kiểm tra kiểu dữ liệu và chọn cấu trúc dữ liệu phù hợp."
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/learning_program.py:0
+msgid ""
+"Only LMS administrators or training managers can reset programs to draft."
+msgstr "Chỉ quản trị viên LMS hoặc quản lý đào tạo mới có thể đặt lại chương trình về dự thảo."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_class__state__open
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_search
+msgid "Open"
+msgstr "Mở"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program_line__unlock_policy__open_after_previous_completed
+msgid "Open After Previous Completed"
+msgstr "Mở sau khi mục trước hoàn thành"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_training_matrix__priority__optional
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_search
+msgid "Optional"
+msgstr "Tùy chọn"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__partner_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class_student__partner_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__partner_id
+msgid "Partner"
+msgstr "Đối tác"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__passing_score
+msgid "Passing Score"
+msgstr "Điểm đạt"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__priority
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_search
+msgid "Priority"
+msgstr "Mức ưu tiên"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__program_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__program_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_line__program_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__program_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__program_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_auto_enrollment_log_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_search
+msgid "Program"
+msgstr "Chương trình"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_line_form
+msgid "Program Course"
+msgstr "Khóa học trong chương trình"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_line_list
+msgid "Program Courses"
+msgstr "Các khóa học trong chương trình"
+
+#. module: corporate_lms_base
+#: model:ir.model,name:corporate_lms_base.model_elearning_program_partner
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class_student__program_partner_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_form
+msgid "Program Enrollment"
+msgstr "Ghi danh chương trình"
+
+#. module: corporate_lms_base
+#: model:ir.actions.act_window,name:corporate_lms_base.action_report_program_enrollment
+#: model:ir.ui.menu,name:corporate_lms_base.menu_report_program_enrollment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_pivot
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_search
+msgid "Program Enrollment Report"
+msgstr "Báo cáo ghi danh chương trình"
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/learning_program.py:0
+#: model:ir.actions.act_window,name:corporate_lms_base.action_elearning_program_partner
+#: model:ir.ui.menu,name:corporate_lms_base.menu_elearning_program_partner
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_search
+msgid "Program Enrollments"
+msgstr "Ghi danh chương trình"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_list
+msgid "Programs"
+msgstr "Các chương trình"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__progress
+msgid "Progress"
+msgstr "Tiến độ"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_form
+msgid "Publish"
+msgstr "Xuất bản"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_program__state__published
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_search
+msgid "Published"
+msgstr "Đã xuất bản"
+
+#. module: corporate_lms_base
+#: model:elearning.role.track,name:corporate_lms_base.role_track_python_developer
+#: model:hr.job,name:corporate_lms_base.job_python_developer
+msgid "Python Developer"
+msgstr "Lập trình viên Python"
+
+#. module: corporate_lms_base
+#: model:elearning.class,name:corporate_lms_base.class_python_batch_01
+msgid "Python Developer Batch 01"
+msgstr "Lớp lập trình viên Python khóa 01"
+
+#. module: corporate_lms_base
+#: model:elearning.program,name:corporate_lms_base.program_python_onboarding
+msgid "Python Developer Onboarding Program"
+msgstr "Chương trình hội nhập lập trình viên Python"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,html_content:corporate_lms_base.slide_python_intro
+msgid ""
+"Python là ngôn ngữ lập trình phổ biến cho backend, tự động hóa và phân tích "
+"dữ liệu."
+msgstr "Python là ngôn ngữ lập trình phổ biến cho backend, tự động hóa và phân tích dữ liệu."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__rating_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__rating_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__rating_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__rating_ids
+msgid "Ratings"
+msgstr "Đánh giá"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_training_matrix__priority__recommended
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_search
+msgid "Recommended"
+msgstr "Khuyến nghị"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_training_matrix__priority__required
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_search
+msgid "Required"
+msgstr "Bắt buộc"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__required_score
+msgid "Required Score"
+msgstr "Điểm yêu cầu"
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/training_matrix.py:0
+msgid "Required score must be zero or greater."
+msgstr "Điểm yêu cầu phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_form
+msgid "Requirement"
+msgstr "Yêu cầu"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_form
+msgid "Reset to Draft"
+msgstr "Đặt lại về dự thảo"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__activity_user_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__activity_user_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__activity_user_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__activity_user_id
+msgid "Responsible User"
+msgstr "Người phụ trách"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__role_track_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__role_track_id
+#: model:ir.model.fields,field_description:corporate_lms_base.field_hr_employee__role_track_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_role_track_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_search
+msgid "Role Track"
+msgstr "Lộ trình vai trò"
+
+#. module: corporate_lms_base
+#: model:ir.actions.act_window,name:corporate_lms_base.action_elearning_role_track
+#: model:ir.ui.menu,name:corporate_lms_base.menu_elearning_role_track
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_role_track_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_role_track_search
+msgid "Role Tracks"
+msgstr "Nhóm vai trò"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_form
+msgid "Rule"
+msgstr "Quy tắc"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__run_date
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_auto_enrollment_log_search
+msgid "Run Date"
+msgstr "Ngày chạy"
+
+#. module: corporate_lms_base
+#: model:ir.actions.server,name:corporate_lms_base.action_server_corporate_lms_auto_enroll_employees
+msgid "Run LMS Auto Enrollment"
+msgstr "Chạy ghi danh tự động LMS"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_class__state__running
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_search
+msgid "Running"
+msgstr "Đang diễn ra"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,html_content:corporate_lms_base.slide_sql_select_where
+msgid ""
+"SELECT chọn cột cần đọc, WHERE giới hạn tập dữ liệu theo điều kiện nghiệp "
+"vụ."
+msgstr "SELECT chọn cột cần đọc, WHERE giới hạn tập dữ liệu theo điều kiện nghiệp vụ."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__message_has_sms_error
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__message_has_sms_error
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__message_has_sms_error
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Lỗi gửi SMS"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,html_content:corporate_lms_base.slide_sql_intro
+msgid ""
+"SQL là ngôn ngữ truy vấn dữ liệu trong hệ quản trị cơ sở dữ liệu quan hệ."
+msgstr "SQL là ngôn ngữ truy vấn dữ liệu trong hệ quản trị cơ sở dữ liệu quan hệ."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_employee_level__sequence
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_line__sequence
+msgid "Sequence"
+msgstr "Trình tự"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_auto_enrollment_log__status__skipped
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_auto_enrollment_log_search
+msgid "Skipped"
+msgstr "Đã bỏ qua"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__source
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_search
+msgid "Source"
+msgstr "Nguồn"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__state
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class_student__state
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__state
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__state
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_student_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_partner_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_report_program_enrollment_search
+msgid "State"
+msgstr "Trạng thái"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_auto_enrollment_log__status
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_auto_enrollment_log_search
+msgid "Status"
+msgstr "Tình trạng"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_class__activity_state
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program__activity_state
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program_partner__activity_state
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_training_matrix__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Trạng thái dựa trên hoạt động\n"
+"Quá hạn: Ngày đến hạn đã qua\n"
+"Hôm nay: Ngày hoạt động là hôm nay\n"
+"Đã lên kế hoạch: Hoạt động trong tương lai."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__student_ids
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_form
+msgid "Students"
+msgstr "Học viên"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields.selection,name:corporate_lms_base.selection__elearning_auto_enrollment_log__status__success
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_auto_enrollment_log_search
+msgid "Success"
+msgstr "Thành công"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,description:corporate_lms_base.slide_python_lambda
+msgid "Sử dụng lambda cho các biểu thức ngắn và các hàm bậc cao."
+msgstr "Sử dụng lambda cho các biểu thức ngắn và các hàm bậc cao."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__target_level_ids
+msgid "Target Levels"
+msgstr "Cấp mục tiêu"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__target_role_track_ids
+msgid "Target Role Tracks"
+msgstr "Lộ trình vai trò mục tiêu"
+
+#. module: corporate_lms_base
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_program_form
+msgid "Targets"
+msgstr "Mục tiêu"
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/training_class.py:0
+msgid "This class exceeds the configured maximum students."
+msgstr "Lớp học này vượt quá số học viên tối đa đã cấu hình."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__trainer_ids
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_class_form
+msgid "Trainers"
+msgstr "Giảng viên"
+
+#. module: corporate_lms_base
+#: model:ir.model,name:corporate_lms_base.model_elearning_class
+msgid "Training Class"
+msgstr "Lớp đào tạo"
+
+#. module: corporate_lms_base
+#: model:ir.actions.act_window,name:corporate_lms_base.action_elearning_training_matrix
+#: model:ir.model,name:corporate_lms_base.model_elearning_training_matrix
+#: model:ir.ui.menu,name:corporate_lms_base.menu_elearning_training_matrix
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_base.view_elearning_training_matrix_search
+msgid "Training Matrix"
+msgstr "Ma trận đào tạo"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_class__activity_exception_decoration
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program__activity_exception_decoration
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program_partner__activity_exception_decoration
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_training_matrix__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Loại hoạt động ngoại lệ trên bản ghi."
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,description:corporate_lms_base.slide_devops_github_actions
+msgid "Tạo workflow kiểm thử tự động bằng GitHub Actions."
+msgstr "Tạo workflow kiểm thử tự động bằng GitHub Actions."
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,description:corporate_lms_base.slide_sql_intro
+msgid "Tổng quan về cơ sở dữ liệu quan hệ và SQL."
+msgstr "Tổng quan về cơ sở dữ liệu quan hệ và SQL."
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_line__unlock_policy
+msgid "Unlock Policy"
+msgstr "Chính sách mở khóa"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_class__website_message_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program__website_message_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_partner__website_message_ids
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_training_matrix__website_message_ids
+msgid "Website Messages"
+msgstr "Tin nhắn website"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_class__website_message_ids
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program__website_message_ids
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_program_partner__website_message_ids
+#: model:ir.model.fields,help:corporate_lms_base.field_elearning_training_matrix__website_message_ids
+msgid "Website communication history"
+msgstr "Lịch sử trao đổi trên website"
+
+#. module: corporate_lms_base
+#: model:ir.model.fields,field_description:corporate_lms_base.field_elearning_program_line__weight
+msgid "Weight"
+msgstr "Trọng số"
+
+#. module: corporate_lms_base
+#: model_terms:slide.slide,html_content:corporate_lms_base.slide_devops_github_actions
+msgid ""
+"Workflow GitHub Actions thường gồm trigger, job, step và các lệnh kiểm thử "
+"dự án."
+msgstr "Workflow GitHub Actions thường gồm trigger, job, step và các lệnh kiểm thử dự án."
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/hr_employee.py:0
+msgid "course_enrollment_error: %s"
+msgstr "Lỗi ghi danh khóa học: %s"
+
+#. module: corporate_lms_base
+#. odoo-python
+#: code:addons/corporate_lms_base/models/learning_program.py:0
+msgid "program_id"
+msgstr "program_id"

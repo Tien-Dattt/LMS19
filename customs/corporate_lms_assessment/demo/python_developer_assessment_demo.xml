@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="rubric_python_assignment" model="elearning.rubric">
+            <field name="name">Python Assignment Rubric</field>
+            <field name="description"><![CDATA[<p>Rubric đánh giá bài tập Python Functions trong chương trình hội nhập Python Developer.</p>]]></field>
+            <field name="active">True</field>
+        </record>
+        <record id="rubric_criteria_python_code_correctness" model="elearning.rubric.criteria">
+            <field name="rubric_id" ref="corporate_lms_assessment.rubric_python_assignment"/>
+            <field name="name">Code correctness</field>
+            <field name="description">Mã chạy đúng yêu cầu, xử lý dữ liệu đầu vào và đầu ra chính xác.</field>
+            <field name="max_score">40.0</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="rubric_criteria_python_code_readability" model="elearning.rubric.criteria">
+            <field name="rubric_id" ref="corporate_lms_assessment.rubric_python_assignment"/>
+            <field name="name">Code readability</field>
+            <field name="description">Tên biến, cấu trúc hàm và định dạng mã rõ ràng.</field>
+            <field name="max_score">20.0</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="rubric_criteria_python_problem_solving" model="elearning.rubric.criteria">
+            <field name="rubric_id" ref="corporate_lms_assessment.rubric_python_assignment"/>
+            <field name="name">Problem solving</field>
+            <field name="description">Cách tiếp cận phù hợp, có xử lý trường hợp biên hợp lý.</field>
+            <field name="max_score">25.0</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="rubric_criteria_python_explanation" model="elearning.rubric.criteria">
+            <field name="rubric_id" ref="corporate_lms_assessment.rubric_python_assignment"/>
+            <field name="name">Explanation</field>
+            <field name="description">Giải thích được tư duy giải pháp và cách sử dụng hàm/lambda.</field>
+            <field name="max_score">15.0</field>
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="assignment_python_functions" model="elearning.assignment">
+            <field name="name">Bài tập Python Functions</field>
+            <field name="description"><![CDATA[<p>Viết các hàm Python để xử lý danh sách điểm số, sử dụng lambda khi phù hợp và giải thích ngắn gọn hướng giải quyết.</p>]]></field>
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_main"/>
+            <field name="class_id" ref="corporate_lms_base.class_python_batch_01"/>
+            <field name="due_date">2026-06-23 17:00:00</field>
+            <field name="submission_type">mixed</field>
+            <field name="max_score">100.0</field>
+            <field name="rubric_id" ref="corporate_lms_assessment.rubric_python_assignment"/>
+            <field name="state">published</field>
+        </record>
+
+        <record id="submission_python_minh_anh" model="elearning.assignment.submission">
+            <field name="assignment_id" ref="corporate_lms_assessment.assignment_python_functions"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_minh_anh"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_minh_anh"/>
+            <field name="text_answer"><![CDATA[<pre>def average_score(scores):
+    valid_scores = list(filter(lambda score: score >= 0, scores))
+    return sum(valid_scores) / len(valid_scores) if valid_scores else 0</pre>
+<p>Em dùng hàm filter với lambda để bỏ điểm không hợp lệ trước khi tính trung bình.</p>]]></field>
+            <field name="submitted_at">2026-06-15 10:00:00</field>
+            <field name="state">submitted</field>
+            <field name="score">77.0</field>
+        </record>
+
+        <record id="submission_python_tran_binh" model="elearning.assignment.submission">
+            <field name="assignment_id" ref="corporate_lms_assessment.assignment_python_functions"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_tran_binh"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_tran_binh"/>
+            <field name="text_answer"><![CDATA[<pre>def normalize_names(names):
+    return list(map(lambda name: name.strip().title(), names))</pre>
+<p>Hàm chuẩn hóa khoảng trắng và viết hoa tên theo định dạng title.</p>]]></field>
+            <field name="submitted_at">2026-06-15 14:30:00</field>
+            <field name="state">submitted</field>
+            <field name="score">78.0</field>
+            <field name="feedback"><![CDATA[<p>Bài làm đúng yêu cầu cơ bản, cần cải thiện cách đặt tên biến.</p>]]></field>
+            <field name="ai_feedback_draft"><![CDATA[<p>Bài nộp xử lý được yêu cầu chính và có sử dụng lambda hợp lý. Cần bổ sung kiểm tra dữ liệu rỗng và viết thêm giải thích cho các trường hợp biên.</p>]]></field>
+            <field name="ai_strengths"><![CDATA[<ul><li>Áp dụng map/lambda đúng ngữ cảnh.</li><li>Mã ngắn gọn, dễ chạy thử.</li></ul>]]></field>
+            <field name="ai_weaknesses"><![CDATA[<ul><li>Chưa nêu rõ giả định về dữ liệu đầu vào.</li><li>Thiếu ví dụ kiểm thử.</li></ul>]]></field>
+        </record>
+
+        <record id="submission_python_le_huong" model="elearning.assignment.submission">
+            <field name="assignment_id" ref="corporate_lms_assessment.assignment_python_functions"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_le_huong"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_le_huong"/>
+            <field name="text_answer"><![CDATA[<pre>def top_scores(scores, threshold=8):
+    return sorted(filter(lambda score: score >= threshold, scores), reverse=True)</pre>
+<p>Em tách ngưỡng điểm thành tham số để dễ tái sử dụng trong các báo cáo khác nhau.</p>]]></field>
+            <field name="submitted_at">2026-06-15 09:15:00</field>
+            <field name="state">submitted</field>
+            <field name="score">92.0</field>
+            <field name="feedback"><![CDATA[<p>Bài làm tốt, giải thích rõ ràng.</p>]]></field>
+            <field name="ai_feedback_draft"><![CDATA[<p>Bài nộp có cấu trúc rõ, giải thích được lý do thiết kế hàm và dùng lambda đúng mức. Có thể bổ sung thêm test cho danh sách rỗng.</p>]]></field>
+            <field name="ai_strengths"><![CDATA[<ul><li>Giải pháp linh hoạt với tham số threshold.</li><li>Giải thích ngắn gọn nhưng đủ ý.</li></ul>]]></field>
+            <field name="ai_weaknesses"><![CDATA[<ul><li>Có thể bổ sung docstring và test minh họa.</li></ul>]]></field>
+        </record>
+
+        <record id="question_bank_python_onboarding" model="elearning.question.bank">
+            <field name="name">Python Onboarding Question Bank</field>
+            <field name="description">Bộ câu hỏi kiểm tra kiến thức Python cơ bản cho chương trình onboarding.</field>
+            <field name="owner_id" ref="corporate_lms_base.user_python_instructor"/>
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_main"/>
+            <field name="state">active</field>
+        </record>
+
+        <record id="question_python_q1_variables" model="elearning.question">
+            <field name="bank_id" ref="corporate_lms_assessment.question_bank_python_onboarding"/>
+            <field name="name">Kiểu dữ liệu nào thường dùng để biểu diễn chuỗi ký tự trong Python?</field>
+            <field name="question_type">single</field>
+            <field name="difficulty">easy</field>
+            <field name="score">20.0</field>
+            <field name="ai_explanation"><![CDATA[<p>Chuỗi trong Python được biểu diễn bằng kiểu <code>str</code>.</p>]]></field>
+            <field name="state">draft</field>
+        </record>
+        <record id="answer_python_q1_str" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q1_variables"/>
+            <field name="name">str</field>
+            <field name="is_correct">True</field>
+            <field name="sequence">10</field>
+            <field name="feedback">Đúng, str là kiểu dữ liệu chuỗi.</field>
+        </record>
+        <record id="answer_python_q1_int" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q1_variables"/>
+            <field name="name">int</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="answer_python_q1_list" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q1_variables"/>
+            <field name="name">list</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="question_python_q1_variables" model="elearning.question">
+            <field name="state">active</field>
+        </record>
+
+        <record id="question_python_q2_function_keyword" model="elearning.question">
+            <field name="bank_id" ref="corporate_lms_assessment.question_bank_python_onboarding"/>
+            <field name="name">Từ khóa nào dùng để khai báo hàm trong Python?</field>
+            <field name="question_type">single</field>
+            <field name="difficulty">easy</field>
+            <field name="score">20.0</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="answer_python_q2_def" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q2_function_keyword"/>
+            <field name="name">def</field>
+            <field name="is_correct">True</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="answer_python_q2_function" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q2_function_keyword"/>
+            <field name="name">function</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="answer_python_q2_func" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q2_function_keyword"/>
+            <field name="name">func</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="question_python_q2_function_keyword" model="elearning.question">
+            <field name="state">active</field>
+        </record>
+
+        <record id="question_python_q3_lambda" model="elearning.question">
+            <field name="bank_id" ref="corporate_lms_assessment.question_bank_python_onboarding"/>
+            <field name="name">Biểu thức lambda nào nhân đôi giá trị x?</field>
+            <field name="question_type">single</field>
+            <field name="difficulty">medium</field>
+            <field name="score">20.0</field>
+            <field name="ai_explanation"><![CDATA[<p><code>lambda x: x * 2</code> nhận một tham số và trả về giá trị nhân đôi.</p>]]></field>
+            <field name="state">draft</field>
+        </record>
+        <record id="answer_python_q3_lambda_correct" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q3_lambda"/>
+            <field name="name">lambda x: x * 2</field>
+            <field name="is_correct">True</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="answer_python_q3_lambda_wrong_sum" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q3_lambda"/>
+            <field name="name">lambda x: x + 2</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="answer_python_q3_lambda_wrong_return" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q3_lambda"/>
+            <field name="name">lambda x return x * 2</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="question_python_q3_lambda" model="elearning.question">
+            <field name="state">active</field>
+        </record>
+
+        <record id="question_python_q4_list_mutable" model="elearning.question">
+            <field name="bank_id" ref="corporate_lms_assessment.question_bank_python_onboarding"/>
+            <field name="name">List trong Python có thể thay đổi sau khi được tạo.</field>
+            <field name="question_type">true_false</field>
+            <field name="difficulty">easy</field>
+            <field name="score">15.0</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="answer_python_q4_true" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q4_list_mutable"/>
+            <field name="name">Đúng</field>
+            <field name="is_correct">True</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="answer_python_q4_false" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q4_list_mutable"/>
+            <field name="name">Sai</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="question_python_q4_list_mutable" model="elearning.question">
+            <field name="state">active</field>
+        </record>
+
+        <record id="question_python_q5_mutable_types" model="elearning.question">
+            <field name="bank_id" ref="corporate_lms_assessment.question_bank_python_onboarding"/>
+            <field name="name">Những kiểu dữ liệu nào dưới đây là mutable trong Python?</field>
+            <field name="question_type">multiple</field>
+            <field name="difficulty">medium</field>
+            <field name="score">15.0</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="answer_python_q5_list" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q5_mutable_types"/>
+            <field name="name">list</field>
+            <field name="is_correct">True</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="answer_python_q5_dict" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q5_mutable_types"/>
+            <field name="name">dict</field>
+            <field name="is_correct">True</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="answer_python_q5_tuple" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q5_mutable_types"/>
+            <field name="name">tuple</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="answer_python_q5_str" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q5_mutable_types"/>
+            <field name="name">str</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="question_python_q5_mutable_types" model="elearning.question">
+            <field name="state">active</field>
+        </record>
+
+        <record id="question_python_q6_default_return" model="elearning.question">
+            <field name="bank_id" ref="corporate_lms_assessment.question_bank_python_onboarding"/>
+            <field name="name">Hàm Python không có lệnh return rõ ràng sẽ trả về giá trị nào?</field>
+            <field name="question_type">single</field>
+            <field name="difficulty">medium</field>
+            <field name="score">15.0</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="answer_python_q6_none" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q6_default_return"/>
+            <field name="name">None</field>
+            <field name="is_correct">True</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="answer_python_q6_zero" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q6_default_return"/>
+            <field name="name">0</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="answer_python_q6_empty_string" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q6_default_return"/>
+            <field name="name">Chuỗi rỗng</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="question_python_q6_default_return" model="elearning.question">
+            <field name="state">active</field>
+        </record>
+
+        <record id="question_python_q7_docstring" model="elearning.question">
+            <field name="bank_id" ref="corporate_lms_assessment.question_bank_python_onboarding"/>
+            <field name="name">Docstring giúp mô tả mục đích và cách dùng của hàm.</field>
+            <field name="question_type">true_false</field>
+            <field name="difficulty">easy</field>
+            <field name="score">10.0</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="answer_python_q7_true" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q7_docstring"/>
+            <field name="name">Đúng</field>
+            <field name="is_correct">True</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="answer_python_q7_false" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q7_docstring"/>
+            <field name="name">Sai</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="question_python_q7_docstring" model="elearning.question">
+            <field name="state">active</field>
+        </record>
+
+        <record id="question_python_q8_import" model="elearning.question">
+            <field name="bank_id" ref="corporate_lms_assessment.question_bank_python_onboarding"/>
+            <field name="name">Từ khóa nào dùng để nạp một module trong Python?</field>
+            <field name="question_type">single</field>
+            <field name="difficulty">easy</field>
+            <field name="score">8.0</field>
+            <field name="state">draft</field>
+        </record>
+        <record id="answer_python_q8_import" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q8_import"/>
+            <field name="name">import</field>
+            <field name="is_correct">True</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="answer_python_q8_include" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q8_import"/>
+            <field name="name">include</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="answer_python_q8_require" model="elearning.answer">
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q8_import"/>
+            <field name="name">require</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="question_python_q8_import" model="elearning.question">
+            <field name="state">active</field>
+        </record>
+
+        <record id="exam_python_onboarding_final" model="elearning.exam">
+            <field name="name">Python Onboarding Final Exam</field>
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_main"/>
+            <field name="class_id" ref="corporate_lms_base.class_python_batch_01"/>
+            <field name="question_bank_id" ref="corporate_lms_assessment.question_bank_python_onboarding"/>
+            <field name="question_count">5</field>
+            <field name="randomize_questions">True</field>
+            <field name="randomize_answers">True</field>
+            <field name="time_limit_minutes">30</field>
+            <field name="attempt_limit">2</field>
+            <field name="passing_score">70.0</field>
+            <field name="state">published</field>
+        </record>
+
+        <record id="gradebook_python_minh_anh" model="elearning.gradebook" context="{'corporate_lms_gradebook_lock_update': True}">
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="class_id" ref="corporate_lms_base.class_python_batch_01"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_minh_anh"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_minh_anh"/>
+            <field name="state">open</field>
+        </record>
+        <record id="gradebook_python_tran_binh" model="elearning.gradebook" context="{'corporate_lms_gradebook_lock_update': True}">
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="class_id" ref="corporate_lms_base.class_python_batch_01"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_tran_binh"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_tran_binh"/>
+            <field name="state">open</field>
+        </record>
+        <record id="gradebook_python_le_huong" model="elearning.gradebook" context="{'corporate_lms_gradebook_lock_update': True}">
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="class_id" ref="corporate_lms_base.class_python_batch_01"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_le_huong"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_le_huong"/>
+            <field name="state">open</field>
+        </record>
+
+        <record id="gradebook_line_python_minh_assignment" model="elearning.gradebook.line">
+            <field name="gradebook_id" ref="corporate_lms_assessment.gradebook_python_minh_anh"/>
+            <field name="source_type">assignment</field>
+            <field name="submission_id" ref="corporate_lms_assessment.submission_python_minh_anh"/>
+            <field name="score">77.0</field>
+            <field name="weight">0.5</field>
+            <field name="note">Bài tập Python Functions</field>
+        </record>
+        <record id="gradebook_line_python_binh_assignment" model="elearning.gradebook.line">
+            <field name="gradebook_id" ref="corporate_lms_assessment.gradebook_python_tran_binh"/>
+            <field name="source_type">assignment</field>
+            <field name="submission_id" ref="corporate_lms_assessment.submission_python_tran_binh"/>
+            <field name="score">78.0</field>
+            <field name="weight">0.5</field>
+            <field name="note">Bài tập Python Functions</field>
+        </record>
+        <record id="gradebook_line_python_huong_assignment" model="elearning.gradebook.line">
+            <field name="gradebook_id" ref="corporate_lms_assessment.gradebook_python_le_huong"/>
+            <field name="source_type">assignment</field>
+            <field name="submission_id" ref="corporate_lms_assessment.submission_python_le_huong"/>
+            <field name="score">92.0</field>
+            <field name="weight">0.5</field>
+            <field name="note">Bài tập Python Functions</field>
+        </record>
+
+        <function model="elearning.assignment.submission" name="action_grade" uid="corporate_lms_base.user_python_instructor" eval="[[ref('corporate_lms_assessment.submission_python_tran_binh'), ref('corporate_lms_assessment.submission_python_le_huong')]]"/>
+
+        <record id="exam_session_python_minh_anh" model="elearning.exam.session" context="{'corporate_lms_skip_auto_session_lines': True}">
+            <field name="exam_id" ref="corporate_lms_assessment.exam_python_onboarding_final"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_minh_anh"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_minh_anh"/>
+            <field name="started_at">2026-06-16 09:00:00</field>
+            <field name="state">in_progress</field>
+        </record>
+        <record id="exam_session_python_tran_binh" model="elearning.exam.session" context="{'corporate_lms_skip_auto_session_lines': True}">
+            <field name="exam_id" ref="corporate_lms_assessment.exam_python_onboarding_final"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_tran_binh"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_tran_binh"/>
+            <field name="started_at">2026-06-16 09:30:00</field>
+            <field name="state">in_progress</field>
+        </record>
+        <record id="exam_session_python_le_huong" model="elearning.exam.session" context="{'corporate_lms_skip_auto_session_lines': True}">
+            <field name="exam_id" ref="corporate_lms_assessment.exam_python_onboarding_final"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_le_huong"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_le_huong"/>
+            <field name="started_at">2026-06-16 10:00:00</field>
+            <field name="state">in_progress</field>
+        </record>
+
+        <record id="exam_line_python_minh_q1" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_minh_anh"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q1_variables"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q1_str')])]"/>
+        </record>
+        <record id="exam_line_python_minh_q2" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_minh_anh"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q2_function_keyword"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q2_def')])]"/>
+        </record>
+        <record id="exam_line_python_minh_q3" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_minh_anh"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q3_lambda"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q3_lambda_correct')])]"/>
+        </record>
+        <record id="exam_line_python_minh_q4" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_minh_anh"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q4_list_mutable"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q4_true')])]"/>
+        </record>
+        <record id="exam_line_python_minh_q5" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_minh_anh"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q5_mutable_types"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q5_list')])]"/>
+        </record>
+
+        <record id="exam_line_python_binh_q1" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_tran_binh"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q1_variables"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q1_str')])]"/>
+        </record>
+        <record id="exam_line_python_binh_q2" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_tran_binh"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q2_function_keyword"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q2_def')])]"/>
+        </record>
+        <record id="exam_line_python_binh_q3" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_tran_binh"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q3_lambda"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q3_lambda_wrong_sum')])]"/>
+        </record>
+        <record id="exam_line_python_binh_q7" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_tran_binh"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q7_docstring"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q7_true')])]"/>
+        </record>
+        <record id="exam_line_python_binh_q8" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_tran_binh"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q8_import"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q8_import')])]"/>
+        </record>
+
+        <record id="exam_line_python_huong_q1" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_le_huong"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q1_variables"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q1_str')])]"/>
+        </record>
+        <record id="exam_line_python_huong_q2" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_le_huong"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q2_function_keyword"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q2_def')])]"/>
+        </record>
+        <record id="exam_line_python_huong_q3" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_le_huong"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q3_lambda"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q3_lambda_correct')])]"/>
+        </record>
+        <record id="exam_line_python_huong_q4" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_le_huong"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q4_list_mutable"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q4_true')])]"/>
+        </record>
+        <record id="exam_line_python_huong_q5" model="elearning.exam.session.line">
+            <field name="session_id" ref="corporate_lms_assessment.exam_session_python_le_huong"/>
+            <field name="question_id" ref="corporate_lms_assessment.question_python_q5_mutable_types"/>
+            <field name="selected_answer_ids" eval="[Command.set([ref('corporate_lms_assessment.answer_python_q5_list'), ref('corporate_lms_assessment.answer_python_q5_dict')])]"/>
+        </record>
+
+        <record id="gradebook_line_python_minh_exam" model="elearning.gradebook.line">
+            <field name="gradebook_id" ref="corporate_lms_assessment.gradebook_python_minh_anh"/>
+            <field name="source_type">exam</field>
+            <field name="exam_session_id" ref="corporate_lms_assessment.exam_session_python_minh_anh"/>
+            <field name="score">75.0</field>
+            <field name="weight">0.5</field>
+            <field name="note">Python Onboarding Final Exam</field>
+        </record>
+        <record id="gradebook_line_python_binh_exam" model="elearning.gradebook.line">
+            <field name="gradebook_id" ref="corporate_lms_assessment.gradebook_python_tran_binh"/>
+            <field name="source_type">exam</field>
+            <field name="exam_session_id" ref="corporate_lms_assessment.exam_session_python_tran_binh"/>
+            <field name="score">58.0</field>
+            <field name="weight">0.5</field>
+            <field name="note">Python Onboarding Final Exam</field>
+        </record>
+        <record id="gradebook_line_python_huong_exam" model="elearning.gradebook.line">
+            <field name="gradebook_id" ref="corporate_lms_assessment.gradebook_python_le_huong"/>
+            <field name="source_type">exam</field>
+            <field name="exam_session_id" ref="corporate_lms_assessment.exam_session_python_le_huong"/>
+            <field name="score">90.0</field>
+            <field name="weight">0.5</field>
+            <field name="note">Python Onboarding Final Exam</field>
+        </record>
+
+        <function model="elearning.exam.session" name="action_submit" uid="corporate_lms_base.user_python_minh_anh" eval="[[ref('corporate_lms_assessment.exam_session_python_minh_anh')]]"/>
+        <function model="elearning.exam.session" name="action_submit" uid="corporate_lms_base.user_python_tran_binh" eval="[[ref('corporate_lms_assessment.exam_session_python_tran_binh')]]"/>
+        <function model="elearning.exam.session" name="action_submit" uid="corporate_lms_base.user_python_le_huong" eval="[[ref('corporate_lms_assessment.exam_session_python_le_huong')]]"/>
+
+        <function model="elearning.gradebook.line" name="write" eval="[[ref('corporate_lms_assessment.gradebook_line_python_minh_assignment'), ref('corporate_lms_assessment.gradebook_line_python_binh_assignment'), ref('corporate_lms_assessment.gradebook_line_python_huong_assignment'), ref('corporate_lms_assessment.gradebook_line_python_minh_exam'), ref('corporate_lms_assessment.gradebook_line_python_binh_exam'), ref('corporate_lms_assessment.gradebook_line_python_huong_exam')], {'weight': 0.5}]"/>
+
+        <record id="exam_session_python_minh_anh" model="elearning.exam.session">
+            <field name="submitted_at">2026-06-16 09:25:00</field>
+        </record>
+        <record id="exam_session_python_tran_binh" model="elearning.exam.session">
+            <field name="submitted_at">2026-06-16 10:00:00</field>
+        </record>
+        <record id="exam_session_python_le_huong" model="elearning.exam.session">
+            <field name="submitted_at">2026-06-16 10:20:00</field>
+        </record>
+
+        <record id="gradebook_python_minh_anh" model="elearning.gradebook" context="{'corporate_lms_gradebook_lock_update': True}">
+            <field name="state">locked</field>
+        </record>
+        <record id="gradebook_python_tran_binh" model="elearning.gradebook" context="{'corporate_lms_gradebook_lock_update': True}">
+            <field name="state">locked</field>
+        </record>
+        <record id="gradebook_python_le_huong" model="elearning.gradebook" context="{'corporate_lms_gradebook_lock_update': True}">
+            <field name="state">locked</field>
+        </record>
+    </data>
+</odoo>

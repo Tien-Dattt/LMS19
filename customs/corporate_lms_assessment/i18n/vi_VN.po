@@ -1,0 +1,1785 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* corporate_lms_assessment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20250925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-16 12:13+0000\n"
+"PO-Revision-Date: 2026-06-16 12:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/gradebook.py:0
+msgid "A gradebook requires a learner."
+msgstr "Sổ điểm yêu cầu phải có học viên."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "A learner can only have one submission per assignment."
+msgstr "Học viên chỉ có thể có một bài nộp cho mỗi bài tập."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "A published exam must have active questions."
+msgstr "Bài thi đã xuất bản phải có các câu hỏi đang hoạt động."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "A published exam must use an active question bank."
+msgstr "Bài thi đã xuất bản phải sử dụng một ngân hàng câu hỏi đang hoạt động."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "A single choice question can only have one selected answer."
+msgstr "Câu hỏi một lựa chọn chỉ có thể có một đáp án được chọn."
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_form
+msgid "AI Draft"
+msgstr "Bản nháp AI"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__ai_explanation
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_form
+msgid "AI Explanation"
+msgstr "Giải thích của AI"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__ai_feedback_draft
+msgid "AI Feedback Draft"
+msgstr "Bản nháp phản hồi của AI"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__ai_strengths
+msgid "AI Strengths"
+msgstr "Điểm mạnh do AI gợi ý"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__ai_weaknesses
+msgid "AI Weaknesses"
+msgstr "Điểm yếu do AI gợi ý"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__message_needaction
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__message_needaction
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__message_needaction
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__message_needaction
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__message_needaction
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__message_needaction
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__message_needaction
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__message_needaction
+msgid "Action Needed"
+msgstr "Cần xử lý"
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_form
+msgid "Activate"
+msgstr "Kích hoạt"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__active
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__active
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__active
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__active
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__active
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_question__state__active
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_question_bank__state__active
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_rubric_search
+msgid "Active"
+msgstr "Đang hoạt động"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__activity_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__activity_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__activity_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__activity_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__activity_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__activity_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__activity_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__activity_ids
+msgid "Activities"
+msgstr "Hoạt động"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__activity_exception_decoration
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__activity_exception_decoration
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__activity_exception_decoration
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__activity_exception_decoration
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__activity_exception_decoration
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__activity_exception_decoration
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__activity_exception_decoration
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Hiển thị ngoại lệ hoạt động"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__activity_state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__activity_state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__activity_state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__activity_state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__activity_state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__activity_state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__activity_state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__activity_state
+msgid "Activity State"
+msgstr "Trạng thái hoạt động"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__activity_type_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__activity_type_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__activity_type_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__activity_type_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__activity_type_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__activity_type_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__activity_type_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Biểu tượng loại hoạt động"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/question_bank.py:0
+msgid "An active choice question must have a correct answer."
+msgstr "Câu hỏi lựa chọn đang hoạt động phải có một đáp án đúng."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "An assignment must belong to at least a program, course, or class."
+msgstr "Bài tập phải thuộc ít nhất một chương trình, khóa học hoặc lớp học."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "An exam must belong to at least a program, course, or class."
+msgstr "Bài thi phải thuộc ít nhất một chương trình, khóa học hoặc lớp học."
+
+#. module: corporate_lms_assessment
+#: model:ir.model,name:corporate_lms_assessment.model_elearning_answer
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_form
+msgid "Answer"
+msgstr "Câu trả lời"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__line_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__answer_ids
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_form
+msgid "Answers"
+msgstr "Các câu trả lời"
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_form
+msgid "Archive"
+msgstr "Lưu trữ"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_question__state__archived
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_question_bank__state__archived
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_rubric_search
+msgid "Archived"
+msgstr "Đã lưu trữ"
+
+#. module: corporate_lms_assessment
+#: model:ir.model,name:corporate_lms_assessment.model_elearning_assignment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__assignment_id
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_gradebook_line__source_type__assignment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_search
+msgid "Assignment"
+msgstr "Bài tập"
+
+#. module: corporate_lms_assessment
+#: model:ir.model,name:corporate_lms_assessment.model_elearning_assignment_submission
+msgid "Assignment Submission"
+msgstr "Bài nộp"
+
+#. module: corporate_lms_assessment
+#: model:ir.actions.act_window,name:corporate_lms_assessment.action_report_assignment_submission
+#: model:ir.ui.menu,name:corporate_lms_assessment.menu_report_assignment_submission
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_pivot
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_search
+msgid "Assignment Submission Report"
+msgstr "Báo cáo bài nộp"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/gradebook.py:0
+msgid "Assignment gradebook lines must reference a submission."
+msgstr "Các dòng sổ điểm bài tập phải tham chiếu đến một bài nộp."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "Assignment maximum score must be zero or greater."
+msgstr "Điểm tối đa của bài tập phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_assessment
+#: model:ir.actions.act_window,name:corporate_lms_assessment.action_elearning_assignment
+#: model:ir.ui.menu,name:corporate_lms_assessment.menu_elearning_assignment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_search
+msgid "Assignments"
+msgstr "Bài tập"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__message_attachment_count
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__message_attachment_count
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__message_attachment_count
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__message_attachment_count
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__message_attachment_count
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__message_attachment_count
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__message_attachment_count
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__message_attachment_count
+msgid "Attachment Count"
+msgstr "Số tệp đính kèm"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__attachment_ids
+msgid "Attachments"
+msgstr "Tệp đính kèm"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__attempt_limit
+msgid "Attempt Limit"
+msgstr "Giới hạn số lần làm bài"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Attempt limit must be zero or greater."
+msgstr "Giới hạn số lần làm bài phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__bank_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_search
+msgid "Bank"
+msgstr "Ngân hàng"
+
+#. module: corporate_lms_assessment
+#: model:elearning.question,name:corporate_lms_assessment.question_python_q3_lambda
+msgid "Biểu thức lambda nào nhân đôi giá trị x?"
+msgstr "Biểu thức lambda nào nhân đôi giá trị x?"
+
+#. module: corporate_lms_assessment
+#: model:elearning.assignment,name:corporate_lms_assessment.assignment_python_functions
+msgid "Bài tập Python Functions"
+msgstr "Bài tập Python Functions"
+
+#. module: corporate_lms_assessment
+#: model:elearning.question.bank,description:corporate_lms_assessment.question_bank_python_onboarding
+msgid ""
+"Bộ câu hỏi kiểm tra kiến thức Python cơ bản cho chương trình onboarding."
+msgstr "Bộ câu hỏi kiểm tra kiến thức Python cơ bản cho chương trình onboarding."
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q6_empty_string
+msgid "Chuỗi rỗng"
+msgstr "Chuỗi rỗng"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__class_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__assignment_class_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__class_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__exam_class_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__class_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_gradebook_search
+msgid "Class"
+msgstr "Lớp học"
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_form
+msgid "Close"
+msgstr "Đóng"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_assignment__state__closed
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_exam__state__closed
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_search
+msgid "Closed"
+msgstr "Đã đóng"
+
+#. module: corporate_lms_assessment
+#: model:elearning.rubric.criteria,name:corporate_lms_assessment.rubric_criteria_python_code_correctness
+msgid "Code correctness"
+msgstr "Độ chính xác của mã"
+
+#. module: corporate_lms_assessment
+#: model:elearning.rubric.criteria,name:corporate_lms_assessment.rubric_criteria_python_code_readability
+msgid "Code readability"
+msgstr "Độ dễ đọc của mã"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__channel_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__assignment_channel_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__channel_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__exam_channel_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__channel_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_search
+msgid "Course"
+msgstr "Khóa học"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_answer__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session_line__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__create_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric_criteria__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_answer__create_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__create_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__create_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__create_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__create_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session_line__create_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__create_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__create_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__create_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__create_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__create_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric_criteria__create_date
+msgid "Created on"
+msgstr "Tạo vào"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__criteria_ids
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_rubric_form
+msgid "Criteria"
+msgstr "Tiêu chí"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/rubric.py:0
+msgid "Criteria maximum score must be zero or greater."
+msgstr "Điểm tối đa của tiêu chí phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_assessment
+#: model:elearning.rubric.criteria,description:corporate_lms_assessment.rubric_criteria_python_problem_solving
+msgid "Cách tiếp cận phù hợp, có xử lý trường hợp biên hợp lý."
+msgstr "Cách tiếp cận phù hợp, có xử lý trường hợp biên hợp lý."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__description
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__description
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__description
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric_criteria__description
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_rubric_form
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__difficulty
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_search
+msgid "Difficulty"
+msgstr "Độ khó"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_answer__display_name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__display_name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__display_name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__display_name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__display_name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session_line__display_name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__display_name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__display_name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__display_name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__display_name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__display_name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric_criteria__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: corporate_lms_assessment
+#: model:elearning.question,name:corporate_lms_assessment.question_python_q7_docstring
+msgid "Docstring giúp mô tả mục đích và cách dùng của hàm."
+msgstr "Docstring giúp mô tả mục đích và cách dùng của hàm."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_assignment__state__draft
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_assignment_submission__state__draft
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_exam__state__draft
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_gradebook__state__draft
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_question__state__draft
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_question_bank__state__draft
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_search
+msgid "Draft"
+msgstr "Dự thảo"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__due_date
+msgid "Due Date"
+msgstr "Ngày đến hạn"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_question__difficulty__easy
+msgid "Easy"
+msgstr "Dễ"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__employee_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__employee_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__employee_id
+msgid "Employee"
+msgstr "Nhân viên"
+
+#. module: corporate_lms_assessment
+#: model:ir.model,name:corporate_lms_assessment.model_elearning_exam
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__exam_id
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_gradebook_line__source_type__exam
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_search
+msgid "Exam"
+msgstr "Bài thi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model,name:corporate_lms_assessment.model_elearning_exam_session
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__exam_session_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_form
+msgid "Exam Session"
+msgstr "Phiên làm bài thi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model,name:corporate_lms_assessment.model_elearning_exam_session_line
+msgid "Exam Session Line"
+msgstr "Dòng phiên làm bài thi"
+
+#. module: corporate_lms_assessment
+#: model:ir.actions.act_window,name:corporate_lms_assessment.action_report_exam_session
+#: model:ir.ui.menu,name:corporate_lms_assessment.menu_report_exam_session
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_pivot
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_search
+msgid "Exam Session Report"
+msgstr "Báo cáo phiên thi"
+
+#. module: corporate_lms_assessment
+#: model:ir.actions.act_window,name:corporate_lms_assessment.action_elearning_exam_session
+#: model:ir.ui.menu,name:corporate_lms_assessment.menu_elearning_exam_session
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_search
+msgid "Exam Sessions"
+msgstr "Phiên thi"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/gradebook.py:0
+msgid "Exam gradebook lines must reference an exam session."
+msgstr "Các dòng sổ điểm bài thi phải tham chiếu đến một phiên làm bài thi."
+
+#. module: corporate_lms_assessment
+#: model:ir.actions.act_window,name:corporate_lms_assessment.action_elearning_exam
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__exam_ids
+#: model:ir.ui.menu,name:corporate_lms_assessment.menu_elearning_exam
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_search
+msgid "Exams"
+msgstr "Bài thi"
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_form
+msgid "Expire"
+msgstr "Hết hạn"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_exam_session__state__expired
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_search
+msgid "Expired"
+msgstr "Đã hết hạn"
+
+#. module: corporate_lms_assessment
+#: model:elearning.rubric.criteria,name:corporate_lms_assessment.rubric_criteria_python_explanation
+msgid "Explanation"
+msgstr "Giải thích"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__external_url
+msgid "External Url"
+msgstr "URL bên ngoài"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_answer__feedback
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__feedback
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_form
+msgid "Feedback"
+msgstr "Phản hồi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_assignment__submission_type__file
+msgid "File"
+msgstr "Tệp"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "File submissions require an attachment."
+msgstr "Bài nộp dạng tệp yêu cầu có tệp đính kèm."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__final_score
+msgid "Final Score"
+msgstr "Điểm cuối cùng"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__message_follower_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__message_follower_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__message_follower_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__message_follower_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__message_follower_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__message_follower_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__message_follower_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__message_follower_ids
+msgid "Followers"
+msgstr "Người theo dõi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__message_partner_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__message_partner_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__message_partner_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__message_partner_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__message_partner_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__message_partner_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__message_partner_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi (Đối tác)"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment__activity_type_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment_submission__activity_type_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam__activity_type_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam_session__activity_type_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_gradebook__activity_type_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question__activity_type_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question_bank__activity_type_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_rubric__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Biểu tượng Font Awesome, ví dụ fa-tasks"
+
+#. module: corporate_lms_assessment
+#: model:elearning.rubric.criteria,description:corporate_lms_assessment.rubric_criteria_python_explanation
+msgid "Giải thích được tư duy giải pháp và cách sử dụng hàm/lambda."
+msgstr "Giải thích được tư duy giải pháp và cách sử dụng hàm/lambda."
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_form
+msgid "Grade"
+msgstr "Chấm điểm"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__line_ids
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_form
+msgid "Grade Lines"
+msgstr "Dòng điểm"
+
+#. module: corporate_lms_assessment
+#: model:ir.actions.act_window,name:corporate_lms_assessment.action_elearning_gradebook
+#: model:ir.model,name:corporate_lms_assessment.model_elearning_gradebook
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__gradebook_id
+#: model:ir.ui.menu,name:corporate_lms_assessment.menu_elearning_gradebook
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_search
+msgid "Gradebook"
+msgstr "Sổ điểm"
+
+#. module: corporate_lms_assessment
+#: model:ir.model,name:corporate_lms_assessment.model_elearning_gradebook_line
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_line_form
+msgid "Gradebook Line"
+msgstr "Dòng sổ điểm"
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_line_list
+msgid "Gradebook Lines"
+msgstr "Các dòng sổ điểm"
+
+#. module: corporate_lms_assessment
+#: model:ir.actions.act_window,name:corporate_lms_assessment.action_report_gradebook
+#: model:ir.ui.menu,name:corporate_lms_assessment.menu_report_gradebook
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_gradebook_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_gradebook_pivot
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_gradebook_search
+msgid "Gradebook Report"
+msgstr "Báo cáo sổ điểm"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/gradebook.py:0
+msgid "Gradebook line score must be zero or greater."
+msgstr "Điểm của dòng sổ điểm phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/gradebook.py:0
+msgid "Gradebook line weight must be zero or greater."
+msgstr "Trọng số của dòng sổ điểm phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_assignment_submission__state__graded
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_exam_session__state__graded
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_search
+msgid "Graded"
+msgstr "Đã chấm điểm"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__grader_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_search
+msgid "Grader"
+msgstr "Người chấm điểm"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_question__difficulty__hard
+msgid "Hard"
+msgstr "Khó"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__has_message
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__has_message
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__has_message
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__has_message
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__has_message
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__has_message
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__has_message
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__has_message
+msgid "Has Message"
+msgstr "Có tin nhắn"
+
+#. module: corporate_lms_assessment
+#: model:elearning.question,name:corporate_lms_assessment.question_python_q6_default_return
+msgid "Hàm Python không có lệnh return rõ ràng sẽ trả về giá trị nào?"
+msgstr "Hàm Python không có lệnh return rõ ràng sẽ trả về giá trị nào?"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_answer__id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session_line__id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric_criteria__id
+msgid "ID"
+msgstr "ID"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__activity_exception_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__activity_exception_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__activity_exception_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__activity_exception_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__activity_exception_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__activity_exception_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__activity_exception_icon
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__activity_exception_icon
+msgid "Icon"
+msgstr "Biểu tượng"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment__activity_exception_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment_submission__activity_exception_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam__activity_exception_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam_session__activity_exception_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_gradebook__activity_exception_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question__activity_exception_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question_bank__activity_exception_icon
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_rubric__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Biểu tượng dùng để chỉ báo hoạt động ngoại lệ."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment__message_needaction
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment_submission__message_needaction
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam__message_needaction
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam_session__message_needaction
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_gradebook__message_needaction
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question__message_needaction
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question_bank__message_needaction
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_rubric__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Nếu được chọn, các tin nhắn mới cần bạn xử lý."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment__message_has_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment__message_has_sms_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment_submission__message_has_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment_submission__message_has_sms_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam__message_has_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam__message_has_sms_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam_session__message_has_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam_session__message_has_sms_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_gradebook__message_has_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_gradebook__message_has_sms_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question__message_has_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question__message_has_sms_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question_bank__message_has_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question_bank__message_has_sms_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_rubric__message_has_error
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_rubric__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Nếu được chọn, một số tin nhắn có lỗi gửi đi."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_exam_session__state__in_progress
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_search
+msgid "In Progress"
+msgstr "Đang thực hiện"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_answer__is_correct
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session_line__is_correct
+msgid "Is Correct"
+msgstr "Đúng"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__message_is_follower
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__message_is_follower
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__message_is_follower
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__message_is_follower
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__message_is_follower
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__message_is_follower
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__message_is_follower
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__message_is_follower
+msgid "Is Follower"
+msgstr "Là người theo dõi"
+
+#. module: corporate_lms_assessment
+#: model:elearning.question,name:corporate_lms_assessment.question_python_q1_variables
+msgid "Kiểu dữ liệu nào thường dùng để biểu diễn chuỗi ký tự trong Python?"
+msgstr "Kiểu dữ liệu nào thường dùng để biểu diễn chuỗi ký tự trong Python?"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_answer__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session_line__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__write_uid
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric_criteria__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_answer__write_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__write_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__write_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__write_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__write_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session_line__write_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__write_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__write_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__write_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__write_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__write_date
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric_criteria__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_assignment_submission__state__late
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_search
+msgid "Late"
+msgstr "Trễ hạn"
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_gradebook_search
+msgid "Learner"
+msgstr "Học viên"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Learners can only answer their own in-progress exam sessions."
+msgstr "Học viên chỉ có thể trả lời phiên làm bài thi đang diễn ra của chính mình."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Learners can only create exam sessions for themselves."
+msgstr "Học viên chỉ có thể tạo phiên làm bài thi cho chính mình."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "Learners can only create submissions for themselves."
+msgstr "Học viên chỉ có thể tạo bài nộp cho chính mình."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "Learners can only edit submission answer fields."
+msgstr "Học viên chỉ có thể chỉnh sửa các trường câu trả lời trong bài nộp."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "Learners can only edit submissions in draft or returned state."
+msgstr "Học viên chỉ có thể chỉnh sửa bài nộp ở trạng thái dự thảo hoặc đã trả lại."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Learners can only select exam answers."
+msgstr "Học viên chỉ có thể chọn đáp án bài thi."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Learners can only start published exams."
+msgstr "Học viên chỉ có thể bắt đầu các bài thi đã xuất bản."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "Learners can only submit published assignments."
+msgstr "Học viên chỉ có thể nộp các bài tập đã xuất bản."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Learners can only submit their own exam sessions."
+msgstr "Học viên chỉ có thể nộp phiên làm bài thi của chính mình."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Learners cannot create exam session lines directly."
+msgstr "Học viên không thể tạo trực tiếp các dòng phiên làm bài thi."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Learners cannot directly update exam session results."
+msgstr "Học viên không thể cập nhật trực tiếp kết quả phiên làm bài thi."
+
+#. module: corporate_lms_assessment
+#: model:elearning.question,name:corporate_lms_assessment.question_python_q4_list_mutable
+msgid "List trong Python có thể thay đổi sau khi được tạo."
+msgstr "List trong Python có thể thay đổi sau khi được tạo."
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_form
+msgid "Lock"
+msgstr "Khóa"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_gradebook__state__locked
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_gradebook_search
+msgid "Locked"
+msgstr "Đã khóa"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/gradebook.py:0
+msgid ""
+"Locked gradebook lines can only be edited by LMS administrators or training "
+"managers."
+msgstr "Các dòng sổ điểm đã khóa chỉ có thể được chỉnh sửa bởi quản trị viên LMS hoặc quản lý đào tạo."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/gradebook.py:0
+msgid ""
+"Locked gradebooks can only be edited by LMS administrators or training "
+"managers."
+msgstr "Sổ điểm đã khóa chỉ có thể được chỉnh sửa bởi quản trị viên LMS hoặc quản lý đào tạo."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_gradebook_line__source_type__manual
+msgid "Manual"
+msgstr "Thủ công"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__max_score
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__max_score
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric_criteria__max_score
+msgid "Max Score"
+msgstr "Điểm tối đa"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_question__difficulty__medium
+msgid "Medium"
+msgstr "Trung bình"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__message_has_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__message_has_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__message_has_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__message_has_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__message_has_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__message_has_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__message_has_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__message_has_error
+msgid "Message Delivery error"
+msgstr "Lỗi gửi tin nhắn"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__message_ids
+msgid "Messages"
+msgstr "Tin nhắn"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_assignment__submission_type__mixed
+msgid "Mixed"
+msgstr "Kết hợp"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "Mixed submissions require text, an attachment, or an external URL."
+msgstr "Bài nộp kết hợp yêu cầu có văn bản, tệp đính kèm hoặc URL bên ngoài."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_question__question_type__multiple
+msgid "Multiple Choice"
+msgstr "Nhiều lựa chọn"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__my_activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__my_activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__my_activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__my_activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__my_activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__my_activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__my_activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Hạn hoạt động của tôi"
+
+#. module: corporate_lms_assessment
+#: model:elearning.rubric.criteria,description:corporate_lms_assessment.rubric_criteria_python_code_correctness
+msgid "Mã chạy đúng yêu cầu, xử lý dữ liệu đầu vào và đầu ra chính xác."
+msgstr "Mã chạy đúng yêu cầu, xử lý dữ liệu đầu vào và đầu ra chính xác."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_answer__name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__name
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric_criteria__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__activity_calendar_event_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__activity_calendar_event_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__activity_calendar_event_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__activity_calendar_event_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__activity_calendar_event_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__activity_calendar_event_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__activity_calendar_event_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Sự kiện lịch của hoạt động tiếp theo"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__activity_date_deadline
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Hạn hoạt động tiếp theo"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__activity_summary
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__activity_summary
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__activity_summary
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__activity_summary
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__activity_summary
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__activity_summary
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__activity_summary
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__activity_summary
+msgid "Next Activity Summary"
+msgstr "Tóm tắt hoạt động tiếp theo"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__activity_type_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__activity_type_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__activity_type_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__activity_type_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__activity_type_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__activity_type_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__activity_type_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__activity_type_id
+msgid "Next Activity Type"
+msgstr "Loại hoạt động tiếp theo"
+
+#. module: corporate_lms_assessment
+#: model:elearning.question,name:corporate_lms_assessment.question_python_q5_mutable_types
+msgid "Những kiểu dữ liệu nào dưới đây là mutable trong Python?"
+msgstr "Những kiểu dữ liệu nào dưới đây là mutable trong Python?"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q6_none
+msgid "None"
+msgstr "None"
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_gradebook_search
+msgid "Not Passed"
+msgstr "Chưa đạt"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__note
+msgid "Note"
+msgstr "Ghi chú"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__message_needaction_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__message_needaction_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__message_needaction_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__message_needaction_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__message_needaction_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__message_needaction_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__message_needaction_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Số hành động"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__message_has_error_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__message_has_error_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__message_has_error_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__message_has_error_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__message_has_error_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__message_has_error_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__message_has_error_counter
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__message_has_error_counter
+msgid "Number of errors"
+msgstr "Số lỗi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment__message_needaction_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment_submission__message_needaction_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam__message_needaction_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam_session__message_needaction_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_gradebook__message_needaction_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question__message_needaction_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question_bank__message_needaction_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_rubric__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Số tin nhắn cần xử lý"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment__message_has_error_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment_submission__message_has_error_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam__message_has_error_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam_session__message_has_error_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_gradebook__message_has_error_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question__message_has_error_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question_bank__message_has_error_counter
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_rubric__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Số tin nhắn có lỗi gửi đi"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/gradebook.py:0
+msgid "Only assignment gradebook lines can reference a submission."
+msgstr "Chỉ các dòng sổ điểm bài tập mới có thể tham chiếu đến bài nộp."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/gradebook.py:0
+msgid "Only exam gradebook lines can reference an exam session."
+msgstr "Chỉ các dòng sổ điểm bài thi mới có thể tham chiếu đến phiên làm bài thi."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Only in-progress exam sessions can be submitted."
+msgstr "Chỉ các phiên làm bài thi đang diễn ra mới có thể được nộp."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_gradebook__state__open
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_gradebook_search
+msgid "Open"
+msgstr "Mở"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__owner_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_search
+msgid "Owner"
+msgstr "Chủ sở hữu"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__partner_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__partner_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__partner_id
+msgid "Partner"
+msgstr "Đối tác"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__passed
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__passed
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_gradebook_search
+msgid "Passed"
+msgstr "Đã đạt"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__passing_score
+msgid "Passing Score"
+msgstr "Điểm đạt"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Passing score must be zero or greater."
+msgstr "Điểm đạt phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_assessment
+#: model:elearning.rubric.criteria,name:corporate_lms_assessment.rubric_criteria_python_problem_solving
+msgid "Problem solving"
+msgstr "Giải quyết vấn đề"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__program_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__assignment_program_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__program_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__exam_program_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__program_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__program_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_gradebook_search
+msgid "Program"
+msgstr "Chương trình"
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_form
+msgid "Publish"
+msgstr "Xuất bản"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_assignment__state__published
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_exam__state__published
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_search
+msgid "Published"
+msgstr "Đã xuất bản"
+
+#. module: corporate_lms_assessment
+#: model:elearning.rubric,name:corporate_lms_assessment.rubric_python_assignment
+msgid "Python Assignment Rubric"
+msgstr "Rubric bài tập Python"
+
+#. module: corporate_lms_assessment
+#: model:elearning.exam,name:corporate_lms_assessment.exam_python_onboarding_final
+msgid "Python Onboarding Final Exam"
+msgstr "Bài thi cuối khóa hội nhập Python"
+
+#. module: corporate_lms_assessment
+#: model:elearning.question.bank,name:corporate_lms_assessment.question_bank_python_onboarding
+msgid "Python Onboarding Question Bank"
+msgstr "Ngân hàng câu hỏi hội nhập Python"
+
+#. module: corporate_lms_assessment
+#: model:ir.model,name:corporate_lms_assessment.model_elearning_question
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_answer__question_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session_line__question_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_form
+msgid "Question"
+msgstr "Câu hỏi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model,name:corporate_lms_assessment.model_elearning_question_bank
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__question_bank_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_form
+msgid "Question Bank"
+msgstr "Ngân hàng câu hỏi"
+
+#. module: corporate_lms_assessment
+#: model:ir.actions.act_window,name:corporate_lms_assessment.action_elearning_question_bank
+#: model:ir.ui.menu,name:corporate_lms_assessment.menu_elearning_question_bank
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_search
+msgid "Question Banks"
+msgstr "Ngân hàng câu hỏi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__question_count
+msgid "Question Count"
+msgstr "Số câu hỏi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__question_type
+msgid "Question Type"
+msgstr "Loại câu hỏi"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Question count cannot exceed the active questions in the bank."
+msgstr "Số câu hỏi không được vượt quá số câu hỏi đang hoạt động trong ngân hàng."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Question count must be zero or greater."
+msgstr "Số câu hỏi phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/question_bank.py:0
+msgid "Question score must be zero or greater."
+msgstr "Điểm câu hỏi phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_assessment
+#: model:ir.actions.act_window,name:corporate_lms_assessment.action_elearning_question
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__question_ids
+#: model:ir.ui.menu,name:corporate_lms_assessment.menu_elearning_question
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_search
+msgid "Questions"
+msgstr "Câu hỏi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__randomize_answers
+msgid "Randomize Answers"
+msgstr "Xáo trộn đáp án"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__randomize_questions
+msgid "Randomize Questions"
+msgstr "Xáo trộn câu hỏi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__rating_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__rating_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__rating_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__rating_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__rating_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__rating_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__rating_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__rating_ids
+msgid "Ratings"
+msgstr "Đánh giá"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__activity_user_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__activity_user_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__activity_user_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__activity_user_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__activity_user_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__activity_user_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__activity_user_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__activity_user_id
+msgid "Responsible User"
+msgstr "Người phụ trách"
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_form
+msgid "Return"
+msgstr "Trả lại"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_assignment_submission__state__returned
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_search
+msgid "Returned"
+msgstr "Đã trả lại"
+
+#. module: corporate_lms_assessment
+#: model:ir.model,name:corporate_lms_assessment.model_elearning_rubric
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__rubric_id
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric_criteria__rubric_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_rubric_form
+msgid "Rubric"
+msgstr "Rubric đánh giá"
+
+#. module: corporate_lms_assessment
+#: model:ir.model,name:corporate_lms_assessment.model_elearning_rubric_criteria
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_rubric_criteria_list
+msgid "Rubric Criteria"
+msgstr "Tiêu chí rubric"
+
+#. module: corporate_lms_assessment
+#: model_terms:elearning.rubric,description:corporate_lms_assessment.rubric_python_assignment
+msgid ""
+"Rubric đánh giá bài tập Python Functions trong chương trình hội nhập Python "
+"Developer."
+msgstr "Rubric đánh giá bài tập Python Functions trong chương trình hội nhập Python Developer."
+
+#. module: corporate_lms_assessment
+#: model:ir.actions.act_window,name:corporate_lms_assessment.action_elearning_rubric
+#: model:ir.ui.menu,name:corporate_lms_assessment.menu_elearning_rubric
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_rubric_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_rubric_search
+msgid "Rubrics"
+msgstr "Rubric"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__message_has_sms_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__message_has_sms_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__message_has_sms_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__message_has_sms_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__message_has_sms_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__message_has_sms_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__message_has_sms_error
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Lỗi gửi SMS"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q4_false
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q7_false
+msgid "Sai"
+msgstr "Sai"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__score
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__score
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session_line__score
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__score
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__score
+msgid "Score"
+msgstr "Điểm"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session_line__selected_answer_ids
+msgid "Selected Answers"
+msgstr "Đáp án đã chọn"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Selected answers must belong to the session question."
+msgstr "Các đáp án đã chọn phải thuộc câu hỏi của phiên làm bài."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_answer__sequence
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric_criteria__sequence
+msgid "Sequence"
+msgstr "Trình tự"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session_line__session_id
+msgid "Session"
+msgstr "Phiên"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__session_ids
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_form
+msgid "Sessions"
+msgstr "Các phiên"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_question__question_type__single
+msgid "Single Choice"
+msgstr "Một lựa chọn"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/question_bank.py:0
+msgid ""
+"Single choice and true/false questions must have exactly one correct answer."
+msgstr "Câu hỏi một lựa chọn và đúng/sai phải có đúng một đáp án đúng."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__source_type
+msgid "Source Type"
+msgstr "Loại nguồn"
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_form
+msgid "Start Exam"
+msgstr "Bắt đầu bài thi"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__started_at
+msgid "Started At"
+msgstr "Bắt đầu lúc"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__state
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__state
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_gradebook_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_bank_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_exam_session_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_gradebook_search
+msgid "State"
+msgstr "Trạng thái"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment__activity_state
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment_submission__activity_state
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam__activity_state
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam_session__activity_state
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_gradebook__activity_state
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question__activity_state
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question_bank__activity_state
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_rubric__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Trạng thái dựa trên hoạt động\n"
+"Quá hạn: Ngày đến hạn đã qua\n"
+"Hôm nay: Ngày hoạt động là hôm nay\n"
+"Đã lên kế hoạch: Hoạt động trong tương lai."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__submission_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_form
+msgid "Submission"
+msgstr "Bài nộp"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__submission_type
+msgid "Submission Type"
+msgstr "Loại bài nộp"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "Submission score cannot exceed the assignment maximum score."
+msgstr "Điểm bài nộp không được vượt quá điểm tối đa của bài tập."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "Submission score must be zero or greater."
+msgstr "Điểm bài nộp phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_assessment
+#: model:ir.actions.act_window,name:corporate_lms_assessment.action_elearning_assignment_submission
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__submission_ids
+#: model:ir.ui.menu,name:corporate_lms_assessment.menu_elearning_assignment_submission
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_search
+msgid "Submissions"
+msgstr "Bài nộp"
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_exam_session_form
+msgid "Submit"
+msgstr "Nộp"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_assignment_submission__state__submitted
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_exam_session__state__submitted
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_report_assignment_submission_search
+msgid "Submitted"
+msgstr "Đã nộp"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__submitted_at
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__submitted_at
+msgid "Submitted At"
+msgstr "Nộp lúc"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_assignment__submission_type__text
+msgid "Text"
+msgstr "Văn bản"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__text_answer
+msgid "Text Answer"
+msgstr "Câu trả lời dạng văn bản"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "Text submissions require an answer."
+msgstr "Bài nộp dạng văn bản yêu cầu có câu trả lời."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "This assignment is closed."
+msgstr "Bài tập này đã đóng."
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "This learner has reached the attempt limit for this exam."
+msgstr "Học viên này đã đạt giới hạn số lần làm bài cho bài thi này."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__time_limit_minutes
+msgid "Time Limit Minutes"
+msgstr "Giới hạn thời gian (phút)"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/exam.py:0
+msgid "Time limit must be zero or greater."
+msgstr "Giới hạn thời gian phải bằng hoặc lớn hơn 0."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_question__question_type__true_false
+msgid "True/False"
+msgstr "Đúng/Sai"
+
+#. module: corporate_lms_assessment
+#: model_terms:ir.ui.view,arch_db:corporate_lms_assessment.view_elearning_question_search
+msgid "Type"
+msgstr "Loại"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment__activity_exception_decoration
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment_submission__activity_exception_decoration
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam__activity_exception_decoration
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam_session__activity_exception_decoration
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_gradebook__activity_exception_decoration
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question__activity_exception_decoration
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question_bank__activity_exception_decoration
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_rubric__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Loại hoạt động ngoại lệ trên bản ghi."
+
+#. module: corporate_lms_assessment
+#: model:elearning.rubric.criteria,description:corporate_lms_assessment.rubric_criteria_python_code_readability
+msgid "Tên biến, cấu trúc hàm và định dạng mã rõ ràng."
+msgstr "Tên biến, cấu trúc hàm và định dạng mã rõ ràng."
+
+#. module: corporate_lms_assessment
+#: model:elearning.question,name:corporate_lms_assessment.question_python_q2_function_keyword
+msgid "Từ khóa nào dùng để khai báo hàm trong Python?"
+msgstr "Từ khóa nào dùng để khai báo hàm trong Python?"
+
+#. module: corporate_lms_assessment
+#: model:elearning.question,name:corporate_lms_assessment.question_python_q8_import
+msgid "Từ khóa nào dùng để nạp một module trong Python?"
+msgstr "Từ khóa nào dùng để nạp một module trong Python?"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields.selection,name:corporate_lms_assessment.selection__elearning_assignment__submission_type__url
+msgid "URL"
+msgstr "URL"
+
+#. module: corporate_lms_assessment
+#. odoo-python
+#: code:addons/corporate_lms_assessment/models/assignment.py:0
+msgid "URL submissions require an external URL."
+msgstr "Bài nộp dạng URL yêu cầu có URL bên ngoài."
+
+#. module: corporate_lms_assessment
+#: model_terms:elearning.assignment,description:corporate_lms_assessment.assignment_python_functions
+msgid ""
+"Viết các hàm Python để xử lý danh sách điểm số, sử dụng lambda khi phù hợp "
+"và giải thích ngắn gọn hướng giải quyết."
+msgstr "Viết các hàm Python để xử lý danh sách điểm số, sử dụng lambda khi phù hợp và giải thích ngắn gọn hướng giải quyết."
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment__website_message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_assignment_submission__website_message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam__website_message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_exam_session__website_message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook__website_message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question__website_message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_question_bank__website_message_ids
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_rubric__website_message_ids
+msgid "Website Messages"
+msgstr "Tin nhắn website"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment__website_message_ids
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_assignment_submission__website_message_ids
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam__website_message_ids
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_exam_session__website_message_ids
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_gradebook__website_message_ids
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question__website_message_ids
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_question_bank__website_message_ids
+#: model:ir.model.fields,help:corporate_lms_assessment.field_elearning_rubric__website_message_ids
+msgid "Website communication history"
+msgstr "Lịch sử trao đổi trên website"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__weight
+msgid "Weight"
+msgstr "Trọng số"
+
+#. module: corporate_lms_assessment
+#: model:ir.model.fields,field_description:corporate_lms_assessment.field_elearning_gradebook_line__weighted_score
+msgid "Weighted Score"
+msgstr "Điểm có trọng số"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q2_def
+msgid "def"
+msgstr "def"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q5_dict
+msgid "dict"
+msgstr "dict"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q2_func
+msgid "func"
+msgstr "func"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q2_function
+msgid "function"
+msgstr "function"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q8_import
+msgid "import"
+msgstr "import"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q8_include
+msgid "include"
+msgstr "include"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q1_int
+msgid "int"
+msgstr "int"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q3_lambda_wrong_return
+msgid "lambda x return x * 2"
+msgstr "lambda x return x * 2"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q3_lambda_correct
+msgid "lambda x: x * 2"
+msgstr "lambda x: x * 2"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q3_lambda_wrong_sum
+msgid "lambda x: x + 2"
+msgstr "lambda x: x + 2"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q1_list
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q5_list
+msgid "list"
+msgstr "list"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q8_require
+msgid "require"
+msgstr "require"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q1_str
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q5_str
+msgid "str"
+msgstr "str"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q5_tuple
+msgid "tuple"
+msgstr "tuple"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q4_true
+#: model:elearning.answer,name:corporate_lms_assessment.answer_python_q7_true
+msgid "Đúng"
+msgstr "Đúng"
+
+#. module: corporate_lms_assessment
+#: model:elearning.answer,feedback:corporate_lms_assessment.answer_python_q1_str
+msgid "Đúng, str là kiểu dữ liệu chuỗi."
+msgstr "Đúng, str là kiểu dữ liệu chuỗi."

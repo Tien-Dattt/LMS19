@@ -52,7 +52,7 @@
     <menuitem
         id="menu_elearning_role_track"
         name="Role Tracks"
-        parent="menu_corporate_lms_configuration"
+        parent="website_slides.website_slides_menu_configuration"
         action="action_elearning_role_track"
         sequence="20"
         groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager"/>

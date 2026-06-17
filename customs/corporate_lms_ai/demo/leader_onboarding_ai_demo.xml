@@ -6,6 +6,10 @@
             <field name="restrict_to_sources" eval="True"/>
         </record>
 
+        <record id="corporate_lms_base.program_leader_onboarding" model="elearning.program">
+            <field name="ai_agent_id" ref="ai_agent_leader_onboarding"/>
+        </record>
+
         <record id="corporate_lms_base.slide_channel_leader_onboarding" model="slide.channel">
             <field name="ai_agent_id" ref="ai_agent_leader_onboarding"/>
             <field name="ai_course_summary" type="html"><p>Draft AI summary for the Leader Onboarding Course.</p></field>

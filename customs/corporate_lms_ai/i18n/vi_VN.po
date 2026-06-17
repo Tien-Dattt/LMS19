@@ -1,0 +1,905 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* corporate_lms_ai
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20250925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-16 12:16+0000\n"
+"PO-Revision-Date: 2026-06-16 12:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: corporate_lms_ai
+#: model:ir.model,name:corporate_lms_ai.model_ai_agent
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_slide_channel__ai_agent_id
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_search
+msgid "AI Agent"
+msgstr "Tác nhân AI"
+
+#. module: corporate_lms_ai
+#: model:ir.model,name:corporate_lms_ai.model_ai_agent_source
+msgid "AI Agent Source"
+msgstr "Nguồn tác nhân AI"
+
+#. module: corporate_lms_ai
+#: model:ir.actions.act_window,name:corporate_lms_ai.action_corporate_lms_ai_agent
+#: model:ir.ui.menu,name:corporate_lms_ai.menu_corporate_lms_ai_agent
+msgid "AI Agents"
+msgstr "AI Agent"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_slide_channel__ai_course_summary
+msgid "AI Course Summary"
+msgstr "Tóm tắt khóa học bằng AI"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_slide_channel__ai_difficulty_suggestion
+msgid "AI Difficulty Suggestion"
+msgstr "Gợi ý độ khó bằng AI"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_elearning_program_form_ai_fields
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_slide_channel_form_ai_fields
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_slide_slide_form_ai_fields
+msgid "AI Draft"
+msgstr "Bản nháp AI"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_slide_slide__ai_keywords
+msgid "AI Keywords"
+msgstr "Từ khóa AI"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_slide_slide__ai_source_id
+msgid "AI Source"
+msgstr "Nguồn AI"
+
+#. module: corporate_lms_ai
+#: model:ir.actions.act_window,name:corporate_lms_ai.action_report_ai_source_sync
+#: model:ir.ui.menu,name:corporate_lms_ai.menu_report_ai_source_sync
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_pivot
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_search
+msgid "AI Source Sync Report"
+msgstr "Báo cáo đồng bộ nguồn AI"
+
+#. module: corporate_lms_ai
+#: model:ir.actions.act_window,name:corporate_lms_ai.action_elearning_ai_sources
+#: model:ir.ui.menu,name:corporate_lms_ai.menu_elearning_ai_sources
+msgid "AI Sources"
+msgstr "Nguồn AI"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_program__ai_summary
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_slide_slide__ai_summary
+msgid "AI Summary"
+msgstr "Tóm tắt AI"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_slide_channel__ai_sync_status
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_slide_slide__ai_sync_status
+msgid "AI Sync Status"
+msgstr "Trạng thái đồng bộ AI"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid ""
+"AI could not generate a course summary. Please check the AI configuration "
+"and try again. Details: %s"
+msgstr "AI không thể tạo tóm tắt khóa học. Vui lòng kiểm tra cấu hình AI và thử lại. Chi tiết: %s"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid ""
+"AI could not generate a feedback draft. Please check the AI configuration "
+"and try again. Details: %s"
+msgstr "AI không thể tạo bản nháp phản hồi. Vui lòng kiểm tra cấu hình AI và thử lại. Chi tiết: %s"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid ""
+"AI could not generate draft questions. Please check the AI configuration and"
+" try again. Details: %s"
+msgstr "AI không thể tạo câu hỏi nháp. Vui lòng kiểm tra cấu hình AI và thử lại. Chi tiết: %s"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "AI did not return any usable draft questions."
+msgstr "AI không trả về câu hỏi nháp nào có thể sử dụng."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_helpers.py:0
+msgid ""
+"AI generation is not configured for Corporate LMS yet. The existing draft "
+"fields were left unchanged."
+msgstr "Chưa cấu hình tính năng sinh nội dung AI cho LMS doanh nghiệp. Các trường nháp hiện có được giữ nguyên."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "AI response did not contain a course summary."
+msgstr "Phản hồi AI không chứa tóm tắt khóa học."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "AI response did not contain a feedback draft."
+msgstr "Phản hồi AI không chứa bản nháp phản hồi."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "AI response did not contain a questions list."
+msgstr "Phản hồi AI không chứa danh sách câu hỏi."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "AI response did not contain feedback fields."
+msgstr "Phản hồi AI không chứa các trường phản hồi."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "AI returned a question with fewer than two answers."
+msgstr "AI trả về một câu hỏi có ít hơn hai đáp án."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "AI returned a question without a correct answer."
+msgstr "AI trả về một câu hỏi không có đáp án đúng."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "AI returned a question without text."
+msgstr "AI trả về một câu hỏi không có nội dung."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid ""
+"AI returned a single choice or true/false question with multiple correct "
+"answers."
+msgstr "AI trả về câu hỏi một lựa chọn hoặc đúng/sai có nhiều đáp án đúng."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "AI returned an answer without text."
+msgstr "AI trả về một đáp án không có nội dung."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "AI returned an empty course summary response."
+msgstr "AI trả về phản hồi tóm tắt khóa học trống."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "AI returned an empty feedback draft response."
+msgstr "AI trả về phản hồi bản nháp phản hồi trống."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "AI returned an empty response."
+msgstr "AI trả về phản hồi trống."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "AI returned an invalid answer item."
+msgstr "AI trả về một mục đáp án không hợp lệ."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "AI returned an invalid question item."
+msgstr "AI trả về một mục câu hỏi không hợp lệ."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "AI returned malformed JSON: %s"
+msgstr "AI trả về JSON sai định dạng: %s"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "AI returned malformed feedback draft JSON: %s"
+msgstr "AI trả về JSON bản nháp phản hồi sai định dạng: %s"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+msgid "An eLearning AI source already exists for this course and AI Agent."
+msgstr "Đã tồn tại một nguồn AI eLearning cho khóa học này và tác nhân AI này."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+msgid "An eLearning AI source already exists for this slide and AI Agent."
+msgstr "Đã tồn tại một nguồn AI eLearning cho bài học này và tác nhân AI này."
+
+#. module: corporate_lms_ai
+#: model:ir.model,name:corporate_lms_ai.model_elearning_assignment_submission
+msgid "Assignment Submission"
+msgstr "Bài nộp"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "Attachments metadata:"
+msgstr "Siêu dữ liệu tệp đính kèm:"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_elearning_ai_generate_question_wizard_form
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: corporate_lms_ai
+#: model:ir.model,name:corporate_lms_ai.model_res_config_settings
+msgid "Config Settings"
+msgstr "Cài đặt cấu hình"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_helpers.py:0
+msgid ""
+"Configure an AI model on the selected AI Agent before generating Corporate "
+"LMS AI draft content."
+msgstr "Hãy cấu hình mô hình AI trên tác nhân AI đã chọn trước khi tạo nội dung nháp AI cho LMS doanh nghiệp."
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.res_config_settings_view_form_corporate_lms_ai
+msgid ""
+"Configure prerequisites for Corporate LMS AI draft actions. API keys are "
+"provided by the Odoo AI provider settings."
+msgstr "Cấu hình các điều kiện tiên quyết cho thao tác tạo bản nháp AI của LMS doanh nghiệp. Khóa API được cung cấp trong thiết lập nhà cung cấp AI của Odoo."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_helpers.py:0
+msgid ""
+"Configure the %s API key in Odoo AI settings before generating Corporate LMS"
+" AI draft content."
+msgstr "Hãy cấu hình khóa API %s trong thiết lập AI của Odoo trước khi tạo nội dung nháp AI cho LMS doanh nghiệp."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_helpers.py:0
+msgid ""
+"Configure the Corporate LMS AI endpoint before generating AI draft content."
+msgstr "Hãy cấu hình endpoint AI của LMS doanh nghiệp trước khi tạo nội dung nháp AI."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_helpers.py:0
+msgid ""
+"Configure the Corporate LMS AI model before generating AI draft content."
+msgstr "Hãy cấu hình mô hình AI của LMS doanh nghiệp trước khi tạo nội dung nháp AI."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_helpers.py:0
+msgid ""
+"Configure the Corporate LMS AI provider before generating AI draft content."
+msgstr "Hãy cấu hình nhà cung cấp AI của LMS doanh nghiệp trước khi tạo nội dung nháp AI."
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_elearning_assignment_submission_form_ai_action
+msgid "Copy Draft to Feedback"
+msgstr "Sao chép bản nháp vào phản hồi"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_elearning_assignment_submission_form_ai_action
+msgid ""
+"Copy the AI draft into the official feedback field? Review and edit it "
+"before grading."
+msgstr "Sao chép bản nháp AI vào trường phản hồi chính thức? Hãy xem lại và chỉnh sửa trước khi chấm điểm."
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.res_config_settings_view_form_corporate_lms_ai
+msgid "Corporate LMS AI Draft Generation"
+msgstr "Tạo bản nháp AI cho LMS doanh nghiệp"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_res_config_settings__corporate_lms_ai_endpoint
+msgid "Corporate LMS AI Endpoint"
+msgstr "Endpoint AI của LMS doanh nghiệp"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_res_config_settings__corporate_lms_ai_model
+msgid "Corporate LMS AI Model"
+msgstr "Mô hình AI của LMS doanh nghiệp"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_res_config_settings__corporate_lms_ai_provider
+msgid "Corporate LMS AI Provider"
+msgstr "Nhà cung cấp AI của LMS doanh nghiệp"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+#: model:ir.model,name:corporate_lms_ai.model_slide_channel
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_ai_agent_source__channel_id
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_ai_generate_question_wizard__channel_id
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__elearning_ai_generate_question_wizard__source_type__course
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_search
+msgid "Course"
+msgstr "Khóa học"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "Course: %s"
+msgstr "Khóa học: %s"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_slide_channel_form_ai_source_action
+msgid "Create AI Source from Course"
+msgstr "Tạo nguồn AI từ khóa học"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_slide_slide_form_ai_source_action
+msgid "Create AI Source from Slide"
+msgstr "Tạo nguồn AI từ bài học"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_ai_generate_question_wizard__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_ai_generate_question_wizard__create_date
+msgid "Created on"
+msgstr "Tạo vào"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "Description: %s"
+msgstr "Mô tả: %s"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_ai_generate_question_wizard__difficulty
+msgid "Difficulty"
+msgstr "Độ khó"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_ai_agent__display_name
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_ai_agent_source__display_name
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_ai_generate_question_wizard__display_name
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_assignment_submission__display_name
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_program__display_name
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_question__display_name
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_question_bank__display_name
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_slide_channel__display_name
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_slide_slide__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_slide_channel_form_ai_fields
+msgid "Draft AI course summary"
+msgstr "Tạo nháp tóm tắt khóa học bằng AI"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_slide_slide_form_ai_fields
+msgid "Draft AI lesson summary"
+msgstr "Tạo nháp tóm tắt bài học bằng AI"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_elearning_program_form_ai_fields
+msgid "Draft AI summary"
+msgstr "Tạo nháp tóm tắt bằng AI"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "Draft Questions"
+msgstr "Câu hỏi nháp"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_slide_channel_form_ai_fields
+msgid "Draft difficulty suggestion"
+msgstr "Gợi ý độ khó nháp"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,help:corporate_lms_ai.field_slide_channel__ai_course_summary
+msgid "Draft/helper course summary. It must be reviewed before official use."
+msgstr "Tóm tắt khóa học dạng nháp/hỗ trợ. Cần được xem lại trước khi sử dụng chính thức."
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,help:corporate_lms_ai.field_slide_channel__ai_difficulty_suggestion
+msgid ""
+"Draft/helper difficulty suggestion. It must be reviewed before official use."
+msgstr "Gợi ý độ khó dạng nháp/hỗ trợ. Cần được xem lại trước khi sử dụng chính thức."
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,help:corporate_lms_ai.field_slide_slide__ai_keywords
+msgid "Draft/helper keywords. They must be reviewed before official use."
+msgstr "Từ khóa dạng nháp/hỗ trợ. Cần được xem lại trước khi sử dụng chính thức."
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,help:corporate_lms_ai.field_slide_slide__ai_summary
+msgid "Draft/helper lesson summary. It must be reviewed before official use."
+msgstr "Tóm tắt bài học dạng nháp/hỗ trợ. Cần được xem lại trước khi sử dụng chính thức."
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,help:corporate_lms_ai.field_elearning_program__ai_summary
+msgid "Draft/helper summary. It must be reviewed before official use."
+msgstr "Tóm tắt dạng nháp/hỗ trợ. Cần được xem lại trước khi sử dụng chính thức."
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__elearning_ai_generate_question_wizard__difficulty__easy
+msgid "Easy"
+msgstr "Dễ"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__slide_channel__ai_sync_status__error
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__slide_slide__ai_sync_status__error
+msgid "Error"
+msgstr "Lỗi"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "External URL: %s"
+msgstr "URL bên ngoài: %s"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_search
+msgid "Failed"
+msgstr "Thất bại"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+msgid "Failed to get embeddings for the prompt."
+msgstr "Không lấy được embedding cho prompt."
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_elearning_assignment_submission_form_ai_action
+msgid "Generate AI Feedback Draft"
+msgstr "Tạo bản nháp phản hồi bằng AI"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_slide_channel_form_ai_fields
+msgid "Generate Course AI Summary"
+msgstr "Tạo tóm tắt khóa học bằng AI"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_elearning_ai_generate_question_wizard_form
+msgid "Generate Draft Questions"
+msgstr "Tạo câu hỏi nháp"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+#: model:ir.actions.act_window,name:corporate_lms_ai.action_elearning_ai_generate_question_wizard
+#: model:ir.model,name:corporate_lms_ai.model_elearning_ai_generate_question_wizard
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_elearning_ai_generate_question_wizard_form
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_elearning_question_bank_form_ai_generate_questions
+msgid "Generate Draft Questions by AI"
+msgstr "Tạo câu hỏi nháp bằng AI"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_elearning_program_form_ai_fields
+msgid "Generate Program AI Summary"
+msgstr "Tạo tóm tắt chương trình bằng AI"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_elearning_question_form_ai_action
+msgid "Generate Question AI Explanation"
+msgstr "Tạo giải thích câu hỏi bằng AI"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_slide_slide_form_ai_fields
+msgid "Generate Slide AI Summary"
+msgstr "Tạo tóm tắt bài học bằng AI"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "Generate an AI feedback draft before copying it to official feedback."
+msgstr "Hãy tạo bản nháp phản hồi bằng AI trước khi sao chép vào phản hồi chính thức."
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__res_config_settings__corporate_lms_ai_provider__google
+msgid "Google Gemini"
+msgstr "Google Gemini"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__elearning_ai_generate_question_wizard__difficulty__hard
+msgid "Hard"
+msgstr "Khó"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_ai_agent__id
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_ai_agent_source__id
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_ai_generate_question_wizard__id
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_assignment_submission__id
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_program__id
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_question__id
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_question_bank__id
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_res_config_settings__id
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_slide_channel__id
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_slide_slide__id
+msgid "ID"
+msgstr "ID"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_search
+msgid "Indexed"
+msgstr "Đã lập chỉ mục"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_list
+msgid "Last Sync Date"
+msgstr "Ngày đồng bộ lần cuối"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_ai_generate_question_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_ai_generate_question_wizard__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "Learner: %s"
+msgstr "Học viên: %s"
+
+#. module: corporate_lms_ai
+#: model:ir.model,name:corporate_lms_ai.model_elearning_program
+msgid "Learning Program"
+msgstr "Chương trình học"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "Maximum score: %s"
+msgstr "Điểm tối đa: %s"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__elearning_ai_generate_question_wizard__difficulty__medium
+msgid "Medium"
+msgstr "Trung bình"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "Name: %s"
+msgstr "Tên: %s"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+msgid "No indexable eLearning content was found for this source."
+msgstr "Không tìm thấy nội dung eLearning có thể lập chỉ mục cho nguồn này."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "No rubric configured."
+msgstr "Chưa cấu hình rubric."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "No source text was available."
+msgstr "Không có văn bản nguồn khả dụng."
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__slide_channel__ai_sync_status__not_synced
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__slide_slide__ai_sync_status__not_synced
+msgid "Not Synced"
+msgstr "Chưa đồng bộ"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_form
+msgid "Open Source"
+msgstr "Mở nguồn"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__res_config_settings__corporate_lms_ai_provider__openai
+msgid "OpenAI"
+msgstr "OpenAI"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,help:corporate_lms_ai.field_slide_channel__ai_agent_id
+msgid "Optional AI agent for draft/helper LMS content generation."
+msgstr "Tác nhân AI tùy chọn để tạo nội dung nháp/hỗ trợ cho LMS."
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,help:corporate_lms_ai.field_slide_slide__ai_source_id
+msgid "Optional AI source reference for later LMS source bridge workflows."
+msgstr "Tham chiếu nguồn AI tùy chọn cho các quy trình kết nối nguồn LMS sau này."
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_search
+msgid "Processing"
+msgstr "Đang xử lý"
+
+#. module: corporate_lms_ai
+#: model:ir.model,name:corporate_lms_ai.model_elearning_question
+msgid "Question"
+msgstr "Câu hỏi"
+
+#. module: corporate_lms_ai
+#: model:ir.model,name:corporate_lms_ai.model_elearning_question_bank
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_ai_generate_question_wizard__question_bank_id
+msgid "Question Bank"
+msgstr "Ngân hàng câu hỏi"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_ai_generate_question_wizard__question_count
+msgid "Question Count"
+msgstr "Số câu hỏi"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "Question count must be greater than zero."
+msgstr "Số câu hỏi phải lớn hơn 0."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "Rubric: %s"
+msgstr "Rubric: %s"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "Select a course to generate draft questions."
+msgstr "Chọn một khóa học để tạo câu hỏi nháp."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "Select a slide to generate draft questions."
+msgstr "Chọn một bài học để tạo câu hỏi nháp."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+msgid "Set an AI Agent on the course before creating an eLearning AI source."
+msgstr "Hãy thiết lập tác nhân AI cho khóa học trước khi tạo nguồn AI eLearning."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "Set an AI Agent on the course before generating a course AI summary."
+msgstr "Hãy thiết lập tác nhân AI cho khóa học trước khi tạo tóm tắt khóa học bằng AI."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid ""
+"Set an AI Agent on the related course before generating feedback drafts."
+msgstr "Hãy thiết lập tác nhân AI cho khóa học liên quan trước khi tạo bản nháp phản hồi."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid ""
+"Set an AI Agent on the selected course before generating draft questions."
+msgstr "Hãy thiết lập tác nhân AI cho khóa học đã chọn trước khi tạo câu hỏi nháp."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_ai_agent_source__slide_id
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_ai_generate_question_wizard__slide_id
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__elearning_ai_generate_question_wizard__source_type__slide
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_search
+msgid "Slide"
+msgstr "Bài học"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "Slide: %s"
+msgstr "Bài học: %s"
+
+#. module: corporate_lms_ai
+#: model:ir.model,name:corporate_lms_ai.model_slide_slide
+msgid "Slides"
+msgstr "Slide"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_elearning_ai_generate_question_wizard__source_type
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_search
+msgid "Source Type"
+msgstr "Loại nguồn"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "State: %s"
+msgstr "Trạng thái: %s"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_search
+msgid "Sync Status"
+msgstr "Trạng thái đồng bộ"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_form
+msgid "Sync eLearning AI Sources"
+msgstr "Đồng bộ nguồn AI eLearning"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__slide_channel__ai_sync_status__synced
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__slide_slide__ai_sync_status__synced
+msgid "Synced"
+msgstr "Đã đồng bộ"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "Text answer: %s"
+msgstr "Câu trả lời văn bản: %s"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+msgid "This eLearning course source is not linked to a course."
+msgstr "Nguồn khóa học eLearning này chưa được liên kết với khóa học."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+msgid "This eLearning slide source is not linked to a slide."
+msgstr "Nguồn bài học eLearning này chưa được liên kết với bài học."
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields,field_description:corporate_lms_ai.field_ai_agent_source__type
+msgid "Type"
+msgstr "Loại"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_helpers.py:0
+msgid "Unsupported Corporate LMS AI provider: %s."
+msgstr "Nhà cung cấp AI LMS doanh nghiệp không được hỗ trợ: %s."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+msgid "You are not allowed to access this eLearning AI source."
+msgstr "Bạn không được phép truy cập nguồn AI eLearning này."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+msgid "You are not allowed to manage eLearning AI sources for this course."
+msgstr "Bạn không được phép quản lý nguồn AI eLearning cho khóa học này."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_helpers.py:0
+msgid "You are not allowed to run Corporate LMS AI actions."
+msgstr "Bạn không được phép chạy các thao tác AI của LMS doanh nghiệp."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid ""
+"You are not allowed to use this course or slide as AI question context."
+msgstr "Bạn không được phép sử dụng khóa học hoặc bài học này làm ngữ cảnh câu hỏi AI."
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_agent_source.py:0
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_form
+msgid "eLearning AI Source"
+msgstr "Nguồn AI eLearning"
+
+#. module: corporate_lms_ai
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_list
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_search
+msgid "eLearning AI Sources"
+msgstr "Nguồn AI eLearning"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__ai_agent_source__type__elearning_course
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_search
+msgid "eLearning Course"
+msgstr "Khóa học eLearning"
+
+#. module: corporate_lms_ai
+#: model:ir.model.fields.selection,name:corporate_lms_ai.selection__ai_agent_source__type__elearning_slide
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_ai_agent_source_elearning_search
+#: model_terms:ir.ui.view,arch_db:corporate_lms_ai.view_report_ai_source_sync_search
+msgid "eLearning Slide"
+msgstr "Bài học eLearning"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "file_size=%s"
+msgstr "file_size=%s"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/wizards/ai_generate_question_wizard.py:0
+msgid "id"
+msgstr "id"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "mimetype=%s"
+msgstr "mimetype=%s"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "name=%s"
+msgstr "name=%s"
+
+#. module: corporate_lms_ai
+#. odoo-python
+#: code:addons/corporate_lms_ai/models/ai_fields.py:0
+msgid "url=%s"
+msgstr "url=%s"
+
+#. module: corporate_lms_ai
+msgid "AI Agent used to generate draft summaries for this learning program."
+msgstr "AI Agent dùng để tạo tóm tắt nháp cho chương trình học này."
+
+#. module: corporate_lms_ai
+msgid "Vui lòng chọn AI Agent cho chương trình trước khi tạo tóm tắt bằng AI."
+msgstr "Vui lòng chọn AI Agent cho chương trình trước khi tạo tóm tắt bằng AI."
+
+#. module: corporate_lms_ai
+msgid "AI Agent chưa được cấu hình mô hình hoặc nguồn dữ liệu hợp lệ."
+msgstr "AI Agent chưa được cấu hình mô hình hoặc nguồn dữ liệu hợp lệ."
+
+#. module: corporate_lms_ai
+msgid ""
+"AI could not generate a program summary. Please check the selected AI Agent "
+"and try again. Details: %s"
+msgstr ""
+"AI không thể tạo tóm tắt chương trình. Vui lòng kiểm tra AI Agent đã chọn "
+"và thử lại. Chi tiết: %s"
+
+#. module: corporate_lms_ai
+msgid "AI returned an empty program summary response."
+msgstr "AI trả về phản hồi tóm tắt chương trình trống."
+
+#. module: corporate_lms_ai
+msgid "AI response did not contain a program summary."
+msgstr "Phản hồi AI không chứa tóm tắt chương trình."

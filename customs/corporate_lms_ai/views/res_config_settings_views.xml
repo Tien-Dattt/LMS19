@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_corporate_lms_ai" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.corporate.lms.ai</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='integration']" position="inside">
+                <setting
+                    id="corporate_lms_ai_generation"
+                    string="Corporate LMS AI Draft Generation"
+                    help="Configure prerequisites for Corporate LMS AI draft actions. API keys are provided by the Odoo AI provider settings."
+                    groups="base.group_system">
+                    <group>
+                        <field name="corporate_lms_ai_provider"/>
+                        <field name="corporate_lms_ai_model"/>
+                        <field name="corporate_lms_ai_endpoint"/>
+                    </group>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

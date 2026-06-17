@@ -32,7 +32,8 @@
     ],
     "demo": [
         "demo/leader_onboarding_demo.xml",
+        "demo/python_developer_onboarding_demo.xml",
     ],
     "installable": True,
-    "application": True,
+    "application": False,
 }

@@ -24,6 +24,7 @@
     ],
     "demo": [
         "demo/leader_onboarding_assessment_demo.xml",
+        "demo/python_developer_assessment_demo.xml",
     ],
     "installable": True,
     "application": False,

@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record id="website_slides.website_slides_menu_root" model="ir.ui.menu">
+        <field name="group_ids" eval="[
+            (4, ref('corporate_lms_base.group_corporate_lms_admin')),
+            (4, ref('corporate_lms_base.group_corporate_lms_training_manager')),
+            (4, ref('corporate_lms_base.group_corporate_lms_hr_officer')),
+            (4, ref('corporate_lms_base.group_corporate_lms_instructor')),
+            (4, ref('corporate_lms_base.group_corporate_lms_manager')),
+            (4, ref('corporate_lms_base.group_corporate_lms_learner'))
+        ]"/>
+    </record>
+
     <menuitem
         id="menu_corporate_lms_root"
         name="Corporate LMS"
-        sequence="65"
+        parent="website_slides.website_slides_menu_root"
+        sequence="95"
         groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
 
     <menuitem
         id="menu_corporate_lms_configuration"
         name="Configuration"
         parent="menu_corporate_lms_root"
-        sequence="10"
+        sequence="100"
         groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
 
     <menuitem
         id="menu_corporate_lms_programs"
-        name="Programs"
+        name="Learning Programs"
         parent="menu_corporate_lms_root"
         sequence="20"
         groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
@@ -38,13 +50,13 @@
         id="menu_corporate_lms_reports"
         name="Reports"
         parent="menu_corporate_lms_root"
-        sequence="50"
-        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
+        sequence="80"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager"/>
 
     <menuitem
         id="menu_corporate_lms_ai"
-        name="AI"
+        name="AI Tools"
         parent="menu_corporate_lms_root"
-        sequence="60"
+        sequence="90"
         groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>
 </odoo>

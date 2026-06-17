@@ -4,7 +4,7 @@
         <field name="name">elearning.gradebook.list</field>
         <field name="model">elearning.gradebook</field>
         <field name="arch" type="xml">
-            <list string="Gradebooks">
+            <list string="Gradebook">
                 <field name="program_id"/>
                 <field name="class_id"/>
                 <field name="partner_id"/>
@@ -68,7 +68,7 @@
         <field name="name">elearning.gradebook.search</field>
         <field name="model">elearning.gradebook</field>
         <field name="arch" type="xml">
-            <search string="Gradebooks">
+            <search string="Gradebook">
                 <field name="program_id"/>
                 <field name="class_id"/>
                 <field name="partner_id"/>
@@ -129,15 +129,15 @@
     </record>
 
     <record id="action_elearning_gradebook" model="ir.actions.act_window">
-        <field name="name">Gradebooks</field>
+        <field name="name">Gradebook</field>
         <field name="res_model">elearning.gradebook</field>
         <field name="view_mode">list,form</field>
     </record>
 
     <menuitem
         id="menu_elearning_gradebook"
-        name="Gradebooks"
-        parent="corporate_lms_base.menu_corporate_lms_reports"
+        name="Gradebook"
+        parent="website_slides.website_slides_menu_report"
         action="action_elearning_gradebook"
         sequence="20"
         groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_instructor,corporate_lms_base.group_corporate_lms_manager,corporate_lms_base.group_corporate_lms_learner"/>

@@ -7,12 +7,14 @@ from odoo import api, fields, models, _
 from odoo.exceptions import AccessError, UserError, ValidationError
 from odoo.tools.mail import html_to_inner_content
 
-
-AI_QUESTION_GROUPS = (
-    "corporate_lms_base.group_corporate_lms_admin",
-    "corporate_lms_base.group_corporate_lms_training_manager",
-    "corporate_lms_base.group_corporate_lms_instructor",
+from odoo.addons.corporate_lms_ai.models.ai_helpers import (
+    AI_MANAGER_GROUPS,
+    AI_TRAINING_GROUPS,
+    _check_ai_manager_access,
+    _get_lms_ai_generation_config,
+    _has_ai_manager_access,
 )
+
 QUESTION_TYPES = {"single", "multiple", "true_false"}
 DIFFICULTIES = {"easy", "medium", "hard"}
 
@@ -75,11 +77,14 @@ class ElearningAIGenerateQuestionWizard(models.TransientModel):
     def action_generate_draft_questions(self):
         self.ensure_one()
         self._check_instructor_permission()
-        self.question_bank_id.check_access("write")
+        is_ai_manager = _has_ai_manager_access(self.env, AI_MANAGER_GROUPS)
+        if not is_ai_manager:
+            self.question_bank_id.check_access("write")
         self._check_source_permission()
 
         source_context = self._get_source_context()
         agent = self._get_ai_agent()
+        _get_lms_ai_generation_config(self, agent)
         prompt = self._build_prompt(source_context)
         try:
             responses = agent._generate_response(
@@ -97,9 +102,10 @@ class ElearningAIGenerateQuestionWizard(models.TransientModel):
         if not generated_questions:
             raise UserError(_("AI did not return any usable draft questions."))
 
-        created_questions = self.env["elearning.question"]
+        Question = self.env["elearning.question"].sudo() if is_ai_manager else self.env["elearning.question"]
+        created_questions = Question.browse()
         for question_values in generated_questions[: self.question_count]:
-            created_questions |= self.env["elearning.question"].create({
+            created_questions |= Question.create({
                 "bank_id": self.question_bank_id.id,
                 "name": question_values["name"],
                 "question_type": question_values["question_type"],
@@ -127,10 +133,11 @@ class ElearningAIGenerateQuestionWizard(models.TransientModel):
         }
 
     def _check_instructor_permission(self):
-        if self.env.su:
-            return
-        if not any(self.env.user.has_group(group) for group in AI_QUESTION_GROUPS):
-            raise AccessError(_("Only LMS instructors or training managers can generate AI draft questions."))
+        _check_ai_manager_access(
+            self,
+            AI_TRAINING_GROUPS,
+            "Only LMS instructors or training managers can generate AI draft questions.",
+        )
 
     def _get_source_context(self):
         self.ensure_one()
@@ -181,13 +188,7 @@ class ElearningAIGenerateQuestionWizard(models.TransientModel):
 
     def _check_source_permission(self):
         self.ensure_one()
-        if self.env.su or any(
-            self.env.user.has_group(group)
-            for group in (
-                "corporate_lms_base.group_corporate_lms_admin",
-                "corporate_lms_base.group_corporate_lms_training_manager",
-            )
-        ):
+        if _has_ai_manager_access(self.env, AI_MANAGER_GROUPS):
             return
 
         channel = self.slide_id.channel_id if self.source_type == "slide" else self.channel_id
@@ -331,9 +332,13 @@ class ElearningQuestionBank(models.Model):
 
     def action_open_ai_generate_question_wizard(self):
         self.ensure_one()
-        if not any(self.env.user.has_group(group) for group in AI_QUESTION_GROUPS):
-            raise AccessError(_("Only LMS instructors or training managers can generate AI draft questions."))
-        self.check_access("write")
+        _check_ai_manager_access(
+            self,
+            AI_TRAINING_GROUPS,
+            "Only LMS instructors or training managers can generate AI draft questions.",
+        )
+        if not _has_ai_manager_access(self.env, AI_MANAGER_GROUPS):
+            self.check_access("write")
         return {
             "type": "ir.actions.act_window",
             "name": _("Generate Draft Questions by AI"),

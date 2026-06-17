@@ -38,6 +38,11 @@ class TestCorporateLmsAiFeedbackWorkflow(TransactionCase):
             "name": "Corporate LMS Feedback Agent",
             "restrict_to_sources": True,
         })
+        params = cls.env["ir.config_parameter"].sudo()
+        params.set_param("corporate_lms_ai.provider", "openai")
+        params.set_param("corporate_lms_ai.model", "gpt-4o")
+        params.set_param("corporate_lms_ai.endpoint", "https://api.openai.com/v1")
+        params.set_param("ai.openai_key", "test-openai-key")
         cls.channel = cls.env["slide.channel"].create({
             "name": "AI Feedback Course",
             "description": "<p>Course context for feedback.</p>",
@@ -84,6 +89,14 @@ class TestCorporateLmsAiFeedbackWorkflow(TransactionCase):
             "ai_strengths": "<p>Strong practical example.</p>",
             "ai_weaknesses": "<p>Needs more detail on risks.</p>",
         })
+
+    def setUp(self):
+        super().setUp()
+        params = self.env["ir.config_parameter"].sudo()
+        params.set_param("corporate_lms_ai.provider", "openai")
+        params.set_param("corporate_lms_ai.model", "gpt-4o")
+        params.set_param("corporate_lms_ai.endpoint", "https://api.openai.com/v1")
+        params.set_param("ai.openai_key", "test-openai-key")
 
     def _create_submission(self, **values):
         defaults = {

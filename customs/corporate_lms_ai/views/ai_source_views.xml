@@ -81,7 +81,7 @@
     </record>
 
     <record id="action_elearning_ai_sources" model="ir.actions.act_window">
-        <field name="name">eLearning Sources</field>
+        <field name="name">AI Sources</field>
         <field name="res_model">ai.agent.source</field>
         <field name="view_mode">list,form</field>
         <field name="domain">[('type', 'in', ('elearning_course', 'elearning_slide'))]</field>
@@ -105,11 +105,25 @@
 
     <menuitem
         id="menu_elearning_ai_sources"
-        name="eLearning Sources"
+        name="AI Sources"
         parent="corporate_lms_base.menu_corporate_lms_ai"
         action="action_elearning_ai_sources"
-        sequence="10"
+        sequence="20"
         groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_instructor"/>
+
+    <record id="action_corporate_lms_ai_agent" model="ir.actions.act_window">
+        <field name="name">AI Agents</field>
+        <field name="res_model">ai.agent</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_corporate_lms_ai_agent"
+        name="AI Agents"
+        parent="corporate_lms_base.menu_corporate_lms_ai"
+        action="action_corporate_lms_ai_agent"
+        sequence="10"
+        groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager"/>
 
     <record id="view_slide_channel_form_ai_source_action" model="ir.ui.view">
         <field name="name">slide.channel.form.ai.source.action</field>

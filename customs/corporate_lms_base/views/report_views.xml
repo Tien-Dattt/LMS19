@@ -92,7 +92,7 @@
     <menuitem
         id="menu_report_program_enrollment"
         name="Program Enrollment Report"
-        parent="menu_corporate_lms_reports"
+        parent="corporate_lms_base.menu_corporate_lms_reports"
         action="action_report_program_enrollment"
         sequence="10"
         groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer,corporate_lms_base.group_corporate_lms_learner"/>

@@ -43,6 +43,11 @@ class TestCorporateLmsAiQuestionWizard(TransactionCase):
             "name": "Corporate LMS Question Agent",
             "restrict_to_sources": True,
         })
+        params = cls.env["ir.config_parameter"].sudo()
+        params.set_param("corporate_lms_ai.provider", "openai")
+        params.set_param("corporate_lms_ai.model", "gpt-4o")
+        params.set_param("corporate_lms_ai.endpoint", "https://api.openai.com/v1")
+        params.set_param("ai.openai_key", "test-openai-key")
         cls.channel = cls.env["slide.channel"].create({
             "name": "AI Question Course",
             "description": "<p>Course context for generated questions.</p>",
@@ -78,8 +83,16 @@ class TestCorporateLmsAiQuestionWizard(TransactionCase):
                     {"answer": "Correct answer", "is_correct": True, "feedback": "Good choice"},
                     {"answer": "Incorrect answer", "is_correct": False},
                 ],
-            })
+        })
         return json.dumps({"questions": questions})
+
+    def setUp(self):
+        super().setUp()
+        params = self.env["ir.config_parameter"].sudo()
+        params.set_param("corporate_lms_ai.provider", "openai")
+        params.set_param("corporate_lms_ai.model", "gpt-4o")
+        params.set_param("corporate_lms_ai.endpoint", "https://api.openai.com/v1")
+        params.set_param("ai.openai_key", "test-openai-key")
 
     def _create_wizard(self, **values):
         defaults = {

@@ -71,7 +71,7 @@
     <menuitem
         id="menu_elearning_auto_enrollment_log"
         name="Auto Enrollment Logs"
-        parent="menu_corporate_lms_reports"
+        parent="corporate_lms_base.menu_corporate_lms_reports"
         action="action_elearning_auto_enrollment_log"
         sequence="10"
         groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer"/>

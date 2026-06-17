@@ -2,4 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_ai_agent_source_lms_admin,ai.agent.source.lms.admin,ai.model_ai_agent_source,corporate_lms_base.group_corporate_lms_admin,1,1,1,1
 access_ai_agent_source_lms_training_manager,ai.agent.source.lms.training.manager,ai.model_ai_agent_source,corporate_lms_base.group_corporate_lms_training_manager,1,1,1,1
 access_ai_agent_source_lms_instructor,ai.agent.source.lms.instructor,ai.model_ai_agent_source,corporate_lms_base.group_corporate_lms_instructor,1,1,1,0
+access_elearning_ai_generate_question_wizard_system,elearning.ai.generate.question.wizard.system,model_elearning_ai_generate_question_wizard,base.group_system,1,1,1,1
 access_elearning_ai_generate_question_wizard_lms_instructor,elearning.ai.generate.question.wizard.lms.instructor,model_elearning_ai_generate_question_wizard,corporate_lms_base.group_corporate_lms_instructor,1,1,1,1

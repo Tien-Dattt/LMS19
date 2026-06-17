@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="department_it" model="hr.department">
+            <field name="name">IT</field>
+        </record>
+
+        <record id="job_python_developer" model="hr.job">
+            <field name="name">Python Developer</field>
+            <field name="department_id" ref="corporate_lms_base.department_it"/>
+        </record>
+
+        <record id="level_junior_developer" model="elearning.employee.level">
+            <field name="name">Junior Developer</field>
+            <field name="code">JR-DEV</field>
+            <field name="sequence">20</field>
+            <field name="description">Nhân sự mới hoặc ít kinh nghiệm trong vai trò phát triển phần mềm.</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="level_middle_developer" model="elearning.employee.level">
+            <field name="name">Middle Developer</field>
+            <field name="code">MID-DEV</field>
+            <field name="sequence">30</field>
+            <field name="description">Nhân sự có kinh nghiệm triển khai tính năng độc lập.</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="role_track_backend_developer" model="elearning.role.track">
+            <field name="name">Backend Developer</field>
+            <field name="code">BACKEND-DEV</field>
+            <field name="description">Lộ trình năng lực dành cho lập trình viên backend.</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="role_track_python_developer" model="elearning.role.track">
+            <field name="name">Python Developer</field>
+            <field name="code">PYTHON-DEV</field>
+            <field name="description">Lộ trình năng lực chuyên sâu về Python.</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="partner_python_instructor" model="res.partner">
+            <field name="name">Nguyễn Quang Hải</field>
+            <field name="email">nguyen.quang.hai.lms@example.com</field>
+        </record>
+        <record id="user_python_instructor" model="res.users" context="{'no_reset_password': True}">
+            <field name="partner_id" ref="corporate_lms_base.partner_python_instructor"/>
+            <field name="login">nguyen.quang.hai.lms@example.com</field>
+            <field name="password">lms_demo</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="group_ids" eval="[Command.set([ref('base.group_user'), ref('website_slides.group_website_slides_officer'), ref('corporate_lms_base.group_corporate_lms_instructor')])]"/>
+        </record>
+        <record id="partner_python_instructor" model="res.partner">
+            <field name="user_id" ref="corporate_lms_base.user_python_instructor"/>
+        </record>
+        <record id="employee_python_instructor" model="hr.employee" context="{'skip_corporate_lms_auto_enrollment': True}">
+            <field name="name">Nguyễn Quang Hải</field>
+            <field name="work_email">nguyen.quang.hai.lms@example.com</field>
+            <field name="user_id" ref="corporate_lms_base.user_python_instructor"/>
+            <field name="department_id" ref="corporate_lms_base.department_it"/>
+            <field name="job_id" ref="corporate_lms_base.job_python_developer"/>
+            <field name="employee_level_id" ref="corporate_lms_base.level_middle_developer"/>
+            <field name="role_track_id" ref="corporate_lms_base.role_track_python_developer"/>
+        </record>
+
+        <record id="partner_python_minh_anh" model="res.partner">
+            <field name="name">Nguyễn Minh Anh</field>
+            <field name="email">nguyen.minh.anh.lms@example.com</field>
+        </record>
+        <record id="user_python_minh_anh" model="res.users" context="{'no_reset_password': True}">
+            <field name="partner_id" ref="corporate_lms_base.partner_python_minh_anh"/>
+            <field name="login">nguyen.minh.anh.lms@example.com</field>
+            <field name="password">lms_demo</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="group_ids" eval="[Command.set([ref('base.group_user'), ref('corporate_lms_base.group_corporate_lms_learner')])]"/>
+        </record>
+        <record id="partner_python_minh_anh" model="res.partner">
+            <field name="user_id" ref="corporate_lms_base.user_python_minh_anh"/>
+        </record>
+        <record id="employee_python_minh_anh" model="hr.employee" context="{'skip_corporate_lms_auto_enrollment': True}">
+            <field name="name">Nguyễn Minh Anh</field>
+            <field name="work_email">nguyen.minh.anh.lms@example.com</field>
+            <field name="user_id" ref="corporate_lms_base.user_python_minh_anh"/>
+            <field name="department_id" ref="corporate_lms_base.department_it"/>
+            <field name="job_id" ref="corporate_lms_base.job_python_developer"/>
+            <field name="employee_level_id" ref="corporate_lms_base.level_junior_developer"/>
+            <field name="role_track_id" ref="corporate_lms_base.role_track_backend_developer"/>
+        </record>
+
+        <record id="partner_python_tran_binh" model="res.partner">
+            <field name="name">Trần Văn Bình</field>
+            <field name="email">tran.van.binh.lms@example.com</field>
+        </record>
+        <record id="user_python_tran_binh" model="res.users" context="{'no_reset_password': True}">
+            <field name="partner_id" ref="corporate_lms_base.partner_python_tran_binh"/>
+            <field name="login">tran.van.binh.lms@example.com</field>
+            <field name="password">lms_demo</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="group_ids" eval="[Command.set([ref('base.group_user'), ref('corporate_lms_base.group_corporate_lms_learner')])]"/>
+        </record>
+        <record id="partner_python_tran_binh" model="res.partner">
+            <field name="user_id" ref="corporate_lms_base.user_python_tran_binh"/>
+        </record>
+        <record id="employee_python_tran_binh" model="hr.employee" context="{'skip_corporate_lms_auto_enrollment': True}">
+            <field name="name">Trần Văn Bình</field>
+            <field name="work_email">tran.van.binh.lms@example.com</field>
+            <field name="user_id" ref="corporate_lms_base.user_python_tran_binh"/>
+            <field name="department_id" ref="corporate_lms_base.department_it"/>
+            <field name="job_id" ref="corporate_lms_base.job_python_developer"/>
+            <field name="employee_level_id" ref="corporate_lms_base.level_junior_developer"/>
+            <field name="role_track_id" ref="corporate_lms_base.role_track_backend_developer"/>
+        </record>
+
+        <record id="partner_python_le_huong" model="res.partner">
+            <field name="name">Lê Thị Hương</field>
+            <field name="email">le.thi.huong.lms@example.com</field>
+        </record>
+        <record id="user_python_le_huong" model="res.users" context="{'no_reset_password': True}">
+            <field name="partner_id" ref="corporate_lms_base.partner_python_le_huong"/>
+            <field name="login">le.thi.huong.lms@example.com</field>
+            <field name="password">lms_demo</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="group_ids" eval="[Command.set([ref('base.group_user'), ref('corporate_lms_base.group_corporate_lms_learner')])]"/>
+        </record>
+        <record id="partner_python_le_huong" model="res.partner">
+            <field name="user_id" ref="corporate_lms_base.user_python_le_huong"/>
+        </record>
+        <record id="employee_python_le_huong" model="hr.employee" context="{'skip_corporate_lms_auto_enrollment': True}">
+            <field name="name">Lê Thị Hương</field>
+            <field name="work_email">le.thi.huong.lms@example.com</field>
+            <field name="user_id" ref="corporate_lms_base.user_python_le_huong"/>
+            <field name="department_id" ref="corporate_lms_base.department_it"/>
+            <field name="job_id" ref="corporate_lms_base.job_python_developer"/>
+            <field name="employee_level_id" ref="corporate_lms_base.level_junior_developer"/>
+            <field name="role_track_id" ref="corporate_lms_base.role_track_python_developer"/>
+        </record>
+
+        <record id="employee_python_no_user" model="hr.employee" context="{'skip_corporate_lms_auto_enrollment': True}">
+            <field name="name">Phạm Quốc Dũng</field>
+            <field name="work_email">pham.quoc.dung.lms@example.com</field>
+            <field name="department_id" ref="corporate_lms_base.department_it"/>
+            <field name="job_id" ref="corporate_lms_base.job_python_developer"/>
+            <field name="employee_level_id" ref="corporate_lms_base.level_junior_developer"/>
+            <field name="role_track_id" ref="corporate_lms_base.role_track_backend_developer"/>
+        </record>
+
+        <record id="partner_python_no_matrix" model="res.partner">
+            <field name="name">Đỗ Mai Lan</field>
+            <field name="email">do.mai.lan.lms@example.com</field>
+        </record>
+        <record id="user_python_no_matrix" model="res.users" context="{'no_reset_password': True}">
+            <field name="partner_id" ref="corporate_lms_base.partner_python_no_matrix"/>
+            <field name="login">do.mai.lan.lms@example.com</field>
+            <field name="password">lms_demo</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="group_ids" eval="[Command.set([ref('base.group_user'), ref('corporate_lms_base.group_corporate_lms_learner')])]"/>
+        </record>
+        <record id="partner_python_no_matrix" model="res.partner">
+            <field name="user_id" ref="corporate_lms_base.user_python_no_matrix"/>
+        </record>
+        <record id="employee_python_no_matrix" model="hr.employee" context="{'skip_corporate_lms_auto_enrollment': True}">
+            <field name="name">Đỗ Mai Lan</field>
+            <field name="work_email">do.mai.lan.lms@example.com</field>
+            <field name="user_id" ref="corporate_lms_base.user_python_no_matrix"/>
+            <field name="department_id" ref="corporate_lms_base.department_it"/>
+            <field name="job_id" ref="corporate_lms_base.job_python_developer"/>
+            <field name="employee_level_id" ref="corporate_lms_base.level_middle_developer"/>
+            <field name="role_track_id" ref="corporate_lms_base.role_track_python_developer"/>
+        </record>
+
+        <record id="slide_channel_python_main" model="slide.channel">
+            <field name="name">Lập Trình Python Từ Cơ Bản Đến Nâng Cao</field>
+            <field name="channel_type">training</field>
+            <field name="enroll">public</field>
+            <field name="visibility">public</field>
+            <field name="is_published">True</field>
+            <field name="user_id" ref="corporate_lms_base.user_python_instructor"/>
+            <field name="description_short">Khóa học nền tảng cho nhân sự Python Developer mới.</field>
+            <field name="description"><![CDATA[<p>Khóa học hướng dẫn từ cú pháp Python cơ bản, hàm, lambda đến cách viết mã rõ ràng trong dự án nội bộ.</p>]]></field>
+        </record>
+
+        <record id="slide_python_intro" model="slide.slide">
+            <field name="name">Bài 1.1: Python Là Gì?</field>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_main"/>
+            <field name="slide_category">article</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">0.5</field>
+            <field name="description">Giới thiệu Python, phạm vi ứng dụng và quy ước học tập trong công ty.</field>
+            <field name="html_content"><![CDATA[<p>Python là ngôn ngữ lập trình phổ biến cho backend, tự động hóa và phân tích dữ liệu.</p>]]></field>
+        </record>
+        <record id="slide_python_variables" model="slide.slide">
+            <field name="name">Bài 1.2: Biến và Kiểu Dữ Liệu</field>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_main"/>
+            <field name="slide_category">article</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">0.75</field>
+            <field name="description">Biến, kiểu số, chuỗi, danh sách và dictionary trong Python.</field>
+            <field name="html_content"><![CDATA[<p>Nội dung trình bày cách khai báo biến, kiểm tra kiểu dữ liệu và chọn cấu trúc dữ liệu phù hợp.</p>]]></field>
+        </record>
+        <record id="slide_python_functions" model="slide.slide">
+            <field name="name">Bài 2.1: Hàm Trong Python</field>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_main"/>
+            <field name="slide_category">article</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">1.0</field>
+            <field name="description">Cách định nghĩa hàm, tham số, giá trị trả về và kiểm thử đơn giản.</field>
+            <field name="html_content"><![CDATA[<p>Hàm giúp đóng gói logic nghiệp vụ và làm cho mã dễ tái sử dụng trong dự án.</p>]]></field>
+        </record>
+        <record id="slide_python_lambda" model="slide.slide">
+            <field name="name">Bài 4.2: Lambda Functions</field>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_main"/>
+            <field name="slide_category">article</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">0.75</field>
+            <field name="description">Sử dụng lambda cho các biểu thức ngắn và các hàm bậc cao.</field>
+            <field name="html_content"><![CDATA[<p>Lambda phù hợp cho logic ngắn, ví dụ sắp xếp, map, filter, nhưng không thay thế các hàm có logic phức tạp.</p>]]></field>
+        </record>
+
+        <record id="slide_channel_python_sql" model="slide.channel">
+            <field name="name">Cơ Sở Dữ Liệu và SQL</field>
+            <field name="channel_type">training</field>
+            <field name="enroll">public</field>
+            <field name="visibility">public</field>
+            <field name="is_published">True</field>
+            <field name="user_id" ref="corporate_lms_base.user_python_instructor"/>
+            <field name="description_short">Khóa học SQL nền tảng cho lập trình viên backend.</field>
+            <field name="description"><![CDATA[<p>Khóa học tập trung vào SELECT, WHERE, JOIN và cách đọc dữ liệu phục vụ nghiệp vụ.</p>]]></field>
+        </record>
+        <record id="slide_sql_intro" model="slide.slide">
+            <field name="name">Bài 1: Giới thiệu SQL</field>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_sql"/>
+            <field name="slide_category">article</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">0.5</field>
+            <field name="description">Tổng quan về cơ sở dữ liệu quan hệ và SQL.</field>
+            <field name="html_content"><![CDATA[<p>SQL là ngôn ngữ truy vấn dữ liệu trong hệ quản trị cơ sở dữ liệu quan hệ.</p>]]></field>
+        </record>
+        <record id="slide_sql_select_where" model="slide.slide">
+            <field name="name">Bài 2: SELECT và WHERE</field>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_sql"/>
+            <field name="slide_category">article</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">0.75</field>
+            <field name="description">Cú pháp SELECT và điều kiện WHERE.</field>
+            <field name="html_content"><![CDATA[<p>SELECT chọn cột cần đọc, WHERE giới hạn tập dữ liệu theo điều kiện nghiệp vụ.</p>]]></field>
+        </record>
+        <record id="slide_sql_join" model="slide.slide">
+            <field name="name">Bài 3: JOIN cơ bản</field>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_sql"/>
+            <field name="slide_category">article</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">1.0</field>
+            <field name="description">INNER JOIN và LEFT JOIN trong các truy vấn thường gặp.</field>
+            <field name="html_content"><![CDATA[<p>JOIN kết hợp dữ liệu từ nhiều bảng dựa trên khóa liên kết.</p>]]></field>
+        </record>
+
+        <record id="slide_channel_python_devops" model="slide.channel">
+            <field name="name">DevOps và CI/CD Pipeline</field>
+            <field name="channel_type">training</field>
+            <field name="enroll">public</field>
+            <field name="visibility">public</field>
+            <field name="is_published">True</field>
+            <field name="user_id" ref="corporate_lms_base.user_python_instructor"/>
+            <field name="description_short">Khóa học nhập môn về quy trình CI/CD cho lập trình viên.</field>
+            <field name="description"><![CDATA[<p>Khóa học giải thích vòng đời commit, kiểm thử tự động và triển khai liên tục.</p>]]></field>
+        </record>
+        <record id="slide_devops_cicd_intro" model="slide.slide">
+            <field name="name">Bài 1: CI/CD là gì?</field>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_devops"/>
+            <field name="slide_category">article</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">0.5</field>
+            <field name="description">Khái niệm tích hợp liên tục và triển khai liên tục.</field>
+            <field name="html_content"><![CDATA[<p>CI/CD giúp nhóm phát triển phát hiện lỗi sớm và triển khai phần mềm ổn định hơn.</p>]]></field>
+        </record>
+        <record id="slide_devops_github_actions" model="slide.slide">
+            <field name="name">Bài 2: GitHub Actions cơ bản</field>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_devops"/>
+            <field name="slide_category">article</field>
+            <field name="is_published">True</field>
+            <field name="completion_time">0.75</field>
+            <field name="description">Tạo workflow kiểm thử tự động bằng GitHub Actions.</field>
+            <field name="html_content"><![CDATA[<p>Workflow GitHub Actions thường gồm trigger, job, step và các lệnh kiểm thử dự án.</p>]]></field>
+        </record>
+
+        <record id="program_python_onboarding" model="elearning.program">
+            <field name="name">Python Developer Onboarding Program</field>
+            <field name="code">PYTHON-ONBOARDING</field>
+            <field name="description"><![CDATA[<p>Chương trình đào tạo hội nhập dành cho lập trình viên Python mới trong phòng IT.</p>]]></field>
+            <field name="state">published</field>
+            <field name="target_level_ids" eval="[Command.set([ref('corporate_lms_base.level_junior_developer')])]"/>
+            <field name="target_role_track_ids" eval="[Command.set([ref('corporate_lms_base.role_track_backend_developer'), ref('corporate_lms_base.role_track_python_developer')])]"/>
+            <field name="passing_score">70.0</field>
+            <field name="ai_summary"><![CDATA[<p>Chương trình giúp nhân sự Python Developer nắm vững Python, SQL và quy trình DevOps cơ bản.</p>]]></field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="program_line_python_main" model="elearning.program.line">
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_main"/>
+            <field name="sequence">10</field>
+            <field name="mandatory">True</field>
+            <field name="unlock_policy">always</field>
+            <field name="weight">2.0</field>
+        </record>
+        <record id="program_line_python_sql" model="elearning.program.line">
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_sql"/>
+            <field name="sequence">20</field>
+            <field name="mandatory">True</field>
+            <field name="unlock_policy">open_after_previous_completed</field>
+            <field name="weight">1.0</field>
+        </record>
+        <record id="program_line_python_devops" model="elearning.program.line">
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_devops"/>
+            <field name="sequence">30</field>
+            <field name="mandatory">False</field>
+            <field name="unlock_policy">always</field>
+            <field name="weight">1.0</field>
+        </record>
+
+        <record id="matrix_it_junior_python_developer" model="elearning.training.matrix">
+            <field name="name">IT Junior Python Developer Matrix</field>
+            <field name="department_id" ref="corporate_lms_base.department_it"/>
+            <field name="job_id" ref="corporate_lms_base.job_python_developer"/>
+            <field name="employee_level_id" ref="corporate_lms_base.level_junior_developer"/>
+            <field name="role_track_id" ref="corporate_lms_base.role_track_backend_developer"/>
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="mandatory">True</field>
+            <field name="priority">required</field>
+            <field name="deadline_days">30</field>
+            <field name="required_score">70.0</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="program_partner_python_minh_anh" model="elearning.program.partner">
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_minh_anh"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_minh_anh"/>
+            <field name="state">assigned</field>
+            <field name="deadline_date">2026-07-16</field>
+            <field name="source">matrix</field>
+            <field name="assigned_date">2026-06-16</field>
+        </record>
+        <record id="program_partner_python_tran_binh" model="elearning.program.partner">
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_tran_binh"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_tran_binh"/>
+            <field name="state">assigned</field>
+            <field name="deadline_date">2026-07-16</field>
+            <field name="source">auto</field>
+            <field name="assigned_date">2026-06-16</field>
+        </record>
+        <record id="program_partner_python_le_huong" model="elearning.program.partner">
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_le_huong"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_le_huong"/>
+            <field name="state">completed</field>
+            <field name="deadline_date">2026-07-16</field>
+            <field name="final_score">86.0</field>
+            <field name="source">manual</field>
+            <field name="assigned_date">2026-06-16</field>
+            <field name="completed_date">2026-06-16</field>
+        </record>
+
+        <function model="elearning.program.partner" name="action_enroll_courses" eval="[[ref('corporate_lms_base.program_partner_python_minh_anh'), ref('corporate_lms_base.program_partner_python_tran_binh'), ref('corporate_lms_base.program_partner_python_le_huong')]]"/>
+
+        <function model="slide.channel.partner" name="write">
+            <value model="slide.channel.partner" search="[('channel_id', '=', ref('corporate_lms_base.slide_channel_python_main')), ('partner_id', '=', ref('corporate_lms_base.partner_python_minh_anh'))]"/>
+            <value eval="{'member_status': 'completed', 'completion': 100.0}"/>
+        </function>
+        <function model="slide.channel.partner" name="write">
+            <value model="slide.channel.partner" search="[('channel_id', '=', ref('corporate_lms_base.slide_channel_python_sql')), ('partner_id', '=', ref('corporate_lms_base.partner_python_minh_anh'))]"/>
+            <value eval="{'member_status': 'ongoing', 'completion': 0.0}"/>
+        </function>
+        <function model="slide.channel.partner" name="write">
+            <value model="slide.channel.partner" search="[('channel_id', '=', ref('corporate_lms_base.slide_channel_python_main')), ('partner_id', '=', ref('corporate_lms_base.partner_python_le_huong'))]"/>
+            <value eval="{'member_status': 'completed', 'completion': 100.0}"/>
+        </function>
+        <function model="slide.channel.partner" name="write">
+            <value model="slide.channel.partner" search="[('channel_id', '=', ref('corporate_lms_base.slide_channel_python_sql')), ('partner_id', '=', ref('corporate_lms_base.partner_python_le_huong'))]"/>
+            <value eval="{'member_status': 'completed', 'completion': 100.0}"/>
+        </function>
+
+        <record id="program_partner_python_minh_anh" model="elearning.program.partner">
+            <field name="state">in_progress</field>
+        </record>
+        <record id="program_partner_python_tran_binh" model="elearning.program.partner">
+            <field name="state">assigned</field>
+        </record>
+        <record id="program_partner_python_le_huong" model="elearning.program.partner">
+            <field name="state">completed</field>
+            <field name="final_score">86.0</field>
+        </record>
+
+        <record id="auto_log_python_minh_anh_success" model="elearning.auto.enrollment.log">
+            <field name="employee_id" ref="corporate_lms_base.employee_python_minh_anh"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_minh_anh"/>
+            <field name="matrix_id" ref="corporate_lms_base.matrix_it_junior_python_developer"/>
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="status">success</field>
+            <field name="message">matched_matrix_enrolled: Nguyễn Minh Anh được ghi danh vào chương trình Python Developer Onboarding.</field>
+            <field name="run_date">2026-06-16 08:00:00</field>
+        </record>
+        <record id="auto_log_python_tran_binh_success" model="elearning.auto.enrollment.log">
+            <field name="employee_id" ref="corporate_lms_base.employee_python_tran_binh"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_tran_binh"/>
+            <field name="matrix_id" ref="corporate_lms_base.matrix_it_junior_python_developer"/>
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="status">success</field>
+            <field name="message">matched_matrix_enrolled: Trần Văn Bình được ghi danh tự động và chờ bắt đầu học.</field>
+            <field name="run_date">2026-06-16 08:05:00</field>
+        </record>
+        <record id="auto_log_python_no_user_skipped" model="elearning.auto.enrollment.log">
+            <field name="employee_id" ref="corporate_lms_base.employee_python_no_user"/>
+            <field name="matrix_id" ref="corporate_lms_base.matrix_it_junior_python_developer"/>
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="status">skipped</field>
+            <field name="message">skipped_no_user_partner: Nhân viên chưa có người dùng hoặc partner để ghi danh.</field>
+            <field name="run_date">2026-06-16 08:10:00</field>
+        </record>
+        <record id="auto_log_python_no_matrix_skipped" model="elearning.auto.enrollment.log">
+            <field name="employee_id" ref="corporate_lms_base.employee_python_no_matrix"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_no_matrix"/>
+            <field name="status">skipped</field>
+            <field name="message">no_matrix_matched: Không có ma trận đào tạo phù hợp với hồ sơ Middle Developer.</field>
+            <field name="run_date">2026-06-16 08:15:00</field>
+        </record>
+
+        <record id="class_python_batch_01" model="elearning.class">
+            <field name="name">Python Developer Batch 01</field>
+            <field name="code">PY-BATCH-01</field>
+            <field name="program_id" ref="corporate_lms_base.program_python_onboarding"/>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_main"/>
+            <field name="trainer_ids" eval="[Command.set([ref('corporate_lms_base.user_python_instructor')])]"/>
+            <field name="date_start">2026-06-01</field>
+            <field name="date_end">2026-07-31</field>
+            <field name="state">running</field>
+            <field name="max_students">30</field>
+        </record>
+
+        <record id="class_student_python_minh_anh" model="elearning.class.student">
+            <field name="class_id" ref="corporate_lms_base.class_python_batch_01"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_minh_anh"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_minh_anh"/>
+            <field name="program_partner_id" ref="corporate_lms_base.program_partner_python_minh_anh"/>
+            <field name="state">active</field>
+        </record>
+        <record id="class_student_python_tran_binh" model="elearning.class.student">
+            <field name="class_id" ref="corporate_lms_base.class_python_batch_01"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_tran_binh"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_tran_binh"/>
+            <field name="program_partner_id" ref="corporate_lms_base.program_partner_python_tran_binh"/>
+            <field name="state">active</field>
+        </record>
+        <record id="class_student_python_le_huong" model="elearning.class.student">
+            <field name="class_id" ref="corporate_lms_base.class_python_batch_01"/>
+            <field name="partner_id" ref="corporate_lms_base.partner_python_le_huong"/>
+            <field name="employee_id" ref="corporate_lms_base.employee_python_le_huong"/>
+            <field name="program_partner_id" ref="corporate_lms_base.program_partner_python_le_huong"/>
+            <field name="state">completed</field>
+        </record>
+    </data>
+</odoo>

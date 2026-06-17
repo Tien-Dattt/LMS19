@@ -59,7 +59,7 @@
     <menuitem
         id="menu_elearning_employee_level"
         name="Employee Levels"
-        parent="menu_corporate_lms_configuration"
+        parent="website_slides.website_slides_menu_configuration"
         action="action_elearning_employee_level"
         sequence="10"
         groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager"/>

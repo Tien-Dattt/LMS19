@@ -7,13 +7,10 @@ from odoo.tools.mail import html_to_inner_content
 from odoo.addons.ai.models.ai_agent import PREPROMPTS
 from odoo.addons.ai.utils.llm_api_service import LLMApiService
 
+from .ai_helpers import AI_INSTRUCTOR_GROUP, AI_MANAGER_GROUPS, _has_ai_manager_access
+
 
 ELEARNING_SOURCE_TYPES = ("elearning_course", "elearning_slide")
-AI_SOURCE_MANAGER_GROUPS = (
-    "corporate_lms_base.group_corporate_lms_admin",
-    "corporate_lms_base.group_corporate_lms_training_manager",
-)
-AI_SOURCE_INSTRUCTOR_GROUP = "corporate_lms_base.group_corporate_lms_instructor"
 
 
 class AIAgent(models.Model):
@@ -95,6 +92,27 @@ class AIAgentSource(models.Model):
         index=True,
         ondelete="cascade",
     )
+
+    @api.constrains("type", "channel_id", "slide_id", "agent_id")
+    def _check_unique_elearning_source(self):
+        for source in self.filtered(lambda item: item.type in ELEARNING_SOURCE_TYPES and item.agent_id):
+            domain = [
+                ("id", "!=", source.id),
+                ("type", "=", source.type),
+                ("agent_id", "=", source.agent_id.id),
+            ]
+            if source.type == "elearning_course":
+                if not source.channel_id:
+                    continue
+                domain.append(("channel_id", "=", source.channel_id.id))
+                error = _("An eLearning AI source already exists for this course and AI Agent.")
+            else:
+                if not source.slide_id:
+                    continue
+                domain.append(("slide_id", "=", source.slide_id.id))
+                error = _("An eLearning AI source already exists for this slide and AI Agent.")
+            if self.search_count(domain, limit=1):
+                raise UserError(error)
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -391,10 +409,10 @@ class AIAgentSource(models.Model):
         raise AccessError(_("You are not allowed to manage eLearning AI sources for this course."))
 
     def _is_ai_source_manager(self):
-        return self.env.su or any(self.env.user.has_group(group) for group in AI_SOURCE_MANAGER_GROUPS)
+        return _has_ai_manager_access(self.env, AI_MANAGER_GROUPS)
 
     def _is_elearning_course_instructor(self, channel):
-        if not self.env.user.has_group(AI_SOURCE_INSTRUCTOR_GROUP) or not channel:
+        if not self.env.user.has_group(AI_INSTRUCTOR_GROUP) or not channel:
             return False
         if channel.user_id == self.env.user:
             return True
@@ -412,6 +430,7 @@ class SlideChannel(models.Model):
 
     def action_create_ai_source_from_course(self):
         self.ensure_one()
+        self.env["ai.agent.source"]._check_elearning_course_manage_access(self)
         if not self.ai_agent_id:
             raise UserError(_("Set an AI Agent on the course before creating an eLearning AI source."))
         source = self.env["ai.agent.source"].create_from_elearning_courses([self.id], self.ai_agent_id.id)
@@ -439,6 +458,7 @@ class SlideSlide(models.Model):
 
     def action_create_ai_source_from_slide(self):
         self.ensure_one()
+        self.env["ai.agent.source"]._check_elearning_course_manage_access(self.channel_id)
         agent = self.channel_id.ai_agent_id
         if not agent:
             raise UserError(_("Set an AI Agent on the course before creating an eLearning AI source."))

@@ -35,7 +35,7 @@ class TestCorporateLmsAiInstall(TransactionCase):
 
     def test_phase9_ai_draft_fields_are_available(self):
         expected_fields = {
-            "elearning.program": ["ai_summary"],
+            "elearning.program": ["ai_agent_id", "ai_summary"],
             "slide.channel": [
                 "ai_agent_id",
                 "ai_course_summary",

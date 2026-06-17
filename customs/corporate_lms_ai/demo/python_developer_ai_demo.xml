@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="ai_agent_python_course_assistant" model="ai.agent">
+            <field name="name">Python Course Assistant</field>
+            <field name="subtitle">Trợ lý trả lời câu hỏi dựa trên nội dung khóa học Python Developer Onboarding.</field>
+            <field name="system_prompt">Trả lời ngắn gọn, chỉ dựa trên nguồn khóa học được phép và không quyết định điểm, đạt/rớt, chứng chỉ hoặc quyền truy cập của học viên.</field>
+            <field name="restrict_to_sources" eval="True"/>
+        </record>
+
+        <record id="corporate_lms_base.slide_channel_python_main" model="slide.channel">
+            <field name="ai_agent_id" ref="corporate_lms_ai.ai_agent_python_course_assistant"/>
+            <field name="ai_course_summary"><![CDATA[<p>Bản nháp AI: Khóa học giúp học viên nắm vững Python cơ bản, hàm, lambda và cách áp dụng vào bài tập nội bộ.</p>]]></field>
+            <field name="ai_difficulty_suggestion">Beginner to intermediate Python backend onboarding</field>
+            <field name="ai_sync_status">not_synced</field>
+        </record>
+
+        <record id="corporate_lms_base.program_python_onboarding" model="elearning.program">
+            <field name="ai_agent_id" ref="corporate_lms_ai.ai_agent_python_course_assistant"/>
+        </record>
+
+        <record id="corporate_lms_base.slide_python_intro" model="slide.slide">
+            <field name="ai_summary"><![CDATA[<p>Bản nháp AI: Python là ngôn ngữ phù hợp cho backend, tự động hóa và xử lý dữ liệu trong doanh nghiệp.</p>]]></field>
+            <field name="ai_keywords">python, backend, automation, onboarding</field>
+            <field name="ai_sync_status">not_synced</field>
+        </record>
+
+        <record id="corporate_lms_base.slide_python_lambda" model="slide.slide">
+            <field name="ai_summary"><![CDATA[<p>Bản nháp AI: Lambda phù hợp với các biểu thức ngắn trong map, filter, sort nhưng không nên lạm dụng cho logic phức tạp.</p>]]></field>
+            <field name="ai_keywords">lambda, function, map, filter, sort</field>
+            <field name="ai_sync_status">not_synced</field>
+        </record>
+
+        <record id="ai_source_python_course" model="ai.agent.source">
+            <field name="name">Python Developer Onboarding Course Source</field>
+            <field name="agent_id" ref="corporate_lms_ai.ai_agent_python_course_assistant"/>
+            <field name="type">elearning_course</field>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_main"/>
+            <field name="status">processing</field>
+        </record>
+
+        <record id="ai_source_python_lambda_slide" model="ai.agent.source">
+            <field name="name">Python Lambda Functions Slide Source</field>
+            <field name="agent_id" ref="corporate_lms_ai.ai_agent_python_course_assistant"/>
+            <field name="type">elearning_slide</field>
+            <field name="channel_id" ref="corporate_lms_base.slide_channel_python_main"/>
+            <field name="slide_id" ref="corporate_lms_base.slide_python_lambda"/>
+            <field name="status">processing</field>
+        </record>
+    </data>
+</odoo>

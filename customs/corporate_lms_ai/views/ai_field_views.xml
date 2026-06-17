@@ -7,6 +7,9 @@
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
                 <page name="ai_fields" string="AI Draft">
+                    <group>
+                        <field name="ai_agent_id"/>
+                    </group>
                     <button
                         name="action_generate_program_ai_summary"
                         string="Generate Program AI Summary"

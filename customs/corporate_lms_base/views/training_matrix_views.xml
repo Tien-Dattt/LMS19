@@ -128,7 +128,7 @@
     <menuitem
         id="menu_elearning_training_matrix"
         name="Training Matrix"
-        parent="menu_corporate_lms_configuration"
+        parent="website_slides.website_slides_menu_configuration"
         action="action_elearning_training_matrix"
         sequence="30"
         groups="corporate_lms_base.group_corporate_lms_admin,corporate_lms_base.group_corporate_lms_training_manager,corporate_lms_base.group_corporate_lms_hr_officer"/>

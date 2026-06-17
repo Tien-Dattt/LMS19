@@ -251,8 +251,9 @@ class ElearningExamSession(models.Model):
             self._prepare_session_values(vals)
             self._check_session_create_allowed(vals)
         sessions = super().create(vals_list)
-        for session in sessions.filtered(lambda item: not item.line_ids):
-            session.sudo()._generate_session_lines()
+        if not self.env.context.get("corporate_lms_skip_auto_session_lines"):
+            for session in sessions.filtered(lambda item: not item.line_ids):
+                session.sudo()._generate_session_lines()
         return sessions
 
     def write(self, vals):

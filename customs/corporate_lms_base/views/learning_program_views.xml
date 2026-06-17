@@ -172,14 +172,14 @@
     </record>
 
     <record id="action_elearning_program" model="ir.actions.act_window">
-        <field name="name">Programs</field>
+        <field name="name">Learning Programs</field>
         <field name="res_model">elearning.program</field>
         <field name="view_mode">list,form</field>
     </record>
 
     <menuitem
         id="menu_elearning_program"
-        name="Programs"
+        name="Learning Programs"
         parent="menu_corporate_lms_programs"
         action="action_elearning_program"
         sequence="10"
