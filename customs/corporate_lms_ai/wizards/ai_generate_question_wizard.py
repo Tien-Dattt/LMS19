@@ -13,6 +13,7 @@ from odoo.addons.corporate_lms_ai.models.ai_helpers import (
     _check_ai_manager_access,
     _get_lms_ai_generation_config,
     _has_ai_manager_access,
+    _format_ai_text,
 )
 
 QUESTION_TYPES = {"single", "multiple", "true_false"}
@@ -214,6 +215,9 @@ class ElearningAIGenerateQuestionWizard(models.TransientModel):
             "You generate draft assessment questions for an Odoo Corporate LMS instructor.",
             "Return only valid JSON. Do not include Markdown fences or prose.",
             "Questions are draft helper content. They are not official until reviewed by the instructor.",
+            "Question text and answer feedback must be readable, concise, and logically separated.",
+            "Do not create one overly long sentence.",
+            "Write in Vietnamese unless the source context requires another language.",
         ])
 
     def _build_prompt(self, source_context):
@@ -286,7 +290,7 @@ class ElearningAIGenerateQuestionWizard(models.TransientModel):
             raise UserError(_("AI returned a single choice or true/false question with multiple correct answers."))
 
         return {
-            "name": name,
+            "name": _format_ai_text(name),
             "question_type": question_type,
             "difficulty": difficulty,
             "score": score,
@@ -320,9 +324,9 @@ class ElearningAIGenerateQuestionWizard(models.TransientModel):
             if not name:
                 raise UserError(_("AI returned an answer without text."))
             answers.append({
-                "name": name,
+                "name": _format_ai_text(name),
                 "is_correct": bool(raw_answer.get("is_correct", raw_answer.get("correct", False))),
-                "feedback": raw_answer.get("feedback"),
+                "feedback": _format_ai_text(raw_answer.get("feedback")),
             })
         return answers
 
