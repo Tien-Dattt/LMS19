@@ -1,0 +1,150 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pyc
+
+# ----------------------------
+# Virtual environments
+# ----------------------------
+.venv/
+venv/
+env/
+ENV/
+odoo-venv/
+.conda/
+
+# ----------------------------
+# Python packaging / build
+# ----------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+htmlcov/
+.coverage
+.coverage.*
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+
+# ----------------------------
+# IDE / editor
+# ----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ----------------------------
+# Odoo runtime files
+# ----------------------------
+*.log
+*.log.*
+odoo.log
+odoo-server.log
+sessions/
+.pid
+*.pid
+
+# Odoo filestore / database dumps / backups
+filestore/
+.postgresql/
+*.dump
+*.sql
+*.sql.gz
+*.backup
+*.bak
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+backups/
+backup/
+dump/
+dumps/
+
+# ----------------------------
+# Odoo generated/static cache
+# ----------------------------
+addons_path_cache
+.web.assets_*
+web.assets_*
+*.pot~
+
+# ----------------------------
+# Local config / secrets
+# KHÔNG commit file chứa password, db_password, API key
+# ----------------------------
+*.conf
+odoo.conf
+odoo-server.conf
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# AI / API secrets
+openai_key.txt
+google_key.txt
+gemini_key.txt
+secrets.json
+
+# ----------------------------
+# Docker local override files
+# ----------------------------
+docker-compose.override.yml
+docker-compose.local.yml
+
+# ----------------------------
+# Node / frontend tools nếu có
+# ----------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ----------------------------
+# Temporary files
+# ----------------------------
+tmp/
+temp/
+.tmp/
+*.tmp
+*.temp
+
+# ----------------------------
+# LibreOffice / Office temporary files
+# ----------------------------
+.~lock.*
+~$*
+
+# ----------------------------
+# Test / local reports
+# ----------------------------
+reports/
+test-reports/
+coverage/
+coverage.xml
+
+
+# ----------------------------
+# Markdown Files
+# ----------------------------
+
+*.md
+
+docs/

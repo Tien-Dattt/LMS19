@@ -13,7 +13,8 @@ from .ai_helpers import (
     _check_ai_manager_access,
     _get_lms_ai_generation_config,
     _has_ai_manager_access,
-    _raise_ai_unavailable,
+    _format_ai_html,
+    _format_ai_short_text,
 )
 
 _AI_SYNC_SELECTION = [
@@ -57,22 +58,24 @@ class ElearningProgram(models.Model):
         return True
 
     def _get_program_ai_agent(self):
-        self.ensure_one()
-        agent = self.ai_agent_id
-        if not agent:
-            raise UserError(_("Vui lòng chọn AI Agent cho chương trình trước khi tạo tóm tắt bằng AI."))
-        if not agent.llm_model:
-            raise UserError(_("AI Agent chưa được cấu hình mô hình hoặc nguồn dữ liệu hợp lệ."))
-        if agent.restrict_to_sources:
-            valid_sources = agent.sources_ids.filtered(lambda source: source.status == "indexed" and source.is_active)
-            if not valid_sources:
-                raise UserError(_("AI Agent chưa được cấu hình mô hình hoặc nguồn dữ liệu hợp lệ."))
-        return agent.with_user(self.env.user)
+        def _get_program_ai_agent(self):
+            self.ensure_one()
+
+            agent = self.ai_agent_id
+            if not agent:
+                raise UserError(_("Vui lòng chọn AI Agent cho chương trình trước khi tạo tóm tắt bằng AI."))
+            _get_lms_ai_generation_config(self, agent)
+
+            return agent.with_user(self.env.user)
 
     def _get_program_summary_system_prompt(self):
         return "\n".join([
             "You draft learning program helper content for an Odoo Corporate LMS training manager.",
-            "Return a concise HTML summary with Vietnamese or valid JSON with an ai_summary key.",
+            "Return only valid JSON. Do not include Markdown fences or prose.",
+            "The ai_summary value must be readable HTML.",
+            "Use <p> for paragraphs, <ul><li> for bullet points, and <strong> for important labels.",
+            "Do not return one long paragraph.",
+            "Write in Vietnamese unless the source context requires another language.",
             "The generated text is draft helper content only.",
             "Do not decide official score, pass/fail, certificates, permissions, or learner access.",
         ])
@@ -107,32 +110,39 @@ class ElearningProgram(models.Model):
         return "\n".join([
             "Generate a draft AI summary for this learning program.",
             "Use this JSON shape if possible:",
-            '{"ai_summary":"..."}',
+            '{"ai_summary":"<p>...</p><ul><li>...</li></ul>"}',
             "Do not change official completion, scoring, pass/fail, certificates, permissions, or learner access.",
             "",
             "\n".join(part for part in parts if part is not False),
         ])
 
     def _parse_program_summary_ai_response(self, raw_response):
-        cleaned = (raw_response or "").strip()
-        if not cleaned:
-            raise UserError(_("AI returned an empty program summary response."))
-        fence_match = re.search(r"```(?:json)?\s*(.*?)```", cleaned, flags=re.DOTALL | re.IGNORECASE)
-        if fence_match:
-            cleaned = fence_match.group(1).strip()
-        try:
-            payload = json.loads(cleaned)
-        except json.JSONDecodeError:
-            return cleaned
-        if isinstance(payload, list):
-            payload = payload[0] if payload else {}
-        if not isinstance(payload, dict):
-            raise UserError(_("AI response did not contain a program summary."))
-        summary = payload.get("ai_summary") or payload.get("program_summary") or payload.get("summary")
-        if not summary:
-            raise UserError(_("AI response did not contain a program summary."))
-        return str(summary)
+        def _parse_program_summary_ai_response(self, raw_response):
+            cleaned = (raw_response or "").strip()
+            if not cleaned:
+                raise UserError(_("AI returned an empty program summary response."))
 
+            fence_match = re.search(r"```(?:json)?\s*(.*?)```", cleaned, flags=re.DOTALL | re.IGNORECASE)
+            if fence_match:
+                cleaned = fence_match.group(1).strip()
+
+            try:
+                payload = json.loads(cleaned)
+            except json.JSONDecodeError:
+                return _format_ai_html(cleaned)
+
+            if isinstance(payload, list):
+                payload = payload[0] if payload else {}
+
+            if not isinstance(payload, dict):
+                raise UserError(_("AI response did not contain a program summary."))
+
+            summary = payload.get("ai_summary") or payload.get("program_summary") or payload.get("summary")
+
+            if not summary:
+                raise UserError(_("AI response did not contain a program summary."))
+
+            return _format_ai_html(summary)
     def _program_html_to_text(self, value):
         if not value:
             return ""
@@ -188,6 +198,11 @@ class SlideChannel(models.Model):
         return "\n".join([
             "You draft course helper content for an Odoo Corporate LMS instructor.",
             "Return only valid JSON. Do not include Markdown fences or prose.",
+            "The ai_course_summary value must be readable HTML.",
+            "Use <p> for paragraphs, <ul><li> for bullet points, and <strong> for important labels.",
+            "Do not return one long paragraph.",
+            "The ai_difficulty_suggestion value must be a short one-line text.",
+            "Write in Vietnamese unless the source context requires another language.",
             "The generated text is draft helper content only.",
             "Do not decide official score, pass/fail, certificates, permissions, or learner access.",
         ])
@@ -211,7 +226,7 @@ class SlideChannel(models.Model):
         return "\n".join([
             "Generate draft helper fields for this course.",
             "Use this JSON shape exactly:",
-            '{"ai_course_summary":"...","ai_difficulty_suggestion":"..."}',
+            '{"ai_course_summary":"<p>...</p><ul><li>...</li></ul>","ai_difficulty_suggestion":"Dễ / Trung bình / Khó"}',
             "Do not change official completion, scoring, pass/fail, certificates, permissions, or learner access.",
             "",
             "\n\n".join(part for part in parts if part),
@@ -242,9 +257,13 @@ class SlideChannel(models.Model):
         if not summary:
             raise UserError(_("AI response did not contain a course summary."))
 
-        values = {"ai_course_summary": str(summary)}
+        values = {
+            "ai_course_summary": _format_ai_html(summary),
+        }
+
         if difficulty:
-            values["ai_difficulty_suggestion"] = str(difficulty)
+            values["ai_difficulty_suggestion"] = _format_ai_short_text(difficulty, max_length=120)
+
         return values
 
     def _course_field_text(self, field_name):
@@ -285,7 +304,120 @@ class SlideSlide(models.Model):
 
     def action_generate_slide_ai_summary(self):
         _check_ai_manager_access(self, AI_TRAINING_GROUPS)
-        _raise_ai_unavailable()
+
+        for slide in self:
+            is_ai_manager = _has_ai_manager_access(slide.env, AI_MANAGER_GROUPS)
+            if not is_ai_manager:
+                slide.check_access("write")
+
+            work_slide = slide.sudo() if is_ai_manager else slide
+            agent = work_slide.channel_id.ai_agent_id
+
+            if not agent:
+                raise UserError(_("Set an AI Agent on the related course before generating a slide AI summary."))
+
+            _get_lms_ai_generation_config(work_slide, agent)
+
+            prompt = work_slide._build_slide_summary_prompt()
+
+            try:
+                responses = agent.sudo()._generate_response(
+                    prompt=prompt,
+                    extra_system_context=work_slide._get_slide_summary_system_prompt(),
+                )
+                values = work_slide._parse_slide_summary_ai_response("\n".join(responses or []))
+            except UserError:
+                raise
+            except Exception as error:
+                raise UserError(_(
+                    "AI could not generate a slide summary. "
+                    "Please check the selected AI Agent and try again. Details: %s"
+                ) % error)
+
+            work_slide.write(values)
+
+        return True
+
+    def _get_slide_summary_system_prompt(self):
+        return "\n".join([
+            "You draft lesson helper content for an Odoo Corporate LMS instructor.",
+            "Return only valid JSON. Do not include Markdown fences or prose.",
+            "The ai_summary value must be readable HTML.",
+            "Use <p> for paragraphs, <ul><li> for bullet points, and <strong> for important labels.",
+            "The ai_keywords value must be a short comma-separated text.",
+            "Do not return one long paragraph.",
+            "Write in Vietnamese unless the source context requires another language.",
+            "The generated text is draft helper content only.",
+            "Do not decide official completion, scoring, pass/fail, certificates, permissions, or learner access.",
+        ])
+
+    def _build_slide_summary_prompt(self):
+        self.ensure_one()
+
+        parts = [
+            _("Course: %s") % (self.channel_id.name or ""),
+            _("Slide: %s") % (self.name or ""),
+            self._slide_field_text("description"),
+            self._slide_field_text("html_content"),
+            self._slide_field_text("url"),
+        ]
+
+        return "\n".join([
+            "Generate draft helper fields for this lesson.",
+            "Use this JSON shape exactly:",
+            '{"ai_summary":"<p>...</p><ul><li>...</li></ul>","ai_keywords":"keyword1, keyword2, keyword3"}',
+            "Do not change official completion, scoring, pass/fail, certificates, permissions, or learner access.",
+            "",
+            "\n\n".join(part for part in parts if part),
+        ])
+
+    def _parse_slide_summary_ai_response(self, raw_response):
+        cleaned = (raw_response or "").strip()
+        if not cleaned:
+            raise UserError(_("AI returned an empty slide summary response."))
+
+        fence_match = re.search(r"```(?:json)?\s*(.*?)```", cleaned, flags=re.DOTALL | re.IGNORECASE)
+        if fence_match:
+            cleaned = fence_match.group(1).strip()
+
+        try:
+            payload = json.loads(cleaned)
+        except json.JSONDecodeError:
+            payload = {"ai_summary": cleaned}
+
+        if isinstance(payload, list):
+            payload = payload[0] if payload else {}
+
+        if not isinstance(payload, dict):
+            raise UserError(_("AI response did not contain a slide summary."))
+
+        summary = payload.get("ai_summary") or payload.get("summary") or payload.get("slide_summary")
+        keywords = payload.get("ai_keywords") or payload.get("keywords") or ""
+
+        if isinstance(keywords, list):
+            keywords = ", ".join(str(keyword) for keyword in keywords)
+
+        if not summary:
+            raise UserError(_("AI response did not contain a slide summary."))
+
+        return {
+            "ai_summary": _format_ai_html(summary),
+            "ai_keywords": _format_ai_short_text(keywords, max_length=160),
+        }
+
+    def _slide_field_text(self, field_name):
+        if field_name not in self._fields or not self[field_name]:
+            return ""
+
+        field = self._fields[field_name]
+
+        if field.type == "html":
+            return html_to_inner_content(self[field_name]).strip()
+
+        if field.type in ("char", "text"):
+            return str(self[field_name]).strip()
+
+        return ""
 
 
 class ElearningAssignmentSubmission(models.Model):
@@ -348,6 +480,10 @@ class ElearningAssignmentSubmission(models.Model):
         return "\n".join([
             "You draft assignment feedback for an Odoo Corporate LMS instructor.",
             "Return only valid JSON. Do not include Markdown fences or prose.",
+            "All values must be readable HTML.",
+            "Use <p> for paragraphs, <ul><li> for bullet points, and <strong> for important labels.",
+            "Do not return one long paragraph.",
+            "Write in Vietnamese unless the source context requires another language.",
             "The generated text is draft helper content only.",
             "Do not decide official score, pass/fail, certificates, permissions, or learner access.",
         ])
@@ -358,7 +494,7 @@ class ElearningAssignmentSubmission(models.Model):
         return "\n".join([
             "Draft assignment feedback from the submission context.",
             "Use this JSON shape exactly:",
-            '{"ai_feedback_draft":"...","ai_strengths":"...","ai_weaknesses":"..."}',
+            '{"ai_feedback_draft":"<p>...</p><ul><li>...</li></ul>","ai_strengths":"<ul><li>...</li></ul>","ai_weaknesses":"<ul><li>...</li></ul>"}',
             "Do not provide an official score.",
             "",
             "Assignment:",
@@ -444,9 +580,9 @@ class ElearningAssignmentSubmission(models.Model):
             raise UserError(_("AI response did not contain a feedback draft."))
 
         return {
-            "ai_feedback_draft": str(feedback),
-            "ai_strengths": str(strengths),
-            "ai_weaknesses": str(weaknesses),
+            "ai_feedback_draft": _format_ai_html(feedback),
+            "ai_strengths": _format_ai_html(strengths),
+            "ai_weaknesses": _format_ai_html(weaknesses),
         }
 
     def _json_loads_feedback_response(self, raw_response):
@@ -467,4 +603,132 @@ class ElearningQuestion(models.Model):
 
     def action_generate_question_ai_explanation(self):
         _check_ai_manager_access(self, AI_TRAINING_GROUPS)
-        _raise_ai_unavailable()
+
+        for question in self:
+            is_ai_manager = _has_ai_manager_access(question.env, AI_MANAGER_GROUPS)
+            if not is_ai_manager:
+                question.check_access("write")
+
+            work_question = question.sudo() if is_ai_manager else question
+            agent = work_question._get_question_ai_agent()
+
+            _get_lms_ai_generation_config(work_question, agent)
+
+            prompt = work_question._build_question_explanation_prompt()
+
+            try:
+                responses = agent.sudo()._generate_response(
+                    prompt=prompt,
+                    extra_system_context=work_question._get_question_explanation_system_prompt(),
+                )
+                values = work_question._parse_question_explanation_ai_response("\n".join(responses or []))
+            except UserError:
+                raise
+            except Exception as error:
+                raise UserError(_(
+                    "AI could not generate a question explanation. "
+                    "Please check the selected AI Agent and try again. Details: %s"
+                ) % error)
+
+            work_question.write(values)
+
+        return True
+
+    def _get_question_ai_agent(self):
+        self.ensure_one()
+
+        bank = self.bank_id
+
+        if bank.channel_id and bank.channel_id.ai_agent_id:
+            return bank.channel_id.ai_agent_id.sudo()
+
+        if bank.program_id:
+            channel = bank.program_id.line_ids.mapped("channel_id").filtered("ai_agent_id")[:1]
+            if channel:
+                return channel.ai_agent_id.sudo()
+
+        raise UserError(_("Set an AI Agent on the related course before generating a question explanation."))
+
+    def _get_question_explanation_system_prompt(self):
+        return "\n".join([
+            "You draft explanation content for an Odoo Corporate LMS instructor.",
+            "Return only valid JSON. Do not include Markdown fences or prose.",
+            "The ai_explanation value must be readable HTML.",
+            "Use <p> for paragraphs, <ul><li> for bullet points, and <strong> for important labels.",
+            "Do not return one long paragraph.",
+            "Write in Vietnamese unless the source context requires another language.",
+            "The generated text is draft helper content only.",
+            "Do not change official score, pass/fail, certificates, permissions, or learner access.",
+        ])
+
+    def _build_question_explanation_prompt(self):
+        self.ensure_one()
+
+        question_type_label = dict(self._fields["question_type"].selection).get(
+            self.question_type,
+            self.question_type,
+        )
+        difficulty_label = dict(self._fields["difficulty"].selection).get(
+            self.difficulty,
+            self.difficulty,
+        )
+
+        answer_lines = []
+        for answer in self.answer_ids.sorted(lambda item: (item.sequence, item.id)):
+            answer_lines.append(
+                "- %s | correct=%s | feedback=%s" % (
+                    answer.name,
+                    "yes" if answer.is_correct else "no",
+                    answer.feedback or "",
+                )
+            )
+
+        return "\n".join([
+            "Generate a draft explanation for this question.",
+            "Use this JSON shape exactly:",
+            '{"ai_explanation":"<p>...</p><ul><li>...</li></ul>"}',
+            "Explain why the correct answer is correct and why distractors are incorrect.",
+            "Do not change the question, answers, score, state, or official grading logic.",
+            "",
+            _("Question bank: %s") % (self.bank_id.name or ""),
+            _("Question: %s") % (self.name or ""),
+            _("Question type: %s") % question_type_label,
+            _("Difficulty: %s") % difficulty_label,
+            _("Score: %s") % self.score,
+            "",
+            _("Answers:"),
+            "\n".join(answer_lines),
+        ])
+
+    def _parse_question_explanation_ai_response(self, raw_response):
+        cleaned = (raw_response or "").strip()
+        if not cleaned:
+            raise UserError(_("AI returned an empty question explanation response."))
+
+        fence_match = re.search(r"```(?:json)?\s*(.*?)```", cleaned, flags=re.DOTALL | re.IGNORECASE)
+        if fence_match:
+            cleaned = fence_match.group(1).strip()
+
+        try:
+            payload = json.loads(cleaned)
+        except json.JSONDecodeError:
+            payload = {"ai_explanation": cleaned}
+
+        if isinstance(payload, list):
+            payload = payload[0] if payload else {}
+
+        if not isinstance(payload, dict):
+            raise UserError(_("AI response did not contain a question explanation."))
+
+        explanation = (
+                payload.get("ai_explanation")
+                or payload.get("explanation")
+                or payload.get("question_explanation")
+        )
+
+        if not explanation:
+            raise UserError(_("AI response did not contain a question explanation."))
+
+        return {
+            "ai_explanation": _format_ai_html(explanation),
+        }
