@@ -58,15 +58,14 @@ class ElearningProgram(models.Model):
         return True
 
     def _get_program_ai_agent(self):
-        def _get_program_ai_agent(self):
-            self.ensure_one()
+        self.ensure_one()
 
-            agent = self.ai_agent_id
-            if not agent:
-                raise UserError(_("Vui lòng chọn AI Agent cho chương trình trước khi tạo tóm tắt bằng AI."))
-            _get_lms_ai_generation_config(self, agent)
+        agent = self.ai_agent_id
+        if not agent:
+            raise UserError(_("Vui lòng chọn AI Agent cho chương trình trước khi tạo tóm tắt bằng AI."))
+        _get_lms_ai_generation_config(self, agent)
 
-            return agent.with_user(self.env.user)
+        return agent.with_user(self.env.user)
 
     def _get_program_summary_system_prompt(self):
         return "\n".join([
@@ -117,32 +116,32 @@ class ElearningProgram(models.Model):
         ])
 
     def _parse_program_summary_ai_response(self, raw_response):
-        def _parse_program_summary_ai_response(self, raw_response):
-            cleaned = (raw_response or "").strip()
-            if not cleaned:
-                raise UserError(_("AI returned an empty program summary response."))
+        cleaned = (raw_response or "").strip()
+        if not cleaned:
+            raise UserError(_("AI returned an empty program summary response."))
 
-            fence_match = re.search(r"```(?:json)?\s*(.*?)```", cleaned, flags=re.DOTALL | re.IGNORECASE)
-            if fence_match:
-                cleaned = fence_match.group(1).strip()
+        fence_match = re.search(r"```(?:json)?\s*(.*?)```", cleaned, flags=re.DOTALL | re.IGNORECASE)
+        if fence_match:
+            cleaned = fence_match.group(1).strip()
 
-            try:
-                payload = json.loads(cleaned)
-            except json.JSONDecodeError:
-                return _format_ai_html(cleaned)
+        try:
+            payload = json.loads(cleaned)
+        except json.JSONDecodeError:
+            return _format_ai_html(cleaned)
 
-            if isinstance(payload, list):
-                payload = payload[0] if payload else {}
+        if isinstance(payload, list):
+            payload = payload[0] if payload else {}
 
-            if not isinstance(payload, dict):
-                raise UserError(_("AI response did not contain a program summary."))
+        if not isinstance(payload, dict):
+            raise UserError(_("AI response did not contain a program summary."))
 
-            summary = payload.get("ai_summary") or payload.get("program_summary") or payload.get("summary")
+        summary = payload.get("ai_summary") or payload.get("program_summary") or payload.get("summary")
 
-            if not summary:
-                raise UserError(_("AI response did not contain a program summary."))
+        if not summary:
+            raise UserError(_("AI response did not contain a program summary."))
 
-            return _format_ai_html(summary)
+        return _format_ai_html(summary)
+
     def _program_html_to_text(self, value):
         if not value:
             return ""
